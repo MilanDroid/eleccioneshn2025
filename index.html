@@ -509,21 +509,6 @@
                 <!-- Candidate cards will be dynamically inserted here -->
             </div>
         </div>
-
-        <div class="info-bar">
-            <div class="info-item">
-                <span class="info-label">Departamento:</span>
-                <span class="info-value" id="current-state">-</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Total Votos:</span>
-                <span class="info-value" id="total-votes">0</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Actualizado:</span>
-                <span class="info-value" id="fecha-corte">-</span>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -794,14 +779,8 @@
 
         // Display the election results
         function displayResults(data, stateName) {
-            // Update info bar
-            document.getElementById('fecha-corte').textContent = data.fecha_corte || 'N/A';
-            document.getElementById('current-state').textContent = stateName;
-
             // Calculate total votes
             const totalVotos = data.candidatos.reduce((sum, candidato) => sum + (candidato.votos || 0), 0);
-            document.getElementById('total-votes').textContent = totalVotos.toLocaleString('es-HN');
-
             // Sort candidates by votes (descending)
             const candidatosSorted = [...data.candidatos].sort((a, b) => (b.votos || 0) - (a.votos || 0));
 
