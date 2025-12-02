@@ -46,7 +46,8 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
-            height: 100vh;
+            height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
@@ -391,21 +392,11 @@
             .candidates-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
-            .container {
-                height: auto;
-                min-height: 100vh;
-            }
         }
 
         @media (min-width: 480px) and (max-width: 767px) {
             .candidates-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .container {
-                height: auto;
-                min-height: 100vh;
             }
 
             .info-bar {
@@ -422,8 +413,6 @@
             }
 
             .container {
-                height: auto;
-                min-height: 100vh;
                 padding: 0 15px;
             }
 
@@ -472,6 +461,85 @@
                 font-size: 1.1rem;
             }
         }
+
+        /* Actas Info Section */
+        .actas-info {
+            background: var(--bg-primary);
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            padding: 12px 15px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .actas-info.visible {
+            display: block;
+        }
+
+        .actas-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 6px;
+        }
+
+        .actas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .actas-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 8px 10px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .actas-item-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .actas-item-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .actas-item-percentage {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 767px) {
+            .actas-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .actas-item {
+                padding: 6px 8px;
+            }
+
+            .actas-item-value {
+                font-size: 1rem;
+            }
+
+            .actas-item-label {
+                font-size: 0.65rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -507,6 +575,14 @@
         <div id="results" class="main-content">
             <div id="candidates-list" class="candidates-grid">
                 <!-- Candidate cards will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Actas Information Section -->
+        <div id="actas-info" class="actas-info">
+            <div class="actas-title">Información de Actas</div>
+            <div id="actas-grid" class="actas-grid">
+                <!-- Actas data will be dynamically inserted here -->
             </div>
         </div>
     </div>
@@ -786,6 +862,76 @@
 
             // Display candidates cards
             displayCandidateCards(candidatosSorted, totalVotos);
+
+            // Display actas information if available
+            if (data.actas) {
+                displayActasInfo(data.actas);
+            } else {
+                hideActasInfo();
+            }
+        }
+
+        // Display actas information
+        function displayActasInfo(actas) {
+            const actasContainer = document.getElementById('actas-info');
+            const actasGrid = document.getElementById('actas-grid');
+
+            // Clear previous content
+            actasGrid.innerHTML = '';
+
+            // Calculate percentage for publicadas/total
+            const percentage = actas.total > 0 ? ((actas.publicadas / actas.total) * 100).toFixed(2) : 0;
+
+            // Define the actas items to display
+            const actasItems = [
+                { label: 'Total', value: actas.total },
+                { label: 'Publicadas', value: actas.publicadas, percentage: percentage },
+                { label: 'En Espera', value: actas.espera },
+                { label: 'En Verificación', value: actas.verificacion },
+                { label: 'Correctas', value: actas.correctas },
+                { label: 'Inconsistencias', value: actas.inconsistencias },
+                { label: 'Pend. Verificación Visual', value: actas.pendientesVerificacionVisual }
+            ];
+
+            // Create and append actas items
+            actasItems.forEach(item => {
+                const actasItem = createActasItem(item.label, item.value, item.percentage);
+                actasGrid.appendChild(actasItem);
+            });
+
+            // Show the actas container
+            actasContainer.classList.add('visible');
+        }
+
+        // Hide actas information section
+        function hideActasInfo() {
+            const actasContainer = document.getElementById('actas-info');
+            actasContainer.classList.remove('visible');
+        }
+
+        // Create an actas item element
+        function createActasItem(label, value, percentage = null) {
+            const item = document.createElement('div');
+            item.className = 'actas-item';
+
+            const labelEl = document.createElement('div');
+            labelEl.className = 'actas-item-label';
+            labelEl.textContent = label;
+            item.appendChild(labelEl);
+
+            const valueEl = document.createElement('div');
+            valueEl.className = 'actas-item-value';
+            valueEl.textContent = (value || 0).toLocaleString('es-HN');
+            item.appendChild(valueEl);
+
+            if (percentage !== null && percentage !== undefined) {
+                const percentageEl = document.createElement('div');
+                percentageEl.className = 'actas-item-percentage';
+                percentageEl.textContent = `${percentage}%`;
+                item.appendChild(percentageEl);
+            }
+
+            return item;
         }
 
         // Display candidate cards
