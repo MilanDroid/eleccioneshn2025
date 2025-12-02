@@ -55,13 +55,63 @@ def fetch_election_results(depto: str) -> Dict[Any, Any]:
         print(f"Error fetching data for department {depto}: {e}")
         return None
 
-def save_results(results: Dict[Any, Any], depto: str, timestamp: str) -> None:
+def fetch_actas_validas(depto: str) -> Dict[Any, Any]:
+    """
+    Fetch valid vote papers (actas validas) data for a specific department.
+
+    Args:
+        depto: Department code (00-18)
+
+    Returns:
+        JSON response from the API with actas data
+    """
+    url = "https://resultadosgenerales2025-api.cne.hn/esc/v1/presentacion-resultados/actas-validas"
+
+    headers = {
+        "accept": "application/json, text/plain, */*",
+        "accept-language": "en-US,en;q=0.9,es;q=0.8",
+        "authorization": "Bearer null",
+        "content-type": "application/json",
+        "dnt": "1",
+        "origin": "https://resultadosgenerales2025.cne.hn",
+        "priority": "u=1, i",
+        "referer": "https://resultadosgenerales2025.cne.hn/",
+        "sec-ch-ua": '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"macOS"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+    }
+
+    payload = {
+        "codigos": [],
+        "tipco": "01",
+        "depto": depto,
+        "comuna": "00",
+        "mcpio": "000",
+        "zona": "",
+        "pesto": "",
+        "mesa": 0
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=60)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching actas data for department {depto}: {e}")
+        return None
+
+def save_results(results: Dict[Any, Any], actas_data: Dict[Any, Any], depto: str, timestamp: str) -> None:
     """
     Save election results to a JSON file organized by timestamp.
-    Saves all candidate data from the API response.
+    Saves all candidate data from the API response with actas data above fecha_corte.
 
     Args:
         results: Election results data
+        actas_data: Valid vote papers (actas) data
         depto: Department code
         timestamp: Timestamp for organizing results
     """
@@ -72,8 +122,9 @@ def save_results(results: Dict[Any, Any], depto: str, timestamp: str) -> None:
     # Get department name
     depto_name = DEPARTAMENTOS.get(depto, f"UNKNOWN_{depto}")
 
-    # Save complete results with metadata
+    # Save complete results with actas data above fecha_corte
     complete_results = {
+        "actas": actas_data,
         "fecha_corte": results.get("fecha_corte"),
         "depto_code": depto,
         "depto_name": depto_name,
@@ -183,8 +234,14 @@ def fetch_all_departments() -> None:
     print(f"✓ Saving new results to: {results_dir}")
     print("=" * 60)
 
-    # Save department 00
-    save_results(results, "00", timestamp)
+    # Fetch and save department 00 actas
+    print("\nFetching actas data for TODOS (00)...")
+    actas_00 = fetch_actas_validas("00")
+    if actas_00:
+        save_results(results, actas_00, "00", timestamp)
+    else:
+        print("⚠️  Warning: Failed to fetch actas for TODOS. Saving without actas data.")
+        save_results(results, {}, "00", timestamp)
 
     # Fetch all other departments from DEPARTAMENTOS (excluding 00 which we already fetched)
     for depto_code in DEPARTAMENTOS.keys():
@@ -195,7 +252,14 @@ def fetch_all_departments() -> None:
         print(f"\nFetching results for {depto_name} ({depto_code})...")
         results = fetch_election_results(depto_code)
         if results:
-            save_results(results, depto_code, timestamp)
+            # Fetch actas for this department
+            print(f"Fetching actas data for {depto_name} ({depto_code})...")
+            actas = fetch_actas_validas(depto_code)
+            if actas:
+                save_results(results, actas, depto_code, timestamp)
+            else:
+                print(f"⚠️  Warning: Failed to fetch actas for {depto_name}. Saving without actas data.")
+                save_results(results, {}, depto_code, timestamp)
 
     print("\n" + "=" * 60)
     print("Finished fetching all election results!")
