@@ -669,13 +669,19 @@
         // Initialize the state selector dropdown with available states
         function initializeStateSelector(states) {
             const select = document.getElementById('state-select');
-            select.innerHTML = '';
+
+            // Remove previous event listener by cloning
+            const newSelect = select.cloneNode(false);
+            select.parentNode.replaceChild(newSelect, select);
+
+            // Clear and populate options
+            newSelect.innerHTML = '';
 
             if (!states || states.length === 0) {
                 const option = document.createElement('option');
                 option.value = '';
                 option.textContent = 'No hay estados';
-                select.appendChild(option);
+                newSelect.appendChild(option);
                 return;
             }
 
@@ -684,16 +690,12 @@
                 const option = document.createElement('option');
                 option.value = state;
                 option.textContent = state;
-                select.appendChild(option);
+                newSelect.appendChild(option);
             });
 
             // Set the first state as default (TODOS)
-            select.value = states[0];
+            newSelect.value = states[0];
             currentState = states[0];
-
-            // Remove previous event listener if any
-            const newSelect = select.cloneNode(true);
-            select.parentNode.replaceChild(newSelect, select);
 
             // Add event listener for state change
             newSelect.addEventListener('change', (e) => {
@@ -877,12 +879,6 @@
 
             return card;
         }
-
-        loadMetadata().then(async () => {
-            if (currentDate && currentState) {
-                await loadResults(currentDate, currentState);
-            }
-        });
 
     </script>
 </body>
