@@ -153,5 +153,9 @@ def fetch_all_departments() -> None:
     print("\n" + "=" * 60)
     print("Finished fetching all election results!")
 
+    # Generate metadata for web page
+    print("\nGenerating metadata for web page...")
+    os.system("python3 generate_metadata.py")
+
 if __name__ == "__main__":
     fetch_all_departments()

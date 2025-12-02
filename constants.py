@@ -51,9 +51,9 @@ CANDIDATOS = {
 
 # Candidates images
 CANDIDATOS_IMAGENES = {
-    "DC": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.laprensa.hn%2Fpremium%2Fchano-rivera-consultor-politico-candidato-presidencial-elecciones-honduras-2025-OK28221168&psig=AOvVaw20FPfm53Qcf6_9nqrL44km&ust=1764720092011000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMD04ejMnZEDFQAAAAAdAAAAABAE",
-    "Libre": "https://commons.wikimedia.org/wiki/File:Honduran_Minister_of_Defense_Rixi_Moncada_visits_U.S._Southern_Command_(cropped).jpg",
-    "PINU": "https://commons.wikimedia.org/wiki/File:Jorge_Nelson_%C3%A1vila_Guti%C3%A9rrez.png",
-    "PLH": "https://commons.wikimedia.org/wiki/File:Salvador_Nasralla_2022_(cropped).jpg",
-    "PNH": "https://commons.wikimedia.org/wiki/File:Nasry_Asfura_in_2020_(close-up).jpg",
+    "DC": "https://www.laprensa.hn/binrepository/1260x945/0c0/0d0/none/11004/YJOO/9_12620377_20251116165825.jpg",
+    "Libre": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Honduran_Minister_of_Defense_Rixi_Moncada_visits_U.S._Southern_Command_%28cropped%29.jpg",
+    "PINU": "https://proceso.hn/wp-content/uploads/2021/02/Nelson-Avila.jpg",
+    "PLH": "https://upload.wikimedia.org/wikipedia/commons/5/51/Salvador_Nasralla_2022_%28cropped%29.jpg",
+    "PNH": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Nasry_Asfura_in_2020_%28close-up%29.jpg",
 }

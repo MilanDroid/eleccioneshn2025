@@ -4,7 +4,8 @@ from pathlib import Path
 
 def generate_results_metadata():
     """
-    Generate a metadata JSON file containing all available result directories.
+    Generate a metadata JSON file containing all available result directories
+    and their available states (JSON files).
     This should be run whenever new results are added.
     """
     results_dir = Path("results")
@@ -13,18 +14,39 @@ def generate_results_metadata():
         print("Results directory not found!")
         return
 
-    # Get all subdirectories (result dates)
+    # Get all subdirectories (result dates) and their available states
+    dates_data = {}
     result_dates = []
+
     for item in results_dir.iterdir():
         if item.is_dir():
-            result_dates.append(item.name)
+            date_name = item.name
+            result_dates.append(date_name)
+
+            # Get all JSON files in this date directory
+            states = []
+            for json_file in item.glob("*.json"):
+                # Get filename without extension (e.g., "TODOS.json" -> "TODOS")
+                state_name = json_file.stem
+                states.append(state_name)
+
+            # Sort states alphabetically, but put TODOS first
+            states.sort()
+            if "TODOS" in states:
+                states.remove("TODOS")
+                states.insert(0, "TODOS")
+
+            dates_data[date_name] = {
+                "states": states
+            }
 
     # Sort dates in descending order (newest first)
     result_dates.sort(reverse=True)
 
     metadata = {
         "available_dates": result_dates,
-        "latest_date": result_dates[0] if result_dates else None
+        "latest_date": result_dates[0] if result_dates else None,
+        "dates": dates_data
     }
 
     # Save metadata to JSON file
@@ -34,6 +56,10 @@ def generate_results_metadata():
     print(f"Metadata generated successfully!")
     print(f"Available dates: {len(result_dates)}")
     print(f"Latest date: {metadata['latest_date']}")
+
+    if metadata['latest_date']:
+        latest_states = dates_data.get(metadata['latest_date'], {}).get('states', [])
+        print(f"States in latest date: {len(latest_states)}")
 
 if __name__ == "__main__":
     generate_results_metadata()
