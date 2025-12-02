@@ -291,7 +291,7 @@ def fetch_all_departments() -> None:
 
 if __name__ == "__main__":
     print("Starting continuous election results monitoring...")
-    print("Process will run every 60 seconds. Press Ctrl+C to stop.")
+    print("Process will run every 70 seconds. Press Ctrl+C to stop.")
     print("=" * 60)
 
     try:
@@ -301,9 +301,9 @@ if __name__ == "__main__":
 
             fetch_all_departments()
 
-            print(f"\n[{current_time}] Fetch cycle complete. Waiting 60 seconds...")
+            print(f"\n[{current_time}] Fetch cycle complete. Waiting 70 seconds...")
             print("=" * 60)
-            time.sleep(60)
+            time.sleep(70)
     except KeyboardInterrupt:
         print("\n\nStopping election results monitoring. Goodbye!")
         print("=" * 60)
