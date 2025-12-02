@@ -503,8 +503,387 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="js/constants.js"></script>
-    <script src="js/app.js"></script>
+    <script>
+        // Department code to name mapping
+        const DEPARTAMENTOS = {
+            "00": "TODOS",
+            "01": "ATLANTIDA",
+            "02": "COLON",
+            "03": "COMAYAGUA",
+            "04": "COPAN",
+            "05": "CORTES",
+            "06": "CHOLUTECA",
+            "07": "EL PARAISO",
+            "08": "FRANCISCO MORAZAN",
+            "09": "GRACIAS A DIOS",
+            "10": "INTIBUCA",
+            "11": "ISLAS DE LA BAHIA",
+            "12": "LA PAZ",
+            "13": "LEMPIRA",
+            "14": "OCOTEPEQUE",
+            "15": "OLANCHO",
+            "16": "SANTA BARBARA",
+            "17": "VALLE",
+            "18": "YORO",
+            "20": "VOTO EN EL EXTERIOR"
+        };
+
+        // Political parties mapping (key => full name)
+        const PARTIDOS = {
+            "DC": "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS",
+            "Libre": "PARTIDO LIBERTAD Y REFUNDACION",
+            "PINU": "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA",
+            "PLH": "PARTIDO LIBERAL DE HONDURAS",
+            "PNH": "PARTIDO NACIONAL DE HONDURAS"
+        };
+
+        // Political party logos (key => logo URL)
+        const PARTIDOS_LOGOS = {
+            "DC": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAlCAMAAAAgENppAAAAYFBMVEUAkjr///8AjCnE3soAiR8AjzH0+vYAkTf7/fwAiBsAgwDf7eIomkwWlUAAji7k8OfT5te11r3M49JwtIG72cJHo2GeyqlirnZYqm0Ahg+EvZF9uYuPwpuoz7I1nVOJv5bjrv9+AAAA1ElEQVRIie2T2w6CMAyGt7IjCoyjBxTe/y1tF8QYkS0m3u2/GCzpl7Z/O8aSkv4krWOiJJAEyOddyGMBEGQh4walmlb4WNEeOOemK2QYXORKJMV67QPkC+ROMBjox/gDwqDKy54KPElNyPkiOvxc91N60DJZYmhmRzxvwDQopeoyBmQCU1b5HcGJTLLWxpSKIDgquUawiJrit4w42v1K33rsfI8z9egaN0T0uLrKFlep5Dns6uYcVYQ5W5tjpoBHH7s6VoTVLLSrP7+OLcW9x6SkOD0AUGQIXuxlVPAAAAAASUVORK5CYII=",
+            "Libre": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAaCAMAAADVPG8RAAAAdVBMVEX////SAADRAADUAB7TABDuubvOAADTABXhd3z89fXcWmH++vrzzc7UABr33d7fam/jhIjww8T009Tsr7H56OjbVFvrqKvYNkDnlpnyyMr78PDTAArvvr/ifIDXLjngcXfljpLVFCXZRE3WJzDeY2jaTFTpoaOonFvCAAAB1klEQVQ4jZ2U65KDIAyFk6h4oSoi3lBbW23f/xEXqHbqbjuzY350kOY7kJMMAP8N/u/MX1HLg2CUHwTPFB/i4ugyHQKLTtIhsAW4ljslRAEcwxAg9/G7cwaqvfeNAPsIYoYMIPHp9I3jRpKz0w70I4BhCAwY4lfQOXrx8+rWzHODDV/BoigcKDMhAptzkhJka3VKIep1anRbFpmCeB63E81VyYLhQtjTzWwz6muiCTpEItyVULDgddWYPLSgh02FHhoH0fMMMilK+0eLKakXJ9b1DgwXgAemswXTuVO8Cq3RA/bjZlKTvJuzgc4c8ogbkDK39oUQo2+1bChq4RO4JpO2oHFEk+fRM57ZGSs/gli4ZIIVNCKotY453wa8Sj+C4d02K6wc6PJCNEdkeb7dUD4t/esqke9Z81cwoxSTnHomQc+T3TmfN5BRbvpIZuTuxCYyTahdH9mzqNkWmHZG4kp9YPO3nmqlzUTFpghufnQQuHK4ViqTMlNcDoOxrGM1qIrdMkjvn0bSSMhyWprr3NyXyziOUZ4klYB6dl0/zWxsnfW7yMpxSaI2kOr3iyambVUaE5a3f3j3aNsg+/IEivczBL3mT3ZDoT8jLoL9p06Ovndgff0B3VgZey9MDFkAAAAASUVORK5CYII=",
+            "PINU": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAsVBMVEX/////eRH/eRAAWSn/eRL/dgD/cgD/bwD/bQD/dAAAWCr/+/j/eAr//vz+eAD/ew/+383+xqf+7+b+qnr/6t//9vEAURn+vZj+zbL+iTn+wJ7+lFX+0bj/aAD+2MP+gCT+to7+nGH+pG6bah7+kEjvdxIASADp7uuJpZIAThC4yb6bsqP+hi/+sYbPchdXYCTddBWzbRyoax02XSbFcRgkXChNXyR9ZSGQaB+HZiB8nYiIU9ttAAAE1UlEQVRIiY1Xh3bbOgyVaXNJtLZiDUuKV5K2zujLbP//wx4Aajix0gTnxKItXuISAC8Rx/nMYp8x3/v09YQ1mxU+MjVjeomjZNt8A5ZzKQoceJKZgH7ytdRfQ0PFmIxhsOTMtPSLZEzFX7ssOBMRAn1jjvjDpWB8809IabnCvAoHreF7fB4NUyG9upyEZUVtkdww4RGAFohhr+TZSVQxEeU00N3Ct5rJNTz3nBiWwlJ31orpID0DNhAUQ3mLYcIWnpWmx54bIgCemZHnQFyQadpcxQ0mcNMGCexAGp3QViHKagLnOBEmAnMf1rIawp9uZI1ftoL1MTqzlereRe9i4OXwkeO79dn+upVuIYA66101ed701FIsgsiO86GKlry+taOt0C3NzSuppBDwUeUEbLWiCnaySvk9EEpDtNbpZo9lHRnJ2QyNMS4N1VFh1861ZsIu4cS1gUCrLW0MPuJCmtmJGVlAdOicxHsFc3ltt+NFvoCvmtu9h5LPPhiXlk8JRCCXx/GolBygRmGhNO/ddU4p2AWVwPFdbJcIlRHWx4hj7IRujMVnZHuWkuVK4Ok7jjzZ3WEcc6zzgOUfYRToEHcx8gvud8HoHOmky5Pp4TYfC9DjJ0Qf3PkJ0OgB5YWrfeiUSiizKUNKRiRmCzJ0+OK6b8FIwJ6teH1bSClk6Ww1rMaFFMcUj9Cis1nw253P3YcRiXIQ+kpoSB2eu6PgBodMZY6nWA9kT4ADexgjqzyQTJhoDNcghGVStT44FJz0rAcu/nsEmHv/+wQIwdNSSt7uk5XNyjJL1+Ul6dTg8c56PIxAAbko12E8oTvRAOyZnnIV0VQSPwAXix0h3acxOtNALw5PqWISyZ4Ddkq1CeM+nXGYr5I9nFMbnC7fh47o3H0ZgHhEuBK8rZIyD51ACaFBg1GEIdp2zuH1sQfevw1RhXyJLhuydbYck2i0qEMU765Me6YnXFHOQf8EOmF8C7qBZVPcrlEDV8Linly3Q8KziysJBpRpZaB64EujqlXYpyazm3x4fdu9ItSdv+3+/KHTxWQvf06aJ0HjLMej4qFu0aSAseDwikUO1jmEAhmg7yze7OlSpGmYkYPrjkk0Bhzsi3Mpj7dSq4YuZHQ5W0BK3OfxPGKhNoqrKjyDQULwyscbhAHBxeHJfX44AFOGOKyaIyQDoOO5zxKEgcjRHiJlFk9/Himu8PeyuwuMVf9lQqo6QONa49H0e/0KXy/cIY2AdS92Pb+0FZjEukOCCPRCntNV+PfqYgDOL67+4m+J1f1Lxe21S1SVMFacQylpgesb9+rHBdiPK/fmGjO1lcpKY1pINaRl1S2Rwh7qjvH1z183N79+Xnf0a9CWTvlXq48pSeEeEHgpfeiGcEel/PxCzqB8OXZjWV1EA5usLOgq3+jp1gFmBNAdCASsBMe5UYIByRSn5mHZwrUkJpBey/ttBMag460U2IRU3PZLKfYz/Lyna+B6xULGi84ONppasqhvkKCmzHn/AIETglo3kHNG/Qy0O+h4bMmAwmR4soIiApRsnwotFbWdxdAEVtPnqrNEs66VMmbhUKy+ajvJUI8kxQjC6OMpT7/X6Oa1NoJUIejaTyfguutI/2nprU+tILTWM1uViX/5jc6a6HacZ5bh5P8Q/wOsYVNwa1QE+wAAAABJRU5ErkJggg==",
+            "PLH": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAlCAMAAAAgENppAAAADFBMVEXYHgX////WAADzzMuQ3qFRAAAAKklEQVRIie3ToQEAAAjDsAH//8wPFVONr9sSqWuhHJSBDA1hiLeK3yF1PfVnBJnWhtatAAAAAElFTkSuQmCC",
+            "PNH": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAlCAMAAAAgENppAAAAQlBMVEUnDeD///8WAN8lB+CYk+3Jx/U+L+LZ2PiIg+vRz/ZfVeWloO+Tjeyalu1DN+Lv7/y5t/J7dOlOQ+PCwPR9d+lYTeXK9I0CAAAAlElEQVRIie2SSQ7EIAwE023IHrL//6sBZdBsioQ5UydfSnTbVFWh8IBIplfXeSaNYZ7YNFmiCJDVki3Q6p7kTQd0rzHR6wfjGeEZwzT0qeaEL6bkwHTzW5udoii5RG9JbfgTNz1mFO0tWqUojFGp+wNc/Va2ze9oVVa02MPld21W4ggZhQdUIs94PLpTZ/J/KhQ+uACtIwMbD73hOgAAAABJRU5ErkJggg=="
+        };
+
+        // Candidates mapping (key => candidate name)
+        const CANDIDATOS = {
+            "DC": "MARIO ENRIQUE RIVERA CALLEJAS",
+            "Libre": "RIXI RAMONA MONCADA GODOY",
+            "PINU": "JORGE NELSON AVILA GUTIERREZ",
+            "PLH": "SALVADOR ALEJANDRO CESAR NASRALLA SALUM",
+            "PNH": "NASRY JUAN ASFURA ZABLAH"
+        };
+
+        // Candidates images (key => image URL) - Synced from constants.py
+        const CANDIDATOS_IMAGENES = {
+            "DC": "https://www.laprensa.hn/binrepository/1260x945/0c0/0d0/none/11004/YJOO/9_12620377_20251116165825.jpg",
+            "Libre": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Honduran_Minister_of_Defense_Rixi_Moncada_visits_U.S._Southern_Command_%28cropped%29.jpg",
+            "PINU": "https://proceso.hn/wp-content/uploads/2021/02/Nelson-Avila.jpg",
+            "PLH": "https://upload.wikimedia.org/wikipedia/commons/5/51/Salvador_Nasralla_2022_%28cropped%29.jpg",
+            "PNH": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Nasry_Asfura_in_2020_%28close-up%29.jpg",
+        };
+
+        // Helper function to get party key from full party name
+        function getPartyKey(fullPartyName) {
+            for (const [key, name] of Object.entries(PARTIDOS)) {
+                if (name === fullPartyName) {
+                    return key;
+                }
+            }
+            return null;
+        }
+
+        // Political party colors for charts
+        const PARTY_COLORS = {
+            "DC": "#11992B",
+            "Libre": "#DC143C",
+            "PINU": "#ffa500",
+            "PLH": "#FF0000",
+            "PNH": "#1E90FF"
+        };
+
+        // Global state
+        let availableDates = [];
+        let metadataObj = {};
+        let currentDate = null;
+        let currentState = null;
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMetadata().then(() => {
+                loadDefaultView();
+            });
+        });
+
+        // Load metadata about available result dates
+        async function loadMetadata() {
+            try {
+                const response = await fetch('results_metadata.json');
+                if (!response.ok) {
+                    throw new Error('Could not load metadata');
+                }
+                const metadata = await response.json();
+                metadataObj = metadata;
+                availableDates = metadata.available_dates || [];
+                initializeDateSelector();
+            } catch (error) {
+                console.error('Error loading metadata:', error);
+                showError('No se pudo cargar la información de fechas disponibles.');
+            }
+        }
+
+        // Initialize the date selector dropdown
+        function initializeDateSelector() {
+            const select = document.getElementById('date-select');
+            select.innerHTML = '';
+
+            if (availableDates.length === 0) {
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'No hay fechas';
+                select.appendChild(option);
+                return;
+            }
+
+            // Add options for each date
+            availableDates.forEach(date => {
+                const option = document.createElement('option');
+                option.value = date;
+                option.textContent = formatDateDisplay(date);
+                select.appendChild(option);
+            });
+
+            // Set the newest date as default
+            select.value = availableDates[0];
+            currentDate = availableDates[0];
+
+            // Add event listener for date change
+            select.addEventListener('change', (e) => {
+                currentDate = e.target.value;
+                if (currentDate) {
+                    // Load states for this date
+                    loadStatesForDate(currentDate);
+                }
+            });
+        }
+
+        // Load available states for a specific date
+        function loadStatesForDate(date) {
+            const dateData = metadataObj.dates[date];
+            if (!dateData || !dateData.states) {
+                console.error('No states found for date:', date);
+                return;
+            }
+
+            const states = dateData.states;
+            initializeStateSelector(states);
+
+            // Load the first state (TODOS) by default
+            if (states.length > 0) {
+                currentState = states[0];
+                loadResults(currentDate, currentState);
+            }
+        }
+
+        // Initialize the state selector dropdown with available states
+        function initializeStateSelector(states) {
+            const select = document.getElementById('state-select');
+            select.innerHTML = '';
+
+            if (!states || states.length === 0) {
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'No hay estados';
+                select.appendChild(option);
+                return;
+            }
+
+            // Add options for each state
+            states.forEach(state => {
+                const option = document.createElement('option');
+                option.value = state;
+                option.textContent = state;
+                select.appendChild(option);
+            });
+
+            // Set the first state as default (TODOS)
+            select.value = states[0];
+            currentState = states[0];
+
+            // Remove previous event listener if any
+            const newSelect = select.cloneNode(true);
+            select.parentNode.replaceChild(newSelect, select);
+
+            // Add event listener for state change
+            newSelect.addEventListener('change', (e) => {
+                currentState = e.target.value;
+                if (currentDate && currentState) {
+                    loadResults(currentDate, currentState);
+                }
+            });
+        }
+
+        // Load default view (newest date, TODOS state)
+        async function loadDefaultView() {
+            if (availableDates.length > 0) {
+                currentDate = availableDates[0];
+                loadStatesForDate(currentDate);
+            }
+        }
+
+        // Format date for display
+        function formatDateDisplay(dateString) {
+            const parts = dateString.split('_');
+            if (parts.length !== 2) return dateString;
+
+            const datePart = parts[0].split('-');
+            const timePart = parts[1].split('-');
+
+            if (datePart.length !== 3 || timePart.length !== 3) return dateString;
+
+            return `${datePart[2]}/${datePart[1]}/${datePart[0]} ${timePart[0]}:${timePart[1]}`;
+        }
+
+        // Load results for a specific date and state
+        async function loadResults(date, state) {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error');
+            const resultsEl = document.getElementById('results');
+
+            // Show loading state
+            loadingEl.style.display = 'flex';
+            errorEl.style.display = 'none';
+            resultsEl.style.display = 'none';
+
+            try {
+                const filePath = `results/${date}/${state}.json`;
+                const response = await fetch(filePath);
+
+                if (!response.ok) {
+                    throw new Error(`No se pudo cargar los datos para ${state}`);
+                }
+
+                const data = await response.json();
+
+                // Hide loading and show results
+                loadingEl.style.display = 'none';
+                resultsEl.style.display = 'flex';
+
+                // Display the data
+                displayResults(data, state);
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                loadingEl.style.display = 'none';
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        // Display error message
+        function showError(message) {
+            const errorEl = document.getElementById('error');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+        }
+
+        // Display the election results
+        function displayResults(data, stateName) {
+            // Update info bar
+            document.getElementById('fecha-corte').textContent = data.fecha_corte || 'N/A';
+            document.getElementById('current-state').textContent = stateName;
+
+            // Calculate total votes
+            const totalVotos = data.candidatos.reduce((sum, candidato) => sum + (candidato.votos || 0), 0);
+            document.getElementById('total-votes').textContent = totalVotos.toLocaleString('es-HN');
+
+            // Sort candidates by votes (descending)
+            const candidatosSorted = [...data.candidatos].sort((a, b) => (b.votos || 0) - (a.votos || 0));
+
+            // Display candidates cards
+            displayCandidateCards(candidatosSorted, totalVotos);
+        }
+
+        // Display candidate cards
+        function displayCandidateCards(candidatos, totalVotos) {
+            const container = document.getElementById('candidates-list');
+            container.innerHTML = '';
+
+            candidatos.forEach((candidato, index) => {
+                const percentage = totalVotos > 0 ? ((candidato.votos / totalVotos) * 100).toFixed(2) : 0;
+                const partyKey = getPartyKey(candidato.parpo_nombre);
+
+                const card = createCandidateCard(candidato, percentage, index + 1, partyKey);
+                container.appendChild(card);
+            });
+        }
+
+        // Create a candidate card element
+        function createCandidateCard(candidato, percentage, position, partyKey) {
+            const card = document.createElement('div');
+            card.className = 'candidate-card';
+
+            // Image wrapper with rank badge
+            const imageWrapper = document.createElement('div');
+            imageWrapper.className = 'candidate-image-wrapper';
+
+            // Rank badge
+            const rankBadge = document.createElement('div');
+            rankBadge.className = `rank-badge rank-${Math.min(position, 3)}`;
+            rankBadge.textContent = position;
+            imageWrapper.appendChild(rankBadge);
+
+            // Candidate image
+            const img = document.createElement('img');
+            img.className = 'candidate-image';
+            img.src = partyKey && CANDIDATOS_IMAGENES[partyKey] ? CANDIDATOS_IMAGENES[partyKey] : 'https://via.placeholder.com/300?text=No+Image';
+            img.alt = candidato.cddto_nombres;
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/300?text=No+Image';
+            };
+            imageWrapper.appendChild(img);
+
+            card.appendChild(imageWrapper);
+
+            // Candidate info section
+            const info = document.createElement('div');
+            info.className = 'candidate-info';
+
+            // Candidate name
+            const name = document.createElement('div');
+            name.className = 'candidate-name';
+            name.textContent = candidato.cddto_nombres;
+            info.appendChild(name);
+
+            // Party section with flag and name
+            const partySection = document.createElement('div');
+            partySection.className = 'party-section';
+
+            if (partyKey && PARTIDOS_LOGOS[partyKey]) {
+                const partyFlag = document.createElement('img');
+                partyFlag.className = 'party-flag';
+                partyFlag.src = PARTIDOS_LOGOS[partyKey];
+                partyFlag.alt = candidato.parpo_nombre;
+                partyFlag.onerror = function() {
+                    this.style.display = 'none';
+                };
+                partySection.appendChild(partyFlag);
+            }
+
+            const partyName = document.createElement('div');
+            partyName.className = 'party-name';
+            partyName.textContent = candidato.parpo_nombre;
+            partySection.appendChild(partyName);
+
+            info.appendChild(partySection);
+
+            // Stats section with votes and percentage
+            const statsSection = document.createElement('div');
+            statsSection.className = 'stats-section';
+
+            const votes = document.createElement('div');
+            votes.className = 'votes';
+            votes.textContent = (candidato.votos || 0).toLocaleString('es-HN');
+            statsSection.appendChild(votes);
+
+            const percentageDiv = document.createElement('div');
+            percentageDiv.className = 'percentage';
+            percentageDiv.textContent = `${percentage}%`;
+            statsSection.appendChild(percentageDiv);
+
+            info.appendChild(statsSection);
+
+            card.appendChild(info);
+
+            return card;
+        }
+
+        loadMetadata().then(async () => {
+            if (currentDate && currentState) {
+                await loadResults(currentDate, currentState);
+            }
+        });
+
+    </script>
 </body>
 </html>
