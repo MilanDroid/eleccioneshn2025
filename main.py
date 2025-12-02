@@ -16,25 +16,23 @@ def fetch_election_results(depto: str) -> Dict[Any, Any]:
     Returns:
         JSON response from the API
     """
-    url = "https://api-publicacion-nacional.elecciones-hnd.grupoasd.xyz/esc/v1/presentacion-resultados"
+    url = "https://resultadosgenerales2025-api.cne.hn/esc/v1/presentacion-resultados"
 
     headers = {
         "accept": "application/json, text/plain, */*",
         "accept-language": "en-US,en;q=0.9,es;q=0.8",
         "authorization": "Bearer null",
-        "cache-control": "no-cache",
         "content-type": "application/json",
         "dnt": "1",
-        "origin": "https://resultadosgenerales2025-api.cne.hn/esc/v1/presentacion-resultados",
-        "pragma": "no-cache",
+        "origin": "https://resultadosgenerales2025.cne.hn",
         "priority": "u=1, i",
-        "referer": "https://resultadosgenerales2025-api.cne.hn/esc/v1/presentacion-resultados",
+        "referer": "https://resultadosgenerales2025.cne.hn/",
         "sec-ch-ua": '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": '"macOS"',
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
-        "sec-fetch-site": "cross-site",
+        "sec-fetch-site": "same-site",
         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
     }
 
@@ -57,58 +55,102 @@ def fetch_election_results(depto: str) -> Dict[Any, Any]:
         print(f"Error fetching data for department {depto}: {e}")
         return None
 
-def save_results(results: Dict[Any, Any], depto: str, fecha_corte: str) -> None:
+def save_results(results: Dict[Any, Any], depto: str, timestamp: str) -> None:
     """
-    Save election results to a JSON file organized by fecha_corte.
-    Only saves essential fields: votos, cddto_nombres, and parpo_nombre.
+    Save election results to a JSON file organized by timestamp.
+    Saves all candidate data from the API response.
 
     Args:
         results: Election results data
         depto: Department code
-        fecha_corte: Cut-off date for results
+        timestamp: Timestamp for organizing results
     """
     # Create directory structure: results/YYYY-MM-DD_HH-MM-SS/
-    fecha_corte_clean = fecha_corte.replace(":", "-").replace(" ", "_").replace(".0", "")
-    results_dir = os.path.join("results", fecha_corte_clean)
+    results_dir = os.path.join("results", timestamp)
     os.makedirs(results_dir, exist_ok=True)
 
     # Get department name
     depto_name = DEPARTAMENTOS.get(depto, f"UNKNOWN_{depto}")
 
-    # Extract only the essential fields
-    simplified_results = {
+    # Save complete results with metadata
+    complete_results = {
         "fecha_corte": results.get("fecha_corte"),
         "depto_code": depto,
         "depto_name": depto_name,
-        "candidatos": []
+        "candidatos": results.get("candidatos", [])
     }
-
-    for candidato in results.get("candidatos", []):
-        simplified_results["candidatos"].append({
-            "cddto_nombres": candidato.get("cddto_nombres"),
-            "parpo_nombre": candidato.get("parpo_nombre"),
-            "votos": candidato.get("votos")
-        })
 
     # Save file using department name
     filename = f"{depto_name}.json"
     filepath = os.path.join(results_dir, filename)
 
     with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(simplified_results, f, ensure_ascii=False, indent=2)
+        json.dump(complete_results, f, ensure_ascii=False, indent=2)
 
     print(f"Saved results for {depto_name} to {filepath}")
+
+def get_total_votes(results: Dict[Any, Any]) -> int:
+    """
+    Calculate total votes from all candidates.
+
+    Args:
+        results: Election results data
+
+    Returns:
+        Total number of votes
+    """
+    total = 0
+    for candidato in results.get("candidatos", []):
+        total += candidato.get("votos", 0)
+    return total
+
+def get_last_saved_total_votes() -> int:
+    """
+    Get the total votes from the most recent saved TODOS results.
+
+    Returns:
+        Total votes from last saved results, or 0 if none exist
+    """
+    # Check if results_metadata.json exists
+    metadata_path = "results_metadata.json"
+    if not os.path.exists(metadata_path):
+        return 0
+
+    try:
+        with open(metadata_path, "r", encoding="utf-8") as f:
+            metadata = json.load(f)
+
+        latest_date = metadata.get("latest_date")
+        if not latest_date:
+            return 0
+
+        # Load TODOS.json from the latest results
+        todos_path = os.path.join("results", latest_date, "TODOS.json")
+        if not os.path.exists(todos_path):
+            return 0
+
+        with open(todos_path, "r", encoding="utf-8") as f:
+            todos_data = json.load(f)
+
+        total = 0
+        for candidato in todos_data.get("candidatos", []):
+            total += candidato.get("votos", 0)
+
+        return total
+    except Exception as e:
+        print(f"Error reading last saved results: {e}")
+        return 0
 
 def fetch_all_departments() -> None:
     """
     Fetch election results for all departments defined in DEPARTAMENTOS.
-    Only saves if the fecha_corte from the API response is new.
+    Only saves if the total votes for TODOS has changed.
     """
     print("Fetching election results...")
     print("=" * 60)
 
-    # First, fetch department 00 to get the actual fecha_corte from response
-    print("\nFetching general results (department 00)...")
+    # First, fetch department 00 (TODOS) to check total votes
+    print("\nFetching general results (department 00 - TODOS)...")
     results = fetch_election_results("00")
 
     if not results:
@@ -116,31 +158,33 @@ def fetch_all_departments() -> None:
         print("=" * 60)
         return
 
-    # Get the actual fecha_corte from the API response
-    actual_fecha_corte = results.get("fecha_corte")
-    if not actual_fecha_corte:
-        print("⚠️  Error: No fecha_corte in response. Will retry in next cycle.")
-        print("=" * 60)
-        return
+    # Calculate current total votes
+    current_total_votes = get_total_votes(results)
+    print(f"\nCurrent total votes: {current_total_votes:,}")
 
-    print(f"\nAPI returned fecha_corte: {actual_fecha_corte}")
+    # Get last saved total votes
+    last_saved_total_votes = get_last_saved_total_votes()
+    print(f"Last saved total votes: {last_saved_total_votes:,}")
 
-    # Check if this fecha_corte already has saved results
-    fecha_corte_clean = actual_fecha_corte.replace(":", "-").replace(" ", "_").replace(".0", "")
-    results_dir = os.path.join("results", fecha_corte_clean)
-
-    if os.path.exists(results_dir):
-        print(f"\n⚠️  Results for fecha_corte '{actual_fecha_corte}' already exist!")
-        print(f"   Directory: {results_dir}")
+    # Check if total votes have changed
+    if current_total_votes == last_saved_total_votes:
+        print(f"\n⚠️  Total votes unchanged ({current_total_votes:,})")
         print("   Skipping fetch to avoid duplicates.")
         print("=" * 60)
         return
 
-    print(f"\n✓ New fecha_corte detected. Saving results to: {results_dir}")
+    # Total votes changed - save new results
+    print(f"\n✓ Total votes changed! ({last_saved_total_votes:,} → {current_total_votes:,})")
+
+    # Create timestamp for this snapshot
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    results_dir = os.path.join("results", timestamp)
+
+    print(f"✓ Saving new results to: {results_dir}")
     print("=" * 60)
 
     # Save department 00
-    save_results(results, "00", actual_fecha_corte)
+    save_results(results, "00", timestamp)
 
     # Fetch all other departments from DEPARTAMENTOS (excluding 00 which we already fetched)
     for depto_code in DEPARTAMENTOS.keys():
@@ -151,7 +195,7 @@ def fetch_all_departments() -> None:
         print(f"\nFetching results for {depto_name} ({depto_code})...")
         results = fetch_election_results(depto_code)
         if results:
-            save_results(results, depto_code, actual_fecha_corte)
+            save_results(results, depto_code, timestamp)
 
     print("\n" + "=" * 60)
     print("Finished fetching all election results!")
@@ -167,8 +211,8 @@ def fetch_all_departments() -> None:
     # Add results directory and metadata file
     os.system("git add results/ results_metadata.json")
 
-    # Create commit with fecha_corte timestamp
-    commit_message = f"Update election results - {actual_fecha_corte}"
+    # Create commit with timestamp and vote count
+    commit_message = f"Nuevo corte"
     os.system(f'git commit -m "{commit_message}"')
 
     # Push to GitHub
