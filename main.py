@@ -216,7 +216,7 @@ def fetch_all_departments() -> None:
     os.system(f'git commit -m "{commit_message}"')
 
     # Push to GitHub
-    push_result = os.system("git push")
+    push_result = os.system("git push origin main")
 
     if push_result == 0:
         print("✓ Successfully pushed changes to GitHub!")
