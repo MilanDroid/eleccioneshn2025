@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import time
 from datetime import datetime
 from typing import Dict, Any
 from constants import DEPARTAMENTOS, PARTIDOS, PARTIDOS_LOGOS, CANDIDATOS, CANDIDATOS_IMAGENES
@@ -49,7 +50,7 @@ def fetch_election_results(depto: str) -> Dict[Any, Any]:
     }
 
     try:
-        response = requests.post(url, headers=headers, json=payload)
+        response = requests.post(url, headers=headers, json=payload, timeout=60)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
@@ -111,13 +112,15 @@ def fetch_all_departments() -> None:
     results = fetch_election_results("00")
 
     if not results:
-        print("Failed to fetch initial results. Exiting.")
+        print("⚠️  Failed to fetch initial results. Will retry in next cycle.")
+        print("=" * 60)
         return
 
     # Get the actual fecha_corte from the API response
     actual_fecha_corte = results.get("fecha_corte")
     if not actual_fecha_corte:
-        print("Error: No fecha_corte in response. Cannot proceed.")
+        print("⚠️  Error: No fecha_corte in response. Will retry in next cycle.")
+        print("=" * 60)
         return
 
     print(f"\nAPI returned fecha_corte: {actual_fecha_corte}")
@@ -157,5 +160,42 @@ def fetch_all_departments() -> None:
     print("\nGenerating metadata for web page...")
     os.system("python3 generate_metadata.py")
 
+    # Commit and push changes to GitHub
+    print("\nCommitting and pushing changes to GitHub...")
+    print("=" * 60)
+
+    # Add results directory and metadata file
+    os.system("git add results/ results_metadata.json")
+
+    # Create commit with fecha_corte timestamp
+    commit_message = f"Update election results - {actual_fecha_corte}"
+    os.system(f'git commit -m "{commit_message}"')
+
+    # Push to GitHub
+    push_result = os.system("git push")
+
+    if push_result == 0:
+        print("✓ Successfully pushed changes to GitHub!")
+    else:
+        print("⚠️  Warning: Failed to push changes to GitHub. Check your connection and credentials.")
+
+    print("=" * 60)
+
 if __name__ == "__main__":
-    fetch_all_departments()
+    print("Starting continuous election results monitoring...")
+    print("Process will run every 60 seconds. Press Ctrl+C to stop.")
+    print("=" * 60)
+
+    try:
+        while True:
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            print(f"\n[{current_time}] Starting fetch cycle...")
+
+            fetch_all_departments()
+
+            print(f"\n[{current_time}] Fetch cycle complete. Waiting 60 seconds...")
+            print("=" * 60)
+            time.sleep(60)
+    except KeyboardInterrupt:
+        print("\n\nStopping election results monitoring. Goodbye!")
+        print("=" * 60)
