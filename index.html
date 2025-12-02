@@ -286,6 +286,29 @@
             color: var(--text-secondary);
         }
 
+        .vote-difference {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px;
+            background: linear-gradient(135deg, rgba(0, 190, 229, 0.1), rgba(0, 190, 229, 0.05));
+            border-top: 2px solid var(--accent-color);
+            margin-top: 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .vote-difference-label {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .vote-difference-value {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
         /* Loading and Error States */
         #loading {
             display: none;
@@ -791,17 +814,21 @@
             const container = document.getElementById('candidates-list');
             container.innerHTML = '';
 
+            // Calculate vote difference between #1 and #2
+            const voteDifference = candidatos.length >= 2 ? candidatos[0].votos - candidatos[1].votos : 0;
+
             candidatos.forEach((candidato, index) => {
                 const percentage = totalVotos > 0 ? ((candidato.votos / totalVotos) * 100).toFixed(2) : 0;
                 const partyKey = getPartyKey(candidato.parpo_nombre);
 
-                const card = createCandidateCard(candidato, percentage, index + 1, partyKey);
+                // Pass vote difference only to the first candidate
+                const card = createCandidateCard(candidato, percentage, index + 1, partyKey, index === 0 ? voteDifference : null);
                 container.appendChild(card);
             });
         }
 
         // Create a candidate card element
-        function createCandidateCard(candidato, percentage, position, partyKey) {
+        function createCandidateCard(candidato, percentage, position, partyKey, voteDifference = null) {
             const card = document.createElement('div');
             card.className = 'candidate-card';
 
@@ -874,6 +901,24 @@
             statsSection.appendChild(percentageDiv);
 
             info.appendChild(statsSection);
+
+            // Add vote difference section for the first candidate only
+            if (voteDifference !== null && voteDifference > 0) {
+                const diffSection = document.createElement('div');
+                diffSection.className = 'vote-difference';
+
+                const diffLabel = document.createElement('span');
+                diffLabel.className = 'vote-difference-label';
+                diffLabel.textContent = 'Diferencia:';
+                diffSection.appendChild(diffLabel);
+
+                const diffValue = document.createElement('span');
+                diffValue.className = 'vote-difference-value';
+                diffValue.textContent = `+${voteDifference.toLocaleString('es-HN')} votos`;
+                diffSection.appendChild(diffValue);
+
+                info.appendChild(diffSection);
+            }
 
             card.appendChild(info);
 
