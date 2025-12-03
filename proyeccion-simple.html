@@ -338,7 +338,7 @@
             </div>
 
             <div class="chart-section">
-                <div class="chart-title">Proyección general a 100% de Votos Procesados</div>
+                <div class="chart-title">Proyección general a 100% de Votos Divulgados</div>
                 <div class="chart-container">
                     <canvas id="projectionChart"></canvas>
                 </div>
@@ -351,11 +351,11 @@
                     <p>Esta proyección se calcula de la siguiente manera:</p>
                     <ul>
                         <li>Se toman los <strong>votos actuales</strong> de cada candidato en cada actualización del conteo.</li>
-                        <li>Se dividen entre el <strong>porcentaje de actas procesadas</strong>: <code>votos actuales / % actas procesadas</code>.</li>
-                        <li>El resultado proyecta cuántos votos obtendría cada candidato si se mantiene la proporción actual hasta el 100% de actas procesadas.</li>
+                        <li>Se dividen entre el <strong>porcentaje de actas correctas</strong>: <code>votos actuales / % actas correctas</code>.</li>
+                        <li>El resultado proyecta cuántos votos obtendría cada candidato si se mantiene la proporción actual hasta el 100% de actas correctas.</li>
                         <li>Esta metodología es directa y asume que la distribución de votos en las actas restantes será similar a la distribución actual.</li>
                     </ul>
-                    <p><strong>Ejemplo:</strong> Si un candidato tiene 50,000 votos con el 25% de actas procesadas, la proyección sería: 50,000 / 0.25 = 200,000 votos al 100%.</p>
+                    <p><strong>Ejemplo:</strong> Si un candidato tiene 50,000 votos con el 25% de actas correctas, la proyección sería: 50,000 / 0.25 = 200,000 votos al 100%.</p>
                     <p><strong>Ventaja:</strong> Proyección simple y fácil de entender, basada directamente en el avance del conteo de actas.</p>
                     <p><strong>Nota:</strong> Esta proyección puede variar a medida que se procesan más actas, especialmente si hay diferencias regionales en los patrones de votación.</p>
                 </div>
@@ -633,7 +633,7 @@
 
                 // Calculate projection to 100% based on actas processed
                 if (item.data.actas && item.data.actas.total > 0) {
-                    const percentProcessed = (item.data.actas.publicadas / item.data.actas.total);
+                    const percentProcessed = (item.data.actas.correctas / item.data.actas.total);
 
                     if (percentProcessed > 0) {
                         candidatos.forEach(candidato => {
