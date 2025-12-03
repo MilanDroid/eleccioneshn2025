@@ -1353,7 +1353,7 @@
                 }
 
                 // Sort by difference (most negative first, positive last)
-                departmentDifferences.sort((a, b) => a.difference - b.difference);
+                departmentDifferences.sort((a, b) => b.difference - a.difference);
 
                 // Display the results
                 if (departmentDifferences.length === 0) {
