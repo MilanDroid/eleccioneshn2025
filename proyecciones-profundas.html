@@ -505,6 +505,18 @@
 
                         for (const date of availableDates.slice().reverse()) {
                             try {
+                                // Check if this department is available for this date
+                                const dateMetadata = metadata.dates[date];
+                                if (dateMetadata && dateMetadata.states) {
+                                    // If states array exists, check if department is in it
+                                    if (!dateMetadata.states.includes(department)) {
+                                        // Department not available for this date
+                                        departmentDataCache[department][date] = null;
+                                        continue;
+                                    }
+                                }
+                                // If no states array or empty object, attempt to fetch
+
                                 const filePath = `results/${date}/${department}.json`;
                                 const response = await fetch(filePath);
                                 if (response.ok) {
@@ -536,7 +548,18 @@
             }
         }
 
-        // Load all departments data (for TOTAL view) - optimized with parallel fetching
+        // Helper function to batch async operations with concurrency limit
+        async function batchPromises(tasks, batchSize = 10) {
+            const results = [];
+            for (let i = 0; i < tasks.length; i += batchSize) {
+                const batch = tasks.slice(i, i + batchSize);
+                const batchResults = await Promise.all(batch.map(task => task()));
+                results.push(...batchResults);
+            }
+            return results;
+        }
+
+        // Load all departments data (for TOTAL view) - optimized with batched parallel fetching
         async function loadAllDepartmentsDataOptimized() {
             // Load departments that aren't cached yet
             const uncachedDepartments = departmentsArray.filter(dept => !departmentDataCache[dept]);
@@ -545,29 +568,44 @@
                 return; // All data already cached
             }
 
-            // Create fetch promises for all uncached departments and dates
-            const fetchPromises = [];
+            // Create fetch tasks for all uncached departments and dates
+            const fetchTasks = [];
 
             for (const department of uncachedDepartments) {
                 departmentDataCache[department] = {};
 
                 for (const date of availableDates.slice().reverse()) {
-                    const filePath = `results/${date}/${department}.json`;
-                    const promise = fetch(filePath)
-                        .then(response => response.ok ? response.json() : null)
-                        .then(data => {
-                            departmentDataCache[department][date] = data;
-                        })
-                        .catch(() => {
+                    // Check if this department is available for this date
+                    const dateMetadata = metadata.dates[date];
+                    if (dateMetadata && dateMetadata.states) {
+                        // If states array exists, check if department is in it
+                        if (!dateMetadata.states.includes(department)) {
+                            // Department not available for this date
                             departmentDataCache[department][date] = null;
-                        });
+                            continue;
+                        }
+                    }
+                    // If no states array or empty object, attempt to fetch
 
-                    fetchPromises.push(promise);
+                    const filePath = `results/${date}/${department}.json`;
+                    // Create a task function that will be executed in batches
+                    fetchTasks.push(() =>
+                        fetch(filePath)
+                            .then(response => response.ok ? response.json() : null)
+                            .then(data => {
+                                departmentDataCache[department][date] = data;
+                                return data;
+                            })
+                            .catch(() => {
+                                departmentDataCache[department][date] = null;
+                                return null;
+                            })
+                    );
                 }
             }
 
-            // Wait for all fetches to complete in parallel
-            await Promise.all(fetchPromises);
+            // Execute fetches in batches of 20 concurrent requests
+            await batchPromises(fetchTasks, 20);
         }
 
         // Update candidates list from latest data
