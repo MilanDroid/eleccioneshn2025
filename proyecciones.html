@@ -55,7 +55,7 @@
 
         /* Header */
         header {
-            padding: 20px 0 15px;
+            padding: 5px 0 5px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -271,7 +271,14 @@
         <div id="error"></div>
 
         <div id="results" class="main-content">
-            <a href="https://milandroid.dev/eleccioneshn2025/" class="link">Ver Votaciones</a>
+            <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: end; gap: 15px">
+                <div>
+                    <a href="https://milandroid.dev/eleccioneshn2025/" class="link">Ver Votaciones</a>
+                </div>
+                <div>
+                    <a href="https://milandroid.dev/eleccioneshn2025/proyecciones-profundas.html" class="link">Ver Proyecciones Simples</a>
+                </div>
+            </div>
 
             <div class="chart-section">
                 <div class="chart-title">Progreso de Votos por Candidato</div>
@@ -938,8 +945,6 @@
                 }
             });
         }
-
-        setInterval(() => window.location.href = window.location.href.split('/?')[0] + `?cache_busting=${Date.now()}`, 100000);
     </script>
 </body>
 </html>
