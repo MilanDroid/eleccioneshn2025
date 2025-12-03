@@ -376,7 +376,9 @@
 
         let mainChart = null;
         let metadata = null;
-        let allDepartmentData = {}; // Store all data for switching between departments
+        let availableDates = [];
+        let departmentsArray = [];
+        let departmentDataCache = {}; // Cache loaded data { department: { date: data } }
         let allCandidates = []; // Store all candidates
 
         // Initialize the app
@@ -401,14 +403,17 @@
                     throw new Error('No se pudo cargar la metadata');
                 }
                 metadata = await metadataResponse.json();
-                const availableDates = metadata.available_dates || [];
+                availableDates = metadata.available_dates || [];
 
                 if (availableDates.length === 0) {
                     throw new Error('No hay datos disponibles');
                 }
 
-                // Load data for all departments
-                await loadAllDepartmentsData(availableDates);
+                // Initialize department list and selector
+                await initializeDepartments();
+
+                // Load data for TOTAL (default selection)
+                await loadDepartmentData('TOTAL');
 
                 loadingEl.style.display = 'none';
                 resultsEl.style.display = 'flex';
@@ -420,66 +425,161 @@
             }
         }
 
-        // Load data for all departments
-        async function loadAllDepartmentsData(availableDates) {
+        // Initialize departments list
+        async function initializeDepartments() {
+            // Get all unique departments from metadata
+            const allDepartments = new Set();
+
+            // Hardcoded list of known departments
+            const knownDepartments = [
+                "ATLANTIDA", "CHOLUTECA", "COLON", "COMAYAGUA", "COPAN", "CORTES",
+                "EL PARAISO", "FRANCISCO MORAZAN", "GRACIAS A DIOS", "INTIBUCA",
+                "ISLAS DE LA BAHIA", "LA PAZ", "LEMPIRA", "OCOTEPEQUE", "OLANCHO",
+                "SANTA BARBARA", "VALLE", "VOTO EN EL EXTERIOR", "YORO"
+            ];
+
+            knownDepartments.forEach(dept => allDepartments.add(dept));
+
+            // Also check metadata for any additional departments
+            availableDates.forEach(date => {
+                const dateData = metadata.dates[date];
+                if (dateData && dateData.states) {
+                    dateData.states.forEach(state => {
+                        if (state !== 'TODOS') {
+                            allDepartments.add(state);
+                        }
+                    });
+                }
+            });
+
+            departmentsArray = Array.from(allDepartments).sort();
+
+            // Initialize department selector
+            const departmentSelect = document.getElementById('department-select');
+            departmentSelect.innerHTML = '';
+
+            const totalOption = document.createElement('option');
+            totalOption.value = 'TOTAL';
+            totalOption.textContent = 'TOTAL';
+            departmentSelect.appendChild(totalOption);
+
+            departmentsArray.forEach(dept => {
+                const option = document.createElement('option');
+                option.value = dept;
+                option.textContent = dept;
+                departmentSelect.appendChild(option);
+            });
+
+            // Add event listeners
+            const projectionTypeSelect = document.getElementById('projection-type-select');
+            projectionTypeSelect.addEventListener('change', updateChartFromSelector);
+            departmentSelect.addEventListener('change', async () => {
+                const department = departmentSelect.value;
+                await loadDepartmentData(department);
+            });
+        }
+
+        // Load data for a specific department (or TOTAL)
+        async function loadDepartmentData(department) {
+            const loadingEl = document.getElementById('loading');
+            const resultsEl = document.getElementById('results');
+
+            loadingEl.style.display = 'flex';
+            resultsEl.style.display = 'none';
+
             try {
-                // Get all unique departments from metadata
-                const allDepartments = new Set();
+                if (department === 'TOTAL') {
+                    // Load all departments data
+                    await loadAllDepartmentsDataOptimized();
+                } else {
+                    // Load single department data if not cached
+                    if (!departmentDataCache[department]) {
+                        departmentDataCache[department] = {};
 
-                // For now, just use a hardcoded list of departments since metadata might not have all
-                const knownDepartments = [
-                    "ATLANTIDA", "CHOLUTECA", "COLON", "COMAYAGUA", "COPAN", "CORTES",
-                    "EL PARAISO", "FRANCISCO MORAZAN", "GRACIAS A DIOS", "INTIBUCA",
-                    "ISLAS DE LA BAHIA", "LA PAZ", "LEMPIRA", "OCOTEPEQUE", "OLANCHO",
-                    "SANTA BARBARA", "VALLE", "VOTO EN EL EXTERIOR", "YORO"
-                ];
-
-                knownDepartments.forEach(dept => allDepartments.add(dept));
-
-                // Also check metadata for any additional departments
-                availableDates.forEach(date => {
-                    const dateData = metadata.dates[date];
-                    if (dateData && dateData.states) {
-                        dateData.states.forEach(state => {
-                            if (state !== 'TODOS') { // Exclude TODOS from department list
-                                allDepartments.add(state);
+                        for (const date of availableDates.slice().reverse()) {
+                            try {
+                                const filePath = `results/${date}/${department}.json`;
+                                const response = await fetch(filePath);
+                                if (response.ok) {
+                                    const data = await response.json();
+                                    departmentDataCache[department][date] = data;
+                                } else {
+                                    departmentDataCache[department][date] = null;
+                                }
+                            } catch (err) {
+                                departmentDataCache[department][date] = null;
                             }
-                        });
-                    }
-                });
-
-                const departmentsArray = Array.from(allDepartments).sort();
-
-                // Load data for each department across all dates
-                const departmentDataByDate = {}; // { date: { department: data } }
-
-                for (const date of availableDates.slice().reverse()) {
-                    departmentDataByDate[date] = {};
-
-                    for (const department of departmentsArray) {
-                        try {
-                            const filePath = `results/${date}/${department}.json`;
-                            const response = await fetch(filePath);
-                            if (response.ok) {
-                                const data = await response.json();
-                                departmentDataByDate[date][department] = data;
-                            } else {
-                                // File doesn't exist, skip silently
-                                departmentDataByDate[date][department] = null;
-                            }
-                        } catch (err) {
-                            // Skip missing files silently
-                            departmentDataByDate[date][department] = null;
                         }
                     }
                 }
 
-                // Process and display charts
-                displayCandidateCharts(availableDates, departmentsArray, departmentDataByDate);
+                // Update candidates list if needed
+                await updateCandidatesList();
+
+                // Update chart
+                updateChartFromSelector();
+
+                loadingEl.style.display = 'none';
+                resultsEl.style.display = 'flex';
 
             } catch (error) {
-                console.error('Error loading departments data:', error);
-                throw error;
+                console.error('Error loading department data:', error);
+                loadingEl.style.display = 'none';
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        // Load all departments data (for TOTAL view) - optimized with parallel fetching
+        async function loadAllDepartmentsDataOptimized() {
+            // Load departments that aren't cached yet
+            const uncachedDepartments = departmentsArray.filter(dept => !departmentDataCache[dept]);
+
+            if (uncachedDepartments.length === 0) {
+                return; // All data already cached
+            }
+
+            // Create fetch promises for all uncached departments and dates
+            const fetchPromises = [];
+
+            for (const department of uncachedDepartments) {
+                departmentDataCache[department] = {};
+
+                for (const date of availableDates.slice().reverse()) {
+                    const filePath = `results/${date}/${department}.json`;
+                    const promise = fetch(filePath)
+                        .then(response => response.ok ? response.json() : null)
+                        .then(data => {
+                            departmentDataCache[department][date] = data;
+                        })
+                        .catch(() => {
+                            departmentDataCache[department][date] = null;
+                        });
+
+                    fetchPromises.push(promise);
+                }
+            }
+
+            // Wait for all fetches to complete in parallel
+            await Promise.all(fetchPromises);
+        }
+
+        // Update candidates list from latest data
+        async function updateCandidatesList() {
+            if (allCandidates.length > 0) {
+                return; // Already initialized
+            }
+
+            const latestDate = availableDates[0];
+
+            // Try to find candidates from the latest date
+            for (const dept of departmentsArray) {
+                const deptData = departmentDataCache[dept]?.[latestDate];
+                if (deptData && deptData.candidatos && deptData.candidatos.length > 0) {
+                    allCandidates = [...deptData.candidatos]
+                        .sort((a, b) => (b.votos || 0) - (a.votos || 0))
+                        .slice(0, 2);
+                    break;
+                }
             }
         }
 
@@ -501,63 +601,6 @@
             if (datePart.length !== 3 || timePart.length !== 3) return dateString;
 
             return `${datePart[2]}/${datePart[1]} ${timePart[0]}:${timePart[1]}`;
-        }
-
-        // Display candidate charts with department projections
-        function displayCandidateCharts(availableDates, departments, departmentDataByDate) {
-            const labels = availableDates.slice().reverse().map(date => formatDateDisplay(date));
-
-            // Store data globally for department switching
-            allDepartmentData = {
-                availableDates,
-                departments,
-                departmentDataByDate,
-                labels
-            };
-
-            // Get top 2 candidates from the latest update
-            const latestDate = availableDates[0];
-
-            // Try to find candidates from the latest date, any department
-            for (const dept of departments) {
-                const deptData = departmentDataByDate[latestDate]?.[dept];
-                if (deptData && deptData.candidatos && deptData.candidatos.length > 0) {
-                    // Sort by votes descending and get top 2
-                    allCandidates = [...deptData.candidatos]
-                        .sort((a, b) => (b.votos || 0) - (a.votos || 0))
-                        .slice(0, 2);
-                    break;
-                }
-            }
-
-            if (allCandidates.length === 0) {
-                console.error('No candidate data found');
-                return;
-            }
-
-            // Initialize department selector
-            const departmentSelect = document.getElementById('department-select');
-            departmentSelect.innerHTML = '';
-
-            const totalOption = document.createElement('option');
-            totalOption.value = 'TOTAL';
-            totalOption.textContent = 'TOTAL';
-            departmentSelect.appendChild(totalOption);
-
-            departments.forEach(dept => {
-                const option = document.createElement('option');
-                option.value = dept;
-                option.textContent = dept;
-                departmentSelect.appendChild(option);
-            });
-
-            // Add event listeners
-            const projectionTypeSelect = document.getElementById('projection-type-select');
-            projectionTypeSelect.addEventListener('change', updateChartFromSelector);
-            departmentSelect.addEventListener('change', updateChartFromSelector);
-
-            // Create initial chart with linear regression
-            updateChartFromSelector();
         }
 
         // Update chart based on selector values
@@ -648,7 +691,7 @@
 
         // Update chart for all candidates for a specific department
         function updateChart(department, projectionType) {
-            const { availableDates, departments, departmentDataByDate, labels } = allDepartmentData;
+            const labels = availableDates.slice().reverse().map(date => formatDateDisplay(date));
 
             // Prepare datasets - one per candidate
             const datasets = [];
@@ -668,8 +711,8 @@
                             let totalVotes = 0;
                             let hasData = false;
 
-                            departments.forEach(dept => {
-                                const dateData = departmentDataByDate[date]?.[dept];
+                            departmentsArray.forEach(dept => {
+                                const dateData = departmentDataCache[dept]?.[date];
                                 if (!dateData) return;
 
                                 if (dateData.candidatos && dateData.actas) {
@@ -690,7 +733,7 @@
                     } else {
                         // Calculate for specific department
                         availableDates.slice().reverse().forEach(date => {
-                            const dateData = departmentDataByDate[date]?.[department];
+                            const dateData = departmentDataCache[department]?.[date];
                             if (!dateData) {
                                 chartData.push(null);
                                 return;
@@ -722,13 +765,13 @@
                         const departmentProjections = {}; // Store each department's projected data points
 
                         // Calculate linear regression for each department and store projected values
-                        departments.forEach(dept => {
+                        departmentsArray.forEach(dept => {
                             const actualVotes = [];
                             const timePoints = [];
 
                             // Collect actual vote data for this department
                             availableDates.slice().reverse().forEach((date, index) => {
-                                const dateData = departmentDataByDate[date]?.[dept];
+                                const dateData = departmentDataCache[dept]?.[date];
                                 if (!dateData) return;
 
                                 if (dateData.candidatos && dateData.actas) {
@@ -759,7 +802,7 @@
                             let hasData = false;
 
                             // Sum all department values at this specific time point
-                            departments.forEach(dept => {
+                            departmentsArray.forEach(dept => {
                                 if (departmentProjections[dept] && departmentProjections[dept][i] !== undefined) {
                                     totalAtThisPoint += departmentProjections[dept][i];
                                     hasData = true;
@@ -774,7 +817,7 @@
                         const timePoints = [];
 
                         availableDates.slice().reverse().forEach((date, index) => {
-                            const dateData = departmentDataByDate[date]?.[department];
+                            const dateData = departmentDataCache[department]?.[date];
                             if (!dateData) return;
 
                             if (dateData.candidatos && dateData.actas) {
