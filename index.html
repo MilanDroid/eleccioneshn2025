@@ -704,6 +704,25 @@
         let currentDate = null;
         let currentState = null;
 
+        // Helper function to get URL query parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                fecha: params.get('fecha'),
+                departamento: params.get('departamento')
+            };
+        }
+
+        // Helper function to update URL without reloading the page
+        function updateURL(fecha, departamento) {
+            const params = new URLSearchParams();
+            if (fecha) params.set('fecha', fecha);
+            if (departamento) params.set('departamento', departamento);
+
+            const newURL = `${window.location.pathname}?${params.toString()}`;
+            window.history.replaceState({}, '', newURL);
+        }
+
         // Initialize the app when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             loadMetadata().then(() => {
@@ -749,14 +768,23 @@
                 select.appendChild(option);
             });
 
-            // Set the newest date as default
-            select.value = availableDates[0];
-            currentDate = availableDates[0];
+            // Check if there's a fecha in URL params
+            const queryParams = getQueryParams();
+            if (queryParams.fecha && availableDates.includes(queryParams.fecha)) {
+                select.value = queryParams.fecha;
+                currentDate = queryParams.fecha;
+            } else {
+                // Set the newest date as default
+                select.value = availableDates[0];
+                currentDate = availableDates[0];
+            }
 
             // Add event listener for date change
             select.addEventListener('change', (e) => {
                 currentDate = e.target.value;
                 if (currentDate) {
+                    // Update URL with new fecha
+                    updateURL(currentDate, currentState);
                     // Load states for this date
                     loadStatesForDate(currentDate);
                 }
@@ -807,17 +835,27 @@
                 states = dateData.states;
             }
 
-            initializeStateSelector(states);
+            // Check if there's a departamento in URL params
+            const queryParams = getQueryParams();
+            let initialState = states[0]; // default to first state
 
-            // Load the first state (TODOS) by default
+            if (queryParams.departamento && states.includes(queryParams.departamento)) {
+                initialState = queryParams.departamento;
+            }
+
+            initializeStateSelector(states, initialState);
+
+            // Load the selected state
             if (states.length > 0) {
-                currentState = states[0];
+                currentState = initialState;
+                // Update URL with current selection
+                updateURL(currentDate, currentState);
                 loadResults(currentDate, currentState);
             }
         }
 
         // Initialize the state selector dropdown with available states
-        function initializeStateSelector(states) {
+        function initializeStateSelector(states, initialState = null) {
             const select = document.getElementById('state-select');
 
             // Remove previous event listener by cloning
@@ -843,14 +881,17 @@
                 newSelect.appendChild(option);
             });
 
-            // Set the first state as default (TODOS)
-            newSelect.value = states[0];
-            currentState = states[0];
+            // Set the initial state (from URL or default)
+            const stateToSelect = initialState || states[0];
+            newSelect.value = stateToSelect;
+            currentState = stateToSelect;
 
             // Add event listener for state change
             newSelect.addEventListener('change', (e) => {
                 currentState = e.target.value;
                 if (currentDate && currentState) {
+                    // Update URL with new departamento
+                    updateURL(currentDate, currentState);
                     loadResults(currentDate, currentState);
                 }
             });
@@ -859,7 +900,8 @@
         // Load default view (newest date, TODOS state)
         async function loadDefaultView() {
             if (availableDates.length > 0) {
-                currentDate = availableDates[0];
+                // currentDate is already set by initializeDateSelector()
+                // Don't overwrite it here
                 loadStatesForDate(currentDate);
             }
         }
@@ -1122,7 +1164,71 @@
             return card;
         }
 
-        setInterval(() => window.location.href = window.location.href.split('/?')[0] + `?chache_busting-${Date.now()}`, 100000);
+        // Function to refresh metadata and update dropdowns
+        async function refreshMetadata() {
+            try {
+                const response = await fetch(`results_metadata.json?cache_bust=${Date.now()}`);
+                if (!response.ok) {
+                    return;
+                }
+                const metadata = await response.json();
+                const newAvailableDates = metadata.available_dates || [];
+
+                // Check if there are new dates
+                if (newAvailableDates.length > availableDates.length ||
+                    newAvailableDates[0] !== availableDates[0]) {
+
+                    const oldCurrentDate = currentDate;
+                    const oldLatestDate = availableDates[0];
+
+                    // Check if user is viewing the latest date (before the update)
+                    const wasViewingLatest = oldCurrentDate === oldLatestDate;
+
+                    // Update metadata
+                    metadataObj = metadata;
+                    availableDates = newAvailableDates;
+
+                    if (wasViewingLatest) {
+                        // User was viewing the latest, do a full reload to get new data
+                        window.location.href = window.location.href.split('?')[0] + `?cache_bust=${Date.now()}`;
+                    } else {
+                        // User is viewing an older date, just refresh the dropdown options
+                        refreshDateDropdown();
+                    }
+                }
+            } catch (error) {
+                console.error('Error refreshing metadata:', error);
+            }
+        }
+
+        // Function to refresh the date dropdown while keeping current selection
+        function refreshDateDropdown() {
+            const select = document.getElementById('date-select');
+            const currentValue = select.value;
+
+            // Clear and repopulate
+            select.innerHTML = '';
+
+            availableDates.forEach(date => {
+                const option = document.createElement('option');
+                option.value = date;
+                option.textContent = formatDateDisplay(date);
+                select.appendChild(option);
+            });
+
+            // Restore the previous selection if it still exists
+            if (availableDates.includes(currentValue)) {
+                select.value = currentValue;
+            } else {
+                // If the selected date no longer exists, select the latest
+                select.value = availableDates[0];
+                currentDate = availableDates[0];
+                loadStatesForDate(currentDate);
+            }
+        }
+
+        // Auto-refresh every 100 seconds
+        setInterval(refreshMetadata, 100000);
 
     </script>
 </body>
