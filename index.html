@@ -763,15 +763,50 @@
             });
         }
 
+        // Default list of all states
+        const ALL_STATES = [
+            "TODOS",
+            "ATLANTIDA",
+            "CHOLUTECA",
+            "COLON",
+            "COMAYAGUA",
+            "COPAN",
+            "CORTES",
+            "EL PARAISO",
+            "FRANCISCO MORAZAN",
+            "GRACIAS A DIOS",
+            "INTIBUCA",
+            "ISLAS DE LA BAHIA",
+            "LA PAZ",
+            "LEMPIRA",
+            "OCOTEPEQUE",
+            "OLANCHO",
+            "SANTA BARBARA",
+            "VALLE",
+            "VOTO EN EL EXTERIOR",
+            "YORO"
+        ];
+
         // Load available states for a specific date
         function loadStatesForDate(date) {
             const dateData = metadataObj.dates[date];
-            if (!dateData || !dateData.states) {
-                console.error('No states found for date:', date);
+            if (!dateData) {
+                console.error('No data found for date:', date);
                 return;
             }
 
-            const states = dateData.states;
+            let states;
+            if (!dateData.states) {
+                // No states property means all states are available
+                states = ALL_STATES;
+            } else if (dateData.states.length === 0) {
+                // Empty array means no options available
+                states = [];
+            } else {
+                // Specific states are available
+                states = dateData.states;
+            }
+
             initializeStateSelector(states);
 
             // Load the first state (TODOS) by default

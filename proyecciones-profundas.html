@@ -443,12 +443,19 @@
             // Also check metadata for any additional departments
             availableDates.forEach(date => {
                 const dateData = metadata.dates[date];
-                if (dateData && dateData.states) {
-                    dateData.states.forEach(state => {
-                        if (state !== 'TODOS') {
-                            allDepartments.add(state);
-                        }
-                    });
+                if (dateData) {
+                    if (!dateData.states) {
+                        // No states property means all states are available
+                        knownDepartments.forEach(dept => allDepartments.add(dept));
+                    } else if (dateData.states.length > 0) {
+                        // Specific states are available
+                        dateData.states.forEach(state => {
+                            if (state !== 'TODOS') {
+                                allDepartments.add(state);
+                            }
+                        });
+                    }
+                    // Empty array means no options, so we don't add anything
                 }
             });
 

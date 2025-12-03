@@ -452,6 +452,30 @@
 
         // Initialize the state selector dropdown
         function initializeStateSelector(availableDates) {
+            // Default list of all states
+            const ALL_STATES = [
+                "TODOS",
+                "ATLANTIDA",
+                "CHOLUTECA",
+                "COLON",
+                "COMAYAGUA",
+                "COPAN",
+                "CORTES",
+                "EL PARAISO",
+                "FRANCISCO MORAZAN",
+                "GRACIAS A DIOS",
+                "INTIBUCA",
+                "ISLAS DE LA BAHIA",
+                "LA PAZ",
+                "LEMPIRA",
+                "OCOTEPEQUE",
+                "OLANCHO",
+                "SANTA BARBARA",
+                "VALLE",
+                "VOTO EN EL EXTERIOR",
+                "YORO"
+            ];
+
             const select = document.getElementById('state-select');
             select.innerHTML = '';
 
@@ -459,8 +483,15 @@
             const allStates = new Set();
             availableDates.forEach(date => {
                 const dateData = metadata.dates[date];
-                if (dateData && dateData.states) {
-                    dateData.states.forEach(state => allStates.add(state));
+                if (dateData) {
+                    if (!dateData.states) {
+                        // No states property means all states are available
+                        ALL_STATES.forEach(state => allStates.add(state));
+                    } else if (dateData.states.length > 0) {
+                        // Specific states are available
+                        dateData.states.forEach(state => allStates.add(state));
+                    }
+                    // Empty array means no options, so we don't add anything
                 }
             });
 

@@ -7,7 +7,36 @@ def generate_results_metadata():
     Generate a metadata JSON file containing all available result directories
     and their available states (JSON files).
     This should be run whenever new results are added.
+
+    States property logic:
+    - No 'states' property: all states are available
+    - Empty array: no options available
+    - Array with values: only those specific states are available
     """
+    # Complete list of all possible states
+    ALL_STATES = [
+        "TODOS",
+        "ATLANTIDA",
+        "CHOLUTECA",
+        "COLON",
+        "COMAYAGUA",
+        "COPAN",
+        "CORTES",
+        "EL PARAISO",
+        "FRANCISCO MORAZAN",
+        "GRACIAS A DIOS",
+        "INTIBUCA",
+        "ISLAS DE LA BAHIA",
+        "LA PAZ",
+        "LEMPIRA",
+        "OCOTEPEQUE",
+        "OLANCHO",
+        "SANTA BARBARA",
+        "VALLE",
+        "VOTO EN EL EXTERIOR",
+        "YORO"
+    ]
+
     results_dir = Path("results")
 
     if not results_dir.exists():
@@ -36,9 +65,19 @@ def generate_results_metadata():
                 states.remove("TODOS")
                 states.insert(0, "TODOS")
 
-            dates_data[date_name] = {
-                "states": states
-            }
+            # Determine what to store based on the states found
+            date_entry = {}
+            if len(states) == 0:
+                # No states available - store empty array
+                date_entry["states"] = []
+            elif sorted(states) == sorted(ALL_STATES):
+                # All states available - don't include states property
+                pass
+            else:
+                # Partial states - store the specific states
+                date_entry["states"] = states
+
+            dates_data[date_name] = date_entry
 
     # Sort dates in descending order (newest first)
     result_dates.sort(reverse=True)
