@@ -107,7 +107,7 @@ def fetch_actas_validas(depto: str) -> Dict[Any, Any]:
 def save_results(results: Dict[Any, Any], actas_data: Dict[Any, Any], depto: str, timestamp: str) -> None:
     """
     Save election results to a JSON file organized by timestamp.
-    Saves all candidate data from the API response with actas data above fecha_corte.
+    Saves optimized candidate data with only essential fields: cddto_nombres, parpo_nombre, votos.
 
     Args:
         results: Election results data
@@ -122,13 +122,22 @@ def save_results(results: Dict[Any, Any], actas_data: Dict[Any, Any], depto: str
     # Get department name
     depto_name = DEPARTAMENTOS.get(depto, f"UNKNOWN_{depto}")
 
+    # Extract only essential candidate fields
+    optimized_candidatos = []
+    for candidato in results.get("candidatos", []):
+        optimized_candidatos.append({
+            "cddto_nombres": candidato.get("cddto_nombres"),
+            "parpo_nombre": candidato.get("parpo_nombre"),
+            "votos": candidato.get("votos")
+        })
+
     # Save complete results with actas data above fecha_corte
     complete_results = {
         "actas": actas_data,
         "fecha_corte": results.get("fecha_corte"),
         "depto_code": depto,
         "depto_name": depto_name,
-        "candidatos": results.get("candidatos", [])
+        "candidatos": optimized_candidatos
     }
 
     # Save file using department name
