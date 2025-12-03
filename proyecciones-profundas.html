@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecciones Profundas - Honduras 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+
+    <style>
+        :root {
+            --accent-color: #00bee5;
+            --accent-hover: #00a5cc;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6c757d;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --card-hover-shadow: 0 4px 12px rgba(0, 190, 229, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #f5f5f5;
+            --text-secondary: #b0b0b0;
+            --border-color: #404040;
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --card-hover-shadow: 0 4px 12px rgba(0, 190, 229, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        header > div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header img {
+            max-width: 100px;
+        }
+
+        header h1 {
+            margin-left: 2rem;
+            color: var(--text-secondary)
+        }
+
+        /* Controls Section */
+        .controls {
+            padding: 15px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            min-width: 250px;
+        }
+
+        .control-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        select {
+            padding: 10px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            max-width: 270px;
+        }
+
+        select:hover {
+            border-color: var(--accent-color);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 190, 229, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 0;
+            padding-bottom: 15px;
+        }
+
+        .link {
+            color: var(--accent-color);
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        /* Chart Containers */
+        .chart-section {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
+
+        .info-section {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .info-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-title::before {
+            content: "ℹ️";
+            font-size: 1.2rem;
+        }
+
+        .info-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .info-content strong {
+            color: var(--text-primary);
+        }
+
+        .info-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .info-content li {
+            margin: 5px 0;
+        }
+
+        /* Loading and Error States */
+        #loading {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            gap: 20px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        #error {
+            display: none;
+            padding: 20px;
+            background: #dc3545;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        #results {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: column;
+            }
+
+            header .logo-container {
+                flex-direction: column;
+            }
+
+            .chart-container {
+                height: 350px;
+            }
+
+            .control-group {
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px 0;
+            }
+
+            select {
+                font-size: 0.9rem;
+                max-width: 100%;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+
+            .chart-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
+                <h1>Proyecciones Profundas - Elecciones 2025</h1>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label class="control-label" for="projection-type-select">Tipo de Proyección</label>
+                    <select id="projection-type-select">
+                        <option value="linear">Regresión Lineal</option>
+                        <option value="simple">Simple Acumulada</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="department-select">Departamento</label>
+                    <select id="department-select">
+                        <option value="">Cargando...</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>Cargando proyecciones profundas...</p>
+        </div>
+
+        <div id="error"></div>
+
+        <div id="results" class="main-content">
+            <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: end; gap: 15px">
+                <div>
+                    <a href="https://milandroid.dev/eleccioneshn2025/" class="link">Ver Votaciones</a>
+                </div>
+                <div>
+                    <a href="https://milandroid.dev/eleccioneshn2025/proyeccion-simple.html" class="link">Ver Proyección Simple</a>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <div class="chart-title">Proyección a 100% - Comparación de Candidatos</div>
+                <div class="chart-container">
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">Cómo se calcula esta proyección</div>
+                <div class="info-content" id="calculationInfo">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Political party colors
+        const PARTY_COLORS = {
+            "DC": "#11992B",
+            "Libre": "#DC143C",
+            "PINU": "#ffa500",
+            "PLH": "#FF0000",
+            "PNH": "#1E90FF"
+        };
+
+        // Helper function to get party key from full party name
+        function getPartyKeyFromName(partyName) {
+            const PARTIDOS = {
+                "DC": "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS",
+                "Libre": "PARTIDO LIBERTAD Y REFUNDACION",
+                "PINU": "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA",
+                "PLH": "PARTIDO LIBERAL DE HONDURAS",
+                "PNH": "PARTIDO NACIONAL DE HONDURAS"
+            };
+
+            for (const [key, name] of Object.entries(PARTIDOS)) {
+                if (name === partyName) {
+                    return key;
+                }
+            }
+            return null;
+        }
+
+        let mainChart = null;
+        let metadata = null;
+        let allDepartmentData = {}; // Store all data for switching between departments
+        let allCandidates = []; // Store all candidates
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadProjections();
+        });
+
+        // Load all historical data
+        async function loadProjections() {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error');
+            const resultsEl = document.getElementById('results');
+
+            loadingEl.style.display = 'flex';
+            errorEl.style.display = 'none';
+            resultsEl.style.display = 'none';
+
+            try {
+                // Load metadata
+                const metadataResponse = await fetch('results_metadata.json');
+                if (!metadataResponse.ok) {
+                    throw new Error('No se pudo cargar la metadata');
+                }
+                metadata = await metadataResponse.json();
+                const availableDates = metadata.available_dates || [];
+
+                if (availableDates.length === 0) {
+                    throw new Error('No hay datos disponibles');
+                }
+
+                // Load data for all departments
+                await loadAllDepartmentsData(availableDates);
+
+                loadingEl.style.display = 'none';
+                resultsEl.style.display = 'flex';
+
+            } catch (error) {
+                console.error('Error loading projections:', error);
+                loadingEl.style.display = 'none';
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        // Load data for all departments
+        async function loadAllDepartmentsData(availableDates) {
+            try {
+                // Get all unique departments from metadata
+                const allDepartments = new Set();
+
+                // For now, just use a hardcoded list of departments since metadata might not have all
+                const knownDepartments = [
+                    "ATLANTIDA", "CHOLUTECA", "COLON", "COMAYAGUA", "COPAN", "CORTES",
+                    "EL PARAISO", "FRANCISCO MORAZAN", "GRACIAS A DIOS", "INTIBUCA",
+                    "ISLAS DE LA BAHIA", "LA PAZ", "LEMPIRA", "OCOTEPEQUE", "OLANCHO",
+                    "SANTA BARBARA", "VALLE", "VOTO EN EL EXTERIOR", "YORO"
+                ];
+
+                knownDepartments.forEach(dept => allDepartments.add(dept));
+
+                // Also check metadata for any additional departments
+                availableDates.forEach(date => {
+                    const dateData = metadata.dates[date];
+                    if (dateData && dateData.states) {
+                        dateData.states.forEach(state => {
+                            if (state !== 'TODOS') { // Exclude TODOS from department list
+                                allDepartments.add(state);
+                            }
+                        });
+                    }
+                });
+
+                const departmentsArray = Array.from(allDepartments).sort();
+
+                // Load data for each department across all dates
+                const departmentDataByDate = {}; // { date: { department: data } }
+
+                for (const date of availableDates.slice().reverse()) {
+                    departmentDataByDate[date] = {};
+
+                    for (const department of departmentsArray) {
+                        try {
+                            const filePath = `results/${date}/${department}.json`;
+                            const response = await fetch(filePath);
+                            if (response.ok) {
+                                const data = await response.json();
+                                departmentDataByDate[date][department] = data;
+                            } else {
+                                // File doesn't exist, skip silently
+                                departmentDataByDate[date][department] = null;
+                            }
+                        } catch (err) {
+                            // Skip missing files silently
+                            departmentDataByDate[date][department] = null;
+                        }
+                    }
+                }
+
+                // Process and display charts
+                displayCandidateCharts(availableDates, departmentsArray, departmentDataByDate);
+
+            } catch (error) {
+                console.error('Error loading departments data:', error);
+                throw error;
+            }
+        }
+
+        // Display error message
+        function showError(message) {
+            const errorEl = document.getElementById('error');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+        }
+
+        // Format date for display
+        function formatDateDisplay(dateString) {
+            const parts = dateString.split('_');
+            if (parts.length !== 2) return dateString;
+
+            const datePart = parts[0].split('-');
+            const timePart = parts[1].split('-');
+
+            if (datePart.length !== 3 || timePart.length !== 3) return dateString;
+
+            return `${datePart[2]}/${datePart[1]} ${timePart[0]}:${timePart[1]}`;
+        }
+
+        // Display candidate charts with department projections
+        function displayCandidateCharts(availableDates, departments, departmentDataByDate) {
+            const labels = availableDates.slice().reverse().map(date => formatDateDisplay(date));
+
+            // Store data globally for department switching
+            allDepartmentData = {
+                availableDates,
+                departments,
+                departmentDataByDate,
+                labels
+            };
+
+            // Get top 2 candidates from the latest update
+            const latestDate = availableDates[0];
+
+            // Try to find candidates from the latest date, any department
+            for (const dept of departments) {
+                const deptData = departmentDataByDate[latestDate]?.[dept];
+                if (deptData && deptData.candidatos && deptData.candidatos.length > 0) {
+                    // Sort by votes descending and get top 2
+                    allCandidates = [...deptData.candidatos]
+                        .sort((a, b) => (b.votos || 0) - (a.votos || 0))
+                        .slice(0, 2);
+                    break;
+                }
+            }
+
+            if (allCandidates.length === 0) {
+                console.error('No candidate data found');
+                return;
+            }
+
+            // Initialize department selector
+            const departmentSelect = document.getElementById('department-select');
+            departmentSelect.innerHTML = '';
+
+            const totalOption = document.createElement('option');
+            totalOption.value = 'TOTAL';
+            totalOption.textContent = 'TOTAL';
+            departmentSelect.appendChild(totalOption);
+
+            departments.forEach(dept => {
+                const option = document.createElement('option');
+                option.value = dept;
+                option.textContent = dept;
+                departmentSelect.appendChild(option);
+            });
+
+            // Add event listeners
+            const projectionTypeSelect = document.getElementById('projection-type-select');
+            projectionTypeSelect.addEventListener('change', updateChartFromSelector);
+            departmentSelect.addEventListener('change', updateChartFromSelector);
+
+            // Create initial chart with linear regression
+            updateChartFromSelector();
+        }
+
+        // Update chart based on selector values
+        function updateChartFromSelector() {
+            const department = document.getElementById('department-select').value;
+            const projectionType = document.getElementById('projection-type-select').value;
+            updateChart(department, projectionType);
+            updateCalculationInfo(department, projectionType);
+        }
+
+        // Update the calculation info section
+        function updateCalculationInfo(department, projectionType) {
+            const infoDiv = document.getElementById('calculationInfo');
+            let infoHTML = '';
+
+            if (projectionType === 'linear') {
+                if (department === 'TOTAL') {
+                    infoHTML = `
+                        <strong>Regresión Lineal - TOTAL</strong>
+                        <p>Esta proyección se calcula de la siguiente manera:</p>
+                        <ul>
+                            <li>Se calcula una <strong>regresión lineal independiente</strong> para cada departamento usando únicamente sus propios datos históricos de votos.</li>
+                            <li>Cada regresión lineal genera una línea de tendencia (y = mx + b) que proyecta los votos esperados en cada punto temporal.</li>
+                            <li>Para cada punto en el tiempo mostrado en el gráfico, se <strong>suma</strong> el valor proyectado de todos los departamentos en ese mismo punto.</li>
+                            <li>El resultado es una proyección total que refleja la suma de las tendencias individuales de cada departamento.</li>
+                        </ul>
+                        <p><strong>Ventaja:</strong> Esta metodología respeta las tendencias particulares de cada región y las combina para obtener un total nacional más preciso.</p>
+                    `;
+                } else {
+                    infoHTML = `
+                        <strong>Regresión Lineal - ${department}</strong>
+                        <p>Esta proyección se calcula de la siguiente manera:</p>
+                        <ul>
+                            <li>Se utiliza <strong>únicamente</strong> los datos históricos de votos del departamento <strong>${department}</strong>.</li>
+                            <li>Se calcula una regresión lineal (y = mx + b) usando estos datos para determinar la tendencia de votación.</li>
+                            <li>La línea proyectada muestra cómo evolucionarían los votos basándose en la tendencia histórica observada en este departamento.</li>
+                        </ul>
+                        <p><strong>Ventaja:</strong> Refleja fielmente el patrón de votación específico de este departamento sin influencia de otras regiones.</p>
+                    `;
+                }
+            } else {
+                // Simple accumulated
+                if (department === 'TOTAL') {
+                    infoHTML = `
+                        <strong>Simple Acumulada - TOTAL</strong>
+                        <p>Esta proyección se calcula de la siguiente manera:</p>
+                        <ul>
+                            <li>Para cada departamento en cada actualización, se calcula una proyección simple: <strong>votos actuales / % actas procesadas</strong>.</li>
+                            <li>Se <strong>suman</strong> las proyecciones simples de todos los departamentos en cada punto temporal.</li>
+                            <li>El resultado muestra cómo evolucionaría el total si cada departamento mantiene su proporción actual de votos.</li>
+                        </ul>
+                        <p><strong>Ventaja:</strong> Proyección simple y directa basada en el porcentaje de actas procesadas en cada región.</p>
+                    `;
+                } else {
+                    infoHTML = `
+                        <strong>Simple Acumulada - ${department}</strong>
+                        <p>Esta proyección se calcula de la siguiente manera:</p>
+                        <ul>
+                            <li>Se toman los votos actuales del departamento <strong>${department}</strong> en cada actualización.</li>
+                            <li>Se divide entre el porcentaje de actas procesadas: <strong>votos actuales / % actas procesadas</strong>.</li>
+                            <li>El resultado proyecta cuántos votos obtendría cada candidato si se mantiene la proporción actual hasta el 100% de actas.</li>
+                        </ul>
+                        <p><strong>Ventaja:</strong> Proyección simple basada directamente en el avance del conteo de actas.</p>
+                    `;
+                }
+            }
+
+            infoDiv.innerHTML = infoHTML;
+        }
+
+        // Linear regression helper function
+        function linearRegression(x, y) {
+            const n = x.length;
+            let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+
+            for (let i = 0; i < n; i++) {
+                sumX += x[i];
+                sumY += y[i];
+                sumXY += x[i] * y[i];
+                sumX2 += x[i] * x[i];
+            }
+
+            const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+            const intercept = (sumY - slope * sumX) / n;
+
+            return { slope, intercept };
+        }
+
+        // Update chart for all candidates for a specific department
+        function updateChart(department, projectionType) {
+            const { availableDates, departments, departmentDataByDate, labels } = allDepartmentData;
+
+            // Prepare datasets - one per candidate
+            const datasets = [];
+
+            allCandidates.forEach(candidate => {
+                const candidateName = candidate.cddto_nombres;
+                const partyKey = getPartyKeyFromName(candidate.parpo_nombre);
+                const mainColor = partyKey ? PARTY_COLORS[partyKey] : '#999999';
+
+                let chartData = [];
+
+                if (projectionType === 'simple') {
+                    // Simple accumulated projection (existing logic)
+                    if (department === 'TOTAL') {
+                        // Calculate total across all departments
+                        availableDates.slice().reverse().forEach(date => {
+                            let totalVotes = 0;
+                            let hasData = false;
+
+                            departments.forEach(dept => {
+                                const dateData = departmentDataByDate[date]?.[dept];
+                                if (!dateData) return;
+
+                                if (dateData.candidatos && dateData.actas) {
+                                    const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
+                                    if (cand && dateData.actas.total > 0) {
+                                        const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
+                                        if (percentProcessed > 0) {
+                                            const projectedVotes = Math.round((cand.votos || 0) / percentProcessed);
+                                            totalVotes += projectedVotes;
+                                            hasData = true;
+                                        }
+                                    }
+                                }
+                            });
+
+                            chartData.push(hasData ? totalVotes : null);
+                        });
+                    } else {
+                        // Calculate for specific department
+                        availableDates.slice().reverse().forEach(date => {
+                            const dateData = departmentDataByDate[date]?.[department];
+                            if (!dateData) {
+                                chartData.push(null);
+                                return;
+                            }
+
+                            if (dateData.candidatos && dateData.actas) {
+                                const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
+                                if (cand && dateData.actas.total > 0) {
+                                    const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
+                                    if (percentProcessed > 0) {
+                                        const projectedVotes = Math.round((cand.votos || 0) / percentProcessed);
+                                        chartData.push(projectedVotes);
+                                    } else {
+                                        chartData.push(null);
+                                    }
+                                } else {
+                                    chartData.push(null);
+                                }
+                            } else {
+                                chartData.push(null);
+                            }
+                        });
+                    }
+                } else {
+                    // Linear regression projection
+
+                    if (department === 'TOTAL') {
+                        // For TOTAL: for each time point, sum up the linear regression values from all departments
+                        const departmentProjections = {}; // Store each department's projected data points
+
+                        // Calculate linear regression for each department and store projected values
+                        departments.forEach(dept => {
+                            const actualVotes = [];
+                            const timePoints = [];
+
+                            // Collect actual vote data for this department
+                            availableDates.slice().reverse().forEach((date, index) => {
+                                const dateData = departmentDataByDate[date]?.[dept];
+                                if (!dateData) return;
+
+                                if (dateData.candidatos && dateData.actas) {
+                                    const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
+                                    if (cand) {
+                                        actualVotes.push(cand.votos || 0);
+                                        timePoints.push(index);
+                                    }
+                                }
+                            });
+
+                            // Calculate linear regression for this department
+                            if (actualVotes.length >= 2) {
+                                const { slope, intercept } = linearRegression(timePoints, actualVotes);
+
+                                // Calculate and store the projected value for each time point
+                                departmentProjections[dept] = [];
+                                for (let i = 0; i < labels.length; i++) {
+                                    const projected = slope * i + intercept;
+                                    departmentProjections[dept][i] = Math.max(0, projected);
+                                }
+                            }
+                        });
+
+                        // For each time point (update), sum up the values from all departments at that same point
+                        for (let i = 0; i < labels.length; i++) {
+                            let totalAtThisPoint = 0;
+                            let hasData = false;
+
+                            // Sum all department values at this specific time point
+                            departments.forEach(dept => {
+                                if (departmentProjections[dept] && departmentProjections[dept][i] !== undefined) {
+                                    totalAtThisPoint += departmentProjections[dept][i];
+                                    hasData = true;
+                                }
+                            });
+
+                            chartData.push(hasData ? Math.round(totalAtThisPoint) : null);
+                        }
+                    } else {
+                        // For specific department: calculate linear regression using only this department's data
+                        const actualVotes = [];
+                        const timePoints = [];
+
+                        availableDates.slice().reverse().forEach((date, index) => {
+                            const dateData = departmentDataByDate[date]?.[department];
+                            if (!dateData) return;
+
+                            if (dateData.candidatos && dateData.actas) {
+                                const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
+                                if (cand) {
+                                    actualVotes.push(cand.votos || 0);
+                                    timePoints.push(index);
+                                }
+                            }
+                        });
+
+                        // Calculate linear regression if we have enough data points
+                        if (actualVotes.length >= 2) {
+                            const { slope, intercept } = linearRegression(timePoints, actualVotes);
+
+                            // Project for each time point
+                            for (let i = 0; i < labels.length; i++) {
+                                const projected = slope * i + intercept;
+                                chartData.push(Math.round(Math.max(0, projected)));
+                            }
+                        } else {
+                            // Not enough data for regression, use nulls
+                            chartData = new Array(labels.length).fill(null);
+                        }
+                    }
+                }
+
+                // Add dataset for this candidate
+                datasets.push({
+                    label: candidateName,
+                    data: chartData,
+                    borderColor: mainColor,
+                    backgroundColor: mainColor + '20',
+                    borderWidth: 3,
+                    tension: 0.1,
+                    fill: false,
+                    pointRadius: 0,
+                    pointHoverRadius: 5,
+                    spanGaps: true
+                });
+            });
+
+            // Calculate min/max for better scaling across all datasets
+            let allValidData = [];
+            datasets.forEach(dataset => {
+                allValidData = allValidData.concat(dataset.data.filter(v => v !== null));
+            });
+            const minValue = Math.min(...allValidData);
+            const maxValue = Math.max(...allValidData);
+            const range = maxValue - minValue;
+            const padding = range * 0.1;
+            const yMin = Math.max(0, minValue - padding);
+            const yMax = maxValue + padding;
+
+            // Destroy existing chart if it exists
+            if (mainChart) {
+                mainChart.destroy();
+            }
+
+            // Create new chart
+            const canvas = document.getElementById('mainChart');
+            const ctx = canvas.getContext('2d');
+
+            mainChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-primary'),
+                                usePointStyle: true,
+                                padding: 15,
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += (context.parsed.y || 0).toLocaleString('es-HN') + ' votos (proyección)';
+                                    return label;
+                                },
+                                afterBody: function(tooltipItems) {
+                                    // Calculate difference between top 2 candidates
+                                    if (tooltipItems.length >= 2) {
+                                        const values = tooltipItems.map(item => item.parsed.y || 0).sort((a, b) => b - a);
+                                        const difference = values[0] - values[1];
+                                        return [
+                                            '',
+                                            'Diferencia (1° vs 2°): ' + difference.toLocaleString('es-HN') + ' votos'
+                                        ];
+                                    }
+                                    return [];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: yMin,
+                            max: yMax,
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                callback: function(value) {
+                                    return value.toLocaleString('es-HN');
+                                }
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                maxRotation: 45,
+                                minRotation: 45
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
