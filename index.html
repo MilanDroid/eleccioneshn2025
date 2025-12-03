@@ -911,17 +911,17 @@
             actasGrid.innerHTML = '';
 
             // Calculate percentage for publicadas/total
-            const percentage = actas.total > 0 ? ((actas.publicadas / actas.total) * 100).toFixed(2) : 0;
+            const percentage = actas.total > 0 ? ((actas.correctas / actas.total) * 100).toFixed(2) : 0;
 
             // Define the actas items to display
             const actasItems = [
                 { label: 'Total', value: actas.total },
-                { label: 'Publicadas', value: actas.publicadas, percentage: percentage },
-                { label: 'En Espera', value: actas.espera },
-                { label: 'En Verificación', value: actas.verificacion },
-                { label: 'Correctas', value: actas.correctas },
-                { label: 'Inconsistencias', value: actas.inconsistencias },
-                { label: 'Pend. Verificación', value: actas.pendientesVerificacionVisual }
+                { label: 'Publicadas', value: actas.publicadas, percentage: actas.total > 0 ? ((actas.publicadas / actas.total) * 100).toFixed(2) : 0 },
+                { label: 'En Espera', value: actas.espera, percentage: actas.total > 0 ? ((actas.espera / actas.total) * 100).toFixed(2) : 0 },
+                { label: 'En Verificación', value: actas.verificacion, percentage: actas.total > 0 ? ((actas.verificacion / actas.total) * 100).toFixed(2) : 0 },
+                { label: 'Correctas', value: actas.correctas, percentage: percentage },
+                { label: 'Inconsistencias', value: actas.inconsistencias, percentage: actas.total > 0 ? ((actas.inconsistencias / actas.total) * 100).toFixed(2) : 0  },
+                { label: 'Pend. Verificación', value: actas.pendientesVerificacionVisual, percentage: actas.total > 0 ? ((actas.pendientesVerificacionVisual / actas.total) * 100).toFixed(2) : 0  }
             ];
 
             // Create and append actas items
