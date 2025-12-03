@@ -313,6 +313,18 @@
             justify-content: space-between;
         }
 
+        .vote-difference.negative {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.12), rgba(220, 53, 69, 0.06));
+            border-top: 2px solid #dc3545;
+            color: #dc3545;
+        }
+
+        .vote-difference.negative.warning {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.18), rgba(255, 193, 7, 0.08));
+            border-top: 2px solid rgba(214, 162, 7, 0.18);
+            color: #dc3545;
+        }
+
         .vote-difference-label {
             color: var(--text-secondary);
             font-weight: 600;
@@ -320,6 +332,12 @@
 
         .vote-difference-value {
             color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .vote-difference.negative .vote-difference-value {
+            color: #dc3545;
             font-weight: 700;
             font-size: 0.95rem;
         }
@@ -1053,15 +1071,13 @@
             const container = document.getElementById('candidates-list');
             container.innerHTML = '';
 
-            // Calculate vote difference between #1 and #2
-            const voteDifference = candidatos.length >= 2 ? candidatos[0].votos - candidatos[1].votos : 0;
-
             candidatos.forEach((candidato, index) => {
                 const percentage = totalVotos > 0 ? ((candidato.votos / totalVotos) * 100).toFixed(2) : 0;
                 const partyKey = getPartyKey(candidato.parpo_nombre);
+                const voteDifference = index === 0 ? candidatos[0].votos - candidatos[1].votos: candidato.votos - candidatos[0].votos;
 
                 // Pass vote difference only to the first candidate
-                const card = createCandidateCard(candidato, percentage, index + 1, partyKey, index === 0 ? voteDifference : null);
+                const card = createCandidateCard(candidato, percentage, index + 1, partyKey, voteDifference);
                 container.appendChild(card);
             });
         }
@@ -1142,9 +1158,16 @@
             info.appendChild(statsSection);
 
             // Add vote difference section for the first candidate only
-            if (voteDifference !== null && voteDifference > 0) {
+            if (voteDifference !== null) {
                 const diffSection = document.createElement('div');
-                diffSection.className = 'vote-difference';
+                let classes = 'vote-difference';
+                if (voteDifference < 0) {
+                    classes += ' negative';
+                }
+                if (voteDifference > -50000) {
+                    classes += ' warning';
+                }
+                diffSection.className = classes;
 
                 const diffLabel = document.createElement('span');
                 diffLabel.className = 'vote-difference-label';
@@ -1153,7 +1176,7 @@
 
                 const diffValue = document.createElement('span');
                 diffValue.className = 'vote-difference-value';
-                diffValue.textContent = `+${voteDifference.toLocaleString('es-HN')}`;
+                diffValue.textContent = `${voteDifference > 0 ? '+' : ''}${voteDifference.toLocaleString('es-HN')}`;
                 diffSection.appendChild(diffValue);
 
                 info.appendChild(diffSection);
