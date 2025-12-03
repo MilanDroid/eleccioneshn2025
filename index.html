@@ -342,6 +342,90 @@
             font-size: 0.95rem;
         }
 
+        /* Department Differences Section */
+        .dept-details-checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .dept-details-checkbox-wrapper input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .dept-details-checkbox-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .dept-details-checkbox-wrapper:hover .dept-details-checkbox-label {
+            color: var(--text-primary);
+        }
+
+        .dept-differences-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .dept-differences-content.expanded {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .dept-differences-list {
+            padding: 8px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dept-difference-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .dept-difference-item.negative {
+            border-left-color: #dc3545;
+        }
+
+        .dept-difference-item.warning {
+            border-left-color: #ffc107;
+        }
+
+        .dept-difference-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.7rem;
+        }
+
+        .dept-difference-value {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 0.75rem;
+        }
+
+        .dept-difference-item.negative .dept-difference-value {
+            color: #dc3545;
+        }
+
+        .dept-difference-item.warning .dept-difference-value {
+            color: #d6a207;
+        }
+
         /* Loading and Error States */
         #loading {
             display: none;
@@ -506,6 +590,15 @@
             .percentage {
                 font-size: 1.1rem;
             }
+
+            .dept-details-checkbox-label {
+                font-size: 0.7rem;
+            }
+
+            .dept-details-checkbox-wrapper input[type="checkbox"] {
+                width: 16px;
+                height: 16px;
+            }
         }
 
         /* Actas Info Section */
@@ -621,7 +714,13 @@
         <div id="error"></div>
 
         <div id="results" class="main-content">
-            <a href="https://milandroid.dev/eleccioneshn2025/proyeccion-simple.html" class="projections-link">Ver Análisis</a>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <label class="dept-details-checkbox-wrapper">
+                    <input type="checkbox" id="toggle-dept-details">
+                    <span class="dept-details-checkbox-label">Ver detalles por departamento</span>
+                </label>
+                <a href="https://milandroid.dev/eleccioneshn2025/proyeccion-simple.html" class="projections-link">Ver Análisis</a>
+            </div>
             <div id="candidates-list" class="candidates-grid">
                 <!-- Candidate cards will be dynamically inserted here -->
             </div>
@@ -989,6 +1088,9 @@
             // Display candidates cards
             displayCandidateCards(candidatosSorted, totalVotos);
 
+            // Initialize department toggle button
+            initializeDepartmentToggle();
+
             // Display actas information if available
             if (data.actas) {
                 displayActasInfo(data.actas);
@@ -1157,14 +1259,14 @@
 
             info.appendChild(statsSection);
 
-            // Add vote difference section for the first candidate only
+            // Add vote difference section for all candidates
             if (voteDifference !== null) {
                 const diffSection = document.createElement('div');
                 let classes = 'vote-difference';
                 if (voteDifference < 0) {
                     classes += ' negative';
                 }
-                if (voteDifference > -50000) {
+                if (voteDifference > -50000 && voteDifference < 0) {
                     classes += ' warning';
                 }
                 diffSection.className = classes;
@@ -1182,9 +1284,150 @@
                 info.appendChild(diffSection);
             }
 
+            // Add department differences content section (hidden by default)
+            const deptContent = document.createElement('div');
+            deptContent.className = 'dept-differences-content';
+            deptContent.innerHTML = '<div class="dept-differences-list" data-party="' + partyKey + '"></div>';
+
+            info.appendChild(deptContent);
+
             card.appendChild(info);
 
             return card;
+        }
+
+        // Function to load department differences for a specific party
+        async function loadDepartmentDifferences(partyKey, containerElement) {
+            // Show loading state
+            containerElement.innerHTML = '<div style="text-align: center; padding: 10px; color: var(--text-secondary);">Cargando...</div>';
+
+            try {
+                const partyName = PARTIDOS[partyKey];
+                if (!partyName) {
+                    containerElement.innerHTML = '<div style="text-align: center; padding: 10px; color: var(--text-secondary);">No hay datos disponibles</div>';
+                    return;
+                }
+
+                // Get all departments except "TODOS"
+                const departments = ALL_STATES.filter(dept => dept !== 'TODOS');
+                const departmentDifferences = [];
+
+                // Load data for each department
+                for (const dept of departments) {
+                    try {
+                        const filePath = `results/${currentDate}/${dept}.json`;
+                        const response = await fetch(filePath);
+
+                        if (!response.ok) continue;
+
+                        const data = await response.json();
+
+                        // Find the candidate for this party
+                        const candidate = data.candidatos.find(c => c.parpo_nombre === partyName);
+                        if (!candidate) continue;
+
+                        // Sort candidates by votes to find positions
+                        const sortedCandidates = [...data.candidatos].sort((a, b) => b.votos - a.votos);
+                        const firstPlace = sortedCandidates[0];
+                        const secondPlace = sortedCandidates[1];
+
+                        let difference;
+
+                        // Check if this candidate is in first place
+                        if (candidate.votos === firstPlace.votos) {
+                            // First place: compare with second place
+                            difference = candidate.votos - (secondPlace ? secondPlace.votos : 0);
+                        } else {
+                            // Not first place: compare with first place (will be negative or zero)
+                            difference = candidate.votos - firstPlace.votos;
+                        }
+
+                        // Include all differences
+                        departmentDifferences.push({
+                            department: dept,
+                            difference: difference
+                        });
+                    } catch (error) {
+                        console.error(`Error loading data for ${dept}:`, error);
+                    }
+                }
+
+                // Sort by difference (most negative first, positive last)
+                departmentDifferences.sort((a, b) => a.difference - b.difference);
+
+                // Display the results
+                if (departmentDifferences.length === 0) {
+                    containerElement.innerHTML = '<div style="text-align: center; padding: 10px; color: var(--text-secondary);">No hay diferencias disponibles</div>';
+                    return;
+                }
+
+                containerElement.innerHTML = '';
+                departmentDifferences.forEach(item => {
+                    const diffItem = document.createElement('div');
+                    let classes = 'dept-difference-item';
+
+                    // Apply color classes based on difference
+                    if (item.difference < -20000) {
+                        classes += ' negative';
+                    } else if (item.difference < 0) {
+                        classes += ' warning';
+                    }
+                    // Positive values will use default (accent color)
+
+                    diffItem.className = classes;
+
+                    const deptName = document.createElement('span');
+                    deptName.className = 'dept-difference-name';
+                    deptName.textContent = item.department;
+
+                    const deptValue = document.createElement('span');
+                    deptValue.className = 'dept-difference-value';
+                    deptValue.textContent = `${item.difference > 0 ? '+' : ''}${item.difference.toLocaleString('es-HN')}`;
+
+                    diffItem.appendChild(deptName);
+                    diffItem.appendChild(deptValue);
+
+                    containerElement.appendChild(diffItem);
+                });
+
+            } catch (error) {
+                console.error('Error loading department differences:', error);
+                containerElement.innerHTML = '<div style="text-align: center; padding: 10px; color: #dc3545;">Error al cargar datos</div>';
+            }
+        }
+
+        // Global toggle for department details
+        let departmentToggleInitialized = false;
+
+        function initializeDepartmentToggle() {
+            if (departmentToggleInitialized) return;
+
+            const toggleCheckbox = document.getElementById('toggle-dept-details');
+            if (!toggleCheckbox) return;
+
+            toggleCheckbox.addEventListener('change', async () => {
+                if (toggleCheckbox.checked) {
+                    // Expand all department details
+                    const allContents = document.querySelectorAll('.dept-differences-content');
+                    allContents.forEach(content => {
+                        content.classList.add('expanded');
+                        const list = content.querySelector('.dept-differences-list');
+                        const partyKey = list.getAttribute('data-party');
+                        if (partyKey && list.children.length === 0) {
+                            // Only load if not already loaded
+                            loadDepartmentDifferences(partyKey, list);
+                        }
+                    });
+                } else {
+                    // Collapse all department details
+                    const allContents = document.querySelectorAll('.dept-differences-content');
+                    allContents.forEach(content => {
+                        content.classList.remove('expanded');
+                    });
+                }
+            });
+
+            departmentToggleInitialized = true;
         }
 
         // Function to refresh metadata and update dropdowns
