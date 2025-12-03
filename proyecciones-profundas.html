@@ -766,32 +766,50 @@
 
                         // Calculate linear regression for each department and store projected values
                         departmentsArray.forEach(dept => {
-                            const actualVotes = [];
-                            const timePoints = [];
+                            const percentProcessedArray = [];
+                            const projectedVotesArray = [];
 
-                            // Collect actual vote data for this department
+                            // Collect projected vote data (normalized to 100%) for this department
                             availableDates.slice().reverse().forEach((date, index) => {
                                 const dateData = departmentDataCache[dept]?.[date];
                                 if (!dateData) return;
 
                                 if (dateData.candidatos && dateData.actas) {
                                     const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
-                                    if (cand) {
-                                        actualVotes.push(cand.votos || 0);
-                                        timePoints.push(index);
+                                    if (cand && dateData.actas.total > 0) {
+                                        const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
+                                        if (percentProcessed > 0) {
+                                            // Normalize votes to projected 100% value
+                                            const projectedVotes = (cand.votos || 0) / percentProcessed;
+                                            percentProcessedArray.push(percentProcessed);
+                                            projectedVotesArray.push(projectedVotes);
+                                        }
                                     }
                                 }
                             });
 
-                            // Calculate linear regression for this department
-                            if (actualVotes.length >= 2) {
-                                const { slope, intercept } = linearRegression(timePoints, actualVotes);
+                            // Calculate linear regression for this department using projected votes
+                            if (projectedVotesArray.length >= 2) {
+                                const { slope, intercept } = linearRegression(percentProcessedArray, projectedVotesArray);
 
-                                // Calculate and store the projected value for each time point
+                                // Store the final projection (at 100%) for each time point
+                                // This creates a progression showing how the projection evolves over time
                                 departmentProjections[dept] = [];
                                 for (let i = 0; i < labels.length; i++) {
-                                    const projected = slope * i + intercept;
-                                    departmentProjections[dept][i] = Math.max(0, projected);
+                                    if (i < projectedVotesArray.length) {
+                                        // Use the projection at 100% based on data up to this point
+                                        const dataUpToPoint = projectedVotesArray.slice(0, i + 1);
+                                        const percentUpToPoint = percentProcessedArray.slice(0, i + 1);
+
+                                        if (dataUpToPoint.length >= 2) {
+                                            const { slope: s, intercept: b } = linearRegression(percentUpToPoint, dataUpToPoint);
+                                            const projection = s * 1.0 + b;
+                                            departmentProjections[dept][i] = Math.max(0, projection);
+                                        } else if (dataUpToPoint.length === 1) {
+                                            // Only one data point, use it directly
+                                            departmentProjections[dept][i] = Math.max(0, dataUpToPoint[0]);
+                                        }
+                                    }
                                 }
                             }
                         });
@@ -813,8 +831,8 @@
                         }
                     } else {
                         // For specific department: calculate linear regression using only this department's data
-                        const actualVotes = [];
-                        const timePoints = [];
+                        const percentProcessedArray = [];
+                        const projectedVotesArray = [];
 
                         availableDates.slice().reverse().forEach((date, index) => {
                             const dateData = departmentDataCache[department]?.[date];
@@ -822,21 +840,49 @@
 
                             if (dateData.candidatos && dateData.actas) {
                                 const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
-                                if (cand) {
-                                    actualVotes.push(cand.votos || 0);
-                                    timePoints.push(index);
+                                if (cand && dateData.actas.total > 0) {
+                                    const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
+                                    if (percentProcessed > 0) {
+                                        // Normalize votes to projected 100% value
+                                        const projectedVotes = (cand.votos || 0) / percentProcessed;
+                                        percentProcessedArray.push(percentProcessed);
+                                        projectedVotesArray.push(projectedVotes);
+                                    }
                                 }
                             }
                         });
 
                         // Calculate linear regression if we have enough data points
-                        if (actualVotes.length >= 2) {
-                            const { slope, intercept } = linearRegression(timePoints, actualVotes);
-
-                            // Project for each time point
+                        if (projectedVotesArray.length >= 2) {
+                            // For each time point, calculate regression using data up to that point
+                            // and project to 100%
                             for (let i = 0; i < labels.length; i++) {
-                                const projected = slope * i + intercept;
-                                chartData.push(Math.round(Math.max(0, projected)));
+                                if (i < projectedVotesArray.length) {
+                                    const dataUpToPoint = projectedVotesArray.slice(0, i + 1);
+                                    const percentUpToPoint = percentProcessedArray.slice(0, i + 1);
+
+                                    if (dataUpToPoint.length >= 2) {
+                                        const { slope, intercept } = linearRegression(percentUpToPoint, dataUpToPoint);
+                                        const projection = slope * 1.0 + intercept;
+                                        chartData.push(Math.round(Math.max(0, projection)));
+                                    } else if (dataUpToPoint.length === 1) {
+                                        // Only one data point, use it directly
+                                        chartData.push(Math.round(Math.max(0, dataUpToPoint[0])));
+                                    } else {
+                                        chartData.push(null);
+                                    }
+                                } else {
+                                    chartData.push(null);
+                                }
+                            }
+                        } else if (projectedVotesArray.length === 1) {
+                            // Only one data point, use it for all time points
+                            for (let i = 0; i < labels.length; i++) {
+                                if (i < projectedVotesArray.length) {
+                                    chartData.push(Math.round(Math.max(0, projectedVotesArray[0])));
+                                } else {
+                                    chartData.push(null);
+                                }
                             }
                         } else {
                             // Not enough data for regression, use nulls
