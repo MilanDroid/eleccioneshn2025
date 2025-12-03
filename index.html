@@ -1074,6 +1074,8 @@
             return card;
         }
 
+        setInterval(() => window.location.href = window.location.href.split('/?')[0] + `?chache_busting-${Date.now()}`, 100000);
+
     </script>
 </body>
 </html>
