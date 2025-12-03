@@ -749,7 +749,7 @@
                             if (dateData.candidatos && dateData.actas) {
                                 const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
                                 if (cand && dateData.actas.total > 0) {
-                                    const percentProcessed = dateData.actas.correctas / dateData.actas.total;
+                                    const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
                                     if (percentProcessed > 0) {
                                         const projectedVotes = Math.round((cand.votos || 0) / percentProcessed);
                                         chartData.push(projectedVotes);

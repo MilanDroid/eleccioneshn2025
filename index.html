@@ -1091,6 +1091,12 @@
             // Initialize department toggle button
             initializeDepartmentToggle();
 
+            // Check if the checkbox is checked and re-apply the expanded state
+            const toggleCheckbox = document.getElementById('toggle-dept-details');
+            if (toggleCheckbox && toggleCheckbox.checked) {
+                applyDepartmentDetailsExpanded();
+            }
+
             // Display actas information if available
             if (data.actas) {
                 displayActasInfo(data.actas);
@@ -1399,6 +1405,20 @@
         // Global toggle for department details
         let departmentToggleInitialized = false;
 
+        // Function to expand all department details and load data
+        function applyDepartmentDetailsExpanded() {
+            const allContents = document.querySelectorAll('.dept-differences-content');
+            allContents.forEach(content => {
+                content.classList.add('expanded');
+                const list = content.querySelector('.dept-differences-list');
+                const partyKey = list.getAttribute('data-party');
+                if (partyKey && list.children.length === 0) {
+                    // Only load if not already loaded
+                    loadDepartmentDifferences(partyKey, list);
+                }
+            });
+        }
+
         function initializeDepartmentToggle() {
             if (departmentToggleInitialized) return;
 
@@ -1408,16 +1428,7 @@
             toggleCheckbox.addEventListener('change', async () => {
                 if (toggleCheckbox.checked) {
                     // Expand all department details
-                    const allContents = document.querySelectorAll('.dept-differences-content');
-                    allContents.forEach(content => {
-                        content.classList.add('expanded');
-                        const list = content.querySelector('.dept-differences-list');
-                        const partyKey = list.getAttribute('data-party');
-                        if (partyKey && list.children.length === 0) {
-                            // Only load if not already loaded
-                            loadDepartmentDifferences(partyKey, list);
-                        }
-                    });
+                    applyDepartmentDetailsExpanded();
                 } else {
                     // Collapse all department details
                     const allContents = document.querySelectorAll('.dept-differences-content');
