@@ -154,7 +154,13 @@
             flex-direction: column;
             gap: 15px;
             min-height: 0;
-            padding: 15px 0;
+            padding-bottom: 15px;
+        }
+
+        .projections-link {
+            color: var(--accent-color);
+            text-decoration: underline;
+            margin-left: auto;
         }
 
         /* Candidates Grid */
@@ -591,6 +597,7 @@
         <div id="error"></div>
 
         <div id="results" class="main-content">
+            <div class="projections-link">Ver Proyeccion</div>
             <div id="candidates-list" class="candidates-grid">
                 <!-- Candidate cards will be dynamically inserted here -->
             </div>

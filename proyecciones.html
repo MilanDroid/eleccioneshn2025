@@ -1,10 +1,941 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <title>Proyecciones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecciones Electorales - Honduras 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+
+    <style>
+        :root {
+            --accent-color: #00bee5;
+            --accent-hover: #00a5cc;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6c757d;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --card-hover-shadow: 0 4px 12px rgba(0, 190, 229, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #f5f5f5;
+            --text-secondary: #b0b0b0;
+            --border-color: #404040;
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --card-hover-shadow: 0 4px 12px rgba(0, 190, 229, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        header > div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header img {
+            max-width: 100px;
+        }
+
+        header h1 {
+            margin-left: 2rem;
+            color: var(--text-secondary)
+        }
+
+        /* Controls Section */
+        .controls {
+            padding: 15px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            min-width: 250px;
+        }
+
+        .control-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        select {
+            padding: 10px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            max-width: 270px;
+        }
+
+        select:hover {
+            border-color: var(--accent-color);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 190, 229, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 0;
+            padding-bottom: 15px;
+        }
+
+        .link {
+            color: var(--accent-color);
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        /* Chart Containers */
+        .chart-section {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        /* Loading and Error States */
+        #loading {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            gap: 20px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        #error {
+            display: none;
+            padding: 20px;
+            background: #dc3545;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        #results {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: column;
+            }
+
+            header .logo-container {
+                flex-direction: column;
+            }
+
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px 0;
+            }
+
+            select {
+                font-size: 0.9rem;
+                max-width: 100%;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+
+            .chart-section {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
+                <h1>Elecciones 2025</h1>
+            </div>
 
+            <div class="controls">
+                <div class="control-group">
+                    <label class="control-label" for="state-select">Departamento</label>
+                    <select id="state-select">
+                        <option value="">Cargando...</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>Cargando proyecciones...</p>
+        </div>
+
+        <div id="error"></div>
+
+        <div id="results" class="main-content">
+            <a href="index.html" class="link">Ver Votaciones</a>
+
+            <div class="chart-section">
+                <div class="chart-title">Progreso de Votos por Candidato</div>
+                <div class="chart-container">
+                    <canvas id="candidatesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <div class="chart-title">Diferencia de Votos: 1° Lugar vs 2° Lugar</div>
+                <div class="chart-container">
+                    <canvas id="differenceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <div class="chart-title">Proyección a 100% de Votos Procesados</div>
+                <div class="chart-container">
+                    <canvas id="projectionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Political party colors
+        const PARTY_COLORS = {
+            "DC": "#11992B",
+            "Libre": "#DC143C",
+            "PINU": "#ffa500",
+            "PLH": "#FF0000",
+            "PNH": "#1E90FF"
+        };
+
+        // Mapping of candidate names to party keys
+        const CANDIDATE_TO_PARTY = {
+            "MARIO ENRIQUE RIVERA CALLEJAS": "DC",
+            "RIXI RAMONA MONCADA GODOY": "Libre",
+            "JORGE NELSON AVILA GUTIERREZ": "PINU",
+            "SALVADOR ALEJANDRO CESAR NASRALLA SALUM": "PLH",
+            "NASRY JUAN ASFURA ZABLAH": "PNH"
+        };
+
+        // Helper function to get party key from full party name
+        function getPartyKeyFromName(partyName) {
+            const PARTIDOS = {
+                "DC": "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS",
+                "Libre": "PARTIDO LIBERTAD Y REFUNDACION",
+                "PINU": "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA",
+                "PLH": "PARTIDO LIBERAL DE HONDURAS",
+                "PNH": "PARTIDO NACIONAL DE HONDURAS"
+            };
+
+            for (const [key, name] of Object.entries(PARTIDOS)) {
+                if (name === partyName) {
+                    return key;
+                }
+            }
+            return null;
+        }
+
+        let candidatesChart = null;
+        let differenceChart = null;
+        let projectionChart = null;
+        let currentState = 'TODOS';
+        let metadata = null;
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadProjections();
+        });
+
+        // Load all historical data
+        async function loadProjections() {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error');
+            const resultsEl = document.getElementById('results');
+
+            loadingEl.style.display = 'flex';
+            errorEl.style.display = 'none';
+            resultsEl.style.display = 'none';
+
+            try {
+                // Load metadata
+                const metadataResponse = await fetch('results_metadata.json');
+                if (!metadataResponse.ok) {
+                    throw new Error('No se pudo cargar la metadata');
+                }
+                metadata = await metadataResponse.json();
+                const availableDates = metadata.available_dates || [];
+
+                if (availableDates.length === 0) {
+                    throw new Error('No hay datos disponibles');
+                }
+
+                // Initialize state selector
+                initializeStateSelector(availableDates);
+
+                // Load data for current state
+                await loadDataForState(currentState, availableDates);
+
+                loadingEl.style.display = 'none';
+                resultsEl.style.display = 'flex';
+
+            } catch (error) {
+                console.error('Error loading projections:', error);
+                loadingEl.style.display = 'none';
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        // Initialize the state selector dropdown
+        function initializeStateSelector(availableDates) {
+            const select = document.getElementById('state-select');
+            select.innerHTML = '';
+
+            // Get all unique states from all dates
+            const allStates = new Set();
+            availableDates.forEach(date => {
+                const dateData = metadata.dates[date];
+                if (dateData && dateData.states) {
+                    dateData.states.forEach(state => allStates.add(state));
+                }
+            });
+
+            const statesArray = Array.from(allStates).sort();
+
+            if (statesArray.length === 0) {
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'No hay estados';
+                select.appendChild(option);
+                return;
+            }
+
+            // Add options for each state
+            statesArray.forEach(state => {
+                const option = document.createElement('option');
+                option.value = state;
+                option.textContent = state;
+                select.appendChild(option);
+            });
+
+            // Set TODOS as default
+            select.value = 'TODOS';
+            currentState = 'TODOS';
+
+            // Add event listener for state change
+            select.addEventListener('change', async (e) => {
+                currentState = e.target.value;
+                if (currentState && metadata) {
+                    const availableDates = metadata.available_dates || [];
+                    await loadDataForState(currentState, availableDates);
+                }
+            });
+        }
+
+        // Load data for a specific state
+        async function loadDataForState(state, availableDates) {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error');
+            const resultsEl = document.getElementById('results');
+
+            loadingEl.style.display = 'flex';
+            errorEl.style.display = 'none';
+            resultsEl.style.display = 'none';
+
+            try {
+                // Load all state files from each date
+                const allData = [];
+                for (const date of availableDates.slice().reverse()) { // Reverse to get chronological order
+                    try {
+                        const filePath = `results/${date}/${state}.json`;
+                        const response = await fetch(filePath);
+                        if (response.ok) {
+                            const data = await response.json();
+                            allData.push({
+                                date: date,
+                                dateFormatted: formatDateDisplay(date),
+                                data: data
+                            });
+                        }
+                    } catch (err) {
+                        console.error(`Error loading ${date}:`, err);
+                    }
+                }
+
+                if (allData.length === 0) {
+                    throw new Error(`No se pudieron cargar los datos históricos para ${state}`);
+                }
+
+                // Process data and create charts
+                displayCharts(allData);
+
+                loadingEl.style.display = 'none';
+                resultsEl.style.display = 'flex';
+
+            } catch (error) {
+                console.error('Error loading data for state:', error);
+                loadingEl.style.display = 'none';
+                showError(`Error: ${error.message}`);
+            }
+        }
+
+        // Display error message
+        function showError(message) {
+            const errorEl = document.getElementById('error');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+        }
+
+        // Format date for display
+        function formatDateDisplay(dateString) {
+            const parts = dateString.split('_');
+            if (parts.length !== 2) return dateString;
+
+            const datePart = parts[0].split('-');
+            const timePart = parts[1].split('-');
+
+            if (datePart.length !== 3 || timePart.length !== 3) return dateString;
+
+            return `${datePart[2]}/${datePart[1]} ${timePart[0]}:${timePart[1]}`;
+        }
+
+        // Process data and display charts
+        function displayCharts(allData) {
+            // Prepare data structures
+            const labels = allData.map(item => item.dateFormatted);
+            const candidatesData = {};
+            const differenceData = [];
+
+            // Get top 2 candidates from the LAST update
+            const lastUpdate = allData[allData.length - 1];
+            const lastCandidatos = lastUpdate.data.candidatos || [];
+            const sortedLastCandidates = [...lastCandidatos].sort((a, b) => (b.votos || 0) - (a.votos || 0));
+            const top2Names = sortedLastCandidates.slice(0, 2).map(c => c.cddto_nombres);
+
+            // Arrays to store colors for each point based on who's leading
+            const segmentColors = [];
+            const pointColors = [];
+            const projectedData = {};
+
+            // Process each time point
+            allData.forEach((item, index) => {
+                const candidatos = item.data.candidatos || [];
+
+                // Sort by votes to get top 2 at this time point
+                const sortedCandidates = [...candidatos].sort((a, b) => (b.votos || 0) - (a.votos || 0));
+
+                // Track only top 2 candidates (based on last update) votes over time
+                candidatos.forEach(candidato => {
+                    const name = candidato.cddto_nombres;
+
+                    // Only track if this candidate is in top 2 of last update
+                    if (!top2Names.includes(name)) {
+                        return;
+                    }
+
+                    if (!candidatesData[name]) {
+                        const partyKey = getPartyKeyFromName(candidato.parpo_nombre);
+                        candidatesData[name] = {
+                            label: name,
+                            data: new Array(allData.length).fill(null),
+                            borderColor: partyKey ? PARTY_COLORS[partyKey] : '#999999',
+                            backgroundColor: partyKey ? PARTY_COLORS[partyKey] + '20' : '#99999920',
+                            tension: 0.1,
+                            fill: false,
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            pointHoverRadius: 0
+                        };
+                    }
+                    candidatesData[name].data[index] = candidato.votos || 0;
+                });
+
+                // Calculate difference between 1st and 2nd place and track color
+                if (sortedCandidates.length >= 2) {
+                    const diff = sortedCandidates[0].votos - sortedCandidates[1].votos;
+                    differenceData.push(diff);
+
+                    // Get the color of the leading candidate
+                    const leadingCandidateName = sortedCandidates[0].cddto_nombres;
+                    const leadingPartyKey = getPartyKeyFromName(sortedCandidates[0].parpo_nombre);
+                    const color = leadingPartyKey ? PARTY_COLORS[leadingPartyKey] : '#00bee5';
+                    segmentColors.push(color);
+                    pointColors.push(color);
+                } else {
+                    differenceData.push(0);
+                    segmentColors.push('#00bee5');
+                    pointColors.push('#00bee5');
+                }
+
+                // Calculate projection to 100% based on actas processed
+                if (item.data.actas && item.data.actas.total > 0) {
+                    const percentProcessed = (item.data.actas.publicadas / item.data.actas.total);
+
+                    if (percentProcessed > 0) {
+                        candidatos.forEach(candidato => {
+                            const name = candidato.cddto_nombres;
+
+                            // Only project for top 2 candidates
+                            if (!top2Names.includes(name)) {
+                                return;
+                            }
+
+                            if (!projectedData[name]) {
+                                const partyKey = getPartyKeyFromName(candidato.parpo_nombre);
+                                projectedData[name] = {
+                                    label: name,
+                                    data: new Array(allData.length).fill(null),
+                                    borderColor: partyKey ? PARTY_COLORS[partyKey] : '#999999',
+                                    backgroundColor: partyKey ? PARTY_COLORS[partyKey] + '20' : '#99999920',
+                                    tension: 0.1,
+                                    fill: false,
+                                    borderWidth: 3,
+                                    pointRadius: 0,
+                                    pointHoverRadius: 0
+                                };
+                            }
+
+                            // Project to 100%
+                            const projectedVotes = Math.round((candidato.votos || 0) / percentProcessed);
+                            projectedData[name].data[index] = projectedVotes;
+                        });
+                    }
+                }
+            });
+
+            // Create candidates chart with only top 2
+            createCandidatesChart(labels, Object.values(candidatesData));
+
+            // Create difference chart with segment colors and candidate info
+            const top2CandidatesInfo = top2Names.map(name => {
+                const candidateData = candidatesData[name];
+                return {
+                    name: name,
+                    color: candidateData.borderColor
+                };
+            });
+            createDifferenceChart(labels, differenceData, segmentColors, top2CandidatesInfo);
+
+            // Create projection chart
+            createProjectionChart(labels, Object.values(projectedData));
+        }
+
+        // Create chart for candidate votes over time
+        function createCandidatesChart(labels, datasets) {
+            const ctx = document.getElementById('candidatesChart');
+
+            if (candidatesChart) {
+                candidatesChart.destroy();
+            }
+
+            // Calculate min and max values from datasets for better scale
+            let minValue = Infinity;
+            let maxValue = -Infinity;
+            datasets.forEach(dataset => {
+                dataset.data.forEach(value => {
+                    if (value !== null) {
+                        minValue = Math.min(minValue, value);
+                        maxValue = Math.max(maxValue, value);
+                    }
+                });
+            });
+
+            // Add some padding (5% on each side) for better visualization
+            const range = maxValue - minValue;
+            const padding = range * 0.05;
+            const yMin = Math.max(0, minValue - padding);
+            const yMax = maxValue + padding;
+
+            candidatesChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-primary'),
+                                usePointStyle: true,
+                                padding: 15,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            padding: 10,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += (context.parsed.y || 0).toLocaleString('es-HN') + ' votos';
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: yMin,
+                            max: yMax,
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                callback: function(value) {
+                                    return value.toLocaleString('es-HN');
+                                }
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                maxRotation: 45,
+                                minRotation: 45
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create chart for vote difference
+        function createDifferenceChart(labels, data, segmentColors, candidatesInfo) {
+            const ctx = document.getElementById('differenceChart');
+
+            if (differenceChart) {
+                differenceChart.destroy();
+            }
+
+            // Create datasets array with a dummy dataset for each candidate (for legend only)
+            const datasets = [{
+                label: 'Diferencia de Votos',
+                data: data,
+                segment: {
+                    borderColor: function(context) {
+                        // Use the color of the leading candidate for each segment
+                        return segmentColors[context.p0DataIndex] || '#00bee5';
+                    }
+                },
+                backgroundColor: function(context) {
+                    const index = context.dataIndex;
+                    const color = segmentColors[index] || '#00bee5';
+                    // Convert hex to rgba with 0.1 opacity
+                    const r = parseInt(color.slice(1, 3), 16);
+                    const g = parseInt(color.slice(3, 5), 16);
+                    const b = parseInt(color.slice(5, 7), 16);
+                    return `rgba(${r}, ${g}, ${b}, 0.1)`;
+                },
+                tension: 0.1,
+                fill: true,
+                borderWidth: 3,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+                order: 1
+            }];
+
+            // Add invisible datasets for legend items (candidates)
+            candidatesInfo.forEach(candidate => {
+                datasets.push({
+                    label: candidate.name,
+                    data: [],
+                    borderColor: candidate.color,
+                    backgroundColor: candidate.color,
+                    pointRadius: 0,
+                    order: 2
+                });
+            });
+
+            differenceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-primary'),
+                                usePointStyle: true,
+                                padding: 15,
+                                font: {
+                                    size: 11
+                                },
+                                filter: function(legendItem, chartData) {
+                                    // Show all legend items
+                                    return true;
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            padding: 10,
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.parsed.y || 0;
+                                    return 'Diferencia: ' + value.toLocaleString('es-HN') + ' votos';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                callback: function(value) {
+                                    return value.toLocaleString('es-HN');
+                                }
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                maxRotation: 45,
+                                minRotation: 45
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create chart for projected votes at 100%
+        function createProjectionChart(labels, datasets) {
+            const ctx = document.getElementById('projectionChart');
+
+            if (projectionChart) {
+                projectionChart.destroy();
+            }
+
+            // Calculate min and max values from datasets for better scale
+            let minValue = Infinity;
+            let maxValue = -Infinity;
+            datasets.forEach(dataset => {
+                dataset.data.forEach(value => {
+                    if (value !== null) {
+                        minValue = Math.min(minValue, value);
+                        maxValue = Math.max(maxValue, value);
+                    }
+                });
+            });
+
+            // Add some padding (5% on each side) for better visualization
+            const range = maxValue - minValue;
+            const padding = range * 0.05;
+            const yMin = Math.max(0, minValue - padding);
+            const yMax = maxValue + padding;
+
+            projectionChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-primary'),
+                                usePointStyle: true,
+                                padding: 15,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            padding: 10,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += (context.parsed.y || 0).toLocaleString('es-HN') + ' votos (proyectados)';
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: yMin,
+                            max: yMax,
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                callback: function(value) {
+                                    return value.toLocaleString('es-HN');
+                                }
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--text-secondary'),
+                                maxRotation: 45,
+                                minRotation: 45
+                            },
+                            grid: {
+                                color: getComputedStyle(document.documentElement).getPropertyValue('--border-color')
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        setInterval(() => window.location.href = window.location.href.split('/?')[0] + `?cache_busting=${Date.now()}`, 100000);
+    </script>
 </body>
 </html>
