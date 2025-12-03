@@ -298,7 +298,7 @@
 
             <div class="controls">
                 <div class="control-group">
-                    <label class="control-label" for="projection-type-select">Tipo de Proyección</label>
+                    <label class="control-label" for="projection-type-select">Método Aplicado</label>
                     <select id="projection-type-select">
                         <option value="linear">Regresión Lineal</option>
                         <option value="simple">Simple Acumulada</option>
@@ -790,8 +790,6 @@
 
                             // Calculate linear regression for this department using projected votes
                             if (projectedVotesArray.length >= 2) {
-                                const { slope, intercept } = linearRegression(percentProcessedArray, projectedVotesArray);
-
                                 // Store the final projection (at 100%) for each time point
                                 // This creates a progression showing how the projection evolves over time
                                 departmentProjections[dept] = [];
@@ -809,6 +807,14 @@
                                             // Only one data point, use it directly
                                             departmentProjections[dept][i] = Math.max(0, dataUpToPoint[0]);
                                         }
+                                    } else {
+                                        // For time points beyond our data, use the last calculated projection
+                                        // This ensures the line continues with the final projection value
+                                        const finalDataPoint = projectedVotesArray.slice();
+                                        const finalPercentPoint = percentProcessedArray.slice();
+                                        const { slope: s, intercept: b } = linearRegression(finalPercentPoint, finalDataPoint);
+                                        const projection = s * 1.0 + b;
+                                        departmentProjections[dept][i] = Math.max(0, projection);
                                     }
                                 }
                             }
@@ -872,17 +878,19 @@
                                         chartData.push(null);
                                     }
                                 } else {
-                                    chartData.push(null);
+                                    // For time points beyond our data, use the last calculated projection
+                                    // This ensures the line continues with the final projection value
+                                    const finalDataPoint = projectedVotesArray.slice();
+                                    const finalPercentPoint = percentProcessedArray.slice();
+                                    const { slope, intercept } = linearRegression(finalPercentPoint, finalDataPoint);
+                                    const projection = slope * 1.0 + intercept;
+                                    chartData.push(Math.round(Math.max(0, projection)));
                                 }
                             }
                         } else if (projectedVotesArray.length === 1) {
                             // Only one data point, use it for all time points
                             for (let i = 0; i < labels.length; i++) {
-                                if (i < projectedVotesArray.length) {
-                                    chartData.push(Math.round(Math.max(0, projectedVotesArray[0])));
-                                } else {
-                                    chartData.push(null);
-                                }
+                                chartData.push(Math.round(Math.max(0, projectedVotesArray[0])));
                             }
                         } else {
                             // Not enough data for regression, use nulls
