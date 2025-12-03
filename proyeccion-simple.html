@@ -165,6 +165,49 @@
             width: 100%;
         }
 
+        .info-section {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .info-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-title::before {
+            content: "ℹ️";
+            font-size: 1.2rem;
+        }
+
+        .info-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .info-content strong {
+            color: var(--text-primary);
+        }
+
+        .info-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .info-content li {
+            margin: 5px 0;
+        }
+
         /* Loading and Error States */
         #loading {
             display: none;
@@ -298,6 +341,23 @@
                 <div class="chart-title">Proyección general a 100% de Votos Procesados</div>
                 <div class="chart-container">
                     <canvas id="projectionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">Cómo se calcula esta proyección</div>
+                <div class="info-content">
+                    <strong>Proyección Simple Acumulada</strong>
+                    <p>Esta proyección se calcula de la siguiente manera:</p>
+                    <ul>
+                        <li>Se toman los <strong>votos actuales</strong> de cada candidato en cada actualización del conteo.</li>
+                        <li>Se dividen entre el <strong>porcentaje de actas procesadas</strong>: <code>votos actuales / % actas procesadas</code>.</li>
+                        <li>El resultado proyecta cuántos votos obtendría cada candidato si se mantiene la proporción actual hasta el 100% de actas procesadas.</li>
+                        <li>Esta metodología es directa y asume que la distribución de votos en las actas restantes será similar a la distribución actual.</li>
+                    </ul>
+                    <p><strong>Ejemplo:</strong> Si un candidato tiene 50,000 votos con el 25% de actas procesadas, la proyección sería: 50,000 / 0.25 = 200,000 votos al 100%.</p>
+                    <p><strong>Ventaja:</strong> Proyección simple y fácil de entender, basada directamente en el avance del conteo de actas.</p>
+                    <p><strong>Nota:</strong> Esta proyección puede variar a medida que se procesan más actas, especialmente si hay diferencias regionales en los patrones de votación.</p>
                 </div>
             </div>
         </div>
