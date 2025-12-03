@@ -907,7 +907,7 @@
                 { label: 'En Verificación', value: actas.verificacion },
                 { label: 'Correctas', value: actas.correctas },
                 { label: 'Inconsistencias', value: actas.inconsistencias },
-                { label: 'Pend. Verificación Visual', value: actas.pendientesVerificacionVisual }
+                { label: 'Pend. Verificación', value: actas.pendientesVerificacionVisual }
             ];
 
             // Create and append actas items
@@ -939,14 +939,20 @@
             const valueEl = document.createElement('div');
             valueEl.className = 'actas-item-value';
             valueEl.textContent = (value || 0).toLocaleString('es-HN');
-            item.appendChild(valueEl);
+            valueEl.style.display = 'flex';
+            valueEl.style.alignItems = 'center';
+            valueEl.style.justifyContent = 'space-between';
+            valueEl.style.width = '100%';
+            valueEl.style.flexWrap = "wrap";
 
             if (percentage !== null && percentage !== undefined) {
                 const percentageEl = document.createElement('div');
                 percentageEl.className = 'actas-item-percentage';
                 percentageEl.textContent = `${percentage}%`;
-                item.appendChild(percentageEl);
+                valueEl.appendChild(percentageEl);
             }
+
+            item.appendChild(valueEl);
 
             return item;
         }
