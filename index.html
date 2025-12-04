@@ -210,16 +210,42 @@
                 max-height: 500px;
             }
 
-            .candidates-grid.two-candidates-mode .candidate-card.split-layout .card-main-content {
+            /* First candidate: default order (main content left, departments right) */
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout:nth-child(1) {
+                grid-template-areas: 'candidate-info department-info';
+            }
+
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout:nth-child(1) .card-main-content {
                 display: flex;
                 flex-direction: column;
                 overflow-y: auto;
+                grid-area: candidate-info;
             }
 
-            .candidates-grid.two-candidates-mode .candidate-card.split-layout .dept-differences-content {
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout:nth-child(1) .dept-differences-content {
                 overflow-y: auto;
                 padding-left: 20px;
                 border-left: 2px solid var(--border-color);
+                grid-area: department-info;
+            }
+
+            /* Second candidate: reversed order (departments left, main content right) */
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout:nth-child(2) {
+                grid-template-areas: 'department-info candidate-info';
+            }
+
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout:nth-child(2) .card-main-content {
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+                grid-area: candidate-info;
+            }
+
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout:nth-child(2) .dept-differences-content {
+                overflow-y: auto;
+                padding-right: 20px;
+                border-right: 2px solid var(--border-color);
+                grid-area: department-info;
             }
         }
 
