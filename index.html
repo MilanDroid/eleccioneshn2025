@@ -401,22 +401,15 @@
         }
 
         .dept-difference-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto;
+            gap: 4px 8px;
             padding: 6px 8px;
             background: var(--bg-secondary);
             border-radius: 4px;
             font-size: 0.75rem;
             border-left: 3px solid var(--accent-color);
-            gap: 8px;
-        }
-
-        .dept-difference-left {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            flex: 1;
         }
 
         .dept-difference-item.negative {
@@ -431,18 +424,24 @@
             font-weight: 600;
             color: var(--text-primary);
             font-size: 0.7rem;
+            grid-area: 'name';
         }
 
         .dept-difference-percentage {
             font-size: 0.65rem;
             color: var(--text-secondary);
             font-weight: 500;
+            grid-area: 'percentage';
         }
 
         .dept-difference-value {
+            grid-column: 2;
+            grid-row: 1;
             font-weight: 700;
             color: var(--accent-color);
             font-size: 0.75rem;
+            text-align: right;
+            grid-area: 'difference';
         }
 
         .dept-difference-item.negative .dept-difference-value {
@@ -641,10 +640,15 @@
             .dept-difference-item {
                 font-size: 0.65rem;
                 padding: 4px 6px;
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto;
+                gap: 2px 8px;
             }
 
             .dept-difference-name {
                 font-size: 0.6rem;
+                grid-column: 1 / -1;
+                grid-row: 1;
             }
 
             .dept-difference-percentage {
@@ -653,6 +657,8 @@
 
             .dept-difference-value {
                 font-size: 0.65rem;
+                grid-column: 2;
+                grid-row: 2;
             }
         }
 
@@ -732,6 +738,10 @@
 
             .actas-item-label {
                 font-size: 0.65rem;
+            }
+
+            .dept-difference-item {
+                grid-template-areas: 'name name' 'percentage difference';
             }
         }
     </style>
@@ -1507,10 +1517,6 @@
 
                     diffItem.className = classes;
 
-                    // Left side: department name and actas percentage
-                    const leftDiv = document.createElement('div');
-                    leftDiv.className = 'dept-difference-left';
-
                     const deptName = document.createElement('div');
                     deptName.className = 'dept-difference-name';
                     deptName.textContent = item.department;
@@ -1519,15 +1525,14 @@
                     actasPercent.className = 'dept-difference-percentage';
                     actasPercent.textContent = `${item.actasPercentage}%`;
 
-                    leftDiv.appendChild(deptName);
-                    leftDiv.appendChild(actasPercent);
+                    diffItem.appendChild(deptName);
+                    diffItem.appendChild(actasPercent);
 
                     // Right side: vote difference
                     const deptValue = document.createElement('span');
                     deptValue.className = 'dept-difference-value';
                     deptValue.textContent = `${item.difference > 0 ? '+' : ''}${item.difference.toLocaleString('es-HN')}`;
 
-                    diffItem.appendChild(leftDiv);
                     diffItem.appendChild(deptValue);
 
                     containerElement.appendChild(diffItem);
