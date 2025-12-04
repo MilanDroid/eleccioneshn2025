@@ -201,6 +201,28 @@
             transform: translateY(-2px);
         }
 
+        /* Split layout for two candidates mode with expanded details on desktop */
+        @media (min-width: 768px) {
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                max-height: 500px;
+            }
+
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout .card-main-content {
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+            }
+
+            .candidates-grid.two-candidates-mode .candidate-card.split-layout .dept-differences-content {
+                overflow-y: auto;
+                padding-left: 20px;
+                border-left: 2px solid var(--border-color);
+            }
+        }
+
         .candidate-image-wrapper {
             width: 100%;
             max-width: 350px;
@@ -389,7 +411,7 @@
         }
 
         .dept-differences-content.expanded {
-            max-height: 400px;
+            max-height: 465px;
             overflow-y: auto;
         }
 
@@ -1330,7 +1352,10 @@
             };
             imageWrapper.appendChild(img);
 
-            card.appendChild(imageWrapper);
+            // Create main content wrapper for split layout
+            const mainContent = document.createElement('div');
+            mainContent.className = 'card-main-content';
+            mainContent.appendChild(imageWrapper);
 
             // Candidate info section
             const info = document.createElement('div');
@@ -1405,14 +1430,17 @@
                 info.appendChild(diffSection);
             }
 
+            // Append info to main content
+            mainContent.appendChild(info);
+
             // Add department differences content section (hidden by default)
             const deptContent = document.createElement('div');
             deptContent.className = 'dept-differences-content';
             deptContent.innerHTML = '<div class="dept-differences-list" data-party="' + partyKey + '"></div>';
 
-            info.appendChild(deptContent);
-
-            card.appendChild(info);
+            // Append both main content and dept content to card
+            card.appendChild(mainContent);
+            card.appendChild(deptContent);
 
             return card;
         }
@@ -1568,14 +1596,33 @@
             if (!toggleCheckbox) return;
 
             toggleCheckbox.addEventListener('change', async () => {
+                const candidatesGrid = document.getElementById('candidates-list');
+                const isTwoCandidatesMode = candidatesGrid && candidatesGrid.classList.contains('two-candidates-mode');
+
                 if (toggleCheckbox.checked) {
                     // Expand all department details
                     applyDepartmentDetailsExpanded();
+
+                    // Add split layout class to cards in two-candidates mode on desktop
+                    if (isTwoCandidatesMode) {
+                        const allCards = document.querySelectorAll('.candidate-card');
+                        allCards.forEach(card => {
+                            if (!card.classList.contains('hidden-candidate')) {
+                                card.classList.add('split-layout');
+                            }
+                        });
+                    }
                 } else {
                     // Collapse all department details
                     const allContents = document.querySelectorAll('.dept-differences-content');
                     allContents.forEach(content => {
                         content.classList.remove('expanded');
+                    });
+
+                    // Remove split layout class
+                    const allCards = document.querySelectorAll('.candidate-card');
+                    allCards.forEach(card => {
+                        card.classList.remove('split-layout');
                     });
                 }
             });
@@ -1597,6 +1644,8 @@
 
             toggleCheckbox.addEventListener('change', () => {
                 const hiddenCandidates = document.querySelectorAll('.candidate-card.hidden-candidate');
+                const deptToggle = document.getElementById('toggle-dept-details');
+                const isDeptDetailsExpanded = deptToggle && deptToggle.checked;
 
                 if (toggleCheckbox.checked) {
                     // Show all candidates
@@ -1605,6 +1654,12 @@
                     });
                     // Remove centered layout
                     candidatesGrid.classList.remove('two-candidates-mode');
+
+                    // Remove split layout when showing all candidates
+                    const allCards = document.querySelectorAll('.candidate-card');
+                    allCards.forEach(card => {
+                        card.classList.remove('split-layout');
+                    });
                 } else {
                     // Hide other candidates (beyond top 2)
                     hiddenCandidates.forEach(card => {
@@ -1612,6 +1667,16 @@
                     });
                     // Add centered layout for 2 candidates
                     candidatesGrid.classList.add('two-candidates-mode');
+
+                    // Add split layout if department details are expanded
+                    if (isDeptDetailsExpanded) {
+                        const allCards = document.querySelectorAll('.candidate-card');
+                        allCards.forEach(card => {
+                            if (!card.classList.contains('hidden-candidate')) {
+                                card.classList.add('split-layout');
+                            }
+                        });
+                    }
                 }
             });
 
