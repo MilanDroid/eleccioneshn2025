@@ -175,6 +175,14 @@
             min-height: 0;
         }
 
+        /* Center candidates when only 2 are visible */
+        .candidates-grid.two-candidates-mode {
+            justify-content: center;
+            grid-template-columns: repeat(2, minmax(220px, 400px));
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .candidate-card {
             background: var(--bg-primary);
             border-radius: 12px;
@@ -184,6 +192,10 @@
             flex-direction: column;
             overflow: hidden;
             position: relative;
+        }
+
+        .candidate-card.hidden-candidate {
+            display: none;
         }
 
         .candidate-card:hover {
@@ -351,6 +363,7 @@
             user-select: none;
         }
 
+
         .dept-details-checkbox-wrapper input[type="checkbox"] {
             width: 18px;
             height: 18px;
@@ -396,6 +409,14 @@
             border-radius: 4px;
             font-size: 0.75rem;
             border-left: 3px solid var(--accent-color);
+            gap: 8px;
+        }
+
+        .dept-difference-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex: 1;
         }
 
         .dept-difference-item.negative {
@@ -410,6 +431,12 @@
             font-weight: 600;
             color: var(--text-primary);
             font-size: 0.7rem;
+        }
+
+        .dept-difference-percentage {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
         .dept-difference-value {
@@ -525,6 +552,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .candidates-grid.two-candidates-mode {
+                grid-template-columns: repeat(2, minmax(220px, 350px));
+                max-width: 750px;
+            }
+
             .info-bar {
                 display: flex;
                 flex-direction: column;
@@ -536,6 +568,11 @@
             .candidates-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
+            }
+
+            .candidates-grid.two-candidates-mode {
+                grid-template-columns: 1fr 1fr;
+                max-width: 100%;
             }
 
             .container {
@@ -598,6 +635,24 @@
             .dept-details-checkbox-wrapper input[type="checkbox"] {
                 width: 16px;
                 height: 16px;
+            }
+
+            /* Smaller font for department details on mobile */
+            .dept-difference-item {
+                font-size: 0.65rem;
+                padding: 4px 6px;
+            }
+
+            .dept-difference-name {
+                font-size: 0.6rem;
+            }
+
+            .dept-difference-percentage {
+                font-size: 0.55rem;
+            }
+
+            .dept-difference-value {
+                font-size: 0.65rem;
             }
         }
 
@@ -714,10 +769,14 @@
         <div id="error"></div>
 
         <div id="results" class="main-content">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                 <label class="dept-details-checkbox-wrapper">
                     <input type="checkbox" id="toggle-dept-details">
                     <span class="dept-details-checkbox-label">Ver detalles por departamento</span>
+                </label>
+                <label class="dept-details-checkbox-wrapper">
+                    <input type="checkbox" id="toggle-other-candidates">
+                    <span class="dept-details-checkbox-label">Ver todos los candidatos</span>
                 </label>
                 <a href="https://milandroid.dev/eleccioneshn2025/proyeccion-simple.html" class="projections-link">Ver Análisis</a>
             </div>
@@ -820,6 +879,7 @@
         let metadataObj = {};
         let currentDate = null;
         let currentState = null;
+        let firstCandidateDeptOrder = []; // Store the department order from the first candidate
 
         // Helper function to get URL query parameters
         function getQueryParams() {
@@ -1115,6 +1175,9 @@
 
         // Display the election results
         function displayResults(data, stateName) {
+            // Reset the department order when loading new results
+            firstCandidateDeptOrder = [];
+
             // Calculate total votes
             const totalVotos = data.candidatos.reduce((sum, candidato) => sum + (candidato.votos || 0), 0);
             // Sort candidates by votes (descending)
@@ -1219,16 +1282,24 @@
                 const partyKey = getPartyKey(candidato.parpo_nombre);
                 const voteDifference = index === 0 ? candidatos[0].votos - candidatos[1].votos: candidato.votos - candidatos[0].votos;
 
-                // Pass vote difference only to the first candidate
-                const card = createCandidateCard(candidato, percentage, index + 1, partyKey, voteDifference);
+                // Pass vote difference and position to determine if should be hidden
+                const card = createCandidateCard(candidato, percentage, index + 1, partyKey, voteDifference, index >= 2);
                 container.appendChild(card);
             });
+
+            // Initialize the other candidates toggle
+            initializeOtherCandidatesToggle();
         }
 
         // Create a candidate card element
-        function createCandidateCard(candidato, percentage, position, partyKey, voteDifference = null) {
+        function createCandidateCard(candidato, percentage, position, partyKey, voteDifference = null, shouldBeHidden = false) {
             const card = document.createElement('div');
             card.className = 'candidate-card';
+
+            // Add hidden class to candidates beyond top 2
+            if (shouldBeHidden) {
+                card.classList.add('hidden-candidate');
+            }
 
             // Image wrapper with rank badge
             const imageWrapper = document.createElement('div');
@@ -1338,7 +1409,7 @@
         }
 
         // Function to load department differences for a specific party
-        async function loadDepartmentDifferences(partyKey, containerElement) {
+        async function loadDepartmentDifferences(partyKey, containerElement, isFirstCandidate = false) {
             // Show loading state
             containerElement.innerHTML = '<div style="text-align: center; padding: 10px; color: var(--text-secondary);">Cargando...</div>';
 
@@ -1383,18 +1454,37 @@
                             difference = candidate.votos - firstPlace.votos;
                         }
 
+                        // Calculate actas publicadas percentage
+                        let actasPercentage = 0;
+                        if (data.actas && data.actas.total > 0) {
+                            actasPercentage = ((data.actas.publicadas / data.actas.total) * 100).toFixed(1);
+                        }
+
                         // Include all differences
                         departmentDifferences.push({
                             department: dept,
-                            difference: difference
+                            difference: difference,
+                            actasPercentage: actasPercentage
                         });
                     } catch (error) {
                         console.error(`Error loading data for ${dept}:`, error);
                     }
                 }
 
-                // Sort by difference (most negative first, positive last)
+                // Sort by difference (most positive first, then negative)
                 departmentDifferences.sort((a, b) => b.difference - a.difference);
+
+                // If this is the first candidate, store the order
+                if (isFirstCandidate) {
+                    firstCandidateDeptOrder = departmentDifferences.map(item => item.department);
+                } else if (firstCandidateDeptOrder.length > 0) {
+                    // Sort according to first candidate's order
+                    departmentDifferences.sort((a, b) => {
+                        const indexA = firstCandidateDeptOrder.indexOf(a.department);
+                        const indexB = firstCandidateDeptOrder.indexOf(b.department);
+                        return indexA - indexB;
+                    });
+                }
 
                 // Display the results
                 if (departmentDifferences.length === 0) {
@@ -1417,15 +1507,27 @@
 
                     diffItem.className = classes;
 
-                    const deptName = document.createElement('span');
+                    // Left side: department name and actas percentage
+                    const leftDiv = document.createElement('div');
+                    leftDiv.className = 'dept-difference-left';
+
+                    const deptName = document.createElement('div');
                     deptName.className = 'dept-difference-name';
                     deptName.textContent = item.department;
 
+                    const actasPercent = document.createElement('div');
+                    actasPercent.className = 'dept-difference-percentage';
+                    actasPercent.textContent = `${item.actasPercentage}%`;
+
+                    leftDiv.appendChild(deptName);
+                    leftDiv.appendChild(actasPercent);
+
+                    // Right side: vote difference
                     const deptValue = document.createElement('span');
                     deptValue.className = 'dept-difference-value';
                     deptValue.textContent = `${item.difference > 0 ? '+' : ''}${item.difference.toLocaleString('es-HN')}`;
 
-                    diffItem.appendChild(deptName);
+                    diffItem.appendChild(leftDiv);
                     diffItem.appendChild(deptValue);
 
                     containerElement.appendChild(diffItem);
@@ -1443,13 +1545,14 @@
         // Function to expand all department details and load data
         function applyDepartmentDetailsExpanded() {
             const allContents = document.querySelectorAll('.dept-differences-content');
-            allContents.forEach(content => {
+            allContents.forEach((content, index) => {
                 content.classList.add('expanded');
                 const list = content.querySelector('.dept-differences-list');
                 const partyKey = list.getAttribute('data-party');
                 if (partyKey && list.children.length === 0) {
                     // Only load if not already loaded
-                    loadDepartmentDifferences(partyKey, list);
+                    // Pass isFirstCandidate=true for the first candidate (index 0)
+                    loadDepartmentDifferences(partyKey, list, index === 0);
                 }
             });
         }
@@ -1474,6 +1577,44 @@
             });
 
             departmentToggleInitialized = true;
+        }
+
+        // Global toggle for other candidates
+        let otherCandidatesToggleInitialized = false;
+
+        // Function to initialize the other candidates toggle
+        function initializeOtherCandidatesToggle() {
+            if (otherCandidatesToggleInitialized) return;
+
+            const toggleCheckbox = document.getElementById('toggle-other-candidates');
+            if (!toggleCheckbox) return;
+
+            const candidatesGrid = document.getElementById('candidates-list');
+
+            toggleCheckbox.addEventListener('change', () => {
+                const hiddenCandidates = document.querySelectorAll('.candidate-card.hidden-candidate');
+
+                if (toggleCheckbox.checked) {
+                    // Show all candidates
+                    hiddenCandidates.forEach(card => {
+                        card.style.display = 'flex';
+                    });
+                    // Remove centered layout
+                    candidatesGrid.classList.remove('two-candidates-mode');
+                } else {
+                    // Hide other candidates (beyond top 2)
+                    hiddenCandidates.forEach(card => {
+                        card.style.display = 'none';
+                    });
+                    // Add centered layout for 2 candidates
+                    candidatesGrid.classList.add('two-candidates-mode');
+                }
+            });
+
+            // Set initial state (centered for 2 candidates)
+            candidatesGrid.classList.add('two-candidates-mode');
+
+            otherCandidatesToggleInitialized = true;
         }
 
         // Function to refresh metadata and update dropdowns
