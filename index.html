@@ -177,10 +177,8 @@
 
         /* Center candidates when only 2 are visible */
         .candidates-grid.two-candidates-mode {
-            justify-content: center;
-            grid-template-columns: repeat(2, minmax(220px, 400px));
-            max-width: 900px;
-            margin: 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         .candidate-card {
@@ -205,6 +203,8 @@
 
         .candidate-image-wrapper {
             width: 100%;
+            max-width: 350px;
+            margin: auto auto;
             height: 270px;
             max-height: 270px;
             position: relative;
@@ -552,8 +552,7 @@
             }
 
             .candidates-grid.two-candidates-mode {
-                grid-template-columns: repeat(2, minmax(220px, 350px));
-                max-width: 750px;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .info-bar {
