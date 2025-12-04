@@ -831,12 +831,47 @@
         }
 
         // Helper function to update URL without reloading the page
-        function updateURL(fecha, departamento) {
-            const params = new URLSearchParams();
-            if (fecha) params.set('fecha', fecha);
-            if (departamento) params.set('departamento', departamento);
+        function updateURL(fecha, departamento, manuallyChangedParam = null) {
+            const params = new URLSearchParams(window.location.search);
 
-            const newURL = `${window.location.pathname}?${params.toString()}&cache-busting=${Date.now()}`;
+            // Only add fecha if it's not the default (latest date) or if user manually changed it
+            const isDefaultFecha = fecha === availableDates[0];
+            if (manuallyChangedParam === 'fecha') {
+                // User manually changed fecha
+                if (!isDefaultFecha) {
+                    params.set('fecha', fecha);
+                } else {
+                    params.delete('fecha');
+                }
+            } else if (params.has('fecha')) {
+                // Fecha was previously set, keep it
+                params.set('fecha', fecha);
+            } else if (!isDefaultFecha) {
+                // Not default and should be in URL
+                params.set('fecha', fecha);
+            }
+
+            // Only add departamento if it's not "TODOS" or if user manually changed it
+            const isDefaultDepartamento = departamento === 'TODOS';
+            if (manuallyChangedParam === 'departamento') {
+                // User manually changed departamento
+                if (!isDefaultDepartamento) {
+                    params.set('departamento', departamento);
+                } else {
+                    params.delete('departamento');
+                }
+            } else if (params.has('departamento')) {
+                // Departamento was previously set, keep it
+                params.set('departamento', departamento);
+            } else if (!isDefaultDepartamento) {
+                // Not default and should be in URL
+                params.set('departamento', departamento);
+            }
+
+            const queryString = params.toString();
+            const newURL = queryString
+                ? `${window.location.pathname}?${queryString}`
+                : window.location.pathname;
             window.history.replaceState({}, '', newURL);
         }
 
@@ -900,8 +935,8 @@
             select.addEventListener('change', (e) => {
                 currentDate = e.target.value;
                 if (currentDate) {
-                    // Update URL with new fecha
-                    updateURL(currentDate, currentState);
+                    // Update URL with new fecha (mark as manual change)
+                    updateURL(currentDate, currentState, 'fecha');
                     // Load states for this date
                     loadStatesForDate(currentDate);
                 }
@@ -1007,8 +1042,8 @@
             newSelect.addEventListener('change', (e) => {
                 currentState = e.target.value;
                 if (currentDate && currentState) {
-                    // Update URL with new departamento
-                    updateURL(currentDate, currentState);
+                    // Update URL with new departamento (mark as manual change)
+                    updateURL(currentDate, currentState, 'departamento');
                     loadResults(currentDate, currentState);
                 }
             });
