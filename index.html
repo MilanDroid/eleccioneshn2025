@@ -836,7 +836,7 @@
             if (fecha) params.set('fecha', fecha);
             if (departamento) params.set('departamento', departamento);
 
-            const newURL = `${window.location.pathname}?${params.toString()}`;
+            const newURL = `${window.location.pathname}?${params.toString()}&cache-busting=${Date.now()}`;
             window.history.replaceState({}, '', newURL);
         }
 
