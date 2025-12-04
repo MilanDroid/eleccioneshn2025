@@ -693,11 +693,11 @@
                         <strong>Simple Acumulada - TOTAL</strong>
                         <p>Esta proyección se calcula de la siguiente manera:</p>
                         <ul>
-                            <li>Para cada departamento en cada actualización, se calcula una proyección simple: <strong>votos actuales / % actas correctas</strong>.</li>
+                            <li>Para cada departamento en cada actualización, se calcula una proyección simple: <strong>votos actuales / % actas publicadas</strong>.</li>
                             <li>Se <strong>suman</strong> las proyecciones simples de todos los departamentos en cada punto temporal.</li>
                             <li>El resultado muestra cómo evolucionaría el total si cada departamento mantiene su proporción actual de votos.</li>
                         </ul>
-                        <p><strong>Ventaja:</strong> Proyección simple y directa basada en el porcentaje de actas correctas en cada región.</p>
+                        <p><strong>Ventaja:</strong> Proyección simple y directa basada en el porcentaje de actas publicadas en cada región.</p>
                     `;
                 } else {
                     infoHTML = `
@@ -705,7 +705,7 @@
                         <p>Esta proyección se calcula de la siguiente manera:</p>
                         <ul>
                             <li>Se toman los votos actuales del departamento <strong>${department}</strong> en cada actualización.</li>
-                            <li>Se divide entre el porcentaje de actas correctas: <strong>votos actuales / % actas correctas</strong>.</li>
+                            <li>Se divide entre el porcentaje de actas publicadas: <strong>votos actuales / % actas publicadas</strong>.</li>
                             <li>El resultado proyecta cuántos votos obtendría cada candidato si se mantiene la proporción actual hasta el 100% de actas.</li>
                         </ul>
                         <p><strong>Ventaja:</strong> Proyección simple basada directamente en el avance del conteo de actas.</p>
@@ -763,7 +763,7 @@
                                 if (dateData.candidatos && dateData.actas) {
                                     const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
                                     if (cand && dateData.actas.total > 0) {
-                                        const percentProcessed = dateData.actas.correctas / dateData.actas.total;
+                                        const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
                                         if (percentProcessed > 0) {
                                             const projectedVotes = Math.round((cand.votos || 0) / percentProcessed);
                                             totalVotes += projectedVotes;
@@ -822,7 +822,7 @@
                                 if (dateData.candidatos && dateData.actas) {
                                     const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
                                     if (cand && dateData.actas.total > 0) {
-                                        const percentProcessed = dateData.actas.correctas / dateData.actas.total;
+                                        const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
                                         if (percentProcessed > 0) {
                                             // Normalize votes to projected 100% value
                                             const projectedVotes = (cand.votos || 0) / percentProcessed;
@@ -892,7 +892,7 @@
                             if (dateData.candidatos && dateData.actas) {
                                 const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
                                 if (cand && dateData.actas.total > 0) {
-                                    const percentProcessed = dateData.actas.correctas / dateData.actas.total;
+                                    const percentProcessed = dateData.actas.publicadas / dateData.actas.total;
                                     if (percentProcessed > 0) {
                                         // Normalize votes to projected 100% value
                                         const projectedVotes = (cand.votos || 0) / percentProcessed;
