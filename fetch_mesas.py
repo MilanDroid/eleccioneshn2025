@@ -16,11 +16,60 @@ def sanitize_folder_name(name):
         name = name.replace(char, '_')
     return name.strip()
 
+def load_existing_mesas(mesas_file):
+    """Load existing mesas.json file if it exists"""
+    if mesas_file.exists():
+        try:
+            with open(mesas_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except:
+            return None
+    return None
+
+def compare_mesas(old_mesas, new_mesas):
+    """
+    Compare old and new mesas lists to determine which need downloading.
+    Returns the new mesas list with 'needs_download' flag set.
+    """
+    if not old_mesas:
+        # No old data, mark all as needing download
+        for mesa in new_mesas:
+            mesa['needs_download'] = True
+        return new_mesas
+
+    # Create a lookup dict for old mesas
+    old_mesas_dict = {mesa['numero']: mesa for mesa in old_mesas}
+
+    for mesa in new_mesas:
+        mesa_num = mesa['numero']
+        old_mesa = old_mesas_dict.get(mesa_num)
+
+        if not old_mesa:
+            # New mesa, needs download
+            mesa['needs_download'] = True
+        else:
+            # Check if the URL changed (indicating an update)
+            old_url = old_mesa.get('nombre_archivo', '')
+            new_url = mesa.get('nombre_archivo', '')
+
+            # Also check other fields that might indicate changes
+            fields_changed = (
+                old_url != new_url or
+                old_mesa.get('publicada') != mesa.get('publicada') or
+                old_mesa.get('escrutado') != mesa.get('escrutado') or
+                old_mesa.get('digitalizado') != mesa.get('digitalizado')
+            )
+
+            mesa['needs_download'] = fields_changed
+
+    return new_mesas
+
 def fetch_mesas():
     """
     Fetch mesas (voting tables) for each centro in each zona.
     Uses the centros_data.json and municipios_data.json files as input.
     Creates folder structure: mesas_data/{department}/{municipio}/{centro}/mesas.json
+    Adds 'needs_download' flag to each mesa based on comparison with previous data.
     """
     base_url = "https://resultadosgenerales2025-api.cne.hn/esc/v1/actas-documentos"
 
@@ -116,19 +165,28 @@ def fetch_mesas():
                     # Construct the URL: /01/{dept_code}/{municipio_code}/{zona_code}/{centro_id}/mesas
                     url = f"{base_url}/01/{dept_code}/{municipio_code}/{zona_code}/{centro_id}/mesas"
 
+                    # Load existing mesas for comparison
+                    mesas_file = centro_folder / "mesas.json"
+                    old_mesas = load_existing_mesas(mesas_file)
+
                     try:
                         response = requests.get(url)
                         response.raise_for_status()
 
-                        mesas_list = response.json()
+                        new_mesas_list = response.json()
+
+                        # Compare with old data and set needs_download flag
+                        updated_mesas_list = compare_mesas(old_mesas, new_mesas_list)
 
                         # Save mesas to JSON file
-                        mesas_file = centro_folder / "mesas.json"
                         with open(mesas_file, "w", encoding="utf-8") as f:
-                            json.dump(mesas_list, f, ensure_ascii=False, indent=2)
+                            json.dump(updated_mesas_list, f, ensure_ascii=False, indent=2)
 
-                        total_mesas += len(mesas_list)
-                        print(f"✓ {len(mesas_list)} mesas")
+                        # Count how many need download
+                        needs_download_count = sum(1 for m in updated_mesas_list if m.get('needs_download', False))
+
+                        total_mesas += len(updated_mesas_list)
+                        print(f"✓ {len(updated_mesas_list)} mesas ({needs_download_count} need download)")
 
                         # Small delay to avoid overwhelming the API
                         time.sleep(0.05)
