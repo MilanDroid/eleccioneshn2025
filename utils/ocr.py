@@ -10,7 +10,7 @@ import argparse
 prompt = """
 Eres un sistema OCR extremadamente estricto y NO creativo.
 Tu única función es leer y transcribir datos exactamente como aparecen
-en un acta electoral hondureña a partir de una imagen.
+en un acta electoral a partir de una imagen.
 
 NO debes interpretar, corregir o inferir contenido.
 NO debes añadir texto fuera del JSON especificado al final.
@@ -33,7 +33,7 @@ Cada fila contiene:
 
 Los números pueden validarse en ambas direcciones:
 - Si los números escritos en dígitos no son legibles utiliza '?' en lugar de.
-- Si las palabras no son legibles, se pueden validar con los dígitos.
+- Si los palabras escritas no son legibles utiliza '?' en lugar de.
 - Si hay contradicción entre número y palabra, devuelve ambos sin interpretarlos ni corregirlos.
 
 Cómo formar el número a partir de dígitos:
@@ -47,7 +47,6 @@ Cómo interpretar las palabras:
 - palabra2 = decenas
 - palabra3 = unidades
 - Si una palabra es ilegible o no corresponde a 'cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho' o 'nueve' → usa '?' en esa posición.
-- Si alguna de las tres palabras es '?' → el valor en letras completo será '?'.
 
 ------------------------------------------------------------
 SECCIONES QUE DEBES PROCESAR
@@ -58,9 +57,7 @@ Debes procesar TODAS las filas dentro de:
 1. "I. BALANCE GENERAL"
 2. "II. RESULTADOS DEL ESCRUTINIO"
 
-Cualquier otra sección (incluyendo la sección final con "CARGO", 
-"NOMBRES Y APELLIDOS", "NÚMERO DE DOCUMENTO NACIONAL DE IDENTIFICACIÓN" y "FIRMA")
-debe ser completamente ignorada.
+Cualquier otra sección debe ser completamente ignorada.
 
 ------------------------------------------------------------
 SECCIÓN I: BALANCE GENERAL
@@ -110,7 +107,6 @@ En esta sección se registran los votos por partido y los totales.
 Es MUY IMPORTANTE que:
 - Respetes estrictamente el orden de las filas.
 - NO muevas votos de un partido a otro.
-- NO reasignes datos aunque sospeches que hay errores en el acta.
 
 El orden de las filas de partidos políticos es SIEMPRE el mismo y OBLIGATORIO:
 
@@ -167,10 +163,7 @@ REGLA PARA ETIQUETAS DE PARTIDOS POLÍTICOS
 
 Para las filas 1–5 de RESULTADOS DEL ESCRUTINIO:
 
-- Si la etiqueta textual es legible → úsala tal como aparece.
-- SI NO ES LEGIBLE o NO ES POSIBLE identificarla con certeza:
-    → Usa el diminutivo correspondiente según la FILA en la que está:
-
+- Usa el diminutivo correspondiente según la FILA en la que está:
    Fila 1 → "DC"
    Fila 2 → "libre"
    Fila 3 → "PINU"
@@ -226,13 +219,29 @@ REGLAS FINALES
 parser = argparse.ArgumentParser(description='Analyze electoral acta images using OCR')
 parser.add_argument('image_path', help='Path to the image file to analyze')
 parser.add_argument('--model', '-m',
-                    default='qwen3-vl:2b',
-                    help='Ollama model to use for OCR (default: qwen3-vl:2b)')
+                    default='qwen3-vl:4b',
+                    help='Ollama model to use for OCR (default: qwen3-vl:4b)')
+parser.add_argument('--tmp', '-tmp',
+                    default=0.6,
+                    help='Ollama model temperature (default: 0.0)')
+parser.add_argument('--topp', '-topp',
+                    default=1.0,
+                    help='Ollama model TopP (default: 1.0)')
+parser.add_argument('--topk', '-topk',
+                    default=20,
+                    help='Ollama model TopK (default: 20)')
+parser.add_argument('--minp', '-minp',
+                    default=0,
+                    help='Ollama model MinP (default: 0)')
 
 args = parser.parse_args()
 
 image_path = args.image_path
 model = args.model
+tmp = float(args.tmp)
+topp = float(args.topp)
+topk = float(args.topk)
+minp = float(args.minp)
 
 # Ensure the image file exists
 if not os.path.exists(image_path):
@@ -243,11 +252,13 @@ try:
     start_time = time.time()
 
     print(f"\nStart time: {datetime.datetime.fromtimestamp(start_time)} seconds")
-    print(f"\nAnalyzing image: {image_path}")
+    print(f"Analyzing image: {image_path}")
+    print(f"Model: {model}")
     print("Please wait, this may take a moment...")
+    print("\n" + "=" * 50)
 
-    # Send the chat request with the image
-    response = ollama.chat(
+    # Send the chat request with the image with streaming enabled
+    response_stream = ollama.chat(
         model=model,
         messages=[
             {
@@ -261,17 +272,24 @@ try:
             }
         ],
         options={
-            "temperature": 0.0,
-            "top_p": 1.0,
-        }
+            "temperature": tmp,
+            "top_p": topp,
+            "top_k": topk,
+            "min_p": minp
+        },
+        stream=True
     )
 
-    # Print the model's response
-    print("\n" + "=" * 50)
-    print(response['message']['content'])
-    print("=" * 50)
+    # Print the model's response as it streams
+    full_response = ""
+    for chunk in response_stream:
+        content = chunk['message']['content']
+        print(content, end='', flush=True)
+        full_response += content
 
     end_time = time.time()
+
+    print("\n" + "=" * 50)
     print(f"\nEnd time: {datetime.datetime.fromtimestamp(end_time)} seconds")
     print(f"\nTotal time: {round(end_time - start_time, 2)} seconds")
 
