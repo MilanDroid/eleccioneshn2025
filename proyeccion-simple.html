@@ -551,7 +551,7 @@
                 const allData = [];
                 for (const date of availableDates.slice().reverse()) { // Reverse to get chronological order
                     try {
-                        const filePath = `results/${date}/${state}.json`;
+                        const filePath = `https://milandroid.dev/eleccioneshn2025Actualizaciones/results/${date}/${department}.json`;
                         const response = await fetch(filePath);
                         if (response.ok) {
                             const data = await response.json();
