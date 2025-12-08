@@ -113,7 +113,7 @@ def generate_csv(base_path, output_file):
 
 if __name__ == "__main__":
     # Define paths
-    base_path = "../eleccioneshn2025Actualizaciones/mesas_data"
+    base_path = "../../eleccioneshn2025Actualizaciones/mesas_data"
     output_file = "mesas_output.csv"
 
     # Generate CSV
