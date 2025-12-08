@@ -219,8 +219,8 @@ REGLAS FINALES
 parser = argparse.ArgumentParser(description='Analyze electoral acta images using OCR')
 parser.add_argument('image_path', help='Path to the image file to analyze')
 parser.add_argument('--model', '-m',
-                    default='qwen3-vl:4b',
-                    help='Ollama model to use for OCR (default: qwen3-vl:4b)')
+                    default='ministral-3:latest',
+                    help='Ollama model to use for OCR (default: ministral-3:latest)')
 parser.add_argument('--tmp', '-tmp',
                     default=0.6,
                     help='Ollama model temperature (default: 0.0)')

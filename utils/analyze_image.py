@@ -30,10 +30,7 @@ Cada fila contiene:
 - 3 celdas con palabras, cada una representa un dígito escrito en letras:
   'cero', 'uno', 'dos', 'tres', 'cuatro',
   'cinco', 'seis', 'siete', 'ocho', 'nueve'.
-
-Los números pueden validarse en ambas direcciones:
 - Si los números escritos en dígitos no son legibles utiliza '?' en lugar de.
-- Si las palabras no son legibles, se pueden validar con los dígitos.
 - Si hay contradicción entre número y palabra, devuelve ambos sin interpretarlos ni corregirlos.
 
 Cómo formar el número a partir de dígitos:
@@ -226,8 +223,8 @@ REGLAS FINALES
 parser = argparse.ArgumentParser(description='Analyze electoral acta images using OCR')
 parser.add_argument('image_path', help='Path to the image file to analyze')
 parser.add_argument('--model', '-m',
-                    default='qwen3-vl:2b',
-                    help='Ollama model to use for OCR (default: qwen3-vl:2b)')
+                    default='ministral-3:latest',
+                    help='Ollama model to use for OCR (default: ministral-3:latest)')
 
 args = parser.parse_args()
 
@@ -262,7 +259,8 @@ try:
         ],
         options={
             "temperature": 0.0,
-            "top_p": 1.0,
+            "top_p": 1,
+            "top_k": 20,
         }
     )
 
