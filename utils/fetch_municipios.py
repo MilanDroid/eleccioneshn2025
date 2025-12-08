@@ -1,6 +1,6 @@
 import requests
 import json
-from constants import DEPARTAMENTOS
+from utils.constants import DEPARTAMENTOS
 
 def fetch_municipios():
     """

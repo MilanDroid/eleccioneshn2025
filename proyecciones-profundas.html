@@ -407,7 +407,7 @@
 
             try {
                 // Load metadata
-                const metadataResponse = await fetch('results_metadata.json');
+                const metadataResponse = await fetch(`https://milandroid.dev/eleccioneshn2025Actualizaciones/results_metadata.json?cache_bust=${Date.now()}`);
                 if (!metadataResponse.ok) {
                     throw new Error('No se pudo cargar la metadata');
                 }
@@ -526,7 +526,7 @@
                                 }
                                 // If no states array or empty object, attempt to fetch
 
-                                const filePath = `results/${date}/${department}.json`;
+                                const filePath = `https://milandroid.dev/eleccioneshn2025Actualizaciones/results/${date}/${department}.json?cache_bust=${Date.now()}`;
                                 const response = await fetch(filePath);
                                 if (response.ok) {
                                     const data = await response.json();
@@ -596,7 +596,7 @@
                     }
                     // If no states array or empty object, attempt to fetch
 
-                    const filePath = `results/${date}/${department}.json`;
+                    const filePath = `https://milandroid.dev/eleccioneshn2025Actualizaciones/results/${date}/${department}.json?cache_bust=${Date.now()}`;
                     // Create a task function that will be executed in batches
                     fetchTasks.push(() =>
                         fetch(filePath)

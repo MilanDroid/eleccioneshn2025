@@ -1011,7 +1011,7 @@
         // Load metadata about available result dates
         async function loadMetadata() {
             try {
-                const response = await fetch('results_metadata.json');
+                const response = await fetch(`https://milandroid.dev/eleccioneshn2025Actualizaciones/results_metadata.json?cache_bust=${Date.now()}`);
                 if (!response.ok) {
                     throw new Error('Could not load metadata');
                 }
@@ -1209,7 +1209,7 @@
             resultsEl.style.display = 'none';
 
             try {
-                const filePath = `results/${date}/${state}.json`;
+                const filePath = `https://milandroid.dev/eleccioneshn2025Actualizaciones/results/${date}/${state}.json`;
                 const response = await fetch(filePath);
 
                 if (!response.ok) {
@@ -1499,7 +1499,7 @@
                 // Load data for each department
                 for (const dept of departments) {
                     try {
-                        const filePath = `results/${currentDate}/${dept}.json`;
+                        const filePath = `https://milandroid.dev/eleccioneshn2025Actualizaciones/results/${currentDate}/${dept}.json`;
                         const response = await fetch(filePath);
 
                         if (!response.ok) continue;
@@ -1727,7 +1727,7 @@
         // Function to refresh metadata and update dropdowns
         async function refreshMetadata() {
             try {
-                const response = await fetch(`results_metadata.json?cache_bust=${Date.now()}`);
+                const response = await fetch(`https://milandroid.dev/eleccioneshn2025Actualizaciones/results_metadata.json?cache_bust=${Date.now()}`);
                 if (!response.ok) {
                     return;
                 }
