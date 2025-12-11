@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Actas Electorales 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .filters {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .filters h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .filter-item {
+            display: flex;
+            flex-direction: column;
+            max-width: 330px;
+        }
+
+        .filter-item label {
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-item select,
+        .filter-item input {
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s;
+            background: white;
+            cursor: pointer;
+        }
+
+        .filter-item select:disabled {
+            background: #f5f5f5;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .filter-item select:hover,
+        .filter-item input:hover {
+            border-color: #667eea;
+        }
+
+        .filter-item select:focus,
+        .filter-item input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-bar {
+            grid-column: 1 / -1;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 18px 20px;
+            font-size: 1.2em;
+            border: 3px solid #e0e0e0;
+            border-radius: 12px;
+        }
+
+        .stats-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .reset-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .reset-btn:hover {
+            background: white;
+            color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .results {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+
+        .results-header h2 {
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        .sort-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .sort-controls label {
+            color: #666;
+            font-weight: 600;
+        }
+
+        .sort-controls select {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .pdf-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdf-card.unavailable {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            opacity: 0.7;
+        }
+
+        .pdf-card.unavailable .mesa-number {
+            background: linear-gradient(135deg, #999 0%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pdf-card.unavailable .pdf-link {
+            background: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .pdf-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .pdf-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pdf-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-color: #667eea;
+        }
+
+        .mesa-number {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .pdf-metadata {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .pdf-metadata div {
+            display: flex;
+            margin-bottom: 8px;
+        }
+
+        .pdf-metadata .label {
+            font-weight: 600;
+            color: #333;
+            min-width: 110px;
+        }
+
+        .pdf-metadata .value {
+            color: #666;
+            flex: 1;
+        }
+
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .pdf-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .pdf-icon {
+            font-size: 1.2em;
+        }
+
+        .availability-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .badge-available {
+            background: #4caf50;
+            color: white;
+        }
+
+        .badge-unavailable {
+            background: #f44336;
+            color: white;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: #999;
+        }
+
+        .no-results-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .no-results-text {
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+
+        .pagination {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .pagination button {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: #667eea;
+            color: white;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            border-color: #ccc;
+            color: #ccc;
+        }
+
+        .pagination .page-info {
+            padding: 10px 20px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pdf-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                width: 100%;
+            }
+
+            .results-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Actas Electorales Honduras 2025</h1>
+
+            <div>
+                Este sitio no pertenece ni está afiliado al Consejo Nacional Electoral (CNE) de Honduras.
+Todas las actas presentadas en esta plataforma son documentos públicos obtenidos de fuentes oficiales del CNE y se comparten únicamente con fines informativos, de transparencia y acceso ciudadano.
+
+No modificamos, alteramos ni interpretamos el contenido de las actas.
+El uso, visualización y verificación de la información es responsabilidad exclusiva del usuario.
+
+Si el CNE o cualquier autoridad competente solicita la modificación o remoción de algún contenido, procederemos a atender dicha solicitud de manera inmediata.
+            </div>
+        </div>
+
+        <div class="filters">
+            <h2>🔍 Filtros de búsqueda</h2>
+
+            <div class="filter-grid">
+                <div class="filter-item">
+                    <label for="departamento">Departamento</label>
+                    <select id="departamento">
+                        <option value="">Todos los departamentos</option>
+                    </select>
+                </div>
+
+                <div class="filter-item">
+                    <label for="municipio">Municipio</label>
+                    <select id="municipio" disabled>
+                        <option value="">Selecciona un departamento primero</option>
+                    </select>
+                </div>
+
+                <div class="filter-item">
+                    <label for="centro">Centro de Votación</label>
+                    <select id="centro" disabled>
+                        <option value="">Selecciona departamento y municipio</option>
+                    </select>
+                </div>
+
+                <div class="filter-item">
+                    <label for="availability">Disponibilidad</label>
+                    <select id="availability">
+                        <option value="all">Todas las actas</option>
+                        <option value="available">Solo disponibles</option>
+                        <option value="unavailable">Solo no disponibles</option>
+                    </select>
+                </div>
+
+                <div class="filter-item search-bar">
+                    <label for="search">🔎 Buscar por número de mesa <span style="font-size: 0.85em; font-weight: normal; color: #888;">(busca en los resultados filtrados)</span></label>
+                    <input type="text" id="search" placeholder="Ej: 13574, 1000, 25..." autocomplete="off">
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" id="total-pdfs">0</div>
+                        <div class="stat-label">PDFs indexados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="available-pdfs">0</div>
+                        <div class="stat-label">Disponibles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="filtered-pdfs">0</div>
+                        <div class="stat-label">Resultados</div>
+                    </div>
+                </div>
+                <button class="reset-btn" onclick="resetFilters()">🔄 Limpiar filtros</button>
+            </div>
+        </div>
+
+        <div class="results">
+            <div class="results-header">
+                <h2>Resultados</h2>
+                <div class="sort-controls">
+                    <label for="sort">Ordenar:</label>
+                    <select id="sort" onchange="renderPDFs()">
+                        <option value="mesa-asc">Mesa ↑</option>
+                        <option value="mesa-desc">Mesa ↓</option>
+                        <option value="dept-asc">Departamento A-Z</option>
+                        <option value="dept-desc">Departamento Z-A</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="pdf-container">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <div class="loading-text">Cargando índice de PDFs...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const BASE_URL = 'https://storage.googleapis.com/actas_elecciones_hn2025/';
+        let pdfIndex = [];
+        let filteredPDFs = [];
+        let unavailableMesas = new Set();
+        let currentPage = 1;
+        const itemsPerPage = 100;
+
+        // Load CSV and build PDF index
+        async function loadPDFIndex() {
+            try {
+                // Load unavailable mesas first
+                await loadUnavailableMesas();
+
+                // Then load the CSV
+                const response = await fetch(BASE_URL + 'mesas_output.csv' + `?${Date.now()}`);
+                const csvText = await response.text();
+                buildIndex(csvText);
+                populateFilters();
+                renderPDFs();
+            } catch (error) {
+                document.getElementById('pdf-container').innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">⚠️</div>
+                        <div class="no-results-text">Error al cargar el índice</div>
+                        <p style="color: #999; margin-top: 10px;">Asegúrate de que el archivo mesas_output.csv esté disponible.</p>
+                    </div>
+                `;
+                console.error('Error:', error);
+            }
+        }
+
+        async function loadUnavailableMesas() {
+            try {
+                const response = await fetch(BASE_URL + 'mesas_without_downloaded_actas.json' + `?${Date.now()}`);
+                const data = await response.json();
+
+                // Extract all mesa numbers from the nested structure
+                for (const dept in data) {
+                    for (const mun in data[dept]) {
+                        for (const zona in data[dept][mun]) {
+                            for (const centro in data[dept][mun][zona]) {
+                                const mesas = data[dept][mun][zona][centro];
+                                mesas.forEach(item => {
+                                    if (item.mesa) {
+                                        unavailableMesas.add(item.mesa);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+
+                console.log(`Loaded ${unavailableMesas.size} unavailable mesas`);
+            } catch (error) {
+                console.warn('Could not load unavailable mesas:', error);
+            }
+        }
+
+        function buildIndex(csvText) {
+            const lines = csvText.split('\n');
+
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+
+                const values = parseCSVLine(lines[i]);
+                if (values.length < 4) continue;
+
+                const mesa = values[3]?.trim();
+                if (!mesa) continue;
+
+                pdfIndex.push({
+                    mesa: mesa,
+                    departamento: values[0]?.trim() || 'N/A',
+                    municipio: values[1]?.trim() || 'N/A',
+                    centro: values[2]?.trim() || 'N/A',
+                    url: `${BASE_URL}${mesa}.pdf`,
+                    available: !unavailableMesas.has(mesa)
+                });
+            }
+
+            filteredPDFs = [...pdfIndex];
+            updateStats();
+        }
+
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current);
+            return result;
+        }
+
+        function populateFilters() {
+            const departamentos = [...new Set(pdfIndex.map(p => p.departamento))].sort();
+
+            populateSelect('departamento', departamentos);
+
+            document.getElementById('departamento').addEventListener('change', onDepartamentoChange);
+            document.getElementById('municipio').addEventListener('change', onMunicipioChange);
+            document.getElementById('centro').addEventListener('change', applyFilters);
+            document.getElementById('availability').addEventListener('change', applyFilters);
+            document.getElementById('search').addEventListener('input', applyFilters);
+        }
+
+        function onDepartamentoChange() {
+            const deptValue = document.getElementById('departamento').value;
+            const municipioSelect = document.getElementById('municipio');
+            const centroSelect = document.getElementById('centro');
+
+            if (deptValue) {
+                // Enable municipio dropdown and populate it
+                municipioSelect.disabled = false;
+                const availableMunicipios = [...new Set(
+                    pdfIndex.filter(p => p.departamento === deptValue).map(p => p.municipio)
+                )].sort();
+                populateSelect('municipio', availableMunicipios, 'Todos los municipios');
+
+                // Disable and reset centro
+                centroSelect.disabled = true;
+                centroSelect.innerHTML = '<option value="">Selecciona un municipio</option>';
+            } else {
+                // Disable and reset both
+                municipioSelect.disabled = true;
+                municipioSelect.innerHTML = '<option value="">Selecciona un departamento primero</option>';
+                centroSelect.disabled = true;
+                centroSelect.innerHTML = '<option value="">Selecciona departamento y municipio</option>';
+            }
+
+            applyFilters();
+        }
+
+        function onMunicipioChange() {
+            const deptValue = document.getElementById('departamento').value;
+            const munValue = document.getElementById('municipio').value;
+            const centroSelect = document.getElementById('centro');
+
+            if (deptValue && munValue) {
+                // Enable centro dropdown and populate it
+                centroSelect.disabled = false;
+                const availableCentros = [...new Set(
+                    pdfIndex
+                        .filter(p => p.departamento === deptValue && p.municipio === munValue)
+                        .map(p => p.centro)
+                )].sort();
+                populateSelect('centro', availableCentros, 'Todos los centros');
+            } else {
+                // Disable and reset centro
+                centroSelect.disabled = true;
+                centroSelect.innerHTML = '<option value="">Selecciona un municipio</option>';
+            }
+
+            applyFilters();
+        }
+
+        function populateSelect(id, options, defaultText = null) {
+            const select = document.getElementById(id);
+            const firstOptionText = defaultText || select.querySelector('option')?.textContent || '';
+
+            select.innerHTML = `<option value="">${firstOptionText}</option>`;
+
+            options.forEach(option => {
+                if (option && option !== 'N/A') {
+                    const opt = document.createElement('option');
+                    opt.value = option;
+                    opt.textContent = option;
+                    select.appendChild(opt);
+                }
+            });
+        }
+
+        function applyFilters() {
+            const deptFilter = document.getElementById('departamento').value.toLowerCase();
+            const munFilter = document.getElementById('municipio').value.toLowerCase();
+            const centroFilter = document.getElementById('centro').value.toLowerCase();
+            const availabilityFilter = document.getElementById('availability').value;
+            const searchFilter = document.getElementById('search').value.toLowerCase();
+
+            // Step 1: Apply dropdown filters first
+            let results = pdfIndex;
+
+            if (deptFilter) {
+                results = results.filter(pdf => pdf.departamento.toLowerCase() === deptFilter);
+            }
+
+            if (munFilter) {
+                results = results.filter(pdf => pdf.municipio.toLowerCase() === munFilter);
+            }
+
+            if (centroFilter) {
+                results = results.filter(pdf => pdf.centro.toLowerCase() === centroFilter);
+            }
+
+            // Filter by availability
+            if (availabilityFilter === 'available') {
+                results = results.filter(pdf => pdf.available);
+            } else if (availabilityFilter === 'unavailable') {
+                results = results.filter(pdf => !pdf.available);
+            }
+
+            // Step 2: Apply search filter on the already filtered results
+            if (searchFilter) {
+                results = results.filter(pdf => pdf.mesa.includes(searchFilter));
+            }
+
+            filteredPDFs = results;
+
+            currentPage = 1; // Reset to first page when filters change
+            updateStats();
+            renderPDFs();
+        }
+
+        function updateStats() {
+            const availableCount = pdfIndex.filter(p => p.available).length;
+            document.getElementById('total-pdfs').textContent = pdfIndex.length.toLocaleString();
+            document.getElementById('available-pdfs').textContent = availableCount.toLocaleString();
+            document.getElementById('filtered-pdfs').textContent = filteredPDFs.length.toLocaleString();
+        }
+
+        function renderPDFs() {
+            const container = document.getElementById('pdf-container');
+            const sortBy = document.getElementById('sort').value;
+
+            if (filteredPDFs.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <div class="no-results-text">No se encontraron PDFs</div>
+                        <p style="color: #999; margin-top: 10px;">Intenta ajustar los filtros de búsqueda</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const sorted = [...filteredPDFs].sort((a, b) => {
+                switch (sortBy) {
+                    case 'mesa-asc':
+                        return parseInt(a.mesa) - parseInt(b.mesa);
+                    case 'mesa-desc':
+                        return parseInt(b.mesa) - parseInt(a.mesa);
+                    case 'dept-asc':
+                        return a.departamento.localeCompare(b.departamento);
+                    case 'dept-desc':
+                        return b.departamento.localeCompare(a.departamento);
+                    default:
+                        return 0;
+                }
+            });
+
+            // Pagination
+            const totalPages = Math.ceil(sorted.length / itemsPerPage);
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedPDFs = sorted.slice(startIndex, endIndex);
+
+            const html = paginatedPDFs.map(pdf => `
+                <div class="pdf-card ${!pdf.available ? 'unavailable' : ''}" onclick="${pdf.available ? `window.open('${pdf.url}', '_blank')` : ''}">
+                    <span class="availability-badge ${pdf.available ? 'badge-available' : 'badge-unavailable'}">
+                        ${pdf.available ? '✓ Disponible' : '✗ No disponible'}
+                    </span>
+                    <div class="mesa-number">Mesa ${pdf.mesa}</div>
+                    <div class="pdf-metadata">
+                        <div>
+                            <span class="label">Departamento:</span>
+                            <span class="value">${pdf.departamento}</span>
+                        </div>
+                        <div>
+                            <span class="label">Municipio:</span>
+                            <span class="value">${pdf.municipio}</span>
+                        </div>
+                        <div>
+                            <span class="label">Centro:</span>
+                            <span class="value">${pdf.centro}</span>
+                        </div>
+                    </div>
+                    <a href="${pdf.available ? pdf.url : '#'}" class="pdf-link" target="_blank" onclick="event.stopPropagation()">
+                        <span class="pdf-icon">${pdf.available ? '📄' : '🚫'}</span>
+                        <span>${pdf.available ? 'Abrir PDF' : 'No disponible'}</span>
+                    </a>
+                </div>
+            `).join('');
+
+            const paginationHTML = totalPages > 1 ? `
+                <div class="pagination">
+                    <div>
+                    <button onclick="goToPage(1)" ${currentPage === 1 ? 'disabled' : ''}>Primera</button>
+                    <button onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>Anterior</button>
+                    </div>
+                    <div>
+                    <span class="page-info">Página ${currentPage} de ${totalPages}</span>
+                    </div>
+                    <div>
+                    <button onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Siguiente</button>
+                    <button onclick="goToPage(${totalPages})" ${currentPage === totalPages ? 'disabled' : ''}>Última</button>
+                    </div>
+                </div>
+            ` : '';
+
+            container.innerHTML = `
+                <div class="pdf-grid">${html}</div>
+                ${paginationHTML}
+            `;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            renderPDFs();
+            // Scroll to top of results
+            document.querySelector('.results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetFilters() {
+            document.getElementById('departamento').value = '';
+            document.getElementById('availability').value = 'all';
+            document.getElementById('search').value = '';
+
+            // Reset and disable municipio and centro
+            const municipioSelect = document.getElementById('municipio');
+            const centroSelect = document.getElementById('centro');
+
+            municipioSelect.disabled = true;
+            municipioSelect.innerHTML = '<option value="">Selecciona un departamento primero</option>';
+
+            centroSelect.disabled = true;
+            centroSelect.innerHTML = '<option value="">Selecciona departamento y municipio</option>';
+
+            applyFilters();
+        }
+
+        // Initialize
+        loadPDFIndex();
+    </script>
+</body>
+</html>
