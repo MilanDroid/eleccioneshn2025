@@ -589,7 +589,7 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
 
         async function loadUnavailableMesas() {
             try {
-                const response = await fetch(BASE_URL + 'mesas_without_downloaded_actas.json' + `?${Date.now()}`);
+                const response = await fetch(BASE_URL + 'cne_mesas_without_downloaded_actas.json' + `?${Date.now()}`);
                 const data = await response.json();
 
                 // Extract all mesa numbers from the nested structure
@@ -631,7 +631,7 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
                     departamento: values[0]?.trim() || 'N/A',
                     municipio: values[1]?.trim() || 'N/A',
                     centro: values[2]?.trim() || 'N/A',
-                    url: `${BASE_URL}${mesa}.pdf`,
+                    url: `${BASE_URL}actas/${mesa}.pdf`,
                     available: !unavailableMesas.has(mesa)
                 });
             }
