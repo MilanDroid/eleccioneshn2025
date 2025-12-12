@@ -796,6 +796,171 @@
                 grid-template-areas: 'name name' 'percentage difference';
             }
         }
+
+        /* Actas Without Votes Styles */
+        .acta-list-item {
+            display: grid;
+            grid-template-columns: 2fr 2fr 3fr 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            align-items: center;
+        }
+
+        .acta-list-item > div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .acta-list-header {
+            display: grid;
+            grid-template-columns: 2fr 2fr 3fr 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .acta-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .acta-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .pagination-btn {
+            padding: 8px 16px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn.active {
+            background: var(--bg-primary);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        /* Actas Filters Styles */
+        .actas-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 15px;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select,
+        .filter-input {
+            padding: 8px 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-select:focus,
+        .filter-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 190, 229, 0.1);
+        }
+
+        .filter-select:hover,
+        .filter-input:hover {
+            border-color: var(--accent-color);
+        }
+
+        .clear-filters-btn {
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .clear-filters-btn:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 767px) {
+            .actas-filters {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .acta-list-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                font-size: 0.75rem;
+            }
+
+            .acta-list-header {
+                display: none;
+            }
+
+            .acta-list-item > div:before {
+                content: attr(data-label);
+                font-weight: 700;
+                color: var(--text-secondary);
+                margin-right: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -878,6 +1043,47 @@
             <div class="actas-title">Información de Actas</div>
             <div id="actas-grid" class="actas-grid">
                 <!-- Actas data will be dynamically inserted here -->
+            </div>
+
+            <!-- Actas Without Votes Section -->
+            <div id="actas-without-votes-section" style="display: none; margin-top: 20px;">
+                <h3 class="actas-title">Actas Sin Votos Registrados por Departamento</h3>
+                <div id="actas-without-votes-summary" class="actas-grid">
+                    <!-- Summary will be inserted here -->
+                </div>
+
+                <h3 class="actas-title" style="margin-top: 20px;">Lista de Actas Sin Votos</h3>
+
+                <!-- Filters -->
+                <div class="actas-filters">
+                    <div class="filter-group">
+                        <label class="filter-label" for="filter-departamento">Departamento</label>
+                        <select id="filter-departamento" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="filter-municipio">Municipio</label>
+                        <select id="filter-municipio" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="filter-centro">Centro</label>
+                        <input type="text" id="filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                    </div>
+                    <div class="filter-group">
+                        <button id="clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                    </div>
+                </div>
+
+                <div id="actas-without-votes-list" style="margin-top: 15px;">
+                    <!-- Paginated list will be inserted here -->
+                </div>
+
+                <div id="pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                    <!-- Pagination buttons will be inserted here -->
+                </div>
             </div>
         </div>
     </div>
@@ -1255,8 +1461,38 @@
 
             // Check if the checkbox is checked and re-apply the expanded state
             const toggleCheckbox = document.getElementById('toggle-dept-details');
+            const candidatesGrid = document.getElementById('candidates-list');
+            const isTwoCandidatesMode = candidatesGrid && candidatesGrid.classList.contains('two-candidates-mode');
+
             if (toggleCheckbox && toggleCheckbox.checked) {
                 applyDepartmentDetailsExpanded();
+
+                // Also reapply split-layout class for two-candidates mode on desktop
+                if (isTwoCandidatesMode) {
+                    const allCards = document.querySelectorAll('.candidate-card');
+                    allCards.forEach(card => {
+                        if (!card.classList.contains('hidden-candidate')) {
+                            card.classList.add('split-layout');
+                        }
+                    });
+                }
+            }
+
+            // Check if "Ver todos los candidatos" checkbox is checked and reapply visibility
+            const otherCandidatesCheckbox = document.getElementById('toggle-other-candidates');
+            if (otherCandidatesCheckbox && otherCandidatesCheckbox.checked) {
+                // Show all candidates
+                const hiddenCandidates = document.querySelectorAll('.candidate-card.hidden-candidate');
+                hiddenCandidates.forEach(card => {
+                    card.style.display = 'flex';
+                });
+                // Remove centered layout
+                candidatesGrid.classList.remove('two-candidates-mode');
+                // Remove split layout when showing all candidates
+                const allCards = document.querySelectorAll('.candidate-card');
+                allCards.forEach(card => {
+                    card.classList.remove('split-layout');
+                });
             }
 
             // Display actas information if available
@@ -1297,12 +1533,380 @@
 
             // Show the actas container
             actasContainer.classList.add('visible');
+
+            // Load and display actas without votes
+            loadActasWithoutVotes();
         }
 
         // Hide actas information section
         function hideActasInfo() {
             const actasContainer = document.getElementById('actas-info');
             actasContainer.classList.remove('visible');
+
+            // Hide actas without votes section
+            const actasWithoutVotesSection = document.getElementById('actas-without-votes-section');
+            if (actasWithoutVotesSection) {
+                actasWithoutVotesSection.style.display = 'none';
+            }
+        }
+
+        // Global variables for pagination
+        let actasWithoutVotesData = null;
+        let currentPage = 1;
+        const itemsPerPage = 50;
+
+        // Load and display actas without votes
+        async function loadActasWithoutVotes() {
+            try {
+                const response = await fetch('reports/cne_actas_without_votes.json');
+                if (!response.ok) {
+                    console.error('Could not load actas without votes');
+                    return;
+                }
+
+                const data = await response.json();
+                actasWithoutVotesData = processActasWithoutVotes(data);
+
+                // Initialize filters
+                initializeActasFilters(actasWithoutVotesData);
+
+                // Display summary by departamento
+                displayActasWithoutVotesSummary(actasWithoutVotesData);
+
+                // Display paginated list
+                displayActasWithoutVotesList(actasWithoutVotesData, currentPage);
+
+                // Show the section
+                const section = document.getElementById('actas-without-votes-section');
+                if (section) {
+                    section.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error loading actas without votes:', error);
+            }
+        }
+
+        // Process actas without votes data
+        function processActasWithoutVotes(data) {
+            const departamentos = {};
+            const actasList = [];
+
+            // Iterate through the data structure
+            for (const [departamento, municipios] of Object.entries(data)) {
+                let deptCount = 0;
+
+                for (const [municipio, zonas] of Object.entries(municipios)) {
+                    for (const [zona, centros] of Object.entries(zonas)) {
+                        for (const [centroFullName, actasArray] of Object.entries(centros)) {
+                            // Extract centro name from full name (remove code prefix)
+                            const centroName = centroFullName.replace(/^\d+_/, '');
+
+                            actasArray.forEach(actaNumber => {
+                                deptCount++;
+                                actasList.push({
+                                    departamento,
+                                    municipio,
+                                    centro: centroName,
+                                    actaNumber,
+                                    pdfUrl: `https://storage.googleapis.com/actas_elecciones_hn2025/actas/${actaNumber}.pdf`
+                                });
+                            });
+                        }
+                    }
+                }
+
+                departamentos[departamento] = deptCount;
+            }
+
+            // Calculate total
+            const total = actasList.length;
+
+            return {
+                departamentos,
+                actasList,
+                total
+            };
+        }
+
+        // Display summary by departamento
+        function displayActasWithoutVotesSummary(data) {
+            const summaryContainer = document.getElementById('actas-without-votes-summary');
+            if (!summaryContainer) return;
+
+            summaryContainer.innerHTML = '';
+
+            // Sort departamentos by count (descending)
+            const sortedDepts = Object.entries(data.departamentos)
+                .sort((a, b) => b[1] - a[1]);
+
+            sortedDepts.forEach(([departamento, count]) => {
+                const percentage = data.total > 0 ? ((count / data.total) * 100).toFixed(2) : 0;
+                const item = createActasItem(departamento, count, percentage);
+                summaryContainer.appendChild(item);
+            });
+        }
+
+        // Display paginated list of actas
+        function displayActasWithoutVotesList(data, page) {
+            const listContainer = document.getElementById('actas-without-votes-list');
+            if (!listContainer) return;
+
+            listContainer.innerHTML = '';
+
+            // Calculate pagination
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = Math.min(startIndex + itemsPerPage, data.actasList.length);
+            const pageItems = data.actasList.slice(startIndex, endIndex);
+
+            // Create header
+            const header = document.createElement('div');
+            header.className = 'acta-list-header';
+            header.innerHTML = `
+                <div>Departamento</div>
+                <div>Municipio</div>
+                <div>Centro</div>
+                <div>JRV</div>
+                <div>Ver</div>
+            `;
+            listContainer.appendChild(header);
+
+            // Create list items
+            pageItems.forEach(item => {
+                const listItem = document.createElement('div');
+                listItem.className = 'acta-list-item';
+                listItem.innerHTML = `
+                    <div data-label="Departamento: ">${item.departamento}</div>
+                    <div data-label="Municipio: ">${item.municipio}</div>
+                    <div data-label="Centro: ">${item.centro}</div>
+                    <div data-label="Acta: ">${item.actaNumber}</div>
+                    <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
+                `;
+                listContainer.appendChild(listItem);
+            });
+
+            // Update pagination controls
+            displayPaginationControls(data, page);
+        }
+
+        // Display pagination controls
+        function displayPaginationControls(data, currentPage) {
+            const controlsContainer = document.getElementById('pagination-controls');
+            if (!controlsContainer) return;
+
+            controlsContainer.innerHTML = '';
+
+            const totalPages = Math.ceil(data.actasList.length / itemsPerPage);
+
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-btn';
+            prevBtn.textContent = 'Anterior';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => {
+                if (currentPage > 1) {
+                    window.currentPage = currentPage - 1;
+                    displayActasWithoutVotesList(data, window.currentPage);
+                    window.scrollTo({ top: document.getElementById('actas-without-votes-list').offsetTop - 100, behavior: 'smooth' });
+                }
+            };
+            controlsContainer.appendChild(prevBtn);
+
+            // Page buttons (show current, 2 before, 2 after)
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(totalPages, currentPage + 2);
+
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'pagination-btn';
+                firstBtn.textContent = '1';
+                firstBtn.onclick = () => {
+                    window.currentPage = 1;
+                    displayActasWithoutVotesList(data, window.currentPage);
+                    window.scrollTo({ top: document.getElementById('actas-without-votes-list').offsetTop - 100, behavior: 'smooth' });
+                };
+                controlsContainer.appendChild(firstBtn);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '8px';
+                    controlsContainer.appendChild(ellipsis);
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-btn';
+                if (i === currentPage) {
+                    pageBtn.classList.add('active');
+                }
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => {
+                    window.currentPage = i;
+                    displayActasWithoutVotesList(data, window.currentPage);
+                    window.scrollTo({ top: document.getElementById('actas-without-votes-list').offsetTop - 100, behavior: 'smooth' });
+                };
+                controlsContainer.appendChild(pageBtn);
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '8px';
+                    controlsContainer.appendChild(ellipsis);
+                }
+
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'pagination-btn';
+                lastBtn.textContent = totalPages;
+                lastBtn.onclick = () => {
+                    window.currentPage = totalPages;
+                    displayActasWithoutVotesList(data, window.currentPage);
+                    window.scrollTo({ top: document.getElementById('actas-without-votes-list').offsetTop - 100, behavior: 'smooth' });
+                };
+                controlsContainer.appendChild(lastBtn);
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-btn';
+            nextBtn.textContent = 'Siguiente';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    window.currentPage = currentPage + 1;
+                    displayActasWithoutVotesList(data, window.currentPage);
+                    window.scrollTo({ top: document.getElementById('actas-without-votes-list').offsetTop - 100, behavior: 'smooth' });
+                }
+            };
+            controlsContainer.appendChild(nextBtn);
+
+            // Page info
+            const pageInfo = document.createElement('div');
+            pageInfo.style.padding = '8px 16px';
+            pageInfo.style.color = 'var(--text-secondary)';
+            pageInfo.style.fontWeight = '600';
+            pageInfo.textContent = `Página ${currentPage} de ${totalPages} (${data.actasList.length} actas sin votos)`;
+            controlsContainer.appendChild(pageInfo);
+        }
+
+        // Initialize actas filters
+        function initializeActasFilters(data) {
+            // Get unique departamentos and municipios
+            const departamentos = [...new Set(data.actasList.map(item => item.departamento))].sort();
+
+            // Populate departamento filter
+            const deptSelect = document.getElementById('filter-departamento');
+            if (deptSelect) {
+                deptSelect.innerHTML = '<option value="">Todos</option>';
+                departamentos.forEach(dept => {
+                    const option = document.createElement('option');
+                    option.value = dept;
+                    option.textContent = dept;
+                    deptSelect.appendChild(option);
+                });
+
+                // Add event listener
+                deptSelect.addEventListener('change', () => {
+                    updateMunicipioFilter();
+                    applyFilters();
+                });
+            }
+
+            // Initialize municipio filter (empty initially)
+            const munSelect = document.getElementById('filter-municipio');
+            if (munSelect) {
+                munSelect.addEventListener('change', applyFilters);
+            }
+
+            // Add event listener for centro filter
+            const centroInput = document.getElementById('filter-centro');
+            if (centroInput) {
+                centroInput.addEventListener('input', applyFilters);
+            }
+
+            // Add event listener for clear button
+            const clearBtn = document.getElementById('clear-filters-btn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    document.getElementById('filter-departamento').value = '';
+                    document.getElementById('filter-municipio').value = '';
+                    document.getElementById('filter-centro').value = '';
+                    updateMunicipioFilter();
+                    applyFilters();
+                });
+            }
+        }
+
+        // Update municipio filter based on selected departamento
+        function updateMunicipioFilter() {
+            const selectedDept = document.getElementById('filter-departamento').value;
+            const munSelect = document.getElementById('filter-municipio');
+
+            if (!munSelect || !actasWithoutVotesData) return;
+
+            // Get municipios for selected departamento
+            let municipios;
+            if (selectedDept === '') {
+                municipios = [...new Set(actasWithoutVotesData.actasList.map(item => item.municipio))];
+            } else {
+                municipios = [...new Set(
+                    actasWithoutVotesData.actasList
+                        .filter(item => item.departamento === selectedDept)
+                        .map(item => item.municipio)
+                )];
+            }
+
+            municipios.sort();
+
+            // Update municipio dropdown
+            munSelect.innerHTML = '<option value="">Todos</option>';
+            municipios.forEach(mun => {
+                const option = document.createElement('option');
+                option.value = mun;
+                option.textContent = mun;
+                munSelect.appendChild(option);
+            });
+        }
+
+        // Apply filters to actas list
+        function applyFilters() {
+            if (!actasWithoutVotesData) return;
+
+            const selectedDept = document.getElementById('filter-departamento').value;
+            const selectedMun = document.getElementById('filter-municipio').value;
+            const centroSearch = document.getElementById('filter-centro').value.toLowerCase().trim();
+
+            // Filter the actas list
+            let filteredList = actasWithoutVotesData.actasList;
+
+            if (selectedDept) {
+                filteredList = filteredList.filter(item => item.departamento === selectedDept);
+            }
+
+            if (selectedMun) {
+                filteredList = filteredList.filter(item => item.municipio === selectedMun);
+            }
+
+            if (centroSearch) {
+                filteredList = filteredList.filter(item =>
+                    item.centro.toLowerCase().includes(centroSearch)
+                );
+            }
+
+            // Create filtered data object
+            const filteredData = {
+                ...actasWithoutVotesData,
+                actasList: filteredList
+            };
+
+            // Reset to page 1 when filters change
+            window.currentPage = 1;
+            currentPage = 1;
+
+            // Display filtered list
+            displayActasWithoutVotesList(filteredData, 1);
         }
 
         // Create an actas item element
