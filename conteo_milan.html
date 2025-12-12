@@ -796,6 +796,188 @@
                 grid-template-areas: 'name name' 'percentage difference';
             }
         }
+
+        /* Mismatches Table Styles */
+        .acta-list-item {
+            display: grid;
+            grid-template-columns: 1.5fr 1.5fr 2.5fr 1fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+            gap: 8px;
+            padding: 10px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 0.75rem;
+            align-items: center;
+        }
+
+        .acta-list-item > div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .acta-list-header {
+            display: grid;
+            grid-template-columns: 1.5fr 1.5fr 2.5fr 1fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+            gap: 8px;
+            padding: 10px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .acta-link {
+            color: var(--accent-color);
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .acta-link:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Pagination Styles */
+        .pagination-btn {
+            padding: 8px 12px;
+            border: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn.active {
+            background: var(--bg-primary);
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        /* Actas Filters Styles */
+        .actas-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 15px;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-select:hover {
+            border-color: var(--accent-color);
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 190, 229, 0.1);
+        }
+
+        .filter-input {
+            padding: 8px 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-input:hover {
+            border-color: var(--accent-color);
+        }
+
+        .filter-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 190, 229, 0.1);
+        }
+
+        .clear-filters-btn {
+            padding: 8px 12px;
+            border: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .clear-filters-btn:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 767px) {
+            .actas-filters {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .acta-list-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                font-size: 0.75rem;
+            }
+
+            .acta-list-header {
+                display: none;
+            }
+
+            .acta-list-item > div:before {
+                content: attr(data-label);
+                font-weight: 700;
+                color: var(--text-secondary);
+                margin-right: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -884,6 +1066,50 @@
         <div id="actas-info" class="actas-info">
             <div id="actas-grid" class="actas-grid">
                 <!-- Actas data will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Mismatches Section -->
+        <div id="mismatches-section" class="actas-info" style="display: none; margin-top: 15px;">
+            <h3 class="actas-title">Actas con Diferencias</h3>
+
+            <!-- Filters -->
+            <div class="actas-filters">
+                <div class="filter-group">
+                    <label class="filter-label" for="mismatch-filter-departamento">Departamento</label>
+                    <select id="mismatch-filter-departamento" class="filter-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="mismatch-filter-municipio">Municipio</label>
+                    <select id="mismatch-filter-municipio" class="filter-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="mismatch-filter-centro">Centro</label>
+                    <input type="text" id="mismatch-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="mismatch-filter-tipo">Tipo Diferencia</label>
+                    <select id="mismatch-filter-tipo" class="filter-select">
+                        <option value="">Todos</option>
+                        <option value="Sin votos CNE">Sin votos CNE</option>
+                        <option value="Diferencia votos">Diferencia votos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <button id="mismatch-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                </div>
+            </div>
+
+            <div id="mismatches-list" style="margin-top: 15px;">
+                <!-- Paginated list will be inserted here -->
+            </div>
+
+            <div id="mismatches-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                <!-- Pagination buttons will be inserted here -->
             </div>
         </div>
     </div>
@@ -1479,6 +1705,11 @@
             // Define the actas items to display
             const actasItems = [
                 {
+                    label: 'En Espera',
+                    value: espera,
+                    percentage: expectedTotal > 0 ? ((espera / expectedTotal) * 100).toFixed(2) : '0.00'
+                },
+                {
                     label: 'Procesadas',
                     value: actas.total,
                     percentage: expectedTotal > 0 ? ((actas.total / expectedTotal) * 100).toFixed(2) : '0.00'
@@ -1487,11 +1718,6 @@
                     label: 'Usadas',
                     value: actas.total - actas.inconsistencias,
                     percentage: actas.total > 0 ? (((actas.total - actas.inconsistencias) / actas.total) * 100).toFixed(2) : '0.00'
-                },
-                {
-                    label: 'En Espera',
-                    value: espera,
-                    percentage: expectedTotal > 0 ? ((espera / expectedTotal) * 100).toFixed(2) : '0.00'
                 },
                 {
                     label: 'Correctas',
@@ -1976,6 +2202,502 @@
 
         // Check disclaimer status on page load
         checkDisclaimerStatus();
+
+        // ============================================
+        // MISMATCHES SECTION
+        // ============================================
+
+        // Global state for mismatches
+        let mismatchesData = null;
+        let csvMappingData = null;
+        let currentMismatchPage = 1;
+        const mismatchItemsPerPage = 20;
+
+        // Load mismatches data when page loads
+        async function loadMismatchesData() {
+            try {
+                // Load vote_comparison_report.json
+                const reportResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/vote_comparison_report.json' + `?${Date.now()}`);
+                if (!reportResponse.ok) {
+                    throw new Error('Could not load vote comparison report');
+                }
+                const reportData = await reportResponse.json();
+
+                // Load cne_mesas_output.csv
+                const csvResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/cne_mesas_output.csv' + `?${Date.now()}`);
+                if (!csvResponse.ok) {
+                    throw new Error('Could not load CSV data');
+                }
+                const csvText = await csvResponse.text();
+
+                // Parse CSV
+                csvMappingData = parseCSV(csvText);
+
+                // Process the mismatches data
+                const mismatchesList = [];
+
+                // Get all unique actas from both arrays
+                const allActas = [...new Set([
+                    ...reportData.actas_with_mismatches,
+                    ...reportData.actas_with_other_mismatches
+                ])];
+
+                // Process each acta and determine tipo
+                allActas.forEach(actaNumber => {
+                    const locationInfo = getLocationFromActa(actaNumber);
+                    if (locationInfo) {
+                        // Check if acta is in actas_with_other_mismatches
+                        const isInOtherMismatches = reportData.actas_with_other_mismatches.includes(actaNumber);
+
+                        mismatchesList.push({
+                            actaNumber: actaNumber,
+                            departamento: locationInfo.departamento,
+                            municipio: locationInfo.municipio,
+                            centro: locationInfo.centro,
+                            tipoDiferencia: isInOtherMismatches ? 'Diferencia votos' : 'Sin votos CNE',
+                            pdfUrl: `https://storage.googleapis.com/actas_elecciones_hn2025/actas/${actaNumber}.pdf`
+                        });
+                    }
+                });
+
+                mismatchesData = {
+                    mismatchesList: mismatchesList,
+                    total: mismatchesList.length
+                };
+
+                // Initialize filters
+                initializeMismatchesFilters();
+
+                // Display the data
+                displayMismatchesList(mismatchesData, currentMismatchPage);
+
+                // Show the section
+                const section = document.getElementById('mismatches-section');
+                if (section) {
+                    section.style.display = 'block';
+                }
+
+            } catch (error) {
+                console.error('Error loading mismatches data:', error);
+            }
+        }
+
+        // Parse CSV data
+        function parseCSV(csvText) {
+            const lines = csvText.split('\n');
+            const mapping = {};
+
+            // Skip header line
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue;
+
+                // Split by comma, but be careful with commas inside quotes
+                const parts = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+                if (parts && parts.length >= 4) {
+                    const departamento = parts[0].replace(/"/g, '').trim();
+                    const municipio = parts[1].replace(/"/g, '').trim();
+                    const centro = parts[2].replace(/"/g, '').trim();
+                    const actaNumber = parts[3].replace(/"/g, '').trim();
+
+                    mapping[actaNumber] = {
+                        departamento: departamento,
+                        municipio: municipio,
+                        centro: centro
+                    };
+                }
+            }
+
+            return mapping;
+        }
+
+        // Get location information from acta number
+        function getLocationFromActa(actaNumber) {
+            if (csvMappingData && csvMappingData[actaNumber]) {
+                return csvMappingData[actaNumber];
+            }
+            return null;
+        }
+
+        // Load vote data for an acta from both sources
+        async function loadActaVotes(actaNumber) {
+            try {
+                // Load transformed data
+                const transformedResponse = await fetch(`https://milandroid.dev/eleccioneshn2025/reports/actas_data_transformed/${actaNumber}.json`);
+                const transformedData = transformedResponse.ok ? await transformedResponse.json() : null;
+
+                // Load CNE data
+                const cneResponse = await fetch(`https://milandroid.dev/eleccioneshn2025/reports/actas_data_cne/${actaNumber}.json`);
+                const cneData = cneResponse.ok ? await cneResponse.json() : null;
+
+                // Extract party votes
+                const votes = {
+                    DC: { transformed: 0, cne: 0 },
+                    Libre: { transformed: 0, cne: 0 },
+                    PINU: { transformed: 0, cne: 0 },
+                    PLH: { transformed: 0, cne: 0 },
+                    PNH: { transformed: 0, cne: 0 }
+                };
+
+                // Get transformed votes
+                if (transformedData) {
+                    votes.DC.transformed = parseInt(transformedData.partido_dc?.n || '0');
+                    votes.Libre.transformed = parseInt(transformedData.partido_libre?.n || '0');
+                    votes.PINU.transformed = parseInt(transformedData.partido_pinu?.n || '0');
+                    votes.PLH.transformed = parseInt(transformedData.partido_plh?.n || '0');
+                    votes.PNH.transformed = parseInt(transformedData.partido_pnh?.n || '0');
+                }
+
+                // Get CNE votes
+                if (cneData && Array.isArray(cneData)) {
+                    cneData.forEach(party => {
+                        const partyKey = getPartyKey(party.parpo_nombre);
+                        if (partyKey && votes[partyKey]) {
+                            votes[partyKey].cne = party.votos || 0;
+                        }
+                    });
+                }
+
+                return votes;
+            } catch (error) {
+                console.error(`Error loading votes for acta ${actaNumber}:`, error);
+                return null;
+            }
+        }
+
+        // Initialize mismatches filters
+        function initializeMismatchesFilters() {
+            if (!mismatchesData) return;
+
+            // Get unique departamentos and municipios
+            const departamentos = [...new Set(mismatchesData.mismatchesList.map(item => item.departamento))].sort();
+
+            // Populate departamento filter
+            const deptSelect = document.getElementById('mismatch-filter-departamento');
+            if (deptSelect) {
+                deptSelect.innerHTML = '<option value="">Todos</option>';
+                departamentos.forEach(dept => {
+                    const option = document.createElement('option');
+                    option.value = dept;
+                    option.textContent = dept;
+                    deptSelect.appendChild(option);
+                });
+
+                // Add event listener
+                deptSelect.addEventListener('change', () => {
+                    updateMismatchMunicipioFilter();
+                    applyMismatchFilters();
+                });
+            }
+
+            // Add event listener for municipio filter
+            const munSelect = document.getElementById('mismatch-filter-municipio');
+            if (munSelect) {
+                munSelect.addEventListener('change', applyMismatchFilters);
+            }
+
+            // Add event listener for centro filter
+            const centroInput = document.getElementById('mismatch-filter-centro');
+            if (centroInput) {
+                centroInput.addEventListener('input', applyMismatchFilters);
+            }
+
+            // Add event listener for tipo filter
+            const tipoSelect = document.getElementById('mismatch-filter-tipo');
+            if (tipoSelect) {
+                tipoSelect.addEventListener('change', applyMismatchFilters);
+            }
+
+            // Add event listener for clear button
+            const clearBtn = document.getElementById('mismatch-clear-filters-btn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    document.getElementById('mismatch-filter-departamento').value = '';
+                    document.getElementById('mismatch-filter-municipio').value = '';
+                    document.getElementById('mismatch-filter-centro').value = '';
+                    document.getElementById('mismatch-filter-tipo').value = '';
+                    updateMismatchMunicipioFilter();
+                    applyMismatchFilters();
+                });
+            }
+        }
+
+        // Update municipio filter based on selected departamento
+        function updateMismatchMunicipioFilter() {
+            const selectedDept = document.getElementById('mismatch-filter-departamento').value;
+            const munSelect = document.getElementById('mismatch-filter-municipio');
+
+            if (!munSelect || !mismatchesData) return;
+
+            // Get municipios for selected departamento
+            let municipios;
+            if (selectedDept === '') {
+                municipios = [...new Set(mismatchesData.mismatchesList.map(item => item.municipio))];
+            } else {
+                municipios = [...new Set(
+                    mismatchesData.mismatchesList
+                        .filter(item => item.departamento === selectedDept)
+                        .map(item => item.municipio)
+                )];
+            }
+
+            municipios.sort();
+
+            // Populate municipio dropdown
+            munSelect.innerHTML = '<option value="">Todos</option>';
+            municipios.forEach(mun => {
+                const option = document.createElement('option');
+                option.value = mun;
+                option.textContent = mun;
+                munSelect.appendChild(option);
+            });
+        }
+
+        // Apply filters to mismatches list
+        function applyMismatchFilters() {
+            if (!mismatchesData) return;
+
+            const selectedDept = document.getElementById('mismatch-filter-departamento').value;
+            const selectedMun = document.getElementById('mismatch-filter-municipio').value;
+            const centroSearch = document.getElementById('mismatch-filter-centro').value.toLowerCase().trim();
+            const selectedTipo = document.getElementById('mismatch-filter-tipo').value;
+
+            // Filter the mismatches list
+            let filteredList = mismatchesData.mismatchesList;
+
+            if (selectedDept) {
+                filteredList = filteredList.filter(item => item.departamento === selectedDept);
+            }
+
+            if (selectedMun) {
+                filteredList = filteredList.filter(item => item.municipio === selectedMun);
+            }
+
+            if (centroSearch) {
+                filteredList = filteredList.filter(item =>
+                    item.centro.toLowerCase().includes(centroSearch)
+                );
+            }
+
+            if (selectedTipo) {
+                filteredList = filteredList.filter(item => item.tipoDiferencia === selectedTipo);
+            }
+
+            // Create filtered data object
+            const filteredData = {
+                mismatchesList: filteredList,
+                total: filteredList.length
+            };
+
+            // Reset to page 1
+            currentMismatchPage = 1;
+
+            // Display filtered results
+            displayMismatchesList(filteredData, currentMismatchPage);
+        }
+
+        // Display mismatches list with pagination
+        async function displayMismatchesList(data, page = 1) {
+            const listContainer = document.getElementById('mismatches-list');
+            if (!listContainer || !data) return;
+
+            listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">Cargando datos...</div>';
+
+            if (data.mismatchesList.length === 0) {
+                listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">No se encontraron actas con diferencias</div>';
+                // Hide pagination
+                const controlsContainer = document.getElementById('mismatches-pagination-controls');
+                if (controlsContainer) {
+                    controlsContainer.innerHTML = '';
+                }
+                return;
+            }
+
+            // Calculate pagination
+            const startIndex = (page - 1) * mismatchItemsPerPage;
+            const endIndex = startIndex + mismatchItemsPerPage;
+            const pageItems = data.mismatchesList.slice(startIndex, endIndex);
+
+            // Load vote data for all items on this page
+            const itemsWithVotes = await Promise.all(
+                pageItems.map(async item => {
+                    const votes = await loadActaVotes(item.actaNumber);
+                    return { ...item, votes };
+                })
+            );
+
+            // Clear loading message
+            listContainer.innerHTML = '';
+
+            // Create header
+            const header = document.createElement('div');
+            header.className = 'acta-list-header';
+            header.innerHTML = `
+                <div>Departamento</div>
+                <div>Municipio</div>
+                <div>Centro</div>
+                <div>JRV</div>
+                <div>Tipo Diferencia</div>
+                <div>DC</div>
+                <div>Libre</div>
+                <div>PINU</div>
+                <div>PLH</div>
+                <div>PNH</div>
+                <div>Ver</div>
+            `;
+            listContainer.appendChild(header);
+
+            // Create list items
+            itemsWithVotes.forEach(item => {
+                const listItem = document.createElement('div');
+                listItem.className = 'acta-list-item';
+
+                // Format vote cells
+                const formatVote = (party) => {
+                    if (!item.votes) return '-';
+                    return `<span style="color: darkolivegreen; cursor: pointer" title="Votos AI">${item.votes[party].transformed}<span>/<b style="color: red; cursor: pointer" title="Votos CNE">${item.votes[party].cne}</b>`;
+                };
+
+                listItem.innerHTML = `
+                    <div data-label="Departamento: ">${item.departamento}</div>
+                    <div data-label="Municipio: ">${item.municipio}</div>
+                    <div data-label="Centro: ">${item.centro}</div>
+                    <div data-label="Acta: ">${item.actaNumber}</div>
+                    <div data-label="Tipo: ">${item.tipoDiferencia}</div>
+                    <div data-label="DC: ">${formatVote('DC')}</div>
+                    <div data-label="Libre: ">${formatVote('Libre')}</div>
+                    <div data-label="PINU: ">${formatVote('PINU')}</div>
+                    <div data-label="PLH: ">${formatVote('PLH')}</div>
+                    <div data-label="PNH: ">${formatVote('PNH')}</div>
+                    <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
+                `;
+                listContainer.appendChild(listItem);
+            });
+
+            // Update pagination controls
+            displayMismatchPaginationControls(data, page);
+        }
+
+        // Display pagination controls for mismatches
+        function displayMismatchPaginationControls(data, currentPage) {
+            const controlsContainer = document.getElementById('mismatches-pagination-controls');
+            if (!controlsContainer) return;
+
+            controlsContainer.innerHTML = '';
+
+            const totalPages = Math.ceil(data.mismatchesList.length / mismatchItemsPerPage);
+
+            if (totalPages <= 1) {
+                return; // No pagination needed
+            }
+
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-btn';
+            prevBtn.textContent = 'Anterior';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => {
+                if (currentPage > 1) {
+                    currentMismatchPage = currentPage - 1;
+                    displayMismatchesList(data, currentMismatchPage);
+                }
+            };
+            controlsContainer.appendChild(prevBtn);
+
+            // Page numbers (show max 7 buttons)
+            const maxButtons = 7;
+            let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+            let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+
+            // Adjust if we're near the end
+            if (endPage - startPage < maxButtons - 1) {
+                startPage = Math.max(1, endPage - maxButtons + 1);
+            }
+
+            // First page button (if not in range)
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'pagination-btn';
+                firstBtn.textContent = '1';
+                firstBtn.onclick = () => {
+                    currentMismatchPage = 1;
+                    displayMismatchesList(data, currentMismatchPage);
+                };
+                controlsContainer.appendChild(firstBtn);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = 'var(--text-secondary)';
+                    controlsContainer.appendChild(ellipsis);
+                }
+            }
+
+            // Page number buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-btn';
+                if (i === currentPage) {
+                    pageBtn.classList.add('active');
+                }
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => {
+                    currentMismatchPage = i;
+                    displayMismatchesList(data, currentMismatchPage);
+                };
+                controlsContainer.appendChild(pageBtn);
+            }
+
+            // Last page button (if not in range)
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = 'var(--text-secondary)';
+                    controlsContainer.appendChild(ellipsis);
+                }
+
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'pagination-btn';
+                lastBtn.textContent = totalPages;
+                lastBtn.onclick = () => {
+                    currentMismatchPage = totalPages;
+                    displayMismatchesList(data, currentMismatchPage);
+                };
+                controlsContainer.appendChild(lastBtn);
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-btn';
+            nextBtn.textContent = 'Siguiente';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentMismatchPage = currentPage + 1;
+                    displayMismatchesList(data, currentMismatchPage);
+                }
+            };
+            controlsContainer.appendChild(nextBtn);
+
+            // Page info
+            const pageInfo = document.createElement('div');
+            pageInfo.style.padding = '8px 12px';
+            pageInfo.style.color = 'var(--text-secondary)';
+            pageInfo.style.fontSize = '0.85rem';
+            pageInfo.textContent = `Página ${currentPage} de ${totalPages} (${data.mismatchesList.length} actas con diferencias)`;
+            controlsContainer.appendChild(pageInfo);
+        }
+
+        // Load mismatches data when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait a bit to ensure other data is loaded first
+            setTimeout(() => {
+                loadMismatchesData();
+            }, 1000);
+        });
 
     </script>
 </body>
