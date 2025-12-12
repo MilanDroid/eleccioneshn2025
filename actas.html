@@ -455,22 +455,126 @@
                 align-items: flex-start;
             }
         }
+
+        /* Modal styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-body {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+
+        .modal-footer {
+            text-align: center;
+        }
+
+        .modal-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-header {
+                font-size: 1.5em;
+            }
+
+            .modal-body {
+                font-size: 0.95em;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-header">Aviso Legal</h2>
+            <div class="modal-body">
+                <p>Este sitio no pertenece ni está afiliado al Consejo Nacional Electoral (CNE) de Honduras.</p>
+                <p>Todas las actas presentadas en esta plataforma son documentos públicos obtenidos de fuentes oficiales del CNE y se comparten únicamente con fines informativos, de transparencia y acceso ciudadano.</p>
+                <p>No modificamos, alteramos ni interpretamos el contenido de las actas. El uso, visualización y verificación de la información es responsabilidad exclusiva del usuario.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeDisclaimerModal()">Entendido</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <h1>Actas Electorales Honduras 2025</h1>
-
-            <div>
-                Este sitio no pertenece ni está afiliado al Consejo Nacional Electoral (CNE) de Honduras.
-Todas las actas presentadas en esta plataforma son documentos públicos obtenidos de fuentes oficiales del CNE y se comparten únicamente con fines informativos, de transparencia y acceso ciudadano.
-
-No modificamos, alteramos ni interpretamos el contenido de las actas.
-El uso, visualización y verificación de la información es responsabilidad exclusiva del usuario.
-
-Si el CNE o cualquier autoridad competente solicita la modificación o remoción de algún contenido, procederemos a atender dicha solicitud de manera inmediata.
-            </div>
         </div>
 
         <div class="filters">
@@ -557,7 +661,7 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
 
     <script>
         const BASE_ACTAS_URL = 'https://storage.googleapis.com/actas_elecciones_hn2025/';
-        const BASE_REPORTS_URL = 'https://milandroid.dev/eleccioneshn2025Actualizaciones/reports';
+        const BASE_REPORTS_URL = 'https://milandroid.dev/eleccioneshn2025/reports/';
         let pdfIndex = [];
         let filteredPDFs = [];
         let unavailableMesas = new Set();
@@ -897,8 +1001,28 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
             applyFilters();
         }
 
+        // Disclaimer Modal Functions
+        function showDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.add('active');
+        }
+
+        function closeDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.remove('active');
+            localStorage.setItem('disclaimerSeen', 'true');
+        }
+
+        function checkDisclaimerStatus() {
+            const disclaimerSeen = localStorage.getItem('disclaimerSeen');
+            if (!disclaimerSeen) {
+                showDisclaimerModal();
+            }
+        }
+
         // Initialize
         loadPDFIndex();
+        checkDisclaimerStatus();
     </script>
 </body>
 </html>
