@@ -1435,6 +1435,33 @@
         }
 
         // Display actas information
+        // Get total votes for current selection
+        function getTotalVotesForCurrentSelection() {
+            if (!processedMetadata || !processedMetadata.voting_statistics) {
+                return null;
+            }
+
+            const votingStats = processedMetadata.voting_statistics;
+
+            // Priority: Centro > Municipio > Departamento > General
+            if (currentCentro) {
+                // Centro selected
+                const centroData = votingStats.total_votes_per_centro?.[currentCentro];
+                return centroData?.total_votes || null;
+            } else if (currentMunicipio) {
+                // Municipio selected
+                const municipioData = votingStats.total_votes_per_municipio?.[currentMunicipio];
+                return municipioData?.total_votes || null;
+            } else if (currentDepartamento) {
+                // Departamento selected
+                const deptData = votingStats.total_votes_per_departamento?.[currentDepartamento];
+                return deptData?.total_votes || null;
+            } else {
+                // General - show total votes
+                return votingStats.total_votes || null;
+            }
+        }
+
         function displayActasInfo(actas) {
             const actasContainer = document.getElementById('actas-info');
             const actasGrid = document.getElementById('actas-grid');
@@ -1445,6 +1472,9 @@
             // Use expected_total from actas or fall back to total
             const expectedTotal = actas.expected_total || actas.total;
             const espera = actas.espera || (expectedTotal - actas.total);
+
+            // Get total votes for current selection
+            const totalVotes = getTotalVotesForCurrentSelection();
 
             // Define the actas items to display
             const actasItems = [
@@ -1474,6 +1504,15 @@
                     percentage: actas.total > 0 ? ((actas.inconsistencias / actas.total) * 100).toFixed(2) : '0.00'
                 },
             ];
+
+            // Add total votes item if available
+            if (totalVotes !== null) {
+                actasItems.push({
+                    label: 'Votos (Incluye nulos)',
+                    value: totalVotes,
+                    percentage: null  // No percentage for total votes
+                });
+            }
 
             // Create and append actas items
             actasItems.forEach(item => {
