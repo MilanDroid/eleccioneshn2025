@@ -675,7 +675,7 @@
                 await loadUnavailableMesas();
 
                 // Then load the CSV
-                const response = await fetch(BASE_REPORTS_URL + 'mesas_output.csv' + `?${Date.now()}`);
+                const response = await fetch(BASE_REPORTS_URL + 'cne_mesas_output.csv' + `?${Date.now()}`);
                 const csvText = await response.text();
                 buildIndex(csvText);
                 populateFilters();
