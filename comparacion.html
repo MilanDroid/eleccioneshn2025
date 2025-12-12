@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y9JPR9BW0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3Y9JPR9BW0');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis a Milan - Elecciones Honduras 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .container {
+            padding: 20px;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .content-card h1 {
+            color: #333333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .content-card p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <img style="max-width: 60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
+                HN 2025
+            </a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item"><a href="actas.html" class="navbar-link">Actas</a></li>
+                <li class="navbar-item"><a href="index.html" class="navbar-link">Conteo CNE</a></li>
+                <li class="navbar-item"><a href="conteo_milan.html" class="navbar-link">Mi Conteo</a></li>
+                <li class="navbar-item"><a href="proyeccion-simple.html" class="navbar-link">Análisis a CNE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-header">Aviso Legal</h2>
+            <div class="modal-body">
+                <p>Este sitio no pertenece ni está afiliado al Consejo Nacional Electoral (CNE) de Honduras.</p>
+                <p>Todas las actas presentadas en esta plataforma son documentos públicos obtenidos de fuentes oficiales del CNE y se comparten únicamente con fines informativos, de transparencia y acceso ciudadano.</p>
+                <p>No modificamos, alteramos ni interpretamos el contenido de las actas. El uso, visualización y verificación de la información es responsabilidad exclusiva del usuario.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeDisclaimerModal()">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-card">
+        </div>
+    </div>
+
+    <script>
+        // Disclaimer Modal Functions
+        function showDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.add('active');
+        }
+
+        function closeDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.remove('active');
+            localStorage.setItem('disclaimerSeen', 'true');
+        }
+
+        function checkDisclaimerStatus() {
+            const disclaimerSeen = localStorage.getItem('disclaimerSeen');
+            if (!disclaimerSeen) {
+                showDisclaimerModal();
+            }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menu = document.getElementById('navbarMenu');
+            const toggle = document.querySelector('.navbar-toggle');
+
+            if (!navbar.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Check disclaimer status on page load
+        checkDisclaimerStatus();
+    </script>
+</body>
+</html>

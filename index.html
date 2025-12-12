@@ -13,8 +13,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados Electorales - Honduras 2025</title>
+    <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Theme Variables */
         :root {
             --accent-color: #00bee5;
             --accent-hover: #00a5cc;
@@ -37,14 +39,8 @@
             --card-hover-shadow: 0 4px 12px rgba(0, 190, 229, 0.3);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Theme-specific overrides */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: var(--bg-secondary);
             color: var(--text-primary);
             line-height: 1.6;
@@ -266,7 +262,7 @@
             max-height: 270px;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            background: var(--bg-secondary);
         }
 
         .candidate-image {
@@ -297,15 +293,15 @@
         }
 
         .rank-badge.rank-1 {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
+            background: #FFD700;
         }
 
         .rank-badge.rank-2 {
-            background: linear-gradient(135deg, #C0C0C0, #999999);
+            background: #C0C0C0;
         }
 
         .rank-badge.rank-3 {
-            background: linear-gradient(135deg, #CD7F32, #8B4513);
+            background: #CD7F32;
         }
 
         .candidate-info {
@@ -374,7 +370,7 @@
             align-items: center;
             gap: 5px;
             padding: 8px;
-            background: linear-gradient(135deg, rgba(0, 190, 229, 0.1), rgba(0, 190, 229, 0.05));
+            background: rgba(0, 190, 229, 0.1);
             border-top: 2px solid var(--accent-color);
             margin-top: 8px;
             border-radius: 6px;
@@ -383,13 +379,13 @@
         }
 
         .vote-difference.negative {
-            background: linear-gradient(135deg, rgba(220, 53, 69, 0.12), rgba(220, 53, 69, 0.06));
+            background: rgba(220, 53, 69, 0.1);
             border-top: 2px solid #dc3545;
             color: #dc3545;
         }
 
         .vote-difference.negative.warning {
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.18), rgba(255, 193, 7, 0.08));
+            background: rgba(255, 193, 7, 0.15);
             border-top: 2px solid rgba(214, 162, 7, 0.18);
             color: #dc3545;
         }
@@ -803,13 +799,40 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <img style="max-width: 60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
+                HN 2025
+            </a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item"><a href="actas.html" class="navbar-link">Actas</a></li>
+                <li class="navbar-item"><a href="index.html" class="navbar-link active">Conteo CNE</a></li>
+                <li class="navbar-item"><a href="conteo_milan.html" class="navbar-link">Mi Conteo</a></li>
+                <li class="navbar-item"><a href="proyeccion-simple.html" class="navbar-link">Análisis a CNE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-header">Aviso Legal</h2>
+            <div class="modal-body">
+                <p>Este sitio no pertenece ni está afiliado al Consejo Nacional Electoral (CNE) de Honduras.</p>
+                <p>Todas las actas presentadas en esta plataforma son documentos públicos obtenidos de fuentes oficiales del CNE y se comparten únicamente con fines informativos, de transparencia y acceso ciudadano.</p>
+                <p>No modificamos, alteramos ni interpretamos el contenido de las actas. El uso, visualización y verificación de la información es responsabilidad exclusiva del usuario.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeDisclaimerModal()">Entendido</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <header>
-            <div class="logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
-                <h1>Elecciones 2025</h1>
-            </div>
-
             <div class="controls">
                 <div class="control-group">
                     <label class="control-label" for="date-select">Fecha de Corte</label>
@@ -825,6 +848,16 @@
                     </select>
                 </div>
             </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <label class="dept-details-checkbox-wrapper">
+                    <input type="checkbox" id="toggle-dept-details">
+                    <span class="dept-details-checkbox-label">Ver detalles por departamento</span>
+                </label>
+                <label class="dept-details-checkbox-wrapper">
+                    <input type="checkbox" id="toggle-other-candidates">
+                    <span class="dept-details-checkbox-label">Ver todos los candidatos</span>
+                </label>
+            </div>
         </header>
 
         <div id="loading">
@@ -835,17 +868,6 @@
         <div id="error"></div>
 
         <div id="results" class="main-content">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                <label class="dept-details-checkbox-wrapper">
-                    <input type="checkbox" id="toggle-dept-details">
-                    <span class="dept-details-checkbox-label">Ver detalles por departamento</span>
-                </label>
-                <label class="dept-details-checkbox-wrapper">
-                    <input type="checkbox" id="toggle-other-candidates">
-                    <span class="dept-details-checkbox-label">Ver todos los candidatos</span>
-                </label>
-                <a href="https://milandroid.dev/eleccioneshn2025/proyeccion-simple.html" class="projections-link">Ver Análisis</a>
-            </div>
             <div id="candidates-list" class="candidates-grid">
                 <!-- Candidate cards will be dynamically inserted here -->
             </div>
@@ -861,30 +883,6 @@
     </div>
 
     <script>
-        // Department code to name mapping
-        const DEPARTAMENTOS = {
-            "00": "TODOS",
-            "01": "ATLANTIDA",
-            "02": "COLON",
-            "03": "COMAYAGUA",
-            "04": "COPAN",
-            "05": "CORTES",
-            "06": "CHOLUTECA",
-            "07": "EL PARAISO",
-            "08": "FRANCISCO MORAZAN",
-            "09": "GRACIAS A DIOS",
-            "10": "INTIBUCA",
-            "11": "ISLAS DE LA BAHIA",
-            "12": "LA PAZ",
-            "13": "LEMPIRA",
-            "14": "OCOTEPEQUE",
-            "15": "OLANCHO",
-            "16": "SANTA BARBARA",
-            "17": "VALLE",
-            "18": "YORO",
-            "20": "VOTO EN EL EXTERIOR"
-        };
-
         // Political parties mapping (key => full name)
         const PARTIDOS = {
             "DC": "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS",
@@ -1789,6 +1787,45 @@
 
         // Auto-refresh every 100 seconds
         setInterval(refreshMetadata, 100000);
+
+        // Disclaimer Modal Functions
+        function showDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.add('active');
+        }
+
+        function closeDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.remove('active');
+            localStorage.setItem('disclaimerSeen', 'true');
+        }
+
+        function checkDisclaimerStatus() {
+            const disclaimerSeen = localStorage.getItem('disclaimerSeen');
+            if (!disclaimerSeen) {
+                showDisclaimerModal();
+            }
+        }
+
+        // Navbar mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menu = document.getElementById('navbarMenu');
+            const toggle = document.querySelector('.navbar-toggle');
+
+            if (!navbar.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Check disclaimer status on page load
+        checkDisclaimerStatus();
 
     </script>
 </body>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y9JPR9BW0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3Y9JPR9BW0');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteo Milan - Elecciones Honduras 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .container {
+            padding: 20px;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .content-card h1 {
+            color: #333333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .content-card p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        /* Statistics Section */
+        .statistics-section {
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #00bee5;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333333;
+            line-height: 1;
+        }
+
+        .stat-percentage {
+            font-size: 0.9rem;
+            color: #00bee5;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #00bee5;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-value {
+                font-size: 1.2rem;
+            }
+
+            .statistics-section {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Candidates Section */
+        .candidates-section {
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .candidates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .candidate-card {
+            background: var(--bg-primary, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .candidate-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .candidate-image-wrapper {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .candidate-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #00bee5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .rank-badge.rank-1 {
+            background: #FFD700;
+            color: #333;
+        }
+
+        .rank-badge.rank-2 {
+            background: #C0C0C0;
+            color: #333;
+        }
+
+        .rank-badge.rank-3 {
+            background: #CD7F32;
+            color: white;
+        }
+
+        .candidate-info {
+            padding: 12px;
+        }
+
+        .candidate-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            min-height: 30px;
+        }
+
+        .vote-count {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .vote-percentage {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #00bee5;
+        }
+
+        .vote-bar {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .vote-bar-fill {
+            height: 100%;
+            background: #00bee5;
+            transition: width 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .candidates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .candidate-image-wrapper {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .candidates-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <img style="max-width: 60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
+                HN 2025
+            </a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item"><a href="actas.html" class="navbar-link">Actas</a></li>
+                <li class="navbar-item"><a href="index.html" class="navbar-link">Conteo CNE</a></li>
+                <li class="navbar-item"><a href="conteo_milan.html" class="navbar-link active">Mi Conteo</a></li>
+                <li class="navbar-item"><a href="proyeccion-simple.html" class="navbar-link">Análisis a CNE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-header">Aviso Legal</h2>
+            <div class="modal-body">
+                <p>Este sitio no pertenece ni está afiliado al Consejo Nacional Electoral (CNE) de Honduras.</p>
+                <p>Todas las actas presentadas en esta plataforma son documentos públicos obtenidos de fuentes oficiales del CNE y se comparten únicamente con fines informativos, de transparencia y acceso ciudadano.</p>
+                <p>No modificamos, alteramos ni interpretamos el contenido de las actas. El uso, visualización y verificación de la información es responsabilidad exclusiva del usuario.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeDisclaimerModal()">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Candidates Section -->
+        <div id="candidatesContainer" class="candidates-section">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Cargando candidatos...</p>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div id="statisticsContainer" class="statistics-section">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Cargando estadísticas...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Political parties mapping (key => full name)
+        const PARTIDOS = {
+            "DC": "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS",
+            "Libre": "PARTIDO LIBERTAD Y REFUNDACION",
+            "PINU": "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA",
+            "PLH": "PARTIDO LIBERAL DE HONDURAS",
+            "PNH": "PARTIDO NACIONAL DE HONDURAS"
+        };
+
+        // Political party logos (key => logo URL)
+        const PARTIDOS_LOGOS = {
+            "DC": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAlCAMAAAAgENppAAAAYFBMVEUAkjr///8AjCnE3soAiR8AjzH0+vYAkTf7/fwAiBsAgwDf7eIomkwWlUAAji7k8OfT5te11r3M49JwtIG72cJHo2GeyqlirnZYqm0Ahg+EvZF9uYuPwpuoz7I1nVOJv5bjrv9+AAAA1ElEQVRIie2T2w6CMAyGt7IjCoyjBxTe/y1tF8QYkS0m3u2/GCzpl7Z/O8aSkv4krWOiJJAEyOddyGMBEGQh4walmlb4WNEeOOemK2QYXORKJMV67QPkC+ROMBjox/gDwqDKy54KPElNyPkiOvxc91N60DJZYmhmRzxvwDQopeoyBmQCU1b5HcGJTLLWxpSKIDgquUawiJrit4w42v1K33rsfI8z9egaN0T0uLrKFlep5Dns6uYcVYQ5W5tjpoBHH7s6VoTVLLSrP7+OLcW9x6SkOD0AUGQIXuxlVPAAAAAASUVORK5CYII=",
+            "Libre": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAaCAMAAADVPG8RAAAAdVBMVEX////SAADRAADUAB7TABDuubvOAADTABXhd3z89fXcWmH++vrzzc7UABr33d7fam/jhIjww8T009Tsr7H56OjbVFvrqKvYNkDnlpnyyMr78PDTAArvvr/ifIDXLjngcXfljpLVFCXZRE3WJzDeY2jaTFTpoaOonFvCAAAB1klEQVQ4jZ2U65KDIAyFk6h4oSoi3lBbW23f/xEXqHbqbjuzY350kOY7kJMMAP8N/u/MX1HLg2CUHwTPFB/i4ugyHQKLTtIhsAW4ljslRAEcwxAg9/G7cwaqvfeNAPsIYoYMIPHp9I3jRpKz0w70I4BhCAwY4lfQOXrx8+rWzHODDV/BoigcKDMhAptzkhJka3VKIep1anRbFpmCeB63E81VyYLhQtjTzWwz6muiCTpEItyVULDgddWYPLSgh02FHhoH0fMMMilK+0eLKakXJ9b1DgwXgAemswXTuVO8Cq3RA/bjZlKTvJuzgc4c8ogbkDK39oUQo2+1bChq4RO4JpO2oHFEk+fRM57ZGSs/gli4ZIIVNCKotY453wa8Sj+C4d02K6wc6PJCNEdkeb7dUD4t/esqke9Z81cwoxSTnHomQc+T3TmfN5BRbvpIZuTuxCYyTahdH9mzqNkWmHZG4kp9YPO3nmqlzUTFpghufnQQuHK4ViqTMlNcDoOxrGM1qIrdMkjvn0bSSMhyWprr3NyXyziOUZ4klYB6dl0/zWxsnfW7yMpxSaI2kOr3iyambVUaE5a3f3j3aNsg+/IEivczBL3mT3ZDoT8jLoL9p06Ovndgff0B3VgZey9MDFkAAAAASUVORK5CYII=",
+            "PINU": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAsVBMVEX/////eRH/eRAAWSn/eRL/dgD/cgD/bwD/bQD/dAAAWCr/+/j/eAr//vz+eAD/ew/+383+xqf+7+b+qnr/6t//9vEAURn+vZj+zbL+iTn+wJ7+lFX+0bj/aAD+2MP+gCT+to7+nGH+pG6bah7+kEjvdxIASADp7uuJpZIAThC4yb6bsqP+hi/+sYbPchdXYCTddBWzbRyoax02XSbFcRgkXChNXyR9ZSGQaB+HZiB8nYiIU9ttAAAE1UlEQVRIiY1Xh3bbOgyVaXNJtLZiDUuKV5K2zujLbP//wx4Aajix0gTnxKItXuISAC8Rx/nMYp8x3/v09YQ1mxU+MjVjeomjZNt8A5ZzKQoceJKZgH7ytdRfQ0PFmIxhsOTMtPSLZEzFX7ssOBMRAn1jjvjDpWB8809IabnCvAoHreF7fB4NUyG9upyEZUVtkdww4RGAFohhr+TZSVQxEeU00N3Ct5rJNTz3nBiWwlJ31orpID0DNhAUQ3mLYcIWnpWmx54bIgCemZHnQFyQadpcxQ0mcNMGCexAGp3QViHKagLnOBEmAnMf1rIawp9uZI1ftoL1MTqzlureRe9i4OXwkeO79dn+upVuIYA66101ed701FIsgsiO86GKlry+taOt0C3NzSuppBDwUeUEbLWiCnaySvk9EEpDtNbpZo9lHRnJ2QyNMS4N1VFh1861ZsIu4cS1gUCrLW0MPuJCmtmJGVlAdOicxHsFc3ltt+NFvoCvmtu9h5LPPhiXlk8JRCCXx/GolBygRmGhNO/ddU4p2AWVwPFdbJcIlRHWx4hj7IRujMVnZHuWkuVK4Ok7jjzZ3WEcc6zzgOUfYRToEHcx8gvud8HoHOmky5Pp4TYfC9DjJ0Qf3PkJ0OgB5YWrfeiUSiizKUNKRiRmCzJ0+OK6b8FIwJ6teH1bSClk6Ww1rMaFFMcUj9Cis1nw253P3YcRiXIQ+kpoSB2eu6PgBodMZY6nWA9kT4ADexgjqzyQTJhoDNcghGVStT44FJz0rAcu/nsEmHv/+wQIwdNSSt7uk5XNyjJL1+Ul6dTg8c56PIxAAbko12E8oTvRAOyZnnIV0VQSPwAXix0h3acxOtNALw5PqWISyZ4Ddkq1CeM+nXGYr5I9nFMbnC7fh47o3H0ZgHhEuBK8rZIyD51ACaFBg1GEIdp2zuH1sQfevw1RhXyJLhuydbYck2i0qEMU765Me6YnXFHOQf8EOmF8C7qBZVPcrlEDV8Linly3Q8KziysJBpRpZaB64EujqlXYpyazm3x4fdu9ItSdv+3+/KHTxWQvf06aJ0HjLMej4qFu0aSAseDwikUO1jmEAhmg7yze7OlSpGmYkYPrjkk0Bhzsi3Mpj7dSq4YuZHQ5W0BK3OfxPGKhNoqrKjyDQULwyscbhAHBxeHJfX44AFOGOKyaIyQDoOO5zxKEgcjRHiJlFk9/Himu8PeyuwuMVf9lQqo6QONa49H0e/0KXy/cIY2AdS92Pb+0FZjEukOCCPRCntNV+PfqYgDOL67+4m+J1f1Lxe21S1SVMFacQylpgesb9+rHBdiPK/fmGjO1lcpKY1pINaRl1S2Rwh7qjvH1z183N79+Xnf0a9CWTvlXq48pSeEeEHgpfeiGcEel/PxCzqB8OXZjWV1EA5usLOgq3+jp1gFmBNAdCASsBMe5UYIByRSn5mHZwrUkJpBey/ttBMag460U2IRU3PZLKfYz/Lyna+B6xULGi84ONppasqhvkKCmzHn/AIETglo3kHNG/Qy0O+h4bMmAwmR4soIiApRsnwotFbWdxdAEVtPnqrNEs66VMmbhUKy+ajvJUI8kxQjC6OMpT7/X6Oa1NoJUIejaTyfguutI/2nprU+tILTWM1uViX/5jc6a6HacZ5bh5P8Q/wOsYVNwa1QE+wAAAABJRU5ErkJggg==",
+            "PLH": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAlCAMAAAAgENppAAAADFBMVEXYHgX////WAADzzMuQ3qFRAAAAKklEQVRIie3ToQEAAAjDsAH//8wPFVONr9sSqWuhHJSBDA1hiLeK3yF1PfVnBJnWhtatAAAAAElFTkSuQmCC",
+            "PNH": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAlCAMAAAAgENppAAAAQlBMVEUnDeD///8WAN8lB+CYk+3Jx/U+L+LZ2PiIg+vRz/ZfVeWloO+Tjeyalu1DN+Lv7/y5t/J7dOlOQ+PCwPR9d+lYTeXK9I0CAAAAlElEQVRIie2SSQ7EIAwE223IHrL//6sBZdBsioQ5UydfSnTbVFWh8IBIplfXeSaNYZ7YNFmiCJDVki3Q6p7kTQd0rzHR6wfjGeEZwzT0qeaEL6bkwHTzW5udoii5RG9JbfgTNz1mFO0tWqUojFGp+wNc/Va2ze9oVVa02MPld21W4ggZhQdUIs94PLpTZ/J/KhQ+uACtIwMbD73hOgAAAABJRU5ErkJggg=="
+        };
+
+        // Candidates mapping (key => candidate name)
+        const CANDIDATOS = {
+            "DC": "MARIO ENRIQUE RIVERA CALLEJAS",
+            "Libre": "RIXI RAMONA MONCADA GODOY",
+            "PINU": "JORGE NELSON AVILA GUTIERREZ",
+            "PLH": "SALVADOR ALEJANDRO CESAR NASRALLA SALUM",
+            "PNH": "NASRY JUAN ASFURA ZABLAH"
+        };
+
+        // Candidates images (key => image URL) - Synced from constants.py
+        const CANDIDATOS_IMAGENES = {
+            "DC": "https://www.laprensa.hn/binrepository/1260x945/0c0/0d0/none/11004/YJOO/9_12620377_20251116165825.jpg",
+            "Libre": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Honduran_Minister_of_Defense_Rixi_Moncada_visits_U.S._Southern_Command_%28cropped%29.jpg",
+            "PINU": "https://proceso.hn/wp-content/uploads/2021/02/Nelson-Avila.jpg",
+            "PLH": "https://upload.wikimedia.org/wikipedia/commons/5/51/Salvador_Nasralla_2022_%28cropped%29.jpg",
+            "PNH": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Nasry_Asfura_in_2020_%28close-up%29.jpg",
+        };
+
+        // Helper function to get party key from full party name
+        function getPartyKey(fullPartyName) {
+            for (const [key, name] of Object.entries(PARTIDOS)) {
+                if (name === fullPartyName) {
+                    return key;
+                }
+            }
+            return null;
+        }
+
+        // Load and display statistics
+        async function loadStatistics() {
+            const container = document.getElementById('statisticsContainer');
+
+            try {
+                const response = await fetch('https://milandroid.dev/eleccioneshn2025/reports/processed_metadata.json' + `?${Date.now()}`);
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar las estadísticas');
+                }
+
+                const data = await response.json();
+                const stats = data.actas_statistics_calculated;
+                const votingStats = data.voting_statistics;
+
+                // Create the statistics display
+                container.innerHTML = `
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total de Actas</div>
+                            <div class="stat-value">${stats.total.toLocaleString('es-HN')}</div>
+                            <div class="stat-percentage">${stats.percentage_processed.toFixed(2)}%</div>
+
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-label">Actas Correctas</div>
+                            <div class="stat-value">${stats.correctas.toLocaleString('es-HN')}</div>
+                            <div class="stat-percentage">${stats.percentage_valid.toFixed(2)}%</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-label">Inconsistencias</div>
+                            <div class="stat-value">${stats.inconsistencias.toLocaleString('es-HN')}</div>
+                            <div class="stat-percentage">${(100 - stats.percentage_valid).toFixed(2)}%</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-label">Total de Votos</div>
+                            <div class="stat-value">${votingStats.total_votes.toLocaleString('es-HN')}</div>
+                        </div>
+                    </div>
+                `;
+
+                // Load candidates after statistics
+                loadCandidates(data);
+            } catch (error) {
+                console.error('Error loading statistics:', error);
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #dc3545;">
+                        <h2>Error al cargar estadísticas</h2>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load and display candidates
+        function loadCandidates(data) {
+            const container = document.getElementById('candidatesContainer');
+
+            try {
+                const votingStats = data.voting_statistics;
+                const candidateVotes = votingStats.total_votes_per_candidate;
+                const totalVotes = votingStats.total_votes;
+
+                // Sort candidates by votes (descending)
+                const sortedCandidates = Object.entries(candidateVotes)
+                    .sort((a, b) => b[1] - a[1]);
+
+                // Create candidates grid
+                const candidatesHTML = sortedCandidates.map(([name, votes], index) => {
+                    const percentage = ((votes / totalVotes) * 100).toFixed(2);
+                    const partyKey = getPartyKey(name);
+                    const imageUrl = partyKey ? PARTIDOS_LOGOS[partyKey] : '';
+                    const rank = index + 1;
+
+                    return `
+                        <div class="candidate-card">
+                            <div class="candidate-image-wrapper">
+                                ${imageUrl ? `<img src="${imageUrl}" alt="${name}" class="candidate-image" loading="lazy">` : ''}
+                                <div class="rank-badge rank-${rank}">${rank}</div>
+                            </div>
+                            <div class="candidate-info">
+                                <div class="candidate-name">${name}</div>
+                                <div class="vote-count">${votes.toLocaleString('es-HN')}</div>
+                                <div class="vote-percentage">${percentage}%</div>
+                                <div class="vote-bar">
+                                    <div class="vote-bar-fill" style="width: ${percentage}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = `<div class="candidates-grid">${candidatesHTML}</div>`;
+            } catch (error) {
+                console.error('Error loading candidates:', error);
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #dc3545;">
+                        <h2>Error al cargar candidatos</h2>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Disclaimer Modal Functions
+        function showDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.add('active');
+        }
+
+        function closeDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.remove('active');
+            localStorage.setItem('disclaimerSeen', 'true');
+        }
+
+        function checkDisclaimerStatus() {
+            const disclaimerSeen = localStorage.getItem('disclaimerSeen');
+            if (!disclaimerSeen) {
+                showDisclaimerModal();
+            }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menu = document.getElementById('navbarMenu');
+            const toggle = document.querySelector('.navbar-toggle');
+
+            if (!navbar.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStatistics();
+            checkDisclaimerStatus();
+        });
+    </script>
+</body>
+</html>

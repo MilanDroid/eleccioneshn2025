@@ -13,11 +13,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecciones Electorales - Honduras 2025</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
 
     <style>
+        /* Theme Variables */
         :root {
-            --accent-color: #00bee5;
+            --accent-color: #333333;
             --accent-hover: #00a5cc;
             --bg-primary: #ffffff;
             --bg-secondary: #f8f9fa;
@@ -38,14 +40,8 @@
             --card-hover-shadow: 0 4px 12px rgba(0, 190, 229, 0.3);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Theme-specific overrides */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: var(--bg-secondary);
             color: var(--text-primary);
             line-height: 1.6;
@@ -93,7 +89,7 @@
             display: flex;
             gap: 15px;
             align-items: center;
-            justify-content: center;
+            justify-content: end;
         }
 
         .control-group {
@@ -298,22 +294,56 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <img style="max-width: 60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
+                HN 2025
+            </a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item"><a href="actas.html" class="navbar-link">Actas</a></li>
+                <li class="navbar-item"><a href="index.html" class="navbar-link">Conteo CNE</a></li>
+                <li class="navbar-item"><a href="conteo_milan.html" class="navbar-link">Mi Conteo</a></li>
+                <li class="navbar-item"><a href="proyeccion-simple.html" class="navbar-link active">Análisis a CNE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-header">Aviso Legal</h2>
+            <div class="modal-body">
+                <p>Este sitio no pertenece ni está afiliado al Consejo Nacional Electoral (CNE) de Honduras.</p>
+                <p>Todas las actas presentadas en esta plataforma son documentos públicos obtenidos de fuentes oficiales del CNE y se comparten únicamente con fines informativos, de transparencia y acceso ciudadano.</p>
+                <p>No modificamos, alteramos ni interpretamos el contenido de las actas. El uso, visualización y verificación de la información es responsabilidad exclusiva del usuario.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeDisclaimerModal()">Entendido</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <header>
-            <div class="logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
-                <h1>Elecciones 2025</h1>
+        <div class="controls" style="display: flex; align-items: end; flex-wrap: wrap; justify-content: space-between; gap: 15px">
+            <div class="control-group">
+                <label class="control-label" for="state-select">Departamento</label>
+                <select id="state-select">
+                    <option value="">Cargando...</option>
+                </select>
             </div>
 
-            <div class="controls">
-                <div class="control-group">
-                    <label class="control-label" for="state-select">Departamento</label>
-                    <select id="state-select">
-                        <option value="">Cargando...</option>
-                    </select>
+            <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: end; gap: 15px">
+                <div>
+                    <a href="https://milandroid.dev/eleccioneshn2025/" class="link">Ver Votaciones</a>
+                </div>
+                <div>
+                    <a href="https://milandroid.dev/eleccioneshn2025/proyecciones-profundas.html" class="link">Ver Análisis Avanzado</a>
                 </div>
             </div>
-        </header>
+        </div>
 
         <div id="loading">
             <div class="spinner"></div>
@@ -323,15 +353,6 @@
         <div id="error"></div>
 
         <div id="results" class="main-content">
-            <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: end; gap: 15px">
-                <div>
-                    <a href="https://milandroid.dev/eleccioneshn2025/" class="link">Ver Votaciones</a>
-                </div>
-                <div>
-                    <a href="https://milandroid.dev/eleccioneshn2025/proyecciones-profundas.html" class="link">Ver Análisis Avanzado</a>
-                </div>
-            </div>
-
             <div class="chart-section">
                 <div class="chart-title">Progreso de Votos por Candidato</div>
                 <div class="chart-container">
@@ -1045,6 +1066,45 @@
                 }
             });
         }
+
+        // Disclaimer Modal Functions
+        function showDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.add('active');
+        }
+
+        function closeDisclaimerModal() {
+            const modal = document.getElementById('disclaimerModal');
+            modal.classList.remove('active');
+            localStorage.setItem('disclaimerSeen', 'true');
+        }
+
+        function checkDisclaimerStatus() {
+            const disclaimerSeen = localStorage.getItem('disclaimerSeen');
+            if (!disclaimerSeen) {
+                showDisclaimerModal();
+            }
+        }
+
+        // Navbar mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const menu = document.getElementById('navbarMenu');
+            const toggle = document.querySelector('.navbar-toggle');
+
+            if (!navbar.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Check disclaimer status on page load
+        checkDisclaimerStatus();
     </script>
 </body>
 </html>
