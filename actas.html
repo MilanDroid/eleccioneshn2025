@@ -556,7 +556,8 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
     </div>
 
     <script>
-        const BASE_URL = 'https://storage.googleapis.com/actas_elecciones_hn2025/';
+        const BASE_ACTAS_URL = 'https://storage.googleapis.com/actas_elecciones_hn2025/';
+        const BASE_REPORTS_URL = 'https://milandroid.dev/eleccioneshn2025Actualizaciones/reports';
         let pdfIndex = [];
         let filteredPDFs = [];
         let unavailableMesas = new Set();
@@ -570,7 +571,7 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
                 await loadUnavailableMesas();
 
                 // Then load the CSV
-                const response = await fetch(BASE_URL + 'mesas_output.csv' + `?${Date.now()}`);
+                const response = await fetch(BASE_REPORTS_URL + 'mesas_output.csv' + `?${Date.now()}`);
                 const csvText = await response.text();
                 buildIndex(csvText);
                 populateFilters();
@@ -589,7 +590,7 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
 
         async function loadUnavailableMesas() {
             try {
-                const response = await fetch(BASE_URL + 'cne_mesas_without_downloaded_actas.json' + `?${Date.now()}`);
+                const response = await fetch(BASE_REPORTS_URL + 'cne_mesas_without_downloaded_actas.json' + `?${Date.now()}`);
                 const data = await response.json();
 
                 // Extract all mesa numbers from the nested structure
@@ -631,7 +632,7 @@ Si el CNE o cualquier autoridad competente solicita la modificación o remoción
                     departamento: values[0]?.trim() || 'N/A',
                     municipio: values[1]?.trim() || 'N/A',
                     centro: values[2]?.trim() || 'N/A',
-                    url: `${BASE_URL}actas/${mesa}.pdf`,
+                    url: `${BASE_ACTAS_URL}actas/${mesa}.pdf`,
                     available: !unavailableMesas.has(mesa)
                 });
             }
