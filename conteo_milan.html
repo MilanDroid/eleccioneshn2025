@@ -1201,6 +1201,44 @@
                 <!-- Pagination buttons will be inserted here -->
             </div>
         </div>
+
+        <!-- Valid Actas Section -->
+        <div id="valid-actas-section" class="actas-info" style="display: none; margin-top: 15px;">
+            <h3 class="actas-title">Actas Válidas</h3>
+
+            <!-- Filters -->
+            <div class="actas-filters">
+                <div class="filter-group">
+                    <label class="filter-label" for="valid-filter-departamento">Departamento</label>
+                    <select id="valid-filter-departamento" class="filter-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="valid-filter-municipio">Municipio</label>
+                    <select id="valid-filter-municipio" class="filter-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="valid-filter-centro">Centro</label>
+                    <input type="text" id="valid-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                </div>
+                <div class="filter-group">
+                    <button id="valid-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                </div>
+            </div>
+
+            <div class="actas-list-scroll-wrapper">
+                <div id="valid-actas-list" style="margin-top: 15px;">
+                    <!-- Paginated list will be inserted here -->
+                </div>
+            </div>
+
+            <div id="valid-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                <!-- Pagination buttons will be inserted here -->
+            </div>
+        </div>
     </div>
 
     <script>
@@ -2307,6 +2345,11 @@
         let currentAIPage = 1;
         const aiItemsPerPage = 20;
 
+        // Valid Actas variables
+        let validActasData = null;
+        let currentValidPage = 1;
+        const validItemsPerPage = 20;
+
         // Load mismatches data when page loads
         async function loadMismatchesData() {
             try {
@@ -3243,12 +3286,390 @@
             controlsContainer.appendChild(pageInfo);
         }
 
+        // VALID ACTAS SECTION
+
+        // Load valid actas data
+        async function loadValidActasData() {
+            try {
+                // Load CSV if not already loaded
+                if (!csvMappingData) {
+                    const csvResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/cne_mesas_output.csv' + `?${Date.now()}`);
+                    if (!csvResponse.ok) {
+                        throw new Error('Could not load CSV data');
+                    }
+                    const csvText = await csvResponse.text();
+                    csvMappingData = parseCSV(csvText);
+                }
+
+                // Load processed_actas_validation_report.json
+                const reportResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/processed_actas_validation_report.json' + `?${Date.now()}`);
+                if (!reportResponse.ok) {
+                    throw new Error('Could not load validation report');
+                }
+                const reportData = await reportResponse.json();
+
+                // Process the valid actas data
+                const validActasList = [];
+
+                // Process each valid acta
+                reportData.actas_valid.forEach(actaNumber => {
+                    const locationInfo = getLocationFromActa(actaNumber);
+                    if (locationInfo) {
+                        validActasList.push({
+                            actaNumber: actaNumber,
+                            departamento: locationInfo.departamento,
+                            municipio: locationInfo.municipio,
+                            centro: locationInfo.centro,
+                            pdfUrl: `https://storage.googleapis.com/actas_elecciones_hn2025/actas/${actaNumber}.pdf`
+                        });
+                    }
+                });
+
+                validActasData = {
+                    validActasList: validActasList,
+                    total: validActasList.length
+                };
+
+                // Initialize filters
+                initializeValidFilters();
+
+                // Display the data
+                displayValidActasList(validActasData, currentValidPage);
+
+                // Show the section
+                const section = document.getElementById('valid-actas-section');
+                if (section) {
+                    section.style.display = 'block';
+                }
+
+            } catch (error) {
+                console.error('Error loading valid actas data:', error);
+            }
+        }
+
+        // Initialize valid actas filters
+        function initializeValidFilters() {
+            if (!validActasData) return;
+
+            const departamentos = [...new Set(validActasData.validActasList.map(item => item.departamento))].sort();
+            const deptSelect = document.getElementById('valid-filter-departamento');
+            if (deptSelect) {
+                deptSelect.innerHTML = '<option value="">Todos</option>';
+                departamentos.forEach(dept => {
+                    const option = document.createElement('option');
+                    option.value = dept;
+                    option.textContent = dept;
+                    deptSelect.appendChild(option);
+                });
+
+                // Add event listener
+                deptSelect.addEventListener('change', () => {
+                    updateValidMunicipioFilter();
+                    currentValidPage = 1;
+                    applyValidFilters();
+                });
+            }
+
+            // Populate municipios
+            updateValidMunicipioFilter();
+
+            // Centro filter
+            const centroInput = document.getElementById('valid-filter-centro');
+            if (centroInput) {
+                centroInput.addEventListener('input', () => {
+                    currentValidPage = 1;
+                    applyValidFilters();
+                });
+            }
+
+            // Clear filters button
+            const clearBtn = document.getElementById('valid-clear-filters-btn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    if (deptSelect) deptSelect.value = '';
+                    const munSelect = document.getElementById('valid-filter-municipio');
+                    if (munSelect) munSelect.value = '';
+                    if (centroInput) centroInput.value = '';
+                    currentValidPage = 1;
+                    updateValidMunicipioFilter();
+                    displayValidActasList(validActasData, currentValidPage);
+                });
+            }
+        }
+
+        // Update valid municipio filter based on selected departamento
+        function updateValidMunicipioFilter() {
+            const deptSelect = document.getElementById('valid-filter-departamento');
+            const munSelect = document.getElementById('valid-filter-municipio');
+
+            if (!munSelect || !validActasData) return;
+
+            const selectedDept = deptSelect ? deptSelect.value : '';
+            let municipios;
+            if (selectedDept) {
+                municipios = [...new Set(validActasData.validActasList.map(item => item.municipio))];
+                municipios = [...new Set(
+                    validActasData.validActasList
+                        .filter(item => item.departamento === selectedDept)
+                        .map(item => item.municipio)
+                )].sort();
+            } else {
+                municipios = [...new Set(validActasData.validActasList.map(item => item.municipio))].sort();
+            }
+
+            munSelect.innerHTML = '<option value="">Todos</option>';
+            municipios.forEach(mun => {
+                const option = document.createElement('option');
+                option.value = mun;
+                option.textContent = mun;
+                munSelect.appendChild(option);
+            });
+
+            // Add event listener
+            munSelect.addEventListener('change', () => {
+                currentValidPage = 1;
+                applyValidFilters();
+            });
+        }
+
+        // Apply filters to valid actas list
+        function applyValidFilters() {
+            if (!validActasData) return;
+
+            const deptSelect = document.getElementById('valid-filter-departamento');
+            const munSelect = document.getElementById('valid-filter-municipio');
+            const centroInput = document.getElementById('valid-filter-centro');
+
+            // Filter the valid actas list
+            let filteredList = validActasData.validActasList;
+
+            if (deptSelect && deptSelect.value) {
+                filteredList = filteredList.filter(item => item.departamento === deptSelect.value);
+            }
+
+            if (munSelect && munSelect.value) {
+                filteredList = filteredList.filter(item => item.municipio === munSelect.value);
+            }
+
+            if (centroInput && centroInput.value.trim()) {
+                const searchTerm = centroInput.value.trim().toLowerCase();
+                filteredList = filteredList.filter(item =>
+                    item.centro.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            const filteredData = {
+                validActasList: filteredList,
+                total: filteredList.length
+            };
+
+            // Reset to page 1 and display
+            currentValidPage = 1;
+            displayValidActasList(filteredData, currentValidPage);
+        }
+
+        // Display valid actas list with pagination
+        async function displayValidActasList(data, page = 1) {
+            const listContainer = document.getElementById('valid-actas-list');
+            if (!listContainer || !data) return;
+
+            listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">Cargando datos...</div>';
+
+            if (data.validActasList.length === 0) {
+                listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">No se encontraron actas</div>';
+                // Hide pagination
+                const controlsContainer = document.getElementById('valid-pagination-controls');
+                if (controlsContainer) {
+                    controlsContainer.innerHTML = '';
+                }
+                return;
+            }
+
+            // Calculate pagination
+            const startIndex = (page - 1) * validItemsPerPage;
+            const endIndex = startIndex + validItemsPerPage;
+            const pageItems = data.validActasList.slice(startIndex, endIndex);
+
+            // Load vote data for all items on this page
+            const itemsWithVotes = await Promise.all(
+                pageItems.map(async item => {
+                    const votes = await loadActaDataWithGranTotal(item.actaNumber);
+                    return { ...item, votes };
+                })
+            );
+
+            // Clear loading message
+            listContainer.innerHTML = '';
+
+            // Create header
+            const header = document.createElement('div');
+            header.className = 'acta-list-header';
+            header.innerHTML = `
+                <div>Departamento</div>
+                <div>Municipio</div>
+                <div>Centro</div>
+                <div>JRV</div>
+                <div>DC</div>
+                <div>Libre</div>
+                <div>PINU</div>
+                <div>PLH</div>
+                <div>PNH</div>
+                <div>Gran Total</div>
+                <div>Ver</div>
+            `;
+            listContainer.appendChild(header);
+
+            // Create list items
+            itemsWithVotes.forEach(item => {
+                const listItem = document.createElement('div');
+                listItem.className = 'acta-list-item';
+
+                // Format vote cells
+                const formatVote = (party) => {
+                    if (!item.votes) return '-';
+                    return `${item.votes[party]}`;
+                };
+
+                listItem.innerHTML = `
+                    <div data-label="Departamento: ">${item.departamento}</div>
+                    <div data-label="Municipio: ">${item.municipio}</div>
+                    <div data-label="Centro: ">${item.centro}</div>
+                    <div data-label="Acta: ">${item.actaNumber}</div>
+                    <div data-label="DC: ">${formatVote('DC')}</div>
+                    <div data-label="Libre: ">${formatVote('Libre')}</div>
+                    <div data-label="PINU: ">${formatVote('PINU')}</div>
+                    <div data-label="PLH: ">${formatVote('PLH')}</div>
+                    <div data-label="PNH: ">${formatVote('PNH')}</div>
+                    <div data-label="Gran Total: ">${item.votes ? item.votes.granTotal : '-'}</div>
+                    <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
+                `;
+                listContainer.appendChild(listItem);
+            });
+
+            // Update pagination controls
+            displayValidPaginationControls(data, page);
+        }
+
+        // Display pagination controls for valid actas
+        function displayValidPaginationControls(data, currentPage) {
+            const controlsContainer = document.getElementById('valid-pagination-controls');
+            if (!controlsContainer) return;
+
+            controlsContainer.innerHTML = '';
+
+            const totalPages = Math.ceil(data.validActasList.length / validItemsPerPage);
+
+            if (totalPages <= 1) {
+                return; // No pagination needed
+            }
+
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-btn';
+            prevBtn.textContent = 'Anterior';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => {
+                if (currentPage > 1) {
+                    currentValidPage = currentPage - 1;
+                    displayValidActasList(data, currentValidPage);
+                }
+            };
+            controlsContainer.appendChild(prevBtn);
+
+            // Page numbers (show max 7 buttons)
+            const maxButtons = 7;
+            let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+            let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+
+            // Adjust if we're near the end
+            if (endPage - startPage < maxButtons - 1) {
+                startPage = Math.max(1, endPage - maxButtons + 1);
+            }
+
+            // First page button (if not in range)
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'pagination-btn';
+                firstBtn.textContent = '1';
+                firstBtn.onclick = () => {
+                    currentValidPage = 1;
+                    displayValidActasList(data, currentValidPage);
+                };
+                controlsContainer.appendChild(firstBtn);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = 'var(--text-secondary)';
+                    controlsContainer.appendChild(ellipsis);
+                }
+            }
+
+            // Page number buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-btn';
+                if (i === currentPage) {
+                    pageBtn.classList.add('active');
+                }
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => {
+                    currentValidPage = i;
+                    displayValidActasList(data, currentValidPage);
+                };
+                controlsContainer.appendChild(pageBtn);
+            }
+
+            // Last page button (if not in range)
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = 'var(--text-secondary)';
+                    controlsContainer.appendChild(ellipsis);
+                }
+
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'pagination-btn';
+                lastBtn.textContent = totalPages;
+                lastBtn.onclick = () => {
+                    currentValidPage = totalPages;
+                    displayValidActasList(data, currentValidPage);
+                };
+                controlsContainer.appendChild(lastBtn);
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-btn';
+            nextBtn.textContent = 'Siguiente';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentValidPage = currentPage + 1;
+                    displayValidActasList(data, currentValidPage);
+                }
+            };
+            controlsContainer.appendChild(nextBtn);
+
+            // Page info
+            const pageInfo = document.createElement('div');
+            pageInfo.style.padding = '8px 12px';
+            pageInfo.style.color = 'var(--text-secondary)';
+            pageInfo.style.fontSize = '0.85rem';
+            pageInfo.textContent = `Página ${currentPage} de ${totalPages} (${data.validActasList.length})`;
+            controlsContainer.appendChild(pageInfo);
+        }
+
         // Load mismatches data when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             // Wait a bit to ensure other data is loaded first
             setTimeout(() => {
                 loadMismatchesData();
                 loadAIInconsistenciasData();
+                loadValidActasData();
             }, 1000);
         });
 
