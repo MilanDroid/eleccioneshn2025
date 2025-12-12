@@ -800,7 +800,7 @@
         /* Mismatches Table Styles */
         .acta-list-item {
             display: grid;
-            grid-template-columns: 1.5fr 1.5fr 2.5fr 1fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+            grid-template-columns: 1.2fr 1.4fr 2fr 0.6fr 1fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
             gap: 8px;
             padding: 10px;
             background: var(--bg-secondary);
@@ -835,7 +835,7 @@
 
         .acta-list-header {
             display: grid;
-            grid-template-columns: 1.5fr 1.5fr 2.5fr 1fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+            grid-template-columns: 1.2fr 1.4fr 2fr 0.6fr 1fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
             gap: 8px;
             padding: 10px;
             font-weight: 700;
@@ -847,11 +847,20 @@
 
         /* AI Inconsistencias Table Styles - with smaller vote columns and centro */
         #ai-inconsistencias-list .acta-list-item {
-            grid-template-columns: 1.5fr 1.5fr 1.5fr 0.8fr 1.2fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.7fr 0.7fr;
+            grid-template-columns: 1.2fr 1.4fr 2fr 0.6fr 1fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
         }
 
         #ai-inconsistencias-list .acta-list-header {
-            grid-template-columns: 1.5fr 1.5fr 1.5fr 0.8fr 1.2fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.7fr 0.7fr;
+            grid-template-columns: 1.2fr 1.4fr 2fr 0.6fr 1fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+        }
+
+        /* Valid Actas Table Styles - 12 columns (no Tipo column) */
+        #valid-actas-list .acta-list-item {
+            grid-template-columns: 1.2fr 1.4fr 2fr 0.6fr 1fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+        }
+
+        #valid-actas-list .acta-list-header {
+            grid-template-columns: 1.2fr 1.4fr 2fr 0.6fr 1fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
         }
 
         .acta-link {
@@ -986,7 +995,7 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        @media (max-width: 767px) {
+        @media (max-width: 940px) {
             .actas-filters {
                 grid-template-columns: 1fr;
                 gap: 10px;
@@ -999,7 +1008,15 @@
             }
 
             #mismatches-list {
-                min-width: 900px;
+                min-width: 960px;
+            }
+
+            #ai-inconsistencias-list {
+                min-width: 960px;
+            }
+
+            #valid-actas-list {
+                min-width: 960px;
             }
 
             .acta-list-item {
@@ -2473,7 +2490,9 @@
                     Libre: { transformed: 0, cne: 0 },
                     PINU: { transformed: 0, cne: 0 },
                     PLH: { transformed: 0, cne: 0 },
-                    PNH: { transformed: 0, cne: 0 }
+                    PNH: { transformed: 0, cne: 0 },
+                    nulos: { transformed: 0, cne: 0 },
+                    en_blanco: { transformed: 0, cne: 0 }
                 };
 
                 // Get transformed votes
@@ -2483,6 +2502,8 @@
                     votes.PINU.transformed = parseInt(transformedData.partido_pinu?.n || '0');
                     votes.PLH.transformed = parseInt(transformedData.partido_plh?.n || '0');
                     votes.PNH.transformed = parseInt(transformedData.partido_pnh?.n || '0');
+                    votes.nulos.transformed = parseInt(transformedData.nulos?.n || '0');
+                    votes.en_blanco.transformed = parseInt(transformedData.en_blanco?.n || '0');
                 }
 
                 // Get CNE votes
@@ -2680,6 +2701,8 @@
                 <div>PINU</div>
                 <div>PLH</div>
                 <div>PNH</div>
+                <div>Nulos</div>
+                <div>En Blanco</div>
                 <div>Ver</div>
             `;
             listContainer.appendChild(header);
@@ -2706,6 +2729,8 @@
                     <div data-label="PINU: ">${formatVote('PINU')}</div>
                     <div data-label="PLH: ">${formatVote('PLH')}</div>
                     <div data-label="PNH: ">${formatVote('PNH')}</div>
+                    <div data-label="Nulos: ">${formatVote('nulos')}</div>
+                    <div data-label="En Blanco: ">${formatVote('en_blanco')}</div>
                     <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
                 `;
                 listContainer.appendChild(listItem);
@@ -3079,6 +3104,8 @@
                     PINU: parseInt(transformedData.partido_pinu?.n || '0'),
                     PLH: parseInt(transformedData.partido_plh?.n || '0'),
                     PNH: parseInt(transformedData.partido_pnh?.n || '0'),
+                    nulos: parseInt(transformedData.nulos?.n || '0'),
+                    en_blanco: parseInt(transformedData.en_blanco?.n || '0'),
                     granTotal: transformedData.gran_total?.n || '-'
                 };
 
@@ -3136,6 +3163,7 @@
                 <div>PINU</div>
                 <div>PLH</div>
                 <div>PNH</div>
+                <div>N/B</div>
                 <div>Gran Total</div>
                 <div>Ver</div>
             `;
@@ -3152,6 +3180,12 @@
                     return `${item.votes[party]}`;
                 };
 
+                // Format N/B column (nulos/en_blanco)
+                const formatNB = () => {
+                    if (!item.votes) return '-';
+                    return `${item.votes.nulos}/${item.votes.en_blanco}`;
+                };
+
                 listItem.innerHTML = `
                     <div data-label="Departamento: ">${item.departamento}</div>
                     <div data-label="Municipio: ">${item.municipio}</div>
@@ -3163,6 +3197,7 @@
                     <div data-label="PINU: ">${formatVote('PINU')}</div>
                     <div data-label="PLH: ">${formatVote('PLH')}</div>
                     <div data-label="PNH: ">${formatVote('PNH')}</div>
+                    <div data-label="N/B: ">${formatNB()}</div>
                     <div data-label="Gran Total: ">${item.votes ? item.votes.granTotal : '-'}</div>
                     <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
                 `;
@@ -3514,6 +3549,8 @@
                 <div>PINU</div>
                 <div>PLH</div>
                 <div>PNH</div>
+                <div>Nulos</div>
+                <div>Blancos</div>
                 <div>Gran Total</div>
                 <div>Ver</div>
             `;
@@ -3540,6 +3577,8 @@
                     <div data-label="PINU: ">${formatVote('PINU')}</div>
                     <div data-label="PLH: ">${formatVote('PLH')}</div>
                     <div data-label="PNH: ">${formatVote('PNH')}</div>
+                    <div data-label="Nulos: ">${item.votes.nulos}</div>
+                    <div data-label="Blancos: ">${item.votes.en_blanco}</div>
                     <div data-label="Gran Total: ">${item.votes ? item.votes.granTotal : '-'}</div>
                     <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
                 `;
