@@ -828,6 +828,15 @@
             margin-bottom: 10px;
         }
 
+        /* AI Inconsistencias Table Styles - with smaller vote columns and centro */
+        #ai-inconsistencias-list .acta-list-item {
+            grid-template-columns: 1.5fr 1.5fr 1.5fr 0.8fr 1.2fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.7fr 0.7fr;
+        }
+
+        #ai-inconsistencias-list .acta-list-header {
+            grid-template-columns: 1.5fr 1.5fr 1.5fr 0.8fr 1.2fr 0.6fr 0.6fr 0.6fr 0.6fr 0.6fr 0.7fr 0.7fr;
+        }
+
         .acta-link {
             color: var(--accent-color);
             text-decoration: underline;
@@ -1078,7 +1087,7 @@
 
         <!-- Mismatches Section -->
         <div id="mismatches-section" class="actas-info" style="display: none; margin-top: 15px;">
-            <h3 class="actas-title">Actas con Diferencias</h3>
+            <h3 class="actas-title">Actas validas con diferencias (Comparativa con el CNE)</h3>
 
             <!-- Filters -->
             <div class="actas-filters">
@@ -1118,6 +1127,53 @@
             </div>
 
             <div id="mismatches-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                <!-- Pagination buttons will be inserted here -->
+            </div>
+        </div>
+
+        <!-- AI Inconsistencias Section -->
+        <div id="ai-inconsistencias-section" class="actas-info" style="display: none; margin-top: 15px;">
+            <h3 class="actas-title">Inconsistencias AI</h3>
+
+            <!-- Filters -->
+            <div class="actas-filters">
+                <div class="filter-group">
+                    <label class="filter-label" for="ai-filter-departamento">Departamento</label>
+                    <select id="ai-filter-departamento" class="filter-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="ai-filter-municipio">Municipio</label>
+                    <select id="ai-filter-municipio" class="filter-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="ai-filter-centro">Centro</label>
+                    <input type="text" id="ai-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="ai-filter-tipo">Tipo Inconsistencia</label>
+                    <select id="ai-filter-tipo" class="filter-select">
+                        <option value="">Todos</option>
+                        <option value="Valor numerico alto">Valor numerico alto</option>
+                        <option value="Total no definido">Total no definido</option>
+                        <option value="Check de suma inconsistente">Check de suma inconsistente</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <button id="ai-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                </div>
+            </div>
+
+            <div class="actas-list-scroll-wrapper">
+                <div id="ai-inconsistencias-list" style="margin-top: 15px;">
+                    <!-- Paginated list will be inserted here -->
+                </div>
+            </div>
+
+            <div id="ai-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
                 <!-- Pagination buttons will be inserted here -->
             </div>
         </div>
@@ -2222,6 +2278,11 @@
         let currentMismatchPage = 1;
         const mismatchItemsPerPage = 20;
 
+        // AI Inconsistencias variables
+        let aiInconsistenciasData = null;
+        let currentAIPage = 1;
+        const aiItemsPerPage = 20;
+
         // Load mismatches data when page loads
         async function loadMismatchesData() {
             try {
@@ -2513,7 +2574,7 @@
             listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">Cargando datos...</div>';
 
             if (data.mismatchesList.length === 0) {
-                listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">No se encontraron actas con diferencias</div>';
+                listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">No se encontraron actas</div>';
                 // Hide pagination
                 const controlsContainer = document.getElementById('mismatches-pagination-controls');
                 if (controlsContainer) {
@@ -2696,7 +2757,465 @@
             pageInfo.style.padding = '8px 12px';
             pageInfo.style.color = 'var(--text-secondary)';
             pageInfo.style.fontSize = '0.85rem';
-            pageInfo.textContent = `Página ${currentPage} de ${totalPages} (${data.mismatchesList.length} actas con diferencias)`;
+            pageInfo.textContent = `Página ${currentPage} de ${totalPages} (${data.mismatchesList.length})`;
+            controlsContainer.appendChild(pageInfo);
+        }
+
+        // ============================================
+        // AI INCONSISTENCIAS SECTION
+        // ============================================
+
+        // Load AI inconsistencias data
+        async function loadAIInconsistenciasData() {
+            try {
+                // Load CSV if not already loaded
+                if (!csvMappingData) {
+                    const csvResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/cne_mesas_output.csv' + `?${Date.now()}`);
+                    if (!csvResponse.ok) {
+                        throw new Error('Could not load CSV data');
+                    }
+                    const csvText = await csvResponse.text();
+                    csvMappingData = parseCSV(csvText);
+                }
+
+                // Load processed_actas_validation_report.json
+                const reportResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/processed_actas_validation_report.json' + `?${Date.now()}`);
+                if (!reportResponse.ok) {
+                    throw new Error('Could not load AI validation report');
+                }
+                const reportData = await reportResponse.json();
+
+                // Process the AI inconsistencias data
+                const aiInconsistenciasList = [];
+
+                // Error type mapping
+                const errorTypeMap = {
+                    'gran_total_exceeds_400': 'Valor numerico alto',
+                    'empty_gran_total': 'Total no definido',
+                    'n_sum_not_equals_gran_total_n': 'Check de suma inconsistente'
+                };
+
+                // Process each acta with errors
+                reportData.actas_with_any_error.forEach(actaNumber => {
+                    const locationInfo = getLocationFromActa(actaNumber);
+                    if (locationInfo) {
+                        // Determine which error types apply to this acta
+                        const errorTypes = [];
+
+                        // Check each error category
+                        for (const [errorKey, errorLabel] of Object.entries(errorTypeMap)) {
+                            if (reportData.errors[errorKey]) {
+                                const actasArray = reportData.errors[errorKey].actas;
+                                // Check if actaNumber exists in the array
+                                // Handle both string arrays and object arrays with 'acta' property
+                                const found = actasArray.some(item => {
+                                    if (typeof item === 'string') {
+                                        return item === actaNumber;
+                                    } else if (typeof item === 'object' && item.acta) {
+                                        return item.acta === actaNumber;
+                                    }
+                                    return false;
+                                });
+
+                                if (found) {
+                                    errorTypes.push(errorLabel);
+                                }
+                            }
+                        }
+
+                        // If no specific error types found, add a generic entry
+                        if (errorTypes.length === 0) {
+                            errorTypes.push('Otra inconsistencia');
+                        }
+
+                        // Add one entry per acta with all error types combined
+                        aiInconsistenciasList.push({
+                            actaNumber: actaNumber,
+                            departamento: locationInfo.departamento,
+                            municipio: locationInfo.municipio,
+                            centro: locationInfo.centro,
+                            tipoInconsistencia: errorTypes.join(', '),
+                            tipoInconsistenciaArray: errorTypes, // Keep array for filtering
+                            pdfUrl: `https://storage.googleapis.com/actas_elecciones_hn2025/actas/${actaNumber}.pdf`
+                        });
+                    }
+                });
+
+                aiInconsistenciasData = {
+                    aiInconsistenciasList: aiInconsistenciasList,
+                    total: aiInconsistenciasList.length
+                };
+
+                // Initialize filters
+                initializeAIFilters();
+
+                // Display the data
+                displayAIInconsistenciasList(aiInconsistenciasData, currentAIPage);
+
+                // Show the section
+                const section = document.getElementById('ai-inconsistencias-section');
+                if (section) {
+                    section.style.display = 'block';
+                }
+
+            } catch (error) {
+                console.error('Error loading AI inconsistencias data:', error);
+            }
+        }
+
+        // Initialize AI filters
+        function initializeAIFilters() {
+            if (!aiInconsistenciasData) return;
+
+            // Get unique departamentos
+            const departamentos = [...new Set(aiInconsistenciasData.aiInconsistenciasList.map(item => item.departamento))].sort();
+
+            // Populate departamento filter
+            const deptSelect = document.getElementById('ai-filter-departamento');
+            if (deptSelect) {
+                deptSelect.innerHTML = '<option value="">Todos</option>';
+                departamentos.forEach(dept => {
+                    const option = document.createElement('option');
+                    option.value = dept;
+                    option.textContent = dept;
+                    deptSelect.appendChild(option);
+                });
+
+                // Add event listener
+                deptSelect.addEventListener('change', () => {
+                    updateAIMunicipioFilter();
+                    applyAIFilters();
+                });
+            }
+
+            // Add event listener for municipio filter
+            const munSelect = document.getElementById('ai-filter-municipio');
+            if (munSelect) {
+                munSelect.addEventListener('change', applyAIFilters);
+            }
+
+            // Add event listener for centro filter
+            const centroInput = document.getElementById('ai-filter-centro');
+            if (centroInput) {
+                centroInput.addEventListener('input', applyAIFilters);
+            }
+
+            // Add event listener for tipo filter
+            const tipoSelect = document.getElementById('ai-filter-tipo');
+            if (tipoSelect) {
+                tipoSelect.addEventListener('change', applyAIFilters);
+            }
+
+            // Add event listener for clear button
+            const clearBtn = document.getElementById('ai-clear-filters-btn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    document.getElementById('ai-filter-departamento').value = '';
+                    document.getElementById('ai-filter-municipio').value = '';
+                    document.getElementById('ai-filter-centro').value = '';
+                    document.getElementById('ai-filter-tipo').value = '';
+                    updateAIMunicipioFilter();
+                    applyAIFilters();
+                });
+            }
+        }
+
+        // Update municipio filter based on selected departamento
+        function updateAIMunicipioFilter() {
+            const selectedDept = document.getElementById('ai-filter-departamento').value;
+            const munSelect = document.getElementById('ai-filter-municipio');
+
+            if (!munSelect || !aiInconsistenciasData) return;
+
+            // Get municipios for selected departamento
+            let municipios;
+            if (selectedDept === '') {
+                municipios = [...new Set(aiInconsistenciasData.aiInconsistenciasList.map(item => item.municipio))];
+            } else {
+                municipios = [...new Set(
+                    aiInconsistenciasData.aiInconsistenciasList
+                        .filter(item => item.departamento === selectedDept)
+                        .map(item => item.municipio)
+                )];
+            }
+
+            municipios.sort();
+
+            // Populate municipio dropdown
+            munSelect.innerHTML = '<option value="">Todos</option>';
+            municipios.forEach(mun => {
+                const option = document.createElement('option');
+                option.value = mun;
+                option.textContent = mun;
+                munSelect.appendChild(option);
+            });
+        }
+
+        // Apply filters to AI inconsistencias list
+        function applyAIFilters() {
+            if (!aiInconsistenciasData) return;
+
+            const selectedDept = document.getElementById('ai-filter-departamento').value;
+            const selectedMun = document.getElementById('ai-filter-municipio').value;
+            const centroSearch = document.getElementById('ai-filter-centro').value.toLowerCase().trim();
+            const selectedTipo = document.getElementById('ai-filter-tipo').value;
+
+            // Filter the AI inconsistencias list
+            let filteredList = aiInconsistenciasData.aiInconsistenciasList;
+
+            if (selectedDept) {
+                filteredList = filteredList.filter(item => item.departamento === selectedDept);
+            }
+
+            if (selectedMun) {
+                filteredList = filteredList.filter(item => item.municipio === selectedMun);
+            }
+
+            if (centroSearch) {
+                filteredList = filteredList.filter(item =>
+                    item.centro.toLowerCase().includes(centroSearch)
+                );
+            }
+
+            if (selectedTipo) {
+                filteredList = filteredList.filter(item =>
+                    item.tipoInconsistenciaArray && item.tipoInconsistenciaArray.includes(selectedTipo)
+                );
+            }
+
+            // Create filtered data object
+            const filteredData = {
+                aiInconsistenciasList: filteredList,
+                total: filteredList.length
+            };
+
+            // Reset to page 1
+            currentAIPage = 1;
+
+            // Display filtered results
+            displayAIInconsistenciasList(filteredData, currentAIPage);
+        }
+
+        // Load acta data with gran_total
+        async function loadActaDataWithGranTotal(actaNumber) {
+            try {
+                // Load transformed data
+                const transformedResponse = await fetch(`https://milandroid.dev/eleccioneshn2025/reports/actas_data_transformed/${actaNumber}.json`);
+                const transformedData = transformedResponse.ok ? await transformedResponse.json() : null;
+
+                if (!transformedData) return null;
+
+                // Extract party votes and gran_total
+                const votes = {
+                    DC: parseInt(transformedData.partido_dc?.n || '0'),
+                    Libre: parseInt(transformedData.partido_libre?.n || '0'),
+                    PINU: parseInt(transformedData.partido_pinu?.n || '0'),
+                    PLH: parseInt(transformedData.partido_plh?.n || '0'),
+                    PNH: parseInt(transformedData.partido_pnh?.n || '0'),
+                    granTotal: transformedData.gran_total?.n || '-'
+                };
+
+                return votes;
+            } catch (error) {
+                console.error(`Error loading data for acta ${actaNumber}:`, error);
+                return null;
+            }
+        }
+
+        // Display AI inconsistencias list with pagination
+        async function displayAIInconsistenciasList(data, page = 1) {
+            const listContainer = document.getElementById('ai-inconsistencias-list');
+            if (!listContainer || !data) return;
+
+            listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">Cargando datos...</div>';
+
+            if (data.aiInconsistenciasList.length === 0) {
+                listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">No se encontraron actas</div>';
+                // Hide pagination
+                const controlsContainer = document.getElementById('ai-pagination-controls');
+                if (controlsContainer) {
+                    controlsContainer.innerHTML = '';
+                }
+                return;
+            }
+
+            // Calculate pagination
+            const startIndex = (page - 1) * aiItemsPerPage;
+            const endIndex = startIndex + aiItemsPerPage;
+            const pageItems = data.aiInconsistenciasList.slice(startIndex, endIndex);
+
+            // Load vote data for all items on this page
+            const itemsWithVotes = await Promise.all(
+                pageItems.map(async item => {
+                    const votes = await loadActaDataWithGranTotal(item.actaNumber);
+                    return { ...item, votes };
+                })
+            );
+
+            // Clear loading message
+            listContainer.innerHTML = '';
+
+            // Create header
+            const header = document.createElement('div');
+            header.className = 'acta-list-header';
+            header.innerHTML = `
+                <div>Departamento</div>
+                <div>Municipio</div>
+                <div>Centro</div>
+                <div>JRV</div>
+                <div>Tipo Inconsistencia</div>
+                <div>DC</div>
+                <div>Libre</div>
+                <div>PINU</div>
+                <div>PLH</div>
+                <div>PNH</div>
+                <div>Gran Total</div>
+                <div>Ver</div>
+            `;
+            listContainer.appendChild(header);
+
+            // Create list items
+            itemsWithVotes.forEach(item => {
+                const listItem = document.createElement('div');
+                listItem.className = 'acta-list-item';
+
+                // Format vote cells
+                const formatVote = (party) => {
+                    if (!item.votes) return '-';
+                    return `${item.votes[party]}`;
+                };
+
+                listItem.innerHTML = `
+                    <div data-label="Departamento: ">${item.departamento}</div>
+                    <div data-label="Municipio: ">${item.municipio}</div>
+                    <div data-label="Centro: ">${item.centro}</div>
+                    <div data-label="Acta: ">${item.actaNumber}</div>
+                    <div data-label="Tipo: ">${item.tipoInconsistencia}</div>
+                    <div data-label="DC: ">${formatVote('DC')}</div>
+                    <div data-label="Libre: ">${formatVote('Libre')}</div>
+                    <div data-label="PINU: ">${formatVote('PINU')}</div>
+                    <div data-label="PLH: ">${formatVote('PLH')}</div>
+                    <div data-label="PNH: ">${formatVote('PNH')}</div>
+                    <div data-label="Gran Total: ">${item.votes ? item.votes.granTotal : '-'}</div>
+                    <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
+                `;
+                listContainer.appendChild(listItem);
+            });
+
+            // Update pagination controls
+            displayAIPaginationControls(data, page);
+        }
+
+        // Display pagination controls for AI inconsistencias
+        function displayAIPaginationControls(data, currentPage) {
+            const controlsContainer = document.getElementById('ai-pagination-controls');
+            if (!controlsContainer) return;
+
+            controlsContainer.innerHTML = '';
+
+            const totalPages = Math.ceil(data.aiInconsistenciasList.length / aiItemsPerPage);
+
+            if (totalPages <= 1) {
+                return; // No pagination needed
+            }
+
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-btn';
+            prevBtn.textContent = 'Anterior';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => {
+                if (currentPage > 1) {
+                    currentAIPage = currentPage - 1;
+                    displayAIInconsistenciasList(data, currentAIPage);
+                }
+            };
+            controlsContainer.appendChild(prevBtn);
+
+            // Page numbers (show max 7 buttons)
+            const maxButtons = 7;
+            let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+            let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+
+            // Adjust if we're near the end
+            if (endPage - startPage < maxButtons - 1) {
+                startPage = Math.max(1, endPage - maxButtons + 1);
+            }
+
+            // First page button (if not in range)
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'pagination-btn';
+                firstBtn.textContent = '1';
+                firstBtn.onclick = () => {
+                    currentAIPage = 1;
+                    displayAIInconsistenciasList(data, currentAIPage);
+                };
+                controlsContainer.appendChild(firstBtn);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = 'var(--text-secondary)';
+                    controlsContainer.appendChild(ellipsis);
+                }
+            }
+
+            // Page number buttons
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-btn';
+                if (i === currentPage) {
+                    pageBtn.classList.add('active');
+                }
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => {
+                    currentAIPage = i;
+                    displayAIInconsistenciasList(data, currentAIPage);
+                };
+                controlsContainer.appendChild(pageBtn);
+            }
+
+            // Last page button (if not in range)
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = 'var(--text-secondary)';
+                    controlsContainer.appendChild(ellipsis);
+                }
+
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'pagination-btn';
+                lastBtn.textContent = totalPages;
+                lastBtn.onclick = () => {
+                    currentAIPage = totalPages;
+                    displayAIInconsistenciasList(data, currentAIPage);
+                };
+                controlsContainer.appendChild(lastBtn);
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-btn';
+            nextBtn.textContent = 'Siguiente';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentAIPage = currentPage + 1;
+                    displayAIInconsistenciasList(data, currentAIPage);
+                }
+            };
+            controlsContainer.appendChild(nextBtn);
+
+            // Page info
+            const pageInfo = document.createElement('div');
+            pageInfo.style.padding = '8px 12px';
+            pageInfo.style.color = 'var(--text-secondary)';
+            pageInfo.style.fontSize = '0.85rem';
+            pageInfo.textContent = `Página ${currentPage} de ${totalPages} (${data.aiInconsistenciasList.length})`;
             controlsContainer.appendChild(pageInfo);
         }
 
@@ -2705,6 +3224,7 @@
             // Wait a bit to ensure other data is loaded first
             setTimeout(() => {
                 loadMismatchesData();
+                loadAIInconsistenciasData();
             }, 1000);
         });
 
