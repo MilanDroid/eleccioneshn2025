@@ -954,6 +954,12 @@
             transform: translateY(-2px);
         }
 
+        .actas-list-scroll-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         @media (max-width: 767px) {
             .actas-filters {
                 grid-template-columns: 1fr;
@@ -961,21 +967,22 @@
                 padding: 10px;
             }
 
+            .actas-list-scroll-wrapper {
+                margin: 0 -15px;
+                padding: 0 15px;
+            }
+
+            #mismatches-list {
+                min-width: 900px;
+            }
+
             .acta-list-item {
-                grid-template-columns: 1fr;
-                gap: 5px;
-                font-size: 0.75rem;
+                font-size: 0.65rem;
+                white-space: nowrap;
             }
 
             .acta-list-header {
-                display: none;
-            }
-
-            .acta-list-item > div:before {
-                content: attr(data-label);
-                font-weight: 700;
-                color: var(--text-secondary);
-                margin-right: 5px;
+                font-size: 0.65rem;
             }
         }
     </style>
@@ -1104,8 +1111,10 @@
                 </div>
             </div>
 
-            <div id="mismatches-list" style="margin-top: 15px;">
-                <!-- Paginated list will be inserted here -->
+            <div class="actas-list-scroll-wrapper">
+                <div id="mismatches-list" style="margin-top: 15px;">
+                    <!-- Paginated list will be inserted here -->
+                </div>
             </div>
 
             <div id="mismatches-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
