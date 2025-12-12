@@ -816,6 +816,23 @@
             text-overflow: ellipsis;
         }
 
+        /* Allow wrapping for location columns (departamento, municipio, centro) */
+        .acta-list-item > div:nth-child(1),
+        .acta-list-item > div:nth-child(2),
+        .acta-list-item > div:nth-child(3) {
+            overflow: visible;
+            text-overflow: clip;
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.3;
+        }
+
+        .acta-list-header > div:nth-child(1),
+        .acta-list-header > div:nth-child(2),
+        .acta-list-header > div:nth-child(3) {
+            white-space: normal;
+        }
+
         .acta-list-header {
             display: grid;
             grid-template-columns: 1.5fr 1.5fr 2.5fr 1fr 1.2fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
@@ -988,6 +1005,13 @@
             .acta-list-item {
                 font-size: 0.65rem;
                 white-space: nowrap;
+            }
+
+            /* Allow location columns to wrap even on mobile */
+            .acta-list-item > div:nth-child(1),
+            .acta-list-item > div:nth-child(2),
+            .acta-list-item > div:nth-child(3) {
+                white-space: normal;
             }
 
             .acta-list-header {
@@ -2362,13 +2386,13 @@
                 const line = lines[i].trim();
                 if (!line) continue;
 
-                // Split by comma, but be careful with commas inside quotes
-                const parts = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+                // Split by comma, properly handling quoted values
+                const parts = line.match(/("([^"]*)"|[^,]+)/g);
                 if (parts && parts.length >= 4) {
-                    const departamento = parts[0].replace(/"/g, '').trim();
-                    const municipio = parts[1].replace(/"/g, '').trim();
-                    const centro = parts[2].replace(/"/g, '').trim();
-                    const actaNumber = parts[3].replace(/"/g, '').trim();
+                    const departamento = parts[0].replace(/^"|"$/g, '').trim();
+                    const municipio = parts[1].replace(/^"|"$/g, '').trim();
+                    const centro = parts[2].replace(/^"|"$/g, '').trim();
+                    const actaNumber = parts[3].replace(/^"|"$/g, '').trim();
 
                     mapping[actaNumber] = {
                         departamento: departamento,
@@ -2625,7 +2649,7 @@
                 // Format vote cells
                 const formatVote = (party) => {
                     if (!item.votes) return '-';
-                    return `<span style="color: darkolivegreen; cursor: pointer" title="Votos AI">${item.votes[party].transformed}<span>/<b style="color: red; cursor: pointer" title="Votos CNE">${item.votes[party].cne}</b>`;
+                    return `<span style="color: darkolivegreen; cursor: pointer" title="Votos AI">${item.votes[party].transformed}<span> / <b style="color: red; cursor: pointer" title="Votos CNE">${item.votes[party].cne}</b>`;
                 };
 
                 listItem.innerHTML = `
