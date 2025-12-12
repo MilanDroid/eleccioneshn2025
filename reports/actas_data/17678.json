@@ -1,0 +1,205 @@
+{
+  "filas": [
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "PAPELETAS",
+      "filas": [
+        {
+          "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+          "numeros": "292",
+          "letras": [
+            "Dos",
+            "Nueve",
+            "Dos"
+          ],
+          "item": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "papeletas_recibidas"
+          }
+        },
+        {
+          "etiqueta": "NO UTILIZADAS / SOBRANTES",
+          "numeros": "098",
+          "letras": [
+            "Cero",
+            "Nueve",
+            "Ocho"
+          ],
+          "item": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "papeletas_no_utilizadas"
+          }
+        },
+        {
+          "etiqueta": "UTILIZADAS",
+          "numeros": "194",
+          "letras": [
+            "Uno",
+            "Nueve",
+            "Cuatro"
+          ],
+          "item": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "papeletas_utilizadas"
+          }
+        }
+      ]
+    },
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "VOTANTES",
+      "filas": [
+        {
+          "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
+          "numeros": "188",
+          "letras": [
+            "Uno",
+            "Ocho",
+            "Ocho"
+          ],
+          "item": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "votantes_registrados"
+          }
+        },
+        {
+          "etiqueta": "MIEMBROS JRV",
+          "numeros": "006",
+          "letras": [
+            "Cero",
+            "Cero",
+            "Seis"
+          ],
+          "item": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "miembros_jrv"
+          }
+        },
+        {
+          "etiqueta": "TOTAL VOTANTES",
+          "numeros": "194",
+          "letras": [
+            "Uno",
+            "Nueve",
+            "Cuatro"
+          ],
+          "item": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "total_votantes"
+          }
+        }
+      ]
+    },
+    {
+      "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+      "filas": [
+        {
+          "etiqueta": "PARTIDO DÉMOCRATA CRISTIANO DE HONDURAS (DC)",
+          "numeros": "000",
+          "letras": [
+            "Cero",
+            "Cero",
+            "Cero"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "votos_dc"
+          }
+        },
+        {
+          "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+          "numeros": "036",
+          "letras": [
+            "Cero",
+            "Tres",
+            "Seis"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "votos_libre"
+          }
+        },
+        {
+          "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
+          "numeros": "000",
+          "letras": [
+            "Cero",
+            "Cero",
+            "Cero"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "votos_pinu"
+          }
+        },
+        {
+          "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+          "numeros": "084",
+          "letras": [
+            "Cero",
+            "Ocho",
+            "Cuatro"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "votos_liberal"
+          }
+        },
+        {
+          "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+          "numeros": "071",
+          "letras": [
+            "Cero",
+            "Siete",
+            "Uno"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "votos_nacional"
+          }
+        },
+        {
+          "etiqueta": "VOTOS EN BLANCO",
+          "numeros": "001",
+          "letras": [
+            "Cero",
+            "Cero",
+            "Uno"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "votos_blanco"
+          }
+        },
+        {
+          "etiqueta": "VOTOS NULOS",
+          "numeros": "002",
+          "letras": [
+            "Cero",
+            "Cero",
+            "Dos"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "votos_nulos"
+          }
+        },
+        {
+          "etiqueta": "GRAN TOTAL",
+          "numeros": "194",
+          "letras": [
+            "Uno",
+            "Nueve",
+            "Cuatro"
+          ],
+          "item": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "tipo": "gran_total"
+          }
+        }
+      ]
+    }
+  ],
+  "ocr_processing_note": "Fixed from raw_ocr_output by fix_json_parsing_errors.py",
+  "original_error": "JSON parsing error: Extra data: line 148 column 1 (char 3992)"
+}
