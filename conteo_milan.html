@@ -738,6 +738,34 @@
             padding-bottom: 6px;
         }
 
+        .actas-title.collapsible {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .actas-title.collapsible::after {
+            content: '▼';
+            position: absolute;
+            right: 10px;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .actas-title.collapsible.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .collapsible-content.collapsed {
+            display: none;
+        }
+
         .actas-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -1125,138 +1153,144 @@
 
         <!-- Mismatches Section -->
         <div id="mismatches-section" class="actas-info" style="display: none; margin-top: 15px;">
-            <h3 class="actas-title">Actas validas con con diferencia respecto al CNE</h3>
+            <h3 class="actas-title collapsible collapsed" data-target="mismatches-content">Actas validas con con diferencia respecto al CNE</h3>
 
-            <div style="font-size: 12px; color: #666; margin: 10px 0; padding: 8px; background-color: #f5f5f5; border-radius: 4px;">
-                <strong>Formato de votos:</strong>
-                <span style="color: darkolivegreen;">Votos IA</span> /
-                <span style="color: red;">Votos CNE</span>
-            </div>
+            <div id="mismatches-content" class="collapsible-content collapsed">
+                <div style="font-size: 12px; color: #666; margin: 10px 0; padding: 8px; background-color: #f5f5f5; border-radius: 4px;">
+                    <strong>Formato de votos:</strong>
+                    <span style="color: darkolivegreen;">Votos IA</span> /
+                    <span style="color: red;">Votos CNE</span>
+                </div>
 
-            <!-- Filters -->
-            <div class="actas-filters">
-                <div class="filter-group">
-                    <label class="filter-label" for="mismatch-filter-departamento">Departamento</label>
-                    <select id="mismatch-filter-departamento" class="filter-select">
-                        <option value="">Todos</option>
-                    </select>
+                <!-- Filters -->
+                <div class="actas-filters">
+                    <div class="filter-group">
+                        <label class="filter-label" for="mismatch-filter-departamento">Departamento</label>
+                        <select id="mismatch-filter-departamento" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="mismatch-filter-municipio">Municipio</label>
+                        <select id="mismatch-filter-municipio" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="mismatch-filter-centro">Centro</label>
+                        <input type="text" id="mismatch-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="mismatch-filter-tipo">Tipo Diferencia</label>
+                        <select id="mismatch-filter-tipo" class="filter-select">
+                            <option value="">Todos</option>
+                            <option value="Sin votos CNE">Sin votos CNE</option>
+                            <option value="Diferencia votos">Diferencia votos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button id="mismatch-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                    </div>
                 </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="mismatch-filter-municipio">Municipio</label>
-                    <select id="mismatch-filter-municipio" class="filter-select">
-                        <option value="">Todos</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="mismatch-filter-centro">Centro</label>
-                    <input type="text" id="mismatch-filter-centro" class="filter-input" placeholder="Buscar por centro...">
-                </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="mismatch-filter-tipo">Tipo Diferencia</label>
-                    <select id="mismatch-filter-tipo" class="filter-select">
-                        <option value="">Todos</option>
-                        <option value="Sin votos CNE">Sin votos CNE</option>
-                        <option value="Diferencia votos">Diferencia votos</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <button id="mismatch-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
-                </div>
-            </div>
 
-            <div class="actas-list-scroll-wrapper">
-                <div id="mismatches-list" style="margin-top: 15px;">
-                    <!-- Paginated list will be inserted here -->
+                <div class="actas-list-scroll-wrapper">
+                    <div id="mismatches-list" style="margin-top: 15px;">
+                        <!-- Paginated list will be inserted here -->
+                    </div>
                 </div>
-            </div>
 
-            <div id="mismatches-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                <!-- Pagination buttons will be inserted here -->
+                <div id="mismatches-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                    <!-- Pagination buttons will be inserted here -->
+                </div>
             </div>
         </div>
 
         <!-- AI Inconsistencias Section -->
         <div id="ai-inconsistencias-section" class="actas-info" style="display: none; margin-top: 15px;">
-            <h3 class="actas-title">Inconsistencias AI</h3>
+            <h3 class="actas-title collapsible collapsed" data-target="ai-inconsistencias-content">Inconsistencias AI</h3>
 
-            <!-- Filters -->
-            <div class="actas-filters">
-                <div class="filter-group">
-                    <label class="filter-label" for="ai-filter-departamento">Departamento</label>
-                    <select id="ai-filter-departamento" class="filter-select">
-                        <option value="">Todos</option>
-                    </select>
+            <div id="ai-inconsistencias-content" class="collapsible-content collapsed">
+                <!-- Filters -->
+                <div class="actas-filters">
+                    <div class="filter-group">
+                        <label class="filter-label" for="ai-filter-departamento">Departamento</label>
+                        <select id="ai-filter-departamento" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="ai-filter-municipio">Municipio</label>
+                        <select id="ai-filter-municipio" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="ai-filter-centro">Centro</label>
+                        <input type="text" id="ai-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="ai-filter-tipo">Tipo Inconsistencia</label>
+                        <select id="ai-filter-tipo" class="filter-select">
+                            <option value="">Todos</option>
+                            <option value="Valor numerico alto">Valor numerico alto</option>
+                            <option value="Total no definido">Total no definido</option>
+                            <option value="Check de suma inconsistente">Check de suma inconsistente</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button id="ai-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                    </div>
                 </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="ai-filter-municipio">Municipio</label>
-                    <select id="ai-filter-municipio" class="filter-select">
-                        <option value="">Todos</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="ai-filter-centro">Centro</label>
-                    <input type="text" id="ai-filter-centro" class="filter-input" placeholder="Buscar por centro...">
-                </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="ai-filter-tipo">Tipo Inconsistencia</label>
-                    <select id="ai-filter-tipo" class="filter-select">
-                        <option value="">Todos</option>
-                        <option value="Valor numerico alto">Valor numerico alto</option>
-                        <option value="Total no definido">Total no definido</option>
-                        <option value="Check de suma inconsistente">Check de suma inconsistente</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <button id="ai-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
-                </div>
-            </div>
 
-            <div class="actas-list-scroll-wrapper">
-                <div id="ai-inconsistencias-list" style="margin-top: 15px;">
-                    <!-- Paginated list will be inserted here -->
+                <div class="actas-list-scroll-wrapper">
+                    <div id="ai-inconsistencias-list" style="margin-top: 15px;">
+                        <!-- Paginated list will be inserted here -->
+                    </div>
                 </div>
-            </div>
 
-            <div id="ai-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                <!-- Pagination buttons will be inserted here -->
+                <div id="ai-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                    <!-- Pagination buttons will be inserted here -->
+                </div>
             </div>
         </div>
 
         <!-- Valid Actas Section -->
         <div id="valid-actas-section" class="actas-info" style="display: none; margin-top: 15px;">
-            <h3 class="actas-title">Actas Válidas</h3>
+            <h3 class="actas-title collapsible collapsed" data-target="valid-actas-content">Actas Válidas</h3>
 
-            <!-- Filters -->
-            <div class="actas-filters">
-                <div class="filter-group">
-                    <label class="filter-label" for="valid-filter-departamento">Departamento</label>
-                    <select id="valid-filter-departamento" class="filter-select">
-                        <option value="">Todos</option>
-                    </select>
+            <div id="valid-actas-content" class="collapsible-content collapsed">
+                <!-- Filters -->
+                <div class="actas-filters">
+                    <div class="filter-group">
+                        <label class="filter-label" for="valid-filter-departamento">Departamento</label>
+                        <select id="valid-filter-departamento" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="valid-filter-municipio">Municipio</label>
+                        <select id="valid-filter-municipio" class="filter-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="valid-filter-centro">Centro</label>
+                        <input type="text" id="valid-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                    </div>
+                    <div class="filter-group">
+                        <button id="valid-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                    </div>
                 </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="valid-filter-municipio">Municipio</label>
-                    <select id="valid-filter-municipio" class="filter-select">
-                        <option value="">Todos</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label class="filter-label" for="valid-filter-centro">Centro</label>
-                    <input type="text" id="valid-filter-centro" class="filter-input" placeholder="Buscar por centro...">
-                </div>
-                <div class="filter-group">
-                    <button id="valid-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
-                </div>
-            </div>
 
-            <div class="actas-list-scroll-wrapper">
-                <div id="valid-actas-list" style="margin-top: 15px;">
-                    <!-- Paginated list will be inserted here -->
+                <div class="actas-list-scroll-wrapper">
+                    <div id="valid-actas-list" style="margin-top: 15px;">
+                        <!-- Paginated list will be inserted here -->
+                    </div>
                 </div>
-            </div>
 
-            <div id="valid-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                <!-- Pagination buttons will be inserted here -->
+                <div id="valid-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                    <!-- Pagination buttons will be inserted here -->
+                </div>
             </div>
         </div>
     </div>
@@ -1352,7 +1386,26 @@
         // Initialize the app when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             loadProcessedMetadata();
+            initializeCollapsibles();
         });
+
+        // Initialize collapsible sections
+        function initializeCollapsibles() {
+            const collapsibleTitles = document.querySelectorAll('.actas-title.collapsible');
+
+            collapsibleTitles.forEach(title => {
+                title.addEventListener('click', () => {
+                    const targetId = title.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+
+                    if (content) {
+                        // Toggle collapsed class
+                        title.classList.toggle('collapsed');
+                        content.classList.toggle('collapsed');
+                    }
+                });
+            });
+        }
 
         // Load processed metadata
         async function loadProcessedMetadata() {
