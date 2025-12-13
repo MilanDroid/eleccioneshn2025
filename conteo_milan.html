@@ -1007,16 +1007,11 @@
                 padding: 0 15px;
             }
 
+            #valid-actas-list,
+            #ai-inconsistencias-list,
             #mismatches-list {
-                min-width: 960px;
-            }
-
-            #ai-inconsistencias-list {
-                min-width: 960px;
-            }
-
-            #valid-actas-list {
-                min-width: 960px;
+                transition: all 0.3s ease;
+                max-width: 960px;
             }
 
             .acta-list-item {
@@ -2667,6 +2662,9 @@
             const listContainer = document.getElementById('mismatches-list');
             if (!listContainer || !data) return;
 
+            // Scroll to the list container to keep user focused
+            listContainer.parentElement.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
             listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">Cargando datos...</div>';
 
             if (data.mismatchesList.length === 0) {
@@ -3129,6 +3127,9 @@
             const listContainer = document.getElementById('ai-inconsistencias-list');
             if (!listContainer || !data) return;
 
+            // Scroll to the list container to keep user focused
+            listContainer.parentElement.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
             listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">Cargando datos...</div>';
 
             if (data.aiInconsistenciasList.length === 0) {
@@ -3515,6 +3516,9 @@
         async function displayValidActasList(data, page = 1) {
             const listContainer = document.getElementById('valid-actas-list');
             if (!listContainer || !data) return;
+
+            // Scroll to the list container to keep user focused
+            listContainer.parentElement.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             listContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">Cargando datos...</div>';
 
