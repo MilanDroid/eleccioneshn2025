@@ -1,5 +1,290 @@
 {
-  "error": "JSON parsing error: Extra data: line 121 column 1 (char 3716)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"en_numeros\": \"332\",\n          \"digitos\": [\"3\", \"3\", \"2\"],\n          \"en_letras\": [\"tres\", \"tres\", \"dos\"],\n          \"digitos_letras\": [\"tres\", \"tres\", \"dos\"]\n        },\n        {\n          \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n          \"en_numeros\": \"114\",\n          \"digitos\": [\"1\", \"1\", \"4\"],\n          \"en_letras\": [\"uno\", \"uno\", \"cuatro\"],\n          \"digitos_letras\": [\"uno\", \"uno\", \"cuatro\"]\n        },\n        {\n          \"descripcion\": \"UTILIZADAS\",\n          \"en_numeros\": \"218\",\n          \"digitos\": [\"2\", \"1\", \"8\"],\n          \"en_letras\": [\"dos\", \"uno\", \"ocho\"],\n          \"digitos_letras\": [\"dos\", \"uno\", \"ocho\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n          \"en_numeros\": \"211\",\n          \"digitos\": [\"2\", \"1\", \"1\"],\n          \"en_letras\": [\"dos\", \"uno\", \"uno\"],\n          \"digitos_letras\": [\"dos\", \"uno\", \"uno\"]\n        },\n        {\n          \"descripcion\": \"MIEMBROS JRV\",\n          \"en_numeros\": \"007\",\n          \"digitos\": [\"0\", \"0\", \"7\"],\n          \"en_letras\": [\"cero\", \"cero\", \"siete\"],\n          \"digitos_letras\": [\"cero\", \"cero\", \"siete\"]\n        },\n        {\n          \"descripcion\": \"TOTAL VOTANTES\",\n          \"en_numeros\": \"218\",\n          \"digitos\": [\"2\", \"1\", \"8\"],\n          \"en_letras\": [\"dos\", \"uno\", \"ocho\"],\n          \"digitos_letras\": [\"dos\", \"uno\", \"ocho\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n      \"subseccion\": \"VOTOS\",\n      \"filas\": [\n        {\n          \"descripcion\": \"PARTIDO DC\",\n          \"en_numeros\": \"000\",\n          \"digitos\": [\"0\", \"0\", \"0\"],\n          \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n          \"digitos_letras\": [\"cero\", \"cero\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO LIBRE\",\n          \"en_numeros\": \"022\",\n          \"digitos\": [\"0\", \"2\", \"2\"],\n          \"en_letras\": [\"cero\", \"dos\", \"dos\"],\n          \"digitos_letras\": [\"cero\", \"dos\", \"dos\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO PINU (PINU no visible, se usa PINU como referencia)\",\n          \"en_numeros\": \"003\",\n          \"digitos\": [\"0\", \"0\", \"3\"],\n          \"en_letras\": [\"cero\", \"cero\", \"tres\"],\n          \"digitos_letras\": [\"cero\", \"cero\", \"tres\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO LIBERAL\",\n          \"en_numeros\": \"090\",\n          \"digitos\": [\"0\", \"9\", \"0\"],\n          \"en_letras\": [\"cero\", \"nueve\", \"cero\"],\n          \"digitos_letras\": [\"cero\", \"nueve\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO NACIONAL\",\n          \"en_numeros\": \"100\",\n          \"digitos\": [\"1\", \"0\", \"0\"],\n          \"en_letras\": [\"uno\", \"cero\", \"cero\"],\n          \"digitos_letras\": [\"uno\", \"cero\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"VOTOS EN BLANCO\",\n          \"en_numeros\": \"000\",\n          \"digitos\": [\"0\", \"0\", \"0\"],\n          \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n          \"digitos_letras\": [\"cero\", \"cero\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"VOTOS NULOS\",\n          \"en_numeros\": \"003\",\n          \"digitos\": [\"0\", \"0\", \"3\"],\n          \"en_letras\": [\"cero\", \"cero\", \"tres\"],\n          \"digitos_letras\": [\"cero\", \"cero\", \"tres\"]\n        },\n        {\n          \"descripcion\": \"GRAN TOTAL\",\n          \"en_numeros\": \"218\",\n          \"digitos\": [\"2\", \"1\", \"8\"],\n          \"en_letras\": [\"dos\", \"uno\", \"ocho\"],\n          \"digitos_letras\": [\"dos\", \"uno\", \"ocho\"]\n        }\n      ]\n    }\n  ]\n}\n```\n\nCorregido y estructurado correctamente como JSON:\n\n```json\n{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"detalles\": [\n        {\n          \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"en_numeros\": \"332\",\n          \"digitos\": [\"3\", \"3\", \"2\"],\n          \"en_letras\": [\"tres\", \"tres\", \"dos\"]\n        },\n        {\n          \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n          \"en_numeros\": \"114\",\n          \"digitos\": [\"1\", \"1\", \"4\"],\n          \"en_letras\": [\"uno\", \"uno\", \"cuatro\"]\n        },\n        {\n          \"descripcion\": \"UTILIZADAS\",\n          \"en_numeros\": \"218\",\n          \"digitos\": [\"2\", \"1\", \"8\"],\n          \"en_letras\": [\"dos\", \"uno\", \"ocho\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"VOTANTES\",\n      \"detalles\": [\n        {\n          \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n          \"en_numeros\": \"211\",\n          \"digitos\": [\"2\", \"1\", \"1\"],\n          \"en_letras\": [\"dos\", \"uno\", \"uno\"]\n        },\n        {\n          \"descripcion\": \"MIEMBROS JRV\",\n          \"en_numeros\": \"007\",\n          \"digitos\": [\"0\", \"0\", \"7\"],\n          \"en_letras\": [\"cero\", \"cero\", \"siete\"]\n        },\n        {\n          \"descripcion\": \"TOTAL VOTANTES\",\n          \"en_numeros\": \"218\",\n          \"digitos\": [\"2\", \"1\", \"8\"],\n          \"en_letras\": [\"dos\", \"uno\", \"ocho\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n      \"subseccion\": \"VOTOS\",\n      \"detalles\": [\n        {\n          \"descripcion\": \"PARTIDO DC\",\n          \"en_numeros\": \"000\",\n          \"digitos\": [\"0\", \"0\", \"0\"],\n          \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO LIBRE\",\n          \"en_numeros\": \"022\",\n          \"digitos\": [\"0\", \"2\", \"2\"],\n          \"en_letras\": [\"cero\", \"dos\", \"dos\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO PINU\",\n          \"en_numeros\": \"003\",\n          \"digitos\": [\"0\", \"0\", \"3\"],\n          \"en_letras\": [\"cero\", \"cero\", \"tres\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO LIBERAL\",\n          \"en_numeros\": \"090\",\n          \"digitos\": [\"0\", \"9\", \"0\"],\n          \"en_letras\": [\"cero\", \"nueve\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"PARTIDO NACIONAL\",\n          \"en_numeros\": \"100\",\n          \"digitos\": [\"1\", \"0\", \"0\"],\n          \"en_letras\": [\"uno\", \"cero\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"VOTOS EN BLANCO\",\n          \"en_numeros\": \"000\",\n          \"digitos\": [\"0\", \"0\", \"0\"],\n          \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n        },\n        {\n          \"descripcion\": \"VOTOS NULOS\",\n          \"en_numeros\": \"003\",\n          \"digitos\": [\"0\", \"0\", \"3\"],\n          \"en_letras\": [\"cero\", \"cero\", \"tres\"]\n        },\n        {\n          \"descripcion\": \"GRAN TOTAL\",\n          \"en_numeros\": \"218\",\n          \"digitos\": [\"2\", \"1\", \"8\"],\n          \"en_letras\": [\"dos\", \"uno\", \"ocho\"]\n        }\n      ]\n    }\n  ]\n}",
-  "processing_failed": true
+  "filas": [
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "PAPELETAS",
+      "filas": [
+        {
+          "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+          "en_numeros": "332",
+          "digitos": [
+            "3",
+            "3",
+            "2"
+          ],
+          "en_letras": [
+            "tres",
+            "tres",
+            "dos"
+          ],
+          "digitos_letras": [
+            "tres",
+            "tres",
+            "dos"
+          ]
+        },
+        {
+          "descripcion": "NO UTILIZADAS / SOBRANTES",
+          "en_numeros": "114",
+          "digitos": [
+            "1",
+            "1",
+            "4"
+          ],
+          "en_letras": [
+            "uno",
+            "uno",
+            "cuatro"
+          ],
+          "digitos_letras": [
+            "uno",
+            "uno",
+            "cuatro"
+          ]
+        },
+        {
+          "descripcion": "UTILIZADAS",
+          "en_numeros": "218",
+          "digitos": [
+            "2",
+            "1",
+            "8"
+          ],
+          "en_letras": [
+            "dos",
+            "uno",
+            "ocho"
+          ],
+          "digitos_letras": [
+            "dos",
+            "uno",
+            "ocho"
+          ]
+        }
+      ]
+    },
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "VOTANTES",
+      "filas": [
+        {
+          "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
+          "en_numeros": "211",
+          "digitos": [
+            "2",
+            "1",
+            "1"
+          ],
+          "en_letras": [
+            "dos",
+            "uno",
+            "uno"
+          ],
+          "digitos_letras": [
+            "dos",
+            "uno",
+            "uno"
+          ]
+        },
+        {
+          "descripcion": "MIEMBROS JRV",
+          "en_numeros": "007",
+          "digitos": [
+            "0",
+            "0",
+            "7"
+          ],
+          "en_letras": [
+            "cero",
+            "cero",
+            "siete"
+          ],
+          "digitos_letras": [
+            "cero",
+            "cero",
+            "siete"
+          ]
+        },
+        {
+          "descripcion": "TOTAL VOTANTES",
+          "en_numeros": "218",
+          "digitos": [
+            "2",
+            "1",
+            "8"
+          ],
+          "en_letras": [
+            "dos",
+            "uno",
+            "ocho"
+          ],
+          "digitos_letras": [
+            "dos",
+            "uno",
+            "ocho"
+          ]
+        }
+      ]
+    },
+    {
+      "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+      "subseccion": "VOTOS",
+      "filas": [
+        {
+          "descripcion": "PARTIDO DC",
+          "en_numeros": "000",
+          "digitos": [
+            "0",
+            "0",
+            "0"
+          ],
+          "en_letras": [
+            "cero",
+            "cero",
+            "cero"
+          ],
+          "digitos_letras": [
+            "cero",
+            "cero",
+            "cero"
+          ]
+        },
+        {
+          "descripcion": "PARTIDO LIBRE",
+          "en_numeros": "022",
+          "digitos": [
+            "0",
+            "2",
+            "2"
+          ],
+          "en_letras": [
+            "cero",
+            "dos",
+            "dos"
+          ],
+          "digitos_letras": [
+            "cero",
+            "dos",
+            "dos"
+          ]
+        },
+        {
+          "descripcion": "PARTIDO PINU (PINU no visible, se usa PINU como referencia)",
+          "en_numeros": "003",
+          "digitos": [
+            "0",
+            "0",
+            "3"
+          ],
+          "en_letras": [
+            "cero",
+            "cero",
+            "tres"
+          ],
+          "digitos_letras": [
+            "cero",
+            "cero",
+            "tres"
+          ]
+        },
+        {
+          "descripcion": "PARTIDO LIBERAL",
+          "en_numeros": "090",
+          "digitos": [
+            "0",
+            "9",
+            "0"
+          ],
+          "en_letras": [
+            "cero",
+            "nueve",
+            "cero"
+          ],
+          "digitos_letras": [
+            "cero",
+            "nueve",
+            "cero"
+          ]
+        },
+        {
+          "descripcion": "PARTIDO NACIONAL",
+          "en_numeros": "100",
+          "digitos": [
+            "1",
+            "0",
+            "0"
+          ],
+          "en_letras": [
+            "uno",
+            "cero",
+            "cero"
+          ],
+          "digitos_letras": [
+            "uno",
+            "cero",
+            "cero"
+          ]
+        },
+        {
+          "descripcion": "VOTOS EN BLANCO",
+          "en_numeros": "000",
+          "digitos": [
+            "0",
+            "0",
+            "0"
+          ],
+          "en_letras": [
+            "cero",
+            "cero",
+            "cero"
+          ],
+          "digitos_letras": [
+            "cero",
+            "cero",
+            "cero"
+          ]
+        },
+        {
+          "descripcion": "VOTOS NULOS",
+          "en_numeros": "003",
+          "digitos": [
+            "0",
+            "0",
+            "3"
+          ],
+          "en_letras": [
+            "cero",
+            "cero",
+            "tres"
+          ],
+          "digitos_letras": [
+            "cero",
+            "cero",
+            "tres"
+          ]
+        },
+        {
+          "descripcion": "GRAN TOTAL",
+          "en_numeros": "218",
+          "digitos": [
+            "2",
+            "1",
+            "8"
+          ],
+          "en_letras": [
+            "dos",
+            "uno",
+            "ocho"
+          ],
+          "digitos_letras": [
+            "dos",
+            "uno",
+            "ocho"
+          ]
+        }
+      ]
+    }
+  ],
+  "ocr_processing_note": "Fixed from raw_ocr_output by fix_json_parsing_errors.py",
+  "original_error": "JSON parsing error: Extra data: line 121 column 1 (char 3716)"
 }

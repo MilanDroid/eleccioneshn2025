@@ -1,5 +1,150 @@
 {
-  "error": "JSON parsing error: Extra data: line 102 column 1 (char 2786)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"digitos\": \"365\",\n          \"digitosDecodificados\": \"3 6 5\",\n          \"letras\": [\"Tres\", \"seis\", \"cinco\"],\n          \"digitosDecodificadosLetras\": [\"tres\", \"seis\", \"cinco\"]\n        },\n        {\n          \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n          \"digitos\": \"115\",\n          \"digitosDecodificados\": \"1 1 5\",\n          \"letras\": [\"uno\", \"uno\", \"cinco\"]\n        },\n        {\n          \"etiqueta\": \"UTILIZADAS\",\n          \"digitos\": \"250\",\n          \"digitosDecodificados\": \"2 5 0\",\n          \"letras\": [\"dos\", \"cinco\", \"uno\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n          \"digitos\": \"249\",\n          \"digitosDecodificados\": \"2 4 9\",\n          \"letras\": [\"dos\", \"cuatro\", \"dos\"]\n        },\n        {\n          \"etiqueta\": \"MIEMBROS JRV\",\n          \"digitos\": \"005\",\n          \"digitosDecodificados\": \"0 0 5\",\n          \"letras\": [\"uno\", \"?\", \"cinco\"]\n        },\n        {\n          \"etiqueta\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n          \"digitos\": \"002\",\n          \"digitosDecodificados\": \"0 0 2\",\n          \"letras\": [\"dos\"]\n        },\n        {\n          \"etiqueta\": \"TOTAL VOTANTES\",\n          \"digitos\": \"249\",\n          \"digitosDecodificados\": \"2 4 9\",\n          \"letras\": [\"dos\", \"cuatro\", \"nueve\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n          \"digitos\": \"10\",\n          \"digitosDecodificados\": \"1 0\",\n          \"letras\": [\"uno\", \"cero\"]\n        },\n        {\n          \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n          \"digitos\": \"38\",\n          \"digitosDecodificados\": \"3 8\",\n          \"letras\": [\"tres\", \"ocho\"]\n        },\n        {\n          \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n          \"digitos\": \"788\",\n          \"digitosDecodificados\": \"7 8 8\",\n          \"letras\": [\"uno\", \"ocho\", \"ocho\"]\n        },\n        {\n          \"etiqueta\": \"VOTOS EN BLANCO\",\n          \"digitos\": \"004\",\n          \"digitosDecodificados\": \"0 0 4\",\n          \"letras\": [\"cuatro\"]\n        },\n        {\n          \"etiqueta\": \"VOTOS NULOS\",\n          \"digitos\": \"009\",\n          \"digitosDecodificados\": \"0 0 9\",\n          \"letras\": [\"nueve\"]\n        },\n        {\n          \"etiqueta\": \"GRAN TOTAL\",\n          \"digitos\": \"249\",\n          \"digitosDecodificados\": \"2 4 9\",\n          \"letras\": [\"dos\", \"cuatro\", \"nueve\"]\n        }\n      ]\n    }\n  ]\n}\n\n```json\n{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"detalles\": [\n        {\n          \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"digitos\": \"365\",\n          \"letras\": [\"tres\", \"seis\", \"cinco\"],\n          \"digitosDecodificados\": \"3 6 5\"\n        },\n        {\n          \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n          \"digitos\": \"115\",\n          \"letras\": [\"uno\", \"uno\", \"cinco\"],\n          \"digitosDecodificados\": \"1 1 5\"\n        },\n        {\n          \"etiqueta\": \"UTILIZADAS\",\n          \"digitos\": \"250\",\n          \"letras\": [\"dos\", \"cinco\", \"uno\"],\n          \"digitosDecodificados\": \"2 5 0\"\n        }\n      ]\n    },\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"VOTANTES\",\n      \"detalles\": [\n        {\n          \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n          \"digitos\": \"249\",\n          \"letras\": [\"dos\", \"cuatro\", \"dos\"],\n          \"digitosDecodificados\": \"2 4 9\"\n        },\n        {\n          \"etiqueta\": \"MIEMBROS JRV\",\n          \"digitos\": \"005\",\n          \"letras\": [\"cinco\"],\n          \"digitosDecodificados\": \"0 0 5\"\n        },\n        {\n          \"etiqueta\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n          \"digitos\": \"002\",\n          \"letras\": [\"dos\"],\n          \"digitosDecodificados\": \"0 0 2\"\n        },\n        {\n          \"etiqueta\": \"TOTAL VOTANTES\",\n          \"digitos\": \"249\",\n          \"letras\": [\"dos\", \"cuatro\", \"nueve\"],\n          \"digitosDecodificados\": \"2 4 9\"\n        }\n      ]\n    },\n    {\n      \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n      \"detalles\": [\n        {\n          \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n          \"digitos\": \"10\",\n          \"letras\": [\"uno\", \"cero\"],\n          \"digitosDecodificados\": \"1 0\"\n        },\n        {\n          \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n          \"digitos\": \"38\",\n          \"letras\": [\"tres\", \"ocho\"],\n          \"digitosDecodificados\": \"3 8\"\n        },\n        {\n          \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n          \"digitos\": \"788\",\n          \"letras\": [\"uno\", \"ocho\", \"ocho\"],\n          \"digitosDecodificados\": \"7 8 8\"\n        },\n        {\n          \"etiqueta\": \"VOTOS EN BLANCO\",\n          \"digitos\": \"004\",\n          \"letras\": [\"cuatro\"],\n          \"digitosDecodificados\": \"0 0 4\"\n        },\n        {\n          \"etiqueta\": \"VOTOS NULOS\",\n          \"digitos\": \"009\",\n          \"letras\": [\"nueve\"],\n          \"digitosDecodificados\": \"0 0 9\"\n        },\n        {\n          \"etiqueta\": \"GRAN TOTAL\",\n          \"digitos\": \"249\",\n          \"letras\": [\"dos\", \"cuatro\", \"nueve\"],\n          \"digitosDecodificados\": \"2 4 9\"\n        }\n      ]\n    }\n  ]\n}",
-  "processing_failed": true
+  "filas": [
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "PAPELETAS",
+      "filas": [
+        {
+          "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+          "digitos": "365",
+          "digitosDecodificados": "3 6 5",
+          "letras": [
+            "Tres",
+            "seis",
+            "cinco"
+          ],
+          "digitosDecodificadosLetras": [
+            "tres",
+            "seis",
+            "cinco"
+          ]
+        },
+        {
+          "etiqueta": "NO UTILIZADAS / SOBRANTES",
+          "digitos": "115",
+          "digitosDecodificados": "1 1 5",
+          "letras": [
+            "uno",
+            "uno",
+            "cinco"
+          ]
+        },
+        {
+          "etiqueta": "UTILIZADAS",
+          "digitos": "250",
+          "digitosDecodificados": "2 5 0",
+          "letras": [
+            "dos",
+            "cinco",
+            "uno"
+          ]
+        }
+      ]
+    },
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "VOTANTES",
+      "filas": [
+        {
+          "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
+          "digitos": "249",
+          "digitosDecodificados": "2 4 9",
+          "letras": [
+            "dos",
+            "cuatro",
+            "dos"
+          ]
+        },
+        {
+          "etiqueta": "MIEMBROS JRV",
+          "digitos": "005",
+          "digitosDecodificados": "0 0 5",
+          "letras": [
+            "uno",
+            "?",
+            "cinco"
+          ]
+        },
+        {
+          "etiqueta": "CUSTODIOS INFORMATICOS ELECTORALES",
+          "digitos": "002",
+          "digitosDecodificados": "0 0 2",
+          "letras": [
+            "dos"
+          ]
+        },
+        {
+          "etiqueta": "TOTAL VOTANTES",
+          "digitos": "249",
+          "digitosDecodificados": "2 4 9",
+          "letras": [
+            "dos",
+            "cuatro",
+            "nueve"
+          ]
+        }
+      ]
+    },
+    {
+      "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+      "filas": [
+        {
+          "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+          "digitos": "10",
+          "digitosDecodificados": "1 0",
+          "letras": [
+            "uno",
+            "cero"
+          ]
+        },
+        {
+          "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+          "digitos": "38",
+          "digitosDecodificados": "3 8",
+          "letras": [
+            "tres",
+            "ocho"
+          ]
+        },
+        {
+          "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
+          "digitos": "788",
+          "digitosDecodificados": "7 8 8",
+          "letras": [
+            "uno",
+            "ocho",
+            "ocho"
+          ]
+        },
+        {
+          "etiqueta": "VOTOS EN BLANCO",
+          "digitos": "004",
+          "digitosDecodificados": "0 0 4",
+          "letras": [
+            "cuatro"
+          ]
+        },
+        {
+          "etiqueta": "VOTOS NULOS",
+          "digitos": "009",
+          "digitosDecodificados": "0 0 9",
+          "letras": [
+            "nueve"
+          ]
+        },
+        {
+          "etiqueta": "GRAN TOTAL",
+          "digitos": "249",
+          "digitosDecodificados": "2 4 9",
+          "letras": [
+            "dos",
+            "cuatro",
+            "nueve"
+          ]
+        }
+      ]
+    }
+  ],
+  "ocr_processing_note": "Fixed from raw_ocr_output by fix_json_parsing_errors.py",
+  "original_error": "JSON parsing error: Extra data: line 102 column 1 (char 2786)"
 }
