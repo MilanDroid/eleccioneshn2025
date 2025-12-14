@@ -3260,7 +3260,7 @@
                     <div data-label="PLH: ">${formatVote('PLH')}</div>
                     <div data-label="PNH: ">${formatVote('PNH')}</div>
                     <div data-label="N/B: ">${formatNB()}</div>
-                    <div data-label="Gran Total: ">${item.votes ? formatVote(item.votes.granTotal) : '-'}</div>
+                    <div data-label="Gran Total: ">${item.votes ? +(item.votes.granTotal ?? 0) : '-'}</div>
                     <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
                 `;
                 listContainer.appendChild(listItem);
@@ -3644,7 +3644,7 @@
                     <div data-label="PNH: ">${formatVote('PNH')}</div>
                     <div data-label="Nulos: ">${item.votes.nulos}</div>
                     <div data-label="Blancos: ">${item.votes.en_blanco}</div>
-                    <div data-label="Gran Total: ">${item.votes ? formatVote(item.votes.granTotal) : '-'}</div>
+                    <div data-label="Gran Total: ">${item.votes ? +(item.votes.granTotal ?? 0) : '-'}</div>
                     <div data-label=""><a href="${item.pdfUrl}" target="_blank" class="acta-link">Ver PDF</a></div>
                 `;
                 listContainer.appendChild(listItem);
