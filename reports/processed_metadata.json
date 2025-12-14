@@ -1,10 +1,10 @@
 {
   "actas_statistics_calculated": {
-    "total": 8286,
-    "correctas": 6677,
-    "inconsistencias": 1609,
-    "percentage_processed": 43.23,
-    "percentage_valid": 80.58
+    "total": 8320,
+    "correctas": 6700,
+    "inconsistencias": 1620,
+    "percentage_processed": 43.41,
+    "percentage_valid": 80.53
   },
   "actas_statistics_by_departamento": {
     "12": {
@@ -48,12 +48,12 @@
       "percentage_valid": 0.0
     },
     "04": {
-      "total": 78,
-      "correctas": 66,
-      "inconsistencias": 12,
+      "total": 90,
+      "correctas": 75,
+      "inconsistencias": 15,
       "expected_total": 876,
-      "percentage_processed": 8.9,
-      "percentage_valid": 84.62
+      "percentage_processed": 10.27,
+      "percentage_valid": 83.33
     },
     "03": {
       "total": 1138,
@@ -136,12 +136,12 @@
       "percentage_valid": 63.64
     },
     "05": {
-      "total": 1108,
-      "correctas": 924,
-      "inconsistencias": 184,
+      "total": 1130,
+      "correctas": 938,
+      "inconsistencias": 192,
       "expected_total": 3332,
-      "percentage_processed": 33.25,
-      "percentage_valid": 83.39
+      "percentage_processed": 33.91,
+      "percentage_valid": 83.01
     },
     "11": {
       "total": 155,
@@ -946,12 +946,12 @@
       "percentage_valid": 0.0
     },
     "04-001": {
-      "total": 78,
-      "correctas": 66,
-      "inconsistencias": 12,
+      "total": 90,
+      "correctas": 75,
+      "inconsistencias": 15,
       "expected_total": 138,
-      "percentage_processed": 56.52,
-      "percentage_valid": 84.62
+      "percentage_processed": 65.22,
+      "percentage_valid": 83.33
     },
     "04-022": {
       "total": 0,
@@ -2450,12 +2450,12 @@
       "percentage_valid": 84.69
     },
     "05-001": {
-      "total": 906,
-      "correctas": 758,
-      "inconsistencias": 148,
+      "total": 928,
+      "correctas": 772,
+      "inconsistencias": 156,
       "expected_total": 1519,
-      "percentage_processed": 59.64,
-      "percentage_valid": 83.66
+      "percentage_processed": 61.09,
+      "percentage_valid": 83.19
     },
     "05-010": {
       "total": 60,
@@ -13524,12 +13524,12 @@
       "percentage_valid": 88.89
     },
     "04-001-01-013": {
-      "total": 4,
-      "correctas": 3,
-      "inconsistencias": 1,
+      "total": 10,
+      "correctas": 8,
+      "inconsistencias": 2,
       "expected_total": 10,
-      "percentage_processed": 40.0,
-      "percentage_valid": 75.0
+      "percentage_processed": 100.0,
+      "percentage_valid": 80.0
     },
     "04-001-01-015": {
       "total": 0,
@@ -13564,12 +13564,12 @@
       "percentage_valid": 78.57
     },
     "04-001-01-014": {
-      "total": 0,
-      "correctas": 0,
-      "inconsistencias": 0,
+      "total": 6,
+      "correctas": 4,
+      "inconsistencias": 2,
       "expected_total": 7,
-      "percentage_processed": 0.0,
-      "percentage_valid": 0.0
+      "percentage_processed": 85.71,
+      "percentage_valid": 66.67
     },
     "04-001-01-003": {
       "total": 8,
@@ -45196,12 +45196,12 @@
       "percentage_valid": 0.0
     },
     "05-001-01-220": {
-      "total": 3,
-      "correctas": 3,
-      "inconsistencias": 0,
+      "total": 18,
+      "correctas": 13,
+      "inconsistencias": 5,
       "expected_total": 18,
-      "percentage_processed": 16.67,
-      "percentage_valid": 100.0
+      "percentage_processed": 100.0,
+      "percentage_valid": 72.22
     },
     "05-001-01-127": {
       "total": 9,
@@ -45540,12 +45540,12 @@
       "percentage_valid": 77.78
     },
     "05-001-01-224": {
-      "total": 0,
-      "correctas": 0,
-      "inconsistencias": 0,
+      "total": 7,
+      "correctas": 4,
+      "inconsistencias": 3,
       "expected_total": 33,
-      "percentage_processed": 0.0,
-      "percentage_valid": 0.0
+      "percentage_processed": 21.21,
+      "percentage_valid": 57.14
     },
     "05-001-01-289": {
       "total": 0,
@@ -48789,33 +48789,33 @@
     }
   },
   "voting_statistics": {
-    "total_actas_processed": 8286,
-    "total_actas_with_votes": 6677,
+    "total_actas_processed": 8320,
+    "total_actas_with_votes": 6700,
     "total_actas_without_votes": 0,
-    "average_votes_per_acta": 159.88,
+    "average_votes_per_acta": 159.75,
     "total_votes_per_candidate": {
-      "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 2490,
-      "PARTIDO LIBERTAD Y REFUNDACION": 251975,
-      "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 9965,
-      "PARTIDO LIBERAL DE HONDURAS": 532488,
-      "PARTIDO NACIONAL DE HONDURAS": 488827
+      "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 2497,
+      "PARTIDO LIBERTAD Y REFUNDACION": 252469,
+      "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 10040,
+      "PARTIDO LIBERAL DE HONDURAS": 535026,
+      "PARTIDO NACIONAL DE HONDURAS": 489969
     },
     "total_votes_per_departamento": {
       "05": {
-        "total_votes": 189003,
-        "actas_processed": 1108,
-        "actas_valid": 924,
-        "actas_with_errors": 184,
-        "percentage_processed": 33.25,
-        "percentage_valid": 83.39
+        "total_votes": 191603,
+        "actas_processed": 1130,
+        "actas_valid": 938,
+        "actas_with_errors": 192,
+        "percentage_processed": 33.91,
+        "percentage_valid": 83.01
       },
       "04": {
-        "total_votes": 14479,
-        "actas_processed": 78,
-        "actas_valid": 66,
-        "actas_with_errors": 12,
-        "percentage_processed": 8.9,
-        "percentage_valid": 84.62
+        "total_votes": 16206,
+        "actas_processed": 90,
+        "actas_valid": 75,
+        "actas_with_errors": 15,
+        "percentage_processed": 10.27,
+        "percentage_valid": 83.33
       },
       "10": {
         "total_votes": 97348,
@@ -48916,20 +48916,20 @@
     },
     "total_votes_per_municipio": {
       "05-001": {
-        "total_votes": 155551,
-        "actas_processed": 906,
-        "actas_valid": 758,
-        "actas_with_errors": 148,
-        "percentage_processed": 59.64,
-        "percentage_valid": 83.66
+        "total_votes": 158151,
+        "actas_processed": 928,
+        "actas_valid": 772,
+        "actas_with_errors": 156,
+        "percentage_processed": 61.09,
+        "percentage_valid": 83.19
       },
       "04-001": {
-        "total_votes": 14479,
-        "actas_processed": 78,
-        "actas_valid": 66,
-        "actas_with_errors": 12,
-        "percentage_processed": 56.52,
-        "percentage_valid": 84.62
+        "total_votes": 16206,
+        "actas_processed": 90,
+        "actas_valid": 75,
+        "actas_with_errors": 15,
+        "percentage_processed": 65.22,
+        "percentage_valid": 83.33
       },
       "10-015": {
         "total_votes": 2328,
@@ -52173,6 +52173,14 @@
         "percentage_processed": 100.0,
         "percentage_valid": 100.0
       },
+      "05-001-01-220": {
+        "total_votes": 2491,
+        "actas_processed": 18,
+        "actas_valid": 13,
+        "actas_with_errors": 5,
+        "percentage_processed": 100.0,
+        "percentage_valid": 72.22
+      },
       "18-008-01-002": {
         "total_votes": 605,
         "actas_processed": 7,
@@ -53444,6 +53452,14 @@
         "actas_with_errors": 2,
         "percentage_processed": 100.0,
         "percentage_valid": 77.78
+      },
+      "04-001-01-013": {
+        "total_votes": 1504,
+        "actas_processed": 10,
+        "actas_valid": 8,
+        "actas_with_errors": 2,
+        "percentage_processed": 100.0,
+        "percentage_valid": 80.0
       },
       "01-007-02-012": {
         "total_votes": 533,
@@ -55788,6 +55804,14 @@
         "actas_with_errors": 1,
         "percentage_processed": 100.0,
         "percentage_valid": 75.0
+      },
+      "04-001-01-014": {
+        "total_votes": 795,
+        "actas_processed": 6,
+        "actas_valid": 4,
+        "actas_with_errors": 2,
+        "percentage_processed": 85.71,
+        "percentage_valid": 66.67
       },
       "05-001-01-109": {
         "total_votes": 2235,
@@ -59413,14 +59437,6 @@
         "percentage_processed": 100.0,
         "percentage_valid": 100.0
       },
-      "04-001-01-013": {
-        "total_votes": 572,
-        "actas_processed": 4,
-        "actas_valid": 3,
-        "actas_with_errors": 1,
-        "percentage_processed": 40.0,
-        "percentage_valid": 75.0
-      },
       "13-001-02-004": {
         "total_votes": 636,
         "actas_processed": 4,
@@ -60732,6 +60748,14 @@
         "actas_with_errors": 0,
         "percentage_processed": 100.0,
         "percentage_valid": 100.0
+      },
+      "05-001-01-224": {
+        "total_votes": 699,
+        "actas_processed": 7,
+        "actas_valid": 4,
+        "actas_with_errors": 3,
+        "percentage_processed": 21.21,
+        "percentage_valid": 57.14
       },
       "16-001-02-022": {
         "total_votes": 147,
@@ -63771,14 +63795,6 @@
         "actas_valid": 2,
         "actas_with_errors": 0,
         "percentage_processed": 100.0,
-        "percentage_valid": 100.0
-      },
-      "05-001-01-220": {
-        "total_votes": 590,
-        "actas_processed": 3,
-        "actas_valid": 3,
-        "actas_with_errors": 0,
-        "percentage_processed": 16.67,
         "percentage_valid": 100.0
       },
       "10-010-02-005": {
@@ -71448,18 +71464,18 @@
     },
     "per_candidate_by_departamento": {
       "05": {
-        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 476,
-        "PARTIDO LIBERTAD Y REFUNDACION": 23846,
-        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 3560,
-        "PARTIDO LIBERAL DE HONDURAS": 114618,
-        "PARTIDO NACIONAL DE HONDURAS": 42939
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 479,
+        "PARTIDO LIBERTAD Y REFUNDACION": 24108,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 3608,
+        "PARTIDO LIBERAL DE HONDURAS": 116186,
+        "PARTIDO NACIONAL DE HONDURAS": 43641
       },
       "04": {
-        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 31,
-        "PARTIDO LIBERTAD Y REFUNDACION": 2113,
-        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 247,
-        "PARTIDO LIBERAL DE HONDURAS": 7624,
-        "PARTIDO NACIONAL DE HONDURAS": 4173
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 35,
+        "PARTIDO LIBERTAD Y REFUNDACION": 2345,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 274,
+        "PARTIDO LIBERAL DE HONDURAS": 8594,
+        "PARTIDO NACIONAL DE HONDURAS": 4613
       },
       "01": {
         "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 253,
@@ -71548,18 +71564,18 @@
     },
     "per_candidate_by_municipio": {
       "05-001": {
-        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 371,
-        "PARTIDO LIBERTAD Y REFUNDACION": 18359,
-        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 3202,
-        "PARTIDO LIBERAL DE HONDURAS": 95600,
-        "PARTIDO NACIONAL DE HONDURAS": 35317
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 374,
+        "PARTIDO LIBERTAD Y REFUNDACION": 18621,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 3250,
+        "PARTIDO LIBERAL DE HONDURAS": 97168,
+        "PARTIDO NACIONAL DE HONDURAS": 36019
       },
       "04-001": {
-        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 31,
-        "PARTIDO LIBERTAD Y REFUNDACION": 2113,
-        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 247,
-        "PARTIDO LIBERAL DE HONDURAS": 7624,
-        "PARTIDO NACIONAL DE HONDURAS": 4173
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 35,
+        "PARTIDO LIBERTAD Y REFUNDACION": 2345,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 274,
+        "PARTIDO LIBERAL DE HONDURAS": 8594,
+        "PARTIDO NACIONAL DE HONDURAS": 4613
       },
       "01-007": {
         "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 66,
@@ -76652,6 +76668,13 @@
         "PARTIDO LIBERAL DE HONDURAS": 111,
         "PARTIDO NACIONAL DE HONDURAS": 250
       },
+      "04-001-01-014": {
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 3,
+        "PARTIDO LIBERTAD Y REFUNDACION": 94,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 13,
+        "PARTIDO LIBERAL DE HONDURAS": 456,
+        "PARTIDO NACIONAL DE HONDURAS": 205
+      },
       "05-001-01-109": {
         "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 1,
         "PARTIDO LIBERTAD Y REFUNDACION": 243,
@@ -77505,6 +77528,20 @@
         "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 5,
         "PARTIDO LIBERAL DE HONDURAS": 92,
         "PARTIDO NACIONAL DE HONDURAS": 80
+      },
+      "05-001-01-220": {
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 3,
+        "PARTIDO LIBERTAD Y REFUNDACION": 255,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 59,
+        "PARTIDO LIBERAL DE HONDURAS": 1554,
+        "PARTIDO NACIONAL DE HONDURAS": 606
+      },
+      "04-001-01-013": {
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 5,
+        "PARTIDO LIBERTAD Y REFUNDACION": 210,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 22,
+        "PARTIDO LIBERAL DE HONDURAS": 816,
+        "PARTIDO NACIONAL DE HONDURAS": 405
       },
       "13-002-02-009": {
         "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 0,
@@ -79746,13 +79783,6 @@
         "PARTIDO LIBERAL DE HONDURAS": 11,
         "PARTIDO NACIONAL DE HONDURAS": 10
       },
-      "04-001-01-013": {
-        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 4,
-        "PARTIDO LIBERTAD Y REFUNDACION": 72,
-        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 8,
-        "PARTIDO LIBERAL DE HONDURAS": 302,
-        "PARTIDO NACIONAL DE HONDURAS": 170
-      },
       "17-009-01-003": {
         "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 0,
         "PARTIDO LIBERTAD Y REFUNDACION": 148,
@@ -81229,6 +81259,13 @@
         "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 1,
         "PARTIDO LIBERAL DE HONDURAS": 102,
         "PARTIDO NACIONAL DE HONDURAS": 81
+      },
+      "05-001-01-224": {
+        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 2,
+        "PARTIDO LIBERTAD Y REFUNDACION": 66,
+        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 8,
+        "PARTIDO LIBERAL DE HONDURAS": 389,
+        "PARTIDO NACIONAL DE HONDURAS": 230
       },
       "13-002-02-008": {
         "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 0,
@@ -82930,13 +82967,6 @@
         "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 0,
         "PARTIDO LIBERAL DE HONDURAS": 113,
         "PARTIDO NACIONAL DE HONDURAS": 141
-      },
-      "05-001-01-220": {
-        "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 2,
-        "PARTIDO LIBERTAD Y REFUNDACION": 59,
-        "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 19,
-        "PARTIDO LIBERAL DE HONDURAS": 375,
-        "PARTIDO NACIONAL DE HONDURAS": 134
       },
       "03-001-01-024": {
         "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 0,
@@ -89584,12 +89614,12 @@
     },
     "percentage_per_candidate": {
       "PARTIDO DEMOCRATA CRISTIANO DE HONDURAS": 0.19,
-      "PARTIDO LIBERTAD Y REFUNDACION": 19.02,
-      "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 0.75,
-      "PARTIDO LIBERAL DE HONDURAS": 40.19,
-      "PARTIDO NACIONAL DE HONDURAS": 36.9
+      "PARTIDO LIBERTAD Y REFUNDACION": 19.0,
+      "PARTIDO INNOVACION Y UNIDAD SOCIAL DEMOCRATA": 0.76,
+      "PARTIDO LIBERAL DE HONDURAS": 40.25,
+      "PARTIDO NACIONAL DE HONDURAS": 36.86
     },
-    "blancos": 15950,
-    "nulos": 23108
+    "blancos": 15971,
+    "nulos": 23158
   }
 }
