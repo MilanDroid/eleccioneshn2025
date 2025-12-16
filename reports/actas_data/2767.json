@@ -1,5 +1,42 @@
-{
-  "error": "JSON parsing error: Extra data: line 55 column 2 (char 1761)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"digitos\": \"334\",\n                \"digitosArray\": [\"3\", \"3\", \"4\"],\n                \"letras\": [\"Tres\", \"Tres\", \"Cuatro\"],\n                \"digitosLetras\": \"334\"\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS/SOBRANTES\",\n                \"digitos\": \"124\",\n                \"digitosArray\": [\"1\", \"2\", \"4\"],\n                \"letras\": [\"uno\", \"dos\", \"cuatro\"],\n                \"digitosLetras\": \"124\"\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"digitos\": \"210\",\n                \"digitosArray\": [\"2\", \"1\", \"0\"],\n                \"letras\": [\"Dos\", \"uno\", \"cero\"],\n                \"digitosLetras\": \"210\"\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"digitos\": \"205\",\n                \"digitosArray\": [\"2\", \"0\", \"5\"],\n                \"letras\": [\"dos\", \"cero\", \"cinco\"],\n                \"digitosLetras\": \"205\"\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"digitos\": \"005\",\n                \"digitosArray\": [\"0\", \"0\", \"5\"],\n                \"letras\": [\"cero\", \"cero\", \"cinco\"],\n                \"digitosLetras\": \"005\"\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"digitos\": \"210\",\n                \"digitosArray\": [\"2\", \"1\", \"0\"],\n                \"letras\": [\"Dos\", \"uno\", \"cero\"],\n                \"digitosLetras\": \"210\"\n            }\n        ]\n    }\n],\n[\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS\",\n                \"etiqueta\": \"DC\",\n                \"digitos\": \"000\",\n                \"digitosArray\": [\"0\", \"0\", \"0\"],\n                \"letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitosLetras\": \"000\"\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN\",\n                \"etiqueta\": \"libre\",\n                \"digitos\": \"029\",\n                \"digitosArray\": [\"0\", \"2\", \"9\"],\n                \"letras\": [\"cero\", \"dos\", \"nueve\"],\n                \"digitosLetras\": \"029\"\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA\",\n                \"etiqueta\": \"PINU\",\n                \"digitos\": \"005\",\n                \"digitosArray\": [\"0\", \"0\", \"5\"],\n                \"letras\": [\"cero\", \"cero\", \"cinco\"],\n                \"digitosLetras\": \"005\"\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"etiqueta\": \"PLH\",\n                \"digitos\": \"099\",\n                \"digitosArray\": [\"0\", \"9\", \"9\"],\n                \"letras\": [\"cero\", \"nueve\", \"nueve\"],\n                \"digitosLetras\": \"099\"\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"etiqueta\": \"PNH\",\n                \"digitos\": \"071\",\n                \"digitosArray\": [\"0\", \"7\", \"1\"],\n                \"letras\": [\"cero\", \"siete\", \"uno\"],\n                \"digitosLetras\": \"071\"\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"digitos\": \"000\",\n                \"digitosArray\": [\"0\", \"0\", \"0\"],\n                \"letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitosLetras\": \"000\"\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"digitos\": \"006\",\n                \"digitosArray\": [\"0\", \"0\", \"6\"],\n                \"letras\": [\"cero\", \"cero\", \"seis\"],\n                \"digitosLetras\": \"006\"\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"digitos\": \"210\",\n                \"digitosArray\": [\"2\", \"1\", \"0\"],\n                \"letras\": [\"Dos\", \"uno\", \"cero\"],\n                \"digitosLetras\": \"210\"\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "DC"
+      },
+      {
+        "etiqueta": "libre"
+      },
+      {
+        "etiqueta": "PINU"
+      },
+      {
+        "etiqueta": "PLH"
+      },
+      {
+        "etiqueta": "PNH"
+      },
+      {},
+      {},
+      {}
+    ]
+  }
+]

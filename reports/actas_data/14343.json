@@ -1,5 +1,64 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 19 column 50 (char 589)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"numero\": \"247\",\n                \"letras\": [\"Dos\", \"Cuatro\", \"Siete\"]\n            },\n            {\n                \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n                \"numero\": \"052\",\n                \"letras\": [\"Cero\", \"Cinco\", \"Dos\"]\n            },\n            {\n                \"etiqueta\": \"UTILIZADAS\",\n                \"numero\": \"95\",\n                \"letras\": [\"N/A\", \"N/A\", \"N/A\"]  // Solo se ve \"95\" sin desglose claro en letras\n            }\n        ]\n    },\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"numero\": \"189\",\n                \"letras\": [\"Uno\", \"Diez\", \"Nueve\"]\n            },\n            {\n                \"etiqueta\": \"MIEMBROS JRV\",\n                \"numero\": \"006\",\n                \"letras\": [\"Cero\", \"Cero\", \"Seis\"]\n            },\n            {\n                \"etiqueta\": \"TOTAL VOTANTES\",\n                \"numero\": \"195\",\n                \"letras\": [\"Uno\", \"Nueve\", \"Cinco\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"numero\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"numero\": \"062\",\n                \"letras\": [\"Cero\", \"Seis\", \"Dos\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"numero\": \"002\",\n                \"letras\": [\"Cero\", \"Cero\", \"Dos\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"numero\": \"025\",\n                \"letras\": [\"Cero\", \"Dos\", \"Cinco\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"numero\": \"098\",\n                \"letras\": [\"Cero\", \"Nueve\", \"Ocho\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS EN BLANCO\",\n                \"numero\": \"008\",\n                \"letras\": [\"Cero\", \"Cero\", \"Ocho\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS NULOS\",\n                \"numero\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"etiqueta\": \"GRAN TOTAL\",\n                \"numero\": \"195\",\n                \"letras\": [\"Uno\", \"Nueve\", \"Cinco\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA"
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES"
+      },
+      {
+        "etiqueta": "UTILIZADAS"
+      }
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN"
+      },
+      {
+        "etiqueta": "MIEMBROS JRV"
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+        "etiqueta_corta": "DC"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+        "etiqueta_corta": "libre"
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
+        "etiqueta_corta": "PINU"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS"
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS"
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO"
+      },
+      {
+        "etiqueta": "VOTOS NULOS"
+      },
+      {
+        "etiqueta": "GRAN TOTAL"
+      }
+    ]
+  }
+]

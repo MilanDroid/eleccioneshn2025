@@ -1,5 +1,33 @@
-{
-  "error": "JSON parsing error: Extra data: line 76 column 2 (char 2430)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"numeros\": \"357\",\n                \"letras\": [\"Tres\", \"cinco\", \"siete\"],\n                \"item\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"tipo\": \"papeletas_recibidas\"\n                }\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"numeros\": \"163\",\n                \"letras\": [\"uno\", \"seis\", \"tres\"],\n                \"item\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"tipo\": \"papeletas_no_utilizadas\"\n                }\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"numeros\": \"194\",\n                \"letras\": [\"uno\", \"nueve\", \"cuatro\"],\n                \"item\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"tipo\": \"papeletas_utilizadas\"\n                }\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"numeros\": \"186\",\n                \"letras\": [\"uno\", \"ocho\", \"seis\"],\n                \"item\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"tipo\": \"votantes_registrados\"\n                }\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"numeros\": \"005\",\n                \"letras\": [\"cero\", \"cero\", \"cinco\"],\n                \"item\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"tipo\": \"miembros_jrv\"\n                }\n            },\n            {\n                \"descripcion\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"numeros\": \"003\",\n                \"letras\": [\"cero\", \"cero\", \"tres\"],\n                \"item\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"tipo\": \"custodios_informaticos\"\n                }\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"numeros\": \"194\",\n                \"letras\": [\"uno\", \"nueve\", \"cuatro\"],\n                \"item\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"tipo\": \"total_votantes\"\n                }\n            }\n        ]\n    }\n],\n[\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"numeros\": \"000\",\n                \"letras\": [\"cero\", \"cero\", \"cero\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"dc\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"numeros\": \"049\",\n                \"letras\": [\"cero\", \"cuatro\", \"nueve\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"libre\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"numeros\": \"001\",\n                \"letras\": [\"cero\", \"cero\", \"uno\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"pinu\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"numeros\": \"076\",\n                \"letras\": [\"cero\", \"siete\", \"seis\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"liberal\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"numeros\": \"065\",\n                \"letras\": [\"cero\", \"seis\", \"cinco\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"nacional\"\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"numeros\": \"000\",\n                \"letras\": [\"cero\", \"cero\", \"cero\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"blanco\"\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"numeros\": \"003\",\n                \"letras\": [\"cero\", \"cero\", \"tres\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"nulos\"\n                }\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"numeros\": \"194\",\n                \"letras\": [\"uno\", \"nueve\", \"cuatro\"],\n                \"item\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"tipo\": \"total\"\n                }\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]

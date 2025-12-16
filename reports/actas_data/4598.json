@@ -1,5 +1,168 @@
-{
-  "error": "JSON parsing error: Extra data: line 76 column 2 (char 2513)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"348\",\n                \"en_letras\": [\"tres\", \"cuatro\", \"ocho\"],\n                \"json\": {\n                    \"digitos\": [\"3\", \"4\", \"8\"],\n                    \"palabras\": [\"tres\", \"cuatro\", \"ocho\"]\n                }\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": \"163\",\n                \"en_letras\": [\"uno\", \"seis\", \"tres\"],\n                \"json\": {\n                    \"digitos\": [\"1\", \"6\", \"3\"],\n                    \"palabras\": [\"uno\", \"seis\", \"tres\"]\n                }\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"en_numeros\": \"184\",\n                \"en_letras\": [\"uno\", \"ocho\", \"cuatro\"],\n                \"json\": {\n                    \"digitos\": [\"1\", \"8\", \"4\"],\n                    \"palabras\": [\"uno\", \"ocho\", \"cuatro\"]\n                }\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"en_numeros\": \"176\",\n                \"en_letras\": [\"uno\", \"siete\", \"seis\"],\n                \"json\": {\n                    \"digitos\": [\"1\", \"7\", \"6\"],\n                    \"palabras\": [\"uno\", \"siete\", \"seis\"]\n                }\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"005\",\n                \"en_letras\": [\"cero\", \"cero\", \"cinco\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"0\", \"5\"],\n                    \"palabras\": [\"cero\", \"cero\", \"cinco\"]\n                }\n            },\n            {\n                \"descripcion\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n                \"en_numeros\": \"003\",\n                \"en_letras\": [\"cero\", \"cero\", \"tres\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"0\", \"3\"],\n                    \"palabras\": [\"cero\", \"cero\", \"tres\"]\n                }\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"184\",\n                \"en_letras\": [\"uno\", \"ocho\", \"cuatro\"],\n                \"json\": {\n                    \"digitos\": [\"1\", \"8\", \"4\"],\n                    \"palabras\": [\"uno\", \"ocho\", \"cuatro\"]\n                }\n            }\n        ]\n    }\n],\n[\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"en_numeros\": \"002\",\n                \"en_letras\": [\"cero\", \"cero\", \"dos\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"0\", \"2\"],\n                    \"palabras\": [\"cero\", \"cero\", \"dos\"]\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"en_numeros\": \"015\",\n                \"en_letras\": [\"cero\", \"uno\", \"cinco\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"1\", \"5\"],\n                    \"palabras\": [\"cero\", \"uno\", \"cinco\"]\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"en_numeros\": \"002\",\n                \"en_letras\": [\"cero\", \"cero\", \"dos\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"0\", \"2\"],\n                    \"palabras\": [\"cero\", \"cero\", \"dos\"]\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"en_numeros\": \"115\",\n                \"en_letras\": [\"uno\", \"uno\", \"cinco\"],\n                \"json\": {\n                    \"digitos\": [\"1\", \"1\", \"5\"],\n                    \"palabras\": [\"uno\", \"uno\", \"cinco\"]\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"en_numeros\": \"046\",\n                \"en_letras\": [\"cero\", \"cuatro\", \"seis\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"4\", \"6\"],\n                    \"palabras\": [\"cero\", \"cuatro\", \"seis\"]\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"0\", \"0\"],\n                    \"palabras\": [\"cero\", \"cero\", \"cero\"]\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"en_numeros\": \"004\",\n                \"en_letras\": [\"cero\", \"cero\", \"cuatro\"],\n                \"json\": {\n                    \"digitos\": [\"0\", \"0\", \"4\"],\n                    \"palabras\": [\"cero\", \"cero\", \"cuatro\"]\n                }\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"en_numeros\": \"184\",\n                \"en_letras\": [\"uno\", \"ocho\", \"cuatro\"],\n                \"json\": {\n                    \"digitos\": [\"1\", \"8\", \"4\"],\n                    \"palabras\": [\"uno\", \"ocho\", \"cuatro\"]\n                }\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "digitos": "348",
+        "letras": [
+          "tres",
+          "cuatro",
+          "ocho"
+        ],
+        "en_numeros": "348",
+        "en_letras": "tres cuatro ocho"
+      },
+      {
+        "digitos": "163",
+        "letras": [
+          "uno",
+          "seis",
+          "tres"
+        ],
+        "en_numeros": "163",
+        "en_letras": "uno seis tres"
+      },
+      {
+        "digitos": "184",
+        "letras": [
+          "uno",
+          "ocho",
+          "cuatro"
+        ],
+        "en_numeros": "184",
+        "en_letras": "uno ocho cuatro"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "digitos": "176",
+        "letras": [
+          "uno",
+          "siete",
+          "seis"
+        ],
+        "en_numeros": "176",
+        "en_letras": "uno siete seis"
+      },
+      {
+        "digitos": "005",
+        "letras": [
+          "cero",
+          "cero",
+          "cinco"
+        ],
+        "en_numeros": "005",
+        "en_letras": "cero cero cinco"
+      },
+      {
+        "digitos": "003",
+        "letras": [
+          "cero",
+          "cero",
+          "tres"
+        ],
+        "en_numeros": "003",
+        "en_letras": "cero cero tres"
+      },
+      {
+        "digitos": "184",
+        "letras": [
+          "uno",
+          "ocho",
+          "cuatro"
+        ],
+        "en_numeros": "184",
+        "en_letras": "uno ocho cuatro"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "digitos": "002",
+        "letras": [
+          "cero",
+          "cero",
+          "dos"
+        ],
+        "en_numeros": "002",
+        "en_letras": "cero cero dos"
+      },
+      {
+        "digitos": "015",
+        "letras": [
+          "cero",
+          "uno",
+          "cinco"
+        ],
+        "en_numeros": "015",
+        "en_letras": "cero uno cinco"
+      },
+      {
+        "digitos": "002",
+        "letras": [
+          "cero",
+          "cero",
+          "dos"
+        ],
+        "en_numeros": "002",
+        "en_letras": "cero cero dos"
+      },
+      {
+        "digitos": "115",
+        "letras": [
+          "uno",
+          "uno",
+          "cinco"
+        ],
+        "en_numeros": "115",
+        "en_letras": "uno uno cinco"
+      },
+      {
+        "digitos": "046",
+        "letras": [
+          "cero",
+          "cuatro",
+          "seis"
+        ],
+        "en_numeros": "046",
+        "en_letras": "cero cuatro seis"
+      },
+      {
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "digitos": "004",
+        "letras": [
+          "cero",
+          "cero",
+          "cuatro"
+        ],
+        "en_numeros": "004",
+        "en_letras": "cero cero cuatro"
+      },
+      {
+        "digitos": "184",
+        "letras": [
+          "uno",
+          "ocho",
+          "cuatro"
+        ],
+        "en_numeros": "184",
+        "en_letras": "uno ocho cuatro"
+      }
+    ]
+  }
+]

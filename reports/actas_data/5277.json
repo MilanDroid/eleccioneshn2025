@@ -1,5 +1,32 @@
-{
-  "error": "JSON parsing error: Extra data: line 67 column 2 (char 2034)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"digitos\": \"360\",\n                \"letras\": \"TRES SEIS CERO\",\n                \"filasJSON\": {\n                    \"digitos\": \"360\",\n                    \"letras\": [\"TRES\", \"SEIS\", \"CERO\"]\n                }\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS/SOBRANTES\",\n                \"digitos\": \"153\",\n                \"letras\": \"UNO CINCO TRES\",\n                \"filasJSON\": {\n                    \"digitos\": \"153\",\n                    \"letras\": [\"UNO\", \"CINCO\", \"TRES\"]\n                }\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"digitos\": \"207\",\n                \"letras\": \"DOS CERO SIETE\",\n                \"filasJSON\": {\n                    \"digitos\": \"207\",\n                    \"letras\": [\"DOS\", \"CERO\", \"SIETE\"]\n                }\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"digitos\": \"207\",\n                \"letras\": \"DOS CERO UNO\",\n                \"filasJSON\": {\n                    \"digitos\": \"207\",\n                    \"letras\": [\"DOS\", \"CERO\", \"UNO\"]\n                }\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"digitos\": \"006\",\n                \"letras\": \"CERO CERO SEIS\",\n                \"filasJSON\": {\n                    \"digitos\": \"006\",\n                    \"letras\": [\"CERO\", \"CERO\", \"SEIS\"]\n                }\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"digitos\": \"207\",\n                \"letras\": \"DOS CERO SIETE\",\n                \"filasJSON\": {\n                    \"digitos\": \"207\",\n                    \"letras\": [\"DOS\", \"CERO\", \"SIETE\"]\n                }\n            }\n        ]\n    }\n],\n[\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO\",\n                \"nombre\": \"Partido Demócrata Cristiano de Honduras (DC)\",\n                \"digitos\": \"000\",\n                \"letras\": \"CERO CERO CERO\",\n                \"filasJSON\": {\n                    \"digitos\": \"000\",\n                    \"letras\": [\"CERO\", \"CERO\", \"CERO\"]\n                }\n            },\n            {\n                \"descripcion\": \"Partido\",\n                \"nombre\": \"Partido Libertad y Refundación (Libre)\",\n                \"digitos\": \"028\",\n                \"letras\": \"CERO DOS OCHO\",\n                \"filasJSON\": {\n                    \"digitos\": \"028\",\n                    \"letras\": [\"CERO\", \"DOS\", \"OCHO\"]\n                }\n            },\n            {\n                \"descripcion\": \"Partido\",\n                \"nombre\": \"Partido Innovación y Unidad Social Democrática (PINU)\",\n                \"digitos\": \"007\",\n                \"letras\": \"CERO CERO UNO\",\n                \"filasJSON\": {\n                    \"digitos\": \"007\",\n                    \"letras\": [\"CERO\", \"CERO\", \"UNO\"]\n                }\n            },\n            {\n                \"descripcion\": \"Partido\",\n                \"nombre\": \"Partido Liberal de Honduras\",\n                \"digitos\": \"147\",\n                \"letras\": \"UNO CUATRO SIETE\",\n                \"filasJSON\": {\n                    \"digitos\": \"147\",\n                    \"letras\": [\"UNO\", \"CUATRO\", \"SIETE\"]\n                }\n            },\n            {\n                \"descripcion\": \"Partido\",\n                \"nombre\": \"Partido Nacional de Honduras\",\n                \"digitos\": \"030\",\n                \"letras\": \"CERO TRES CERO\",\n                \"filasJSON\": {\n                    \"digitos\": \"030\",\n                    \"letras\": [\"CERO\", \"TRES\", \"CERO\"]\n                }\n            },\n            {\n                \"descripcion\": \"Votos en Blanco\",\n                \"digitos\": \"007\",\n                \"letras\": \"CERO CERO UNO\",\n                \"filasJSON\": {\n                    \"digitos\": \"007\",\n                    \"letras\": [\"CERO\", \"CERO\", \"UNO\"]\n                }\n            },\n            {\n                \"descripcion\": \"Votos Nulos\",\n                \"digitos\": \"000\",\n                \"letras\": \"CERO CERO CERO\",\n                \"filasJSON\": {\n                    \"digitos\": \"000\",\n                    \"letras\": [\"CERO\", \"CERO\", \"CERO\"]\n                }\n            },\n            {\n                \"descripcion\": \"Gran Total\",\n                \"digitos\": \"207\",\n                \"letras\": \"DOS CERO SIETE\",\n                \"filasJSON\": {\n                    \"digitos\": \"207\",\n                    \"letras\": [\"DOS\", \"CERO\", \"SIETE\"]\n                }\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]

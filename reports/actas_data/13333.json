@@ -1,5 +1,60 @@
-{
-  "error": "JSON parsing error: Extra data: line 49 column 2 (char 1561)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"digitos\": [\"3\", \"5\", \"9\"],\n                \"letras\": [\"Tres\", \"Cinco\", \"Nueve\"],\n                \"digitos_concatenados\": \"359\"\n            },\n            {\n                \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n                \"digitos\": [\"1\", \"7\", \"5\"],\n                \"letras\": [\"Uno\", \"Siete\", \"Cinco\"],\n                \"digitos_concatenados\": \"175\"\n            },\n            {\n                \"etiqueta\": \"UTILIZADAS\",\n                \"digitos\": [\"1\", \"8\", \"4\"],\n                \"letras\": [\"Uno\", \"Ocho\", \"Cuatro\"],\n                \"digitos_concatenados\": \"184\"\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"digitos\": [\"1\", \"7\", \"7\"],\n                \"letras\": [\"Uno\", \"Siete\", \"Siete\"],\n                \"digitos_concatenados\": \"177\"\n            },\n            {\n                \"etiqueta\": \"MIEMBROS JRV\",\n                \"digitos\": [\"0\", \"0\", \"7\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Siete\"],\n                \"digitos_concatenados\": \"007\"\n            },\n            {\n                \"etiqueta\": \"TOTAL VOTANTES\",\n                \"digitos\": [\"1\", \"8\", \"4\"],\n                \"letras\": [\"Uno\", \"Ocho\", \"Cuatro\"],\n                \"digitos_concatenados\": \"184\"\n            }\n        ]\n    }\n],\n[\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS\",\n                \"etiqueta_corta\": \"DC\",\n                \"digitos\": [\"0\", \"0\", \"1\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Uno\"],\n                \"digitos_concatenados\": \"001\"\n            },\n            {\n                \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN\",\n                \"etiqueta_corta\": \"libre\",\n                \"digitos\": [\"0\", \"2\", \"2\"],\n                \"letras\": [\"Cero\", \"Dos\", \"Dos\"],\n                \"digitos_concatenados\": \"022\"\n            },\n            {\n                \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA\",\n                \"etiqueta_corta\": \"PINU\",\n                \"digitos\": [\"0\", \"0\", \"2\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Dos\"],\n                \"digitos_concatenados\": \"002\"\n            },\n            {\n                \"etiqueta\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"etiqueta_corta\": \"PLH\",\n                \"digitos\": [\"0\", \"9\", \"9\"],\n                \"letras\": [\"Cero\", \"Nueve\", \"Nueve\"],\n                \"digitos_concatenados\": \"099\"\n            },\n            {\n                \"etiqueta\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"etiqueta_corta\": \"PNH\",\n                \"digitos\": [\"0\", \"5\", \"9\"],\n                \"letras\": [\"Cero\", \"Cinco\", \"Nueve\"],\n                \"digitos_concatenados\": \"059\"\n            },\n            {\n                \"etiqueta\": \"VOTOS EN BLANCO\",\n                \"digitos\": [\"0\", \"0\", \"1\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Uno\"],\n                \"digitos_concatenados\": \"001\"\n            },\n            {\n                \"etiqueta\": \"VOTOS NULOS\",\n                \"digitos\": [\"0\", \"0\", \"0\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"],\n                \"digitos_concatenados\": \"000\"\n            },\n            {\n                \"etiqueta\": \"GRAN TOTAL\",\n                \"digitos\": [\"1\", \"8\", \"4\"],\n                \"letras\": [\"Uno\", \"Ocho\", \"Cuatro\"],\n                \"digitos_concatenados\": \"184\"\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA"
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES"
+      },
+      {
+        "etiqueta": "UTILIZADAS"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN"
+      },
+      {
+        "etiqueta": "MIEMBROS JRV"
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN"
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS"
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS"
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO"
+      },
+      {
+        "etiqueta": "VOTOS NULOS"
+      },
+      {
+        "etiqueta": "GRAN TOTAL"
+      }
+    ]
+  }
+]

@@ -1,5 +1,32 @@
-{
-  "error": "JSON parsing error: Extra data: line 55 column 2 (char 1928)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"digitos\": [\"3\", \"4\", \"0\"],\n                \"letras\": [\"Tres\", \"Cuatro\", \"Cero\"],\n                \"digitos_combinados\": \"340\",\n                \"letras_combinadas\": [\"Tres\", \"Cuatro\", \"Cero\"]\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"digitos\": [\"1\", \"2\", \"9\"],\n                \"letras\": [\"Uno\", \"Dos\", \"Nueve\"],\n                \"digitos_combinados\": \"129\",\n                \"letras_combinadas\": [\"Uno\", \"Dos\", \"Nueve\"]\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"digitos\": [\"2\", \"1\", \"1\"],\n                \"letras\": [\"Dos\", \"Uno\", \"Uno\"],\n                \"digitos_combinados\": \"211\",\n                \"letras_combinadas\": [\"Dos\", \"Uno\", \"Uno\"]\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"digitos\": [\"2\", \"0\", \"6\"],\n                \"letras\": [\"Dos\", \"Cero\", \"Seis\"],\n                \"digitos_combinados\": \"206\",\n                \"letras_combinadas\": [\"Dos\", \"Cero\", \"Seis\"]\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"digitos\": [\"0\", \"0\", \"5\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Cinco\"],\n                \"digitos_combinados\": \"005\",\n                \"letras_combinadas\": [\"Cero\", \"Cero\", \"Cinco\"]\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"digitos\": [\"2\", \"1\", \"1\"],\n                \"letras\": [\"Dos\", \"Uno\", \"Uno\"],\n                \"digitos_combinados\": \"211\",\n                \"letras_combinadas\": [\"Dos\", \"Uno\", \"Uno\"]\n            }\n        ]\n    }\n],\n[\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"digitos\": [\"0\", \"0\", \"1\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Uno\"],\n                \"digitos_combinados\": \"001\",\n                \"letras_combinadas\": [\"Cero\", \"Cero\", \"Uno\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"digitos\": [\"0\", \"1\", \"8\"],\n                \"letras\": [\"Cero\", \"Uno\", \"Ocho\"],\n                \"digitos_combinados\": \"018\",\n                \"letras_combinadas\": [\"Cero\", \"Uno\", \"Ocho\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"digitos\": [\"0\", \"0\", \"5\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Cinco\"],\n                \"digitos_combinados\": \"005\",\n                \"letras_combinadas\": [\"Cero\", \"Cero\", \"Cinco\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"digitos\": [\"1\", \"2\", \"7\"],\n                \"letras\": [\"Uno\", \"Dos\", \"Siete\"],\n                \"digitos_combinados\": \"127\",\n                \"letras_combinadas\": [\"Uno\", \"Dos\", \"Siete\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"digitos\": [\"0\", \"5\", \"6\"],\n                \"letras\": [\"Cero\", \"Cinco\", \"Seis\"],\n                \"digitos_combinados\": \"056\",\n                \"letras_combinadas\": [\"Cero\", \"Cinco\", \"Seis\"]\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"digitos\": [\"0\", \"0\", \"2\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Dos\"],\n                \"digitos_combinados\": \"002\",\n                \"letras_combinadas\": [\"Cero\", \"Cero\", \"Dos\"]\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"digitos\": [\"0\", \"0\", \"2\"],\n                \"letras\": [\"Cero\", \"Cero\", \"Dos\"],\n                \"digitos_combinados\": \"002\",\n                \"letras_combinadas\": [\"Cero\", \"Cero\", \"Dos\"]\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"digitos\": [\"2\", \"1\", \"1\"],\n                \"letras\": [\"Dos\", \"Uno\", \"Uno\"],\n                \"digitos_combinados\": \"211\",\n                \"letras_combinadas\": [\"Dos\", \"Uno\", \"Uno\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]

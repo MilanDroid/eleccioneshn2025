@@ -1,5 +1,34 @@
-{
-  "error": "JSON parsing error: Extra data: line 52 column 1 (char 1500)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"digitos\": \"194\",\n                \"letras\": [\"uno\", \"nuere\", \"cuatro\"],\n                \"digitos_correctos\": \"194\",\n                \"letras_correctas\": [\"uno\", \"nueve\", \"cuatro\"]\n            },\n            {\n                \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n                \"digitos\": \"074\",\n                \"letras\": [\"cero\", \"siete\", \"cuatro\"]\n            },\n            {\n                \"etiqueta\": \"UTILIZADAS\",\n                \"digitos\": \"120\",\n                \"letras\": [\"uno\", \"dos\", \"cero\"]\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"digitos\": \"111\",\n                \"letras\": [\"uno\", \"uno\", \"uno\"]\n            },\n            {\n                \"etiqueta\": \"MIEMBROS JRV\",\n                \"digitos\": \"006\",\n                \"letras\": [\"cero\", \"cero\", \"seis\"]\n            },\n            {\n                \"etiqueta\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"digitos\": \"003\",\n                \"letras\": [\"cero\", \"cero\", \"tres\"]\n            },\n            {\n                \"etiqueta\": \"TOTAL VOTANTES\",\n                \"digitos\": \"120\",\n                \"letras\": [\"uno\", \"dos\", \"cero\"]\n            }\n        ]\n    }\n]\n\n,\n\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS\",\n                \"etiqueta_corta\": \"DC\",\n                \"digitos\": \"001\",\n                \"letras\": [\"cero\", \"cero\", \"uno\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN\",\n                \"etiqueta_corta\": \"libre\",\n                \"digitos\": \"009\",\n                \"letras\": [\"cero\", \"cero\", \"nueve\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA\",\n                \"etiqueta_corta\": \"PINU\",\n                \"digitos\": \"000\",\n                \"letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"etiqueta_corta\": \"PLH\",\n                \"digitos\": \"026\",\n                \"letras\": [\"cero\", \"dos\", \"seis\"]\n            },\n            {\n                \"etiqueta\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"etiqueta_corta\": \"PNH\",\n                \"digitos\": \"075\",\n                \"letras\": [\"cero\", \"siete\", \"cinco\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS EN BLANCO\",\n                \"digitos\": \"001\",\n                \"letras\": [\"cero\", \"cero\", \"uno\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS NULOS\",\n                \"digitos\": \"008\",\n                \"letras\": [\"cero\", \"cero\", \"ocho\"]\n            },\n            {\n                \"etiqueta\": \"GRAN TOTAL\",\n                \"digitos\": \"120\",\n                \"letras\": [\"uno\", \"dos\", \"cero\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA"
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES"
+      },
+      {
+        "etiqueta": "UTILIZADAS"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN"
+      },
+      {
+        "etiqueta": "MIEMBROS JRV"
+      },
+      {
+        "etiqueta": "CUSTODIOS INFORMÁTICOS ELECTORALES"
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES"
+      }
+    ]
+  }
+]

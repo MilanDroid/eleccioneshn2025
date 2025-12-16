@@ -1,5 +1,33 @@
-{
-  "error": "JSON parsing error: Extra data: line 90 column 2 (char 2694)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"datos\": {\n                    \"en_numeros\": \"292\",\n                    \"en_letras\": {\n                        \"centena\": \"Dos\",\n                        \"decena\": \"Nueve\",\n                        \"unidad\": \"Dos\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"datos\": {\n                    \"en_numeros\": \"080\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Ocho\",\n                        \"unidad\": \"Cero\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"datos\": {\n                    \"en_numeros\": \"212\",\n                    \"en_letras\": {\n                        \"centena\": \"Dos\",\n                        \"decena\": \"Uno\",\n                        \"unidad\": \"Dos\"\n                    }\n                }\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"datos\": {\n                    \"en_numeros\": \"203\",\n                    \"en_letras\": {\n                        \"centena\": \"Dos\",\n                        \"decena\": \"Cero\",\n                        \"unidad\": \"Tres\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"datos\": {\n                    \"en_numeros\": \"006\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cero\",\n                        \"unidad\": \"Seis\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"datos\": {\n                    \"en_numeros\": \"003\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cero\",\n                        \"unidad\": \"Tres\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"datos\": {\n                    \"en_numeros\": \"213\",\n                    \"en_letras\": {\n                        \"centena\": \"Dos\",\n                        \"decena\": \"Uno\",\n                        \"unidad\": \"Tres\"\n                    }\n                }\n            }\n        ]\n    }\n],\n[\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"datos\": {\n                    \"en_numeros\": \"000\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cero\",\n                        \"unidad\": \"Cero\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"datos\": {\n                    \"en_numeros\": \"114\",\n                    \"en_letras\": {\n                        \"centena\": \"Uno\",\n                        \"decena\": \"Uno\",\n                        \"unidad\": \"Cuatro\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"datos\": {\n                    \"en_numeros\": \"001\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cero\",\n                        \"unidad\": \"Uno\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"datos\": {\n                    \"en_numeros\": \"050\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cinco\",\n                        \"unidad\": \"Cero\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"datos\": {\n                    \"en_numeros\": \"047\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cuatro\",\n                        \"unidad\": \"Siete\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"datos\": {\n                    \"en_numeros\": \"003\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cero\",\n                        \"unidad\": \"Tres\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"datos\": {\n                    \"en_numeros\": \"002\",\n                    \"en_letras\": {\n                        \"centena\": \"Cero\",\n                        \"decena\": \"Cero\",\n                        \"unidad\": \"Dos\"\n                    }\n                }\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"datos\": {\n                    \"en_numeros\": \"217\",\n                    \"en_letras\": {\n                        \"centena\": \"Dos\",\n                        \"decena\": \"Uno\",\n                        \"unidad\": \"Siete\"\n                    }\n                }\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]

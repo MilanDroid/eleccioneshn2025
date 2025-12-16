@@ -1,5 +1,73 @@
-{
-  "error": "JSON parsing error: Extra data: line 52 column 1 (char 1609)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"357\",\n                \"digitos\": [\"3\", \"5\", \"7\"],\n                \"en_letras\": [\"tres\", \"cinco\", \"seis\"],\n                \"nota\": \"Nota: 'seis' en letras difiere del número escrito (7)\"\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS/SOBRANTES\",\n                \"en_numeros\": \"165\",\n                \"digitos\": [\"1\", \"6\", \"5\"],\n                \"en_letras\": [\"uno\", \"seis\", \"cinco\"]\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"en_numeros\": \"192\",\n                \"digitos\": [\"1\", \"9\", \"2\"],\n                \"en_letras\": [\"uno\", \"nueve\", \"dos\"]\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"en_numeros\": \"186\",\n                \"digitos\": [\"1\", \"8\", \"6\"],\n                \"en_letras\": [\"uno\", \"ocho\", \"seis\"]\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"006\",\n                \"digitos\": [\"0\", \"0\", \"6\"],\n                \"en_letras\": [\"cero\", \"cero\", \"seis\"]\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"192\",\n                \"digitos\": [\"1\", \"9\", \"2\"],\n                \"en_letras\": [\"uno\", \"nueve\", \"dos\"]\n            }\n        ]\n    }\n]\n\n,\n\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"en_numeros\": \"000\",\n                \"digitos\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"en_numeros\": \"018\",\n                \"digitos\": [\"0\", \"1\", \"8\"],\n                \"en_letras\": [\"cero\", \"uno\", \"ocho\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"en_numeros\": \"001\",\n                \"digitos\": [\"0\", \"0\", \"1\"],\n                \"en_letras\": [\"cero\", \"cero\", \"uno\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"en_numeros\": \"129\",\n                \"digitos\": [\"1\", \"2\", \"9\"],\n                \"en_letras\": [\"uno\", \"dos\", \"nueve\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"en_numeros\": \"042\",\n                \"digitos\": [\"0\", \"4\", \"2\"],\n                \"en_letras\": [\"cero\", \"cuatro\", \"dos\"]\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"001\",\n                \"digitos\": [\"0\", \"0\", \"1\"],\n                \"en_letras\": [\"cero\", \"cero\", \"uno\"]\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"en_numeros\": \"001\",\n                \"digitos\": [\"0\", \"0\", \"1\"],\n                \"en_letras\": [\"cero\", \"cero\", \"uno\"]\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"en_numeros\": \"192\",\n                \"digitos\": [\"1\", \"9\", \"2\"],\n                \"en_letras\": [\"uno\", \"nueve\", \"dos\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "digitos": "357",
+        "letras": [
+          "tres",
+          "cinco",
+          "seis"
+        ],
+        "en_numeros": "357",
+        "en_letras": "tres cinco seis"
+      },
+      {
+        "digitos": "165",
+        "letras": [
+          "uno",
+          "seis",
+          "cinco"
+        ],
+        "en_numeros": "165",
+        "en_letras": "uno seis cinco"
+      },
+      {
+        "digitos": "192",
+        "letras": [
+          "uno",
+          "nueve",
+          "dos"
+        ],
+        "en_numeros": "192",
+        "en_letras": "uno nueve dos"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "digitos": "186",
+        "letras": [
+          "uno",
+          "ocho",
+          "seis"
+        ],
+        "en_numeros": "186",
+        "en_letras": "uno ocho seis"
+      },
+      {
+        "digitos": "006",
+        "letras": [
+          "cero",
+          "cero",
+          "seis"
+        ],
+        "en_numeros": "006",
+        "en_letras": "cero cero seis"
+      },
+      {
+        "digitos": "192",
+        "letras": [
+          "uno",
+          "nueve",
+          "dos"
+        ],
+        "en_numeros": "192",
+        "en_letras": "uno nueve dos"
+      }
+    ]
+  }
+]

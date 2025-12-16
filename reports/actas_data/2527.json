@@ -1,5 +1,34 @@
-{
-  "error": "JSON parsing error: Expecting property name enclosed in double quotes: line 87 column 46 (char 2851)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"numeros\": \"352\",\n                \"letras\": [\"tres\", \"cinco\", \"dos\"],\n                \"digitos\": [\"3\", \"5\", \"2\"]\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"numeros\": \"124\",\n                \"letras\": [\"uno\", \"dos\", \"cuatro\"],\n                \"digitos\": [\"1\", \"2\", \"4\"]\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"numeros\": \"228\",\n                \"letras\": [\"dos\", \"dos\", \"ocho\"],\n                \"digitos\": [\"2\", \"2\", \"8\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"numeros\": \"222\",\n                \"letras\": [\"dos\", \"dos\", \"dos\"],\n                \"digitos\": [\"2\", \"2\", \"2\"]\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"numeros\": \"004\",\n                \"letras\": [\"cero\", \"cero\", \"cuatro\"],\n                \"digitos\": [\"0\", \"0\", \"4\"]\n            },\n            {\n                \"descripcion\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"numeros\": \"002\",\n                \"letras\": [\"cero\", \"cero\", \"dos\"],\n                \"digitos\": [\"0\", \"0\", \"2\"]\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"numeros\": \"228\",\n                \"letras\": [\"dos\", \"dos\", \"ocho\"],\n                \"digitos\": [\"2\", \"2\", \"8\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DC\",\n                \"numeros\": \"004\",\n                \"letras\": [\"cero\", \"cero\", \"cuatro\"],\n                \"digitos\": [\"0\", \"0\", \"4\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBRE\",\n                \"numeros\": \"022\",\n                \"letras\": [\"cero\", \"dos\", \"dos\"],\n                \"digitos\": [\"0\", \"2\", \"2\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO PINU\",\n                \"numeros\": \"002\",\n                \"letras\": [\"cero\", \"cero\", \"dos\"],\n                \"digitos\": [\"0\", \"0\", \"2\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL\",\n                \"numeros\": \"177\",\n                \"letras\": [\"uno\", \"siete\", \"siete\"],\n                \"digitos\": [\"1\", \"7\", \"7\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL\",\n                \"numeros\": \"85\",\n                \"letras\": [\"cero\", \"ocho\", \"cinco\"],\n                \"digitos\": [\"8\", \"5\", \"?\"],  // El último dígito no es claro, se deja como \"?\"\n                \"letras_correctas\": [\"cero\", \"ocho\", \"cinco\"]\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"numeros\": \"000\",\n                \"letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"numeros\": \"014\",\n                \"letras\": [\"cero\", \"uno\", \"cuatro\"],\n                \"digitos\": [\"0\", \"1\", \"4\"]\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"numeros\": \"228\",\n                \"letras\": [\"dos\", \"dos\", \"ocho\"],\n                \"digitos\": [\"2\", \"2\", \"8\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]

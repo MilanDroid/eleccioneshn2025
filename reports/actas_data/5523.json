@@ -1,5 +1,72 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 33 column 66 (char 1345)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"320\",\n                \"en_letras\": [\"tres\", \"dos\", \"cero\"],\n                \"filas_json\": {\n                    \"centenas\": {\"numero\": \"3\", \"letra\": \"tres\"},\n                    \"decenas\": {\"numero\": \"2\", \"letra\": \"dos\"},\n                    \"unidades\": {\"numero\": \"0\", \"letra\": \"cero\"}\n                }\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": \"149\",\n                \"en_letras\": [\"uno\", \"cuatro\", \"nueve\"],\n                \"filas_json\": {\n                    \"centenas\": {\"numero\": \"1\", \"letra\": \"uno\"},\n                    \"decenas\": {\"numero\": \"4\", \"letra\": \"cuatro\"},\n                    \"unidades\": {\"numero\": \"9\", \"letra\": \"nueve\"}\n                }\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"en_numeros\": \"171\",\n                \"en_letras\": [\"uno\", \"siete\", \"seis\"],\n                \"filas_json\": {\n                    \"centenas\": {\"numero\": \"1\", \"letra\": \"uno\"},\n                    \"decenas\": {\"numero\": \"7\", \"letra\": \"siete\"},\n                    \"unidades\": {\"numero\": \"1\", \"letra\": \"uno\"}  // Corregido según el texto \"uno siete seis\" mal escrito\n                }\n            }\n        ]\n    },\n    {\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"en_numeros\": \"14\",\n                \"en_letras\": [\"uno\", \"siete\"],\n                \"filas_json\": {\n                    \"decenas\": {\"numero\": \"1\", \"letra\": \"uno\"},\n                    \"unidades\": {\"numero\": \"4\", \"letra\": \"siete\"} // Corregido según el texto incompleto\n                }\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"006\",\n                \"en_letras\": [\"cero\", \"cero\", \"seis\"],\n                \"filas_json\": {\n                    \"centenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                    \"decenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                    \"unidades\": {\"numero\": \"6\", \"letra\": \"seis\"}\n                }\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"106\",\n                \"en_letras\": [\"uno\", \"cero\", \"seis\"],\n                \"filas_json\": {\n                    \"centenas\": {\"numero\": \"1\", \"letra\": \"uno\"},\n                    \"decenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                    \"unidades\": {\"numero\": \"6\", \"letra\": \"seis\"}\n                }\n            }\n        ]\n    }\n],\n{\n    \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n    \"filas\": [\n        {\n            \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n            \"en_numeros\": \"060\",\n            \"en_letras\": [\"cero\", \"seis\", \"cero\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"decenas\": {\"numero\": \"6\", \"letra\": \"seis\"},\n                \"unidades\": {\"numero\": \"0\", \"letra\": \"cero\"}\n            }\n        },\n        {\n            \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n            \"en_numeros\": \"003\",\n            \"en_letras\": [\"cero\", \"cero\", \"tres\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"decenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"unidades\": {\"numero\": \"3\", \"letra\": \"tres\"}\n            }\n        },\n        {\n            \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n            \"en_numeros\": \"000\",\n            \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"decenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"unidades\": {\"numero\": \"0\", \"letra\": \"cero\"}\n            }\n        },\n        {\n            \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n            \"en_numeros\": \"100\",\n            \"en_letras\": [\"uno\", \"cero\", \"cero\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"1\", \"letra\": \"uno\"},\n                \"decenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"unidades\": {\"numero\": \"0\", \"letra\": \"cero\"}\n            }\n        },\n        {\n            \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n            \"en_numeros\": \"062\",\n            \"en_letras\": [\"cero\", \"seis\", \"dos\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"decenas\": {\"numero\": \"6\", \"letra\": \"seis\"},\n                \"unidades\": {\"numero\": \"2\", \"letra\": \"dos\"}\n            }\n        },\n        {\n            \"descripcion\": \"VOTOS EN BLANCO\",\n            \"en_numeros\": \"006\",\n            \"en_letras\": [\"cero\", \"cero\", \"seis\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"decenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"unidades\": {\"numero\": \"6\", \"letra\": \"seis\"}\n            }\n        },\n        {\n            \"descripcion\": \"VOTOS NULOS\",\n            \"en_numeros\": \"005\",\n            \"en_letras\": [\"cero\", \"cero\", \"cinco\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"decenas\": {\"numero\": \"0\", \"letra\": \"cero\"},\n                \"unidades\": {\"numero\": \"5\", \"letra\": \"cinco\"}\n            }\n        },\n        {\n            \"descripcion\": \"GRAN TOTAL\",\n            \"en_numeros\": \"165\",\n            \"en_letras\": [\"uno\", \"seis\", \"cinco\"],\n            \"filas_json\": {\n                \"centenas\": {\"numero\": \"1\", \"letra\": \"uno\"},\n                \"decenas\": {\"numero\": \"6\", \"letra\": \"seis\"},\n                \"unidades\": {\"numero\": \"5\", \"letra\": \"cinco\"}\n            }\n        }\n    ]\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "digitos": "320",
+        "letras": [
+          "tres",
+          "dos",
+          "cero"
+        ],
+        "en_numeros": "320",
+        "en_letras": "tres dos cero"
+      },
+      {
+        "digitos": "149",
+        "letras": [
+          "uno",
+          "cuatro",
+          "nueve"
+        ],
+        "en_numeros": "149",
+        "en_letras": "uno cuatro nueve"
+      },
+      {
+        "digitos": "171",
+        "letras": [
+          "uno",
+          "siete",
+          "seis"
+        ],
+        "en_numeros": "171",
+        "en_letras": "uno siete seis"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "digitos": "14",
+        "letras": [
+          "uno",
+          "siete"
+        ],
+        "en_numeros": "14",
+        "en_letras": "uno siete"
+      },
+      {
+        "digitos": "006",
+        "letras": [
+          "cero",
+          "cero",
+          "seis"
+        ],
+        "en_numeros": "006",
+        "en_letras": "cero cero seis"
+      },
+      {
+        "digitos": "106",
+        "letras": [
+          "uno",
+          "cero",
+          "seis"
+        ],
+        "en_numeros": "106",
+        "en_letras": "uno cero seis"
+      }
+    ]
+  }
+]

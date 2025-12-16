@@ -1,5 +1,44 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 88 column 68 (char 3237)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"digitos\": \"288\",\n                \"letras\": [\"dos\", \"ocho\", \"ocho\"],\n                \"digitos_concatenados\": \"288\",\n                \"letras_concatenadas\": [\"dos\", \"ocho\", \"ocho\"]\n            },\n            {\n                \"descripcion\": \"SOBRIZADAS / SOBRANTES\",\n                \"digitos\": \"100\",\n                \"letras\": [\"uno\", \"cero\", \"cero\"],\n                \"digitos_concatenados\": \"100\",\n                \"letras_concatenadas\": [\"uno\", \"cero\", \"cero\"]\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"digitos\": \"188\",\n                \"letras\": [\"uno\", \"ocho\", \"ocho\"],\n                \"digitos_concatenados\": \"188\",\n                \"letras_concatenadas\": [\"uno\", \"ocho\", \"ocho\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRO DE VOTACIÓN\",\n                \"digitos\": \"179\",\n                \"letras\": [\"uno\", \"siete\", \"nueve\"],\n                \"digitos_concatenados\": \"179\",\n                \"letras_concatenadas\": [\"uno\", \"siete\", \"nueve\"]\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"digitos\": \"006\",\n                \"letras\": [\"cero\", \"cero\", \"seis\"],\n                \"digitos_concatenados\": \"006\",\n                \"letras_concatenadas\": [\"cero\", \"cero\", \"seis\"]\n            },\n            {\n                \"descripcion\": \"CUSTODIOS ELECTORALES\",\n                \"digitos\": \"003\",\n                \"letras\": [\"cero\", \"cero\", \"tres\"],\n                \"digitos_concatenados\": \"003\",\n                \"letras_concatenadas\": [\"cero\", \"cero\", \"tres\"]\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"digitos\": \"188\",\n                \"letras\": [\"uno\", \"ocho\", \"ocho\"],\n                \"digitos_concatenados\": \"188\",\n                \"letras_concatenadas\": [\"uno\", \"ocho\", \"ocho\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"partido\": \"Partido Demócrata Cristiano (DC)\",\n                \"etiqueta\": \"DC\",\n                \"digitos\": \"000\",\n                \"letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitos_concatenados\": \"000\",\n                \"letras_concatenadas\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"partido\": \"Libre\",\n                \"etiqueta\": \"libre\",\n                \"digitos\": \"021\",\n                \"letras\": [\"cero\", \"dos\", \"uno\"],\n                \"digitos_concatenados\": \"021\",\n                \"letras_concatenadas\": [\"cero\", \"dos\", \"uno\"]\n            },\n            {\n                \"partido\": \"Partido Innovación y Renovación Social (PINI)\",\n                \"etiqueta\": \"PINI\",\n                \"digitos\": \"004\",\n                \"letras\": [\"cero\", \"cero\", \"cuatro\"],\n                \"digitos_concatenados\": \"004\",\n                \"letras_concatenadas\": [\"cero\", \"cero\", \"cuatro\"]  // Corregido según el número visible\n            },\n            {\n                \"partido\": \"Partido Liberación Nacional (PLN)\",\n                \"etiqueta\": \"PLN\",\n                \"digitos\": \"127\",\n                \"letras\": [\"uno\", \"dos\", \"siete\"],\n                \"digitos_concatenados\": \"127\",\n                \"letras_concatenadas\": [\"uno\", \"dos\", \"siete\"]\n            },\n            {\n                \"partido\": \"Partido Acción Ciudadana (PAC)\",\n                \"etiqueta\": \"PAC\",\n                \"digitos\": \"032\",\n                \"letras\": [\"cero\", \"tres\", \"dos\"],\n                \"digitos_concatenados\": \"032\",\n                \"letras_concatenadas\": [\"cero\", \"tres\", \"dos\"]\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"digitos\": \"003\",\n                \"letras\": [\"cero\", \"cero\", \"tres\"],\n                \"digitos_concatenados\": \"003\",\n                \"letras_concatenadas\": [\"cero\", \"cero\", \"tres\"]\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"digitos\": \"004\",\n                \"letras\": [\"cero\", \"cero\", \"cuatro\"],\n                \"digitos_concatenados\": \"004\",\n                \"letras_concatenadas\": [\"cero\", \"cero\", \"cuatro\"]\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"digitos\": \"188\",\n                \"letras\": [\"uno\", \"ocho\", \"ocho\"],\n                \"digitos_concatenados\": \"188\",\n                \"letras_concatenadas\": [\"uno\", \"ocho\", \"ocho\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "DC"
+      },
+      {
+        "etiqueta": "libre"
+      },
+      {
+        "etiqueta": "PINI"
+      },
+      {
+        "etiqueta": "PLN"
+      },
+      {
+        "etiqueta": "PAC"
+      },
+      {},
+      {},
+      {}
+    ]
+  }
+]

@@ -1,5 +1,167 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 9 column 55 (char 283)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"filas\": [\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"250\",\n                \"en_letras\": [\"Dos\", \"Cinc\", \"Cero\"]  // \"Cinc\" es ilegible, se transcribe como está\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": \"111\",\n                \"en_letras\": [\"Uno\", \"Uno\", \"Uno\"]\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"UTILIZADAS\",\n                \"en_numeros\": \"139\",\n                \"en_letras\": [\"Uno\", \"Tres\", \"Nueve\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"en_numeros\": \"131\",\n                \"en_letras\": [\"Uno\", \"Tres\", \"Uno\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"006\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Seis\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"en_numeros\": \"002\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Dos\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"139\",\n                \"en_letras\": [\"Uno\", \"Tres\", \"Nueve\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"partido\": \"Partido Demócrata Cristiano de Honduras\",\n                \"etiqueta\": \"DC\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"partido\": \"Partido Libertad y Refundación\",\n                \"etiqueta\": \"libre\",\n                \"en_numeros\": \"010\",\n                \"en_letras\": [\"Cero\", \"Uno\", \"Cero\"]\n            },\n            {\n                \"partido\": \"Partido Innovación y Unidad Social Demócrata\",\n                \"etiqueta\": \"PINU\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"partido\": \"Partido Liberal de Honduras\",\n                \"etiqueta\": \"PL\",\n                \"en_numeros\": \"088\",\n                \"en_letras\": [\"Cero\", \"Ocho\", \"Ocho\"]\n            },\n            {\n                \"partido\": \"Partido Nacional de Honduras\",\n                \"etiqueta\": \"PNH\",\n                \"en_numeros\": \"036\",\n                \"en_letras\": [\"Cero\", \"Tres\", \"Seis\"]\n            },\n            {\n                \"categoria\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"012\",\n                \"en_letras\": [\"Cero\", \"Uno\", \"Dos\"]\n            },\n            {\n                \"categoria\": \"VOTOS NULOS\",\n                \"en_numeros\": \"013\",\n                \"en_letras\": [\"Cero\", \"Uno\", \"Tres\"]\n            },\n            {\n                \"categoria\": \"GRAN TOTAL\",\n                \"en_numeros\": \"139\",\n                \"en_letras\": [\"Uno\", \"Tres\", \"Nueve\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "filas": [
+      {
+        "digitos": "250",
+        "letras": [
+          "Dos",
+          "Cinc",
+          "Cero"
+        ],
+        "en_numeros": "250",
+        "en_letras": "Dos Cinc Cero"
+      },
+      {
+        "digitos": "111",
+        "letras": [
+          "Uno",
+          "Uno",
+          "Uno"
+        ],
+        "en_numeros": "111",
+        "en_letras": "Uno Uno Uno"
+      },
+      {
+        "digitos": "139",
+        "letras": [
+          "Uno",
+          "Tres",
+          "Nueve"
+        ],
+        "en_numeros": "139",
+        "en_letras": "Uno Tres Nueve"
+      },
+      {
+        "digitos": "131",
+        "letras": [
+          "Uno",
+          "Tres",
+          "Uno"
+        ],
+        "en_numeros": "131",
+        "en_letras": "Uno Tres Uno"
+      },
+      {
+        "digitos": "006",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Seis"
+        ],
+        "en_numeros": "006",
+        "en_letras": "Cero Cero Seis"
+      },
+      {
+        "digitos": "002",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ],
+        "en_numeros": "002",
+        "en_letras": "Cero Cero Dos"
+      },
+      {
+        "digitos": "139",
+        "letras": [
+          "Uno",
+          "Tres",
+          "Nueve"
+        ],
+        "en_numeros": "139",
+        "en_letras": "Uno Tres Nueve"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "DC",
+        "digitos": "000",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "Cero Cero Cero"
+      },
+      {
+        "etiqueta": "libre",
+        "digitos": "010",
+        "letras": [
+          "Cero",
+          "Uno",
+          "Cero"
+        ],
+        "en_numeros": "010",
+        "en_letras": "Cero Uno Cero"
+      },
+      {
+        "etiqueta": "PINU",
+        "digitos": "000",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "Cero Cero Cero"
+      },
+      {
+        "etiqueta": "PL",
+        "digitos": "088",
+        "letras": [
+          "Cero",
+          "Ocho",
+          "Ocho"
+        ],
+        "en_numeros": "088",
+        "en_letras": "Cero Ocho Ocho"
+      },
+      {
+        "etiqueta": "PNH",
+        "digitos": "036",
+        "letras": [
+          "Cero",
+          "Tres",
+          "Seis"
+        ],
+        "en_numeros": "036",
+        "en_letras": "Cero Tres Seis"
+      },
+      {
+        "digitos": "012",
+        "letras": [
+          "Cero",
+          "Uno",
+          "Dos"
+        ],
+        "en_numeros": "012",
+        "en_letras": "Cero Uno Dos"
+      },
+      {
+        "digitos": "013",
+        "letras": [
+          "Cero",
+          "Uno",
+          "Tres"
+        ],
+        "en_numeros": "013",
+        "en_letras": "Cero Uno Tres"
+      },
+      {
+        "digitos": "139",
+        "letras": [
+          "Uno",
+          "Tres",
+          "Nueve"
+        ],
+        "en_numeros": "139",
+        "en_letras": "Uno Tres Nueve"
+      }
+    ]
+  }
+]

@@ -1,5 +1,170 @@
-{
-  "error": "JSON parsing error: Extra data: line 186 column 1 (char 6612)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"337\",\n                \"digitos\": [\"3\", \"3\", \"7\"],\n                \"en_letras\": [\"tres\", \"tres\", \"siete\"],\n                \"formato\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"subseccion\": \"PAPELETAS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": \"152\",\n                \"digitos\": [\"1\", \"5\", \"2\"],\n                \"en_letras\": [\"uno\", \"cinco\", \"dos\"],\n                \"formato\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"subseccion\": \"PAPELETAS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"en_numeros\": \"185\",\n                \"digitos\": [\"1\", \"8\", \"5\"],\n                \"en_letras\": [\"uno\", \"ocho\", \"cinco\"],\n                \"formato\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"subseccion\": \"PAPELETAS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            }\n        ]\n    },\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"en_numeros\": \"176\",\n                \"digitos\": [\"1\", \"7\", \"6\"],\n                \"en_letras\": [\"uno\", \"siete\", \"seis\"],\n                \"formato\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"subseccion\": \"VOTANTES\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"006\",\n                \"digitos\": [\"0\", \"0\", \"6\"],\n                \"en_letras\": [\"cero\", \"cero\", \"seis\"],\n                \"formato\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"subseccion\": \"VOTANTES\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n                \"en_numeros\": \"003\",\n                \"digitos\": [\"0\", \"0\", \"3\"],\n                \"en_letras\": [\"cero\", \"cero\", \"tres\"],\n                \"formato\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"subseccion\": \"VOTANTES\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"185\",\n                \"digitos\": [\"1\", \"8\", \"5\"],\n                \"en_letras\": [\"uno\", \"ocho\", \"cinco\"],\n                \"formato\": {\n                    \"seccion\": \"BALANCE_GENERAL\",\n                    \"subseccion\": \"VOTANTES\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"subseccion\": \"VOTOS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"en_numeros\": \"000\",\n                \"digitos\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"en_numeros\": \"024\",\n                \"digitos\": [\"0\", \"2\", \"4\"],\n                \"en_letras\": [\"cero\", \"dos\", \"cuatro\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"en_numeros\": \"004\",\n                \"digitos\": [\"0\", \"0\", \"4\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cuatro\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"en_numeros\": \"110\",\n                \"digitos\": [\"1\", \"1\", \"0\"],\n                \"en_letras\": [\"uno\", \"uno\", \"cero\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"en_numeros\": \"043\",\n                \"digitos\": [\"0\", \"4\", \"3\"],\n                \"en_letras\": [\"cero\", \"cuatro\", \"tres\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"000\",\n                \"digitos\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"en_numeros\": \"004\",\n                \"digitos\": [\"0\", \"0\", \"4\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cuatro\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"en_numeros\": \"185\",\n                \"digitos\": [\"1\", \"8\", \"5\"],\n                \"en_letras\": [\"uno\", \"ocho\", \"cinco\"],\n                \"formato\": {\n                    \"seccion\": \"RESULTADOS_ESCRUTINIO\",\n                    \"subseccion\": \"VOTOS\",\n                    \"tipo\": \"numeros_letras\"\n                }\n            }\n        ]\n    }\n]\n```\n\n```json\n[\n    {\n        \"filas\": [\n            {\n                \"seccion\": \"I. BALANCE GENERAL\",\n                \"subseccion\": \"PAPELETAS\",\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"337\",\n                \"digitos\": [\"3\", \"3\", \"7\"],\n                \"en_letras\": [\"tres\", \"tres\", \"siete\"]\n            },\n            {\n                \"seccion\": \"I. BALANCE GENERAL\",\n                \"subseccion\": \"PAPELETAS\",\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": \"152\",\n                \"digitos\": [\"1\", \"5\", \"2\"],\n                \"en_letras\": [\"uno\", \"cinco\", \"dos\"]\n            },\n            {\n                \"seccion\": \"I. BALANCE GENERAL\",\n                \"subseccion\": \"PAPELETAS\",\n                \"descripcion\": \"UTILIZADAS\",\n                \"en_numeros\": \"185\",\n                \"digitos\": [\"1\", \"8\", \"5\"],\n                \"en_letras\": [\"uno\", \"ocho\", \"cinco\"]\n            },\n            {\n                \"seccion\": \"I. BALANCE GENERAL\",\n                \"subseccion\": \"VOTANTES\",\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"en_numeros\": \"176\",\n                \"digitos\": [\"1\", \"7\", \"6\"],\n                \"en_letras\": [\"uno\", \"siete\", \"seis\"]\n            },\n            {\n                \"seccion\": \"I. BALANCE GENERAL\",\n                \"subseccion\": \"VOTANTES\",\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"006\",\n                \"digitos\": [\"0\", \"0\", \"6\"],\n                \"en_letras\": [\"cero\", \"cero\", \"seis\"]\n            },\n            {\n                \"seccion\": \"I. BALANCE GENERAL\",\n                \"subseccion\": \"VOTANTES\",\n                \"descripcion\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n                \"en_numeros\": \"003\",\n                \"digitos\": [\"0\", \"0\", \"3\"],\n                \"en_letras\": [\"cero\", \"cero\", \"tres\"]\n            },\n            {\n                \"seccion\": \"I. BALANCE GENERAL\",\n                \"subseccion\": \"VOTANTES\",\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"185\",\n                \"digitos\": [\"1\", \"8\", \"5\"],\n                \"en_letras\": [\"uno\", \"ocho\", \"cinco\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"en_numeros\": \"000\",\n                \"digitos\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"en_numeros\": \"024\",\n                \"digitos\": [\"0\", \"2\", \"4\"],\n                \"en_letras\": [\"cero\", \"dos\", \"cuatro\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"en_numeros\": \"004\",\n                \"digitos\": [\"0\", \"0\", \"4\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cuatro\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"en_numeros\": \"110\",\n                \"digitos\": [\"1\", \"1\", \"0\"],\n                \"en_letras\": [\"uno\", \"uno\", \"cero\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"en_numeros\": \"043\",\n                \"digitos\": [\"0\", \"4\", \"3\"],\n                \"en_letras\": [\"cero\", \"cuatro\", \"tres\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"000\",\n                \"digitos\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"VOTOS NULOS\",\n                \"en_numeros\": \"004\",\n                \"digitos\": [\"0\", \"0\", \"4\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cuatro\"]\n            },\n            {\n                \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n                \"subseccion\": \"VOTOS\",\n                \"descripcion\": \"GRAN TOTAL\",\n                \"en_numeros\": \"185\",\n                \"digitos\": [\"1\", \"8\", \"5\"],\n                \"en_letras\": [\"uno\", \"ocho\", \"cinco\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "digitos": "337",
+        "letras": [
+          "tres",
+          "tres",
+          "siete"
+        ],
+        "en_numeros": "337",
+        "en_letras": "tres tres siete"
+      },
+      {
+        "digitos": "152",
+        "letras": [
+          "uno",
+          "cinco",
+          "dos"
+        ],
+        "en_numeros": "152",
+        "en_letras": "uno cinco dos"
+      },
+      {
+        "digitos": "185",
+        "letras": [
+          "uno",
+          "ocho",
+          "cinco"
+        ],
+        "en_numeros": "185",
+        "en_letras": "uno ocho cinco"
+      }
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "digitos": "176",
+        "letras": [
+          "uno",
+          "siete",
+          "seis"
+        ],
+        "en_numeros": "176",
+        "en_letras": "uno siete seis"
+      },
+      {
+        "digitos": "006",
+        "letras": [
+          "cero",
+          "cero",
+          "seis"
+        ],
+        "en_numeros": "006",
+        "en_letras": "cero cero seis"
+      },
+      {
+        "digitos": "003",
+        "letras": [
+          "cero",
+          "cero",
+          "tres"
+        ],
+        "en_numeros": "003",
+        "en_letras": "cero cero tres"
+      },
+      {
+        "digitos": "185",
+        "letras": [
+          "uno",
+          "ocho",
+          "cinco"
+        ],
+        "en_numeros": "185",
+        "en_letras": "uno ocho cinco"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "digitos": "024",
+        "letras": [
+          "cero",
+          "dos",
+          "cuatro"
+        ],
+        "en_numeros": "024",
+        "en_letras": "cero dos cuatro"
+      },
+      {
+        "digitos": "004",
+        "letras": [
+          "cero",
+          "cero",
+          "cuatro"
+        ],
+        "en_numeros": "004",
+        "en_letras": "cero cero cuatro"
+      },
+      {
+        "digitos": "110",
+        "letras": [
+          "uno",
+          "uno",
+          "cero"
+        ],
+        "en_numeros": "110",
+        "en_letras": "uno uno cero"
+      },
+      {
+        "digitos": "043",
+        "letras": [
+          "cero",
+          "cuatro",
+          "tres"
+        ],
+        "en_numeros": "043",
+        "en_letras": "cero cuatro tres"
+      },
+      {
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "digitos": "004",
+        "letras": [
+          "cero",
+          "cero",
+          "cuatro"
+        ],
+        "en_numeros": "004",
+        "en_letras": "cero cero cuatro"
+      },
+      {
+        "digitos": "185",
+        "letras": [
+          "uno",
+          "ocho",
+          "cinco"
+        ],
+        "en_numeros": "185",
+        "en_letras": "uno ocho cinco"
+      }
+    ]
+  }
+]

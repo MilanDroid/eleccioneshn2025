@@ -1,5 +1,34 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 45 column 60 (char 1584)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"digitos\": \"275\",\n                \"letras\": [\"Dos\", \"siete\", \"cinco\"],\n                \"digitosFormato\": \"275\",\n                \"letrasFormato\": [\"Dos\", \"siete\", \"cinco\"]\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS/SOBRANTES\",\n                \"digitos\": \"075\",\n                \"letras\": [\"Cero\", \"siete\", \"cinco\"],\n                \"digitosFormato\": \"075\",\n                \"letrasFormato\": [\"Cero\", \"siete\", \"cinco\"]\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"digitos\": \"200\",\n                \"letras\": [\"Dos\", \"cero\", \"cero\"],\n                \"digitosFormato\": \"200\",\n                \"letrasFormato\": [\"Dos\", \"cero\", \"cero\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"digitos\": \"194\",\n                \"letras\": [\"uno\", \"nueve\", \"cuatro\"],\n                \"digitosFormato\": \"194\",\n                \"letrasFormato\": [\"uno\", \"nueve\", \"cuatro\"]\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"digitos\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Seis\"],\n                \"digitosFormato\": \"000\",\n                \"letrasFormato\": [\"Cero\", \"Cero\", \"Seis\"]  // Corregido según la imagen\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"digitos\": \"200\",\n                \"letras\": [\"Dos\", \"cero\", \"cero\"],\n                \"digitosFormato\": \"200\",\n                \"letrasFormato\": [\"Dos\", \"cero\", \"cero\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"subseccion\": \"VOTOS\",\n        \"filas\": [\n            {\n                \"partido\": \"Partido Demócrata Cristiano de Honduras (DC)\",\n                \"digitos\": \"001\",\n                \"letras\": [\"Cero\", \"Cero\", \"uno\"],\n                \"digitosFormato\": \"001\",\n                \"letrasFormato\": [\"Cero\", \"Cero\", \"uno\"]\n            },\n            {\n                \"partido\": \"Partido Libertad y Refundación (libre)\",\n                \"digitos\": \"017\",\n                \"letras\": [\"Cero\", \"uno\", \"siete\"],\n                \"digitosFormato\": \"017\",\n                \"letrasFormato\": [\"Cero\", \"uno\", \"siete\"]\n            },\n            {\n                \"partido\": \"Partido Innovación y Unidad Social Demócrata (PINU)\",\n                \"digitos\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"],\n                \"digitosFormato\": \"000\",\n                \"letrasFormato\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"partido\": \"Partido Liberal de Honduras\",\n                \"digitos\": \"080\",\n                \"letras\": [\"Cero\", \"ocho\", \"cero\"],\n                \"digitosFormato\": \"080\",\n                \"letrasFormato\": [\"Cero\", \"ocho\", \"cero\"]\n            },\n            {\n                \"partido\": \"Partido Nacional de Honduras\",\n                \"digitos\": \"098\",\n                \"letras\": [\"Cero\", \"nueve\", \"ocho\"],\n                \"digitosFormato\": \"098\",\n                \"letrasFormato\": [\"Cero\", \"nueve\", \"ocho\"]\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"digitos\": \"002\",\n                \"letras\": [\"Cero\", \"Cero\", \"dos\"],\n                \"digitosFormato\": \"002\",\n                \"letrasFormato\": [\"Cero\", \"Cero\", \"dos\"]\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"digitos\": \"002\",\n                \"letras\": [\"Cero\", \"Cero\", \"dos\"],\n                \"digitosFormato\": \"002\",\n                \"letrasFormato\": [\"Cero\", \"Cero\", \"dos\"]\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"digitos\": \"200\",\n                \"letras\": [\"Dos\", \"cero\", \"cero\"],\n                \"digitosFormato\": \"200\",\n                \"letrasFormato\": [\"Dos\", \"cero\", \"cero\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]

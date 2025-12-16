@@ -1,5 +1,157 @@
-{
-  "error": "JSON parsing error: Extra data: line 118 column 1 (char 3794)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"PAPELETAS\",\n                \"subetiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"000\"\n            },\n            {\n                \"etiqueta\": \"PAPELETAS\",\n                \"subetiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitos\": \"000\"\n            },\n            {\n                \"etiqueta\": \"PAPELETAS\",\n                \"subetiqueta\": \"UTILIZADAS\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitos\": \"000\"\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitos\": \"000\"\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Demócrata Cristiano de Honduras (DC)\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Libertad y Refundación (libre)\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Innovación y Unidad Social Demócrata (PINU)\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Liberal de Honduras (PLH)\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Nacional de Honduras (PNH)\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"subetiqueta\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitos\": \"000\"\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"subetiqueta\": \"VOTOS NULOS\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"],\n                \"digitos\": \"000\"\n            },\n            {\n                \"etiqueta\": \"TOTAL\",\n                \"subetiqueta\": \"GRAN TOTAL\",\n                \"en_numeros\": \"???\",\n                \"en_letras\": \"???\",\n                \"digitos\": \"???\"\n            }\n        ]\n    }\n]\n```\n\nSince the fields in the image are blank, the data is represented as `???` or `000` with corresponding letters for zeroes. Here is the accurate JSON representation based on the structure and format requested:\n\n```json\n[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"PAPELETAS\",\n                \"subetiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"PAPELETAS\",\n                \"subetiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"PAPELETAS\",\n                \"subetiqueta\": \"UTILIZADAS\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"MIEMBROS JRV\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTANTES\",\n                \"subetiqueta\": \"TOTAL VOTANTES\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Demócrata Cristiano de Honduras (DC)\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Libertad y Refundación (libre)\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Innovación y Unidad Social Demócrata (PINU)\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Liberal de Honduras (PLH)\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"partido\": \"Partido Nacional de Honduras (PNH)\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"subetiqueta\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"VOTOS\",\n                \"subetiqueta\": \"VOTOS NULOS\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"etiqueta\": \"TOTAL\",\n                \"subetiqueta\": \"GRAN TOTAL\",\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            }\n        ]\n    }\n]\n```\n\nSince the fields are blank, the data is represented with zeros. Here is the final JSON representation:\n\n```json\n{\n    \"I_Balance_General\": {\n        \"Papeletas\": {\n            \"Recibidas_segun_Acta_de_Apertura\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"No_Utilizadas_Sobrantes\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Utilizadas\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            }\n        },\n        \"Votantes\": {\n            \"Ciudadanos_que_votaron\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Membros_JRV\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Custodios_Informaticos_Electorales\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Total_Votantes\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            }\n        }\n    },\n    \"II_Resultados_Esrutinio\": {\n        \"Votos\": {\n            \"Partido_Demócrata_Cristiano\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Partido_Libertad_y_Refundación\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Partido_Innovación_y_Unidad_Social_Demócrata\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Partido_Liberal_de_Honduras\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Partido_Nacional_de_Honduras\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Votos_En_Blanco\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Votos_Nulos\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            \"Gran_Total\": {\n                \"en_numeros\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            }\n        }\n    }\n}\n```\n\nSince the fields are blank, the JSON representation is structured with zeros. Here is the final JSON:\n\n```json\n{\n    \"I_Balance_General\": {\n        \"Papeletas\": {\n            \"Recibidas_segun_Acta_de_Apertura\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"No_Utilizadas_Sobrantes\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Utilizadas\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            }\n        },\n        \"Votantes\": {\n            \"Ciudadanos_que_votaron\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Membros_JRV\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Custodios_Informaticos_Electorales\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Total_Votantes\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            }\n        }\n    },\n    \"II_Resultados_Esrutinio\": {\n        \"Votos\": {\n            \"Partido_Demócrata_Cristiano\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Partido_Libertad_y_Refundación\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Partido_Innovación_y_Unidad_Social_Demócrata\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Partido_Liberal_de_Honduras\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Partido_Nacional_de_Honduras\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Votos_En_Blanco\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Votos_Nulos\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            },\n            \"Gran_Total\": {\n                \"digitos\": [\"0\", \"0\", \"0\"]\n            }\n        }\n    }\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "filas": [
+      {
+        "etiqueta": "PAPELETAS",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "PAPELETAS",
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "etiqueta": "PAPELETAS",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "VOTANTES",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "VOTANTES",
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "etiqueta": "VOTANTES",
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "etiqueta": "VOTANTES",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "VOTOS",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "VOTOS",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "VOTOS",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "VOTOS",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "VOTOS",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      },
+      {
+        "etiqueta": "VOTOS",
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "etiqueta": "VOTOS",
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero cero cero"
+      },
+      {
+        "etiqueta": "TOTAL",
+        "digitos": "???",
+        "letras": [
+          "???"
+        ],
+        "en_numeros": "???",
+        "en_letras": "???"
+      }
+    ]
+  }
+]

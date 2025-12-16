@@ -1,5 +1,34 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 30 column 52 (char 913)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"numeros\": \"197\",\n                \"letras\": [\"Uno\", \"Nueve\", \"Siete\"]\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS/SOBRANTES\",\n                \"numeros\": \"061\",\n                \"letras\": [\"Cero\", \"Seis\", \"Uno\"]\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"numeros\": \"136\",\n                \"letras\": [\"Uno\", \"Tres\", \"Seis\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"numeros\": \"128\",\n                \"letras\": [\"Uno\", \"Dos\", \"Dicho\"]  // \"Dicho\" no es una palabra válida en letras, se transcribe como está\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"numeros\": \"005\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cinco\"]\n            },\n            {\n                \"descripcion\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n                \"numeros\": \"003\",\n                \"letras\": [\"Cero\", \"Cero\", \"Tres\"]\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"numeros\": \"136\",\n                \"letras\": [\"Uno\", \"Tres\", \"Seis\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n                \"numeros\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n                \"numeros\": \"013\",\n                \"letras\": [\"Cero\", \"Uno\", \"Tres\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n                \"numeros\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n                \"numeros\": \"029\",\n                \"letras\": [\"Cero\", \"Dos\", \"Nueve\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n                \"numeros\": \"089\",\n                \"letras\": [\"Cero\", \"Ocho\", \"Nueve\"]\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"numeros\": \"004\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cuatro\"]\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"numeros\": \"001\",\n                \"letras\": [\"Cero\", \"Cero\", \"Uno\"]\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"numeros\": \"136\",\n                \"letras\": [\"Uno\", \"Tres\", \"Seis\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+]
