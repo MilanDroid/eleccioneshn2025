@@ -1,5 +1,167 @@
-{
-  "error": "JSON parsing error: Expecting property name enclosed in double quotes: line 35 column 39 (char 1048)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"digitos\": [\"3\", \"1\", \"0\", \"8\"],\n          \"letras\": [\"Tres\", \"ciento\", \"ochenta\"],\n          \"digitos_completos\": \"3108\",\n          \"letras_completas\": \"tres mil ochenta\"\n        },\n        {\n          \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n          \"digitos\": [\"1\", \"7\", \"0\"],\n          \"letras\": [\"uno\", \"setenta\"],\n          \"digitos_completos\": \"170\",\n          \"letras_completas\": \"ciento setenta\"\n        },\n        {\n          \"etiqueta\": \"UTILIZADAS\",\n          \"digitos\": [\"1\", \"9\", \"3\", \"8\"],\n          \"letras\": [\"uno\", \"noventa\", \"ocho\"],\n          \"digitos_completos\": \"1938\",\n          \"letras_completas\": \"mil novecientos treinta y ocho\"\n        }\n      ]\n    },\n    {\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n          \"digitos\": [\"1\", \"7\", \"?\"], // Dígito ilegible\n          \"letras\": [\"?\"], // Letra ilegible\n          \"digitos_completos\": \"17?\",\n          \"letras_completas\": \"ilegible\"\n        },\n        {\n          \"etiqueta\": \"MIEMBROS JRV\",\n          \"digitos\": [\"0\", \"0\", \"3\"],\n          \"letras\": [\"tres\"],\n          \"digitos_completos\": \"003\",\n          \"letras_completas\": \"tres\"\n        },\n        {\n          \"etiqueta\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n          \"digitos\": [\"0\", \"0\", \"0\"],\n          \"letras\": [\"?\"], // Letra ilegible\n          \"digitos_completos\": \"000\",\n          \"letras_completas\": \"cero\"\n        },\n        {\n          \"etiqueta\": \"TOTAL VOTANTES\",\n          \"digitos\": [\"1\", \"9\", \"3\", \"8\"],\n          \"letras\": [\"uno\", \"novecientos\", \"treinta\", \"ocho\"],\n          \"digitos_completos\": \"1938\",\n          \"letras_completas\": \"mil novecientos treinta y ocho\"\n        }\n      ]\n    }\n  ],\n  {\n    \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n    \"filas\": [\n      {\n        \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n        \"digitos\": [\"0\", \"0\", \"0\", \"0\"],\n        \"letras\": [\"?\"], // Letra ilegible\n        \"digitos_completos\": \"0000\",\n        \"letras_completas\": \"cero\"\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n        \"digitos\": [\"0\", \"1\", \"4\", \"?\"], // Dígito ilegible\n        \"letras\": [\"?\"], // Letra ilegible\n        \"digitos_completos\": \"014?\",\n        \"letras_completas\": \"ilegible\"\n      },\n      {\n        \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n        \"digitos\": [\"0\", \"0\", \"0\", \"?\"], // Dígito ilegible\n        \"letras\": [\"?\"], // Letra ilegible\n        \"digitos_completos\": \"000?\",\n        \"letras_completas\": \"ilegible\"\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBERAL DE HONDURAS\",\n        \"digitos\": [\"0\", \"0\", \"0\", \"?\"], // Dígito ilegible\n        \"letras\": [\"?\"], // Letra ilegible\n        \"digitos_completos\": \"000?\",\n        \"letras_completas\": \"ilegible\"\n      },\n      {\n        \"etiqueta\": \"PARTIDO NACIONAL DE HONDURAS\",\n        \"digitos\": [\"0\", \"8\", \"1\", \"?\"], // Dígito ilegible\n        \"letras\": [\"?\"], // Letra ilegible\n        \"digitos_completos\": \"081?\",\n        \"letras_completas\": \"ilegible\"\n      },\n      {\n        \"etiqueta\": \"VOTOS EN BLANCO\",\n        \"digitos\": [\"0\", \"0\", \"1\", \"2\"],\n        \"letras\": [\"?\"], // Letra ilegible\n        \"digitos_completos\": \"0012\",\n        \"letras_completas\": \"doce\"\n      },\n      {\n        \"etiqueta\": \"VOTOS NULOS\",\n        \"digitos\": [\"0\", \"0\", \"1\", \"7\"],\n        \"letras\": [\"?\"], // Letra ilegible\n        \"digitos_completos\": \"0017\",\n        \"letras_completas\": \"diecisiete\"\n      },\n      {\n        \"etiqueta\": \"GRAN TOTAL\",\n        \"digitos\": [\"1\", \"9\", \"3\", \"8\"],\n        \"letras\": [\"uno\", \"novecientos\", \"treinta\", \"ocho\"],\n        \"digitos_completos\": \"1938\",\n        \"letras_completas\": \"mil novecientos treinta y ocho\"\n      }\n    ]\n  }\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+        "digitos": "3108",
+        "letras": [
+          "Tres",
+          "ciento",
+          "ochenta"
+        ],
+        "en_numeros": "3108",
+        "en_letras": "tres mil ochenta"
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES",
+        "digitos": "170",
+        "letras": [
+          "uno",
+          "setenta"
+        ],
+        "en_numeros": "170",
+        "en_letras": "ciento setenta"
+      },
+      {
+        "etiqueta": "UTILIZADAS",
+        "digitos": "1938",
+        "letras": [
+          "uno",
+          "noventa",
+          "ocho"
+        ],
+        "en_numeros": "1938",
+        "en_letras": "mil novecientos treinta y ocho"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
+        "digitos": "17?",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "17?",
+        "en_letras": "ilegible"
+      },
+      {
+        "etiqueta": "MIEMBROS JRV",
+        "digitos": "003",
+        "letras": [
+          "tres"
+        ],
+        "en_numeros": "003",
+        "en_letras": "tres"
+      },
+      {
+        "etiqueta": "CUSTODIOS INFORMATICOS ELECTORALES",
+        "digitos": "000",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "000",
+        "en_letras": "cero"
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES",
+        "digitos": "1938",
+        "letras": [
+          "uno",
+          "novecientos",
+          "treinta",
+          "ocho"
+        ],
+        "en_numeros": "1938",
+        "en_letras": "mil novecientos treinta y ocho"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+        "etiqueta_corta": "DC",
+        "digitos": "0000",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "0000",
+        "en_letras": "cero"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+        "etiqueta_corta": "libre",
+        "digitos": "014?",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "014?",
+        "en_letras": "ilegible"
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
+        "etiqueta_corta": "PINU",
+        "digitos": "000?",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "000?",
+        "en_letras": "ilegible"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "digitos": "000?",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "000?",
+        "en_letras": "ilegible"
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "digitos": "081?",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "081?",
+        "en_letras": "ilegible"
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "digitos": "0012",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "0012",
+        "en_letras": "doce"
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "digitos": "0017",
+        "letras": [
+          "?"
+        ],
+        "en_numeros": "0017",
+        "en_letras": "diecisiete"
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "digitos": "1938",
+        "letras": [
+          "uno",
+          "novecientos",
+          "treinta",
+          "ocho"
+        ],
+        "en_numeros": "1938",
+        "en_letras": "mil novecientos treinta y ocho"
+      }
+    ]
+  }
+]

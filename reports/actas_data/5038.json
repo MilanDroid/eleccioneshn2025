@@ -1,5 +1,91 @@
-{
-  "error": "JSON parsing error: Expecting property name enclosed in double quotes: line 69 column 3 (char 1595)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"en_numeros\": \"248\",\n          \"en_letras\": {\n            \"centenas\": \"Dos\",\n            \"decenas\": \"Cuatro\",\n            \"unidades\": \"Ocho\"\n          }\n        },\n        {\n          \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n          \"en_numeros\": \"109\",\n          \"en_letras\": {\n            \"centenas\": \"uno\",\n            \"decenas\": \"Cero\",\n            \"unidades\": \"Nueve\"\n          }\n        },\n        {\n          \"etiqueta\": \"UTILIZADAS\",\n          \"en_numeros\": \"139\",\n          \"en_letras\": {\n            \"centenas\": \"uno\",\n            \"decenas\": \"Tres\",\n            \"unidades\": \"Nueve\"\n          }\n        }\n      ]\n    },\n    {\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n          \"en_numeros\": \"133\",\n          \"en_letras\": {\n            \"centenas\": \"uno\",\n            \"decenas\": \"Tres\",\n            \"unidades\": \"Tres\"\n          }\n        },\n        {\n          \"etiqueta\": \"MIEMBROS JRV\",\n          \"en_numeros\": \"006\",\n          \"en_letras\": {\n            \"centenas\": \"Cero\",\n            \"decenas\": \"Cero\",\n            \"unidades\": \"Seis\"\n          }\n        },\n        {\n          \"etiqueta\": \"TOTAL VOTANTES\",\n          \"en_numeros\": \"139\",\n          \"en_letras\": {\n            \"centenas\": \"uno\",\n            \"decenas\": \"Tres\",\n            \"unidades\": \"Nueve\"\n          }\n        }\n      ]\n    }\n  ],\n  {\n    \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n    \"filas\": [\n      {\n        \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n        \"en_numeros\": \"001\",\n        \"en_letras\": {\n          \"centenas\": \"Cero\",\n          \"decenas\": \"Cero\",\n          \"unidades\": \"uno\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n        \"en_numeros\": \"008\",\n        \"en_letras\": {\n          \"centenas\": \"Cero\",\n          \"decenas\": \"Cero\",\n          \"unidades\": \"Ocho\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n        \"en_numeros\": \"001\",\n        \"en_letras\": {\n          \"centenas\": \"Cero\",\n          \"decenas\": \"Cero\",\n          \"unidades\": \"uno\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBERAL DE HONDURAS\",\n        \"en_numeros\": \"061\",\n        \"en_letras\": {\n          \"centenas\": \"Cero\",\n          \"decenas\": \"Seis\",\n          \"unidades\": \"uno\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO NACIONAL DE HONDURAS\",\n        \"en_numeros\": \"062\",\n        \"en_letras\": {\n          \"centenas\": \"Cero\",\n          \"decenas\": \"Seis\",\n          \"unidades\": \"Dos\"\n        }\n      },\n      {\n        \"etiqueta\": \"VOTOS EN BLANCO\",\n        \"en_numeros\": \"002\",\n        \"en_letras\": {\n          \"centenas\": \"Cero\",\n          \"decenas\": \"Cero\",\n          \"unidades\": \"Dos\"\n        }\n      },\n      {\n        \"etiqueta\": \"VOTOS NULOS\",\n        \"en_numeros\": \"004\",\n        \"en_letras\": {\n          \"centenas\": \"Cero\",\n          \"decenas\": \"Cero\",\n          \"unidades\": \"Cuatro\"\n        }\n      },\n      {\n        \"etiqueta\": \"GRAN TOTAL\",\n        \"en_numeros\": \"139\",\n        \"en_letras\": {\n          \"centenas\": \"uno\",\n          \"decenas\": \"Tres\",\n          \"unidades\": \"Nueve\"\n        }\n      }\n    ]\n  }\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+        "digitos": "248",
+        "en_numeros": "248"
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES",
+        "digitos": "109",
+        "en_numeros": "109"
+      },
+      {
+        "etiqueta": "UTILIZADAS",
+        "digitos": "139",
+        "en_numeros": "139"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
+        "digitos": "133",
+        "en_numeros": "133"
+      },
+      {
+        "etiqueta": "MIEMBROS JRV",
+        "digitos": "006",
+        "en_numeros": "006"
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES",
+        "digitos": "139",
+        "en_numeros": "139"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+        "etiqueta_corta": "DC",
+        "digitos": "001",
+        "en_numeros": "001"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+        "etiqueta_corta": "libre",
+        "digitos": "008",
+        "en_numeros": "008"
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
+        "etiqueta_corta": "PINU",
+        "digitos": "001",
+        "en_numeros": "001"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "digitos": "061",
+        "en_numeros": "061"
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "digitos": "062",
+        "en_numeros": "062"
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "digitos": "002",
+        "en_numeros": "002"
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "digitos": "004",
+        "en_numeros": "004"
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "digitos": "139",
+        "en_numeros": "139"
+      }
+    ]
+  }
+]

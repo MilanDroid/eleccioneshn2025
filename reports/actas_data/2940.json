@@ -1,5 +1,138 @@
-{
-  "error": "JSON parsing error: Expecting property name enclosed in double quotes: line 64 column 3 (char 1863)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"nombre\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"digitos\": [\"3\", \"1\", \"5\"],\n          \"letras\": [\"Tres\", \"Uno\", \"Cinco\"],\n          \"digitos_conjunto\": \"315\",\n          \"letras_conjunto\": \"Tres Uno Cinco\"\n        },\n        {\n          \"nombre\": \"NO UTILIZADAS/SOBRANTES\",\n          \"digitos\": [\"0\", \"6\", \"7\"],\n          \"letras\": [\"Cero\", \"Seis\", \"Siete\"],\n          \"digitos_conjunto\": \"067\",\n          \"letras_conjunto\": \"Cero Seis Siete\"\n        },\n        {\n          \"nombre\": \"UTILIZADAS\",\n          \"digitos\": [\"2\", \"4\", \"8\"],\n          \"letras\": [\"Dos\", \"Cuatro\", \"Ocho\"],\n          \"digitos_conjunto\": \"248\",\n          \"letras_conjunto\": \"Dos Cuatro Ocho\"\n        }\n      ]\n    },\n    {\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"nombre\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n          \"digitos\": [\"2\", \"3\", \"9\"],\n          \"letras\": [\"Dos\", \"Tres\", \"Nueve\"],\n          \"digitos_conjunto\": \"239\",\n          \"letras_conjunto\": \"Dos Tres Nueve\"\n        },\n        {\n          \"nombre\": \"MIEMBROS JRV\",\n          \"digitos\": [\"0\", \"0\", \"6\"],\n          \"letras\": [\"Cero\", \"Cero\", \"Seis\"],\n          \"digitos_conjunto\": \"006\",\n          \"letras_conjunto\": \"Cero Cero Seis\"\n        },\n        {\n          \"nombre\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n          \"digitos\": [\"0\", \"0\", \"3\"],\n          \"letras\": [\"Cero\", \"Cero\", \"Tres\"],\n          \"digitos_conjunto\": \"003\",\n          \"letras_conjunto\": \"Cero Cero Tres\"\n        },\n        {\n          \"nombre\": \"TOTAL VOTANTES\",\n          \"digitos\": [\"2\", \"4\", \"8\"],\n          \"letras\": [\"Dos\", \"Cuatro\", \"Ocho\"],\n          \"digitos_conjunto\": \"248\",\n          \"letras_conjunto\": \"Dos Cuatro Ocho\"\n        }\n      ]\n    }\n  ],\n  {\n    \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n    \"filas\": [\n      {\n        \"nombre\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n        \"digitos\": [\"0\", \"0\", \"1\"],\n        \"letras\": [\"Cero\", \"Cero\", \"Uno\"],\n        \"digitos_conjunto\": \"001\",\n        \"letras_conjunto\": \"Cero Cero Uno\"\n      },\n      {\n        \"nombre\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n        \"digitos\": [\"0\", \"1\", \"3\"],\n        \"letras\": [\"Cero\", \"Uno\", \"Tres\"],\n        \"digitos_conjunto\": \"013\",\n        \"letras_conjunto\": \"Cero Uno Tres\"\n      },\n      {\n        \"nombre\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n        \"digitos\": [\"0\", \"0\", \"0\"],\n        \"letras\": [\"Cero\", \"Cero\", \"Cero\"],\n        \"digitos_conjunto\": \"000\",\n        \"letras_conjunto\": \"Cero Cero Cero\"\n      },\n      {\n        \"nombre\": \"PARTIDO LIBERAL DE HONDURAS\",\n        \"digitos\": [\"0\", \"6\", \"1\"],\n        \"letras\": [\"Cero\", \"Seis\", \"Uno\"],\n        \"digitos_conjunto\": \"061\",\n        \"letras_conjunto\": \"Cero Seis Uno\"\n      },\n      {\n        \"nombre\": \"PARTIDO NACIONAL DE HONDURAS\",\n        \"digitos\": [\"1\", \"4\", \"9\"],\n        \"letras\": [\"Uno\", \"Cuatro\", \"Nueve\"],\n        \"digitos_conjunto\": \"149\",\n        \"letras_conjunto\": \"Uno Cuatro Nueve\"\n      },\n      {\n        \"nombre\": \"VOTOS EN BLANCO\",\n        \"digitos\": [\"0\", \"1\", \"9\"],\n        \"letras\": [\"Cero\", \"Uno\", \"Nueve\"],\n        \"digitos_conjunto\": \"019\",\n        \"letras_conjunto\": \"Cero Uno Nueve\"\n      },\n      {\n        \"nombre\": \"VOTOS NULOS\",\n        \"digitos\": [\"0\", \"0\", \"5\"],\n        \"letras\": [\"Cero\", \"Cero\", \"Cinco\"],\n        \"digitos_conjunto\": \"005\",\n        \"letras_conjunto\": \"Cero Cero Cinco\"\n      },\n      {\n        \"nombre\": \"GRAN TOTAL\",\n        \"digitos\": [\"2\", \"4\", \"8\"],\n        \"letras\": [\"Dos\", \"Cuatro\", \"Ocho\"],\n        \"digitos_conjunto\": \"248\",\n        \"letras_conjunto\": \"Dos Cuatro Ocho\"\n      }\n    ]\n  }\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "letras": [
+          "Tres",
+          "Uno",
+          "Cinco"
+        ],
+        "en_letras": "Tres Uno Cinco"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Seis",
+          "Siete"
+        ],
+        "en_letras": "Cero Seis Siete"
+      },
+      {
+        "letras": [
+          "Dos",
+          "Cuatro",
+          "Ocho"
+        ],
+        "en_letras": "Dos Cuatro Ocho"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "letras": [
+          "Dos",
+          "Tres",
+          "Nueve"
+        ],
+        "en_letras": "Dos Tres Nueve"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Cero",
+          "Seis"
+        ],
+        "en_letras": "Cero Cero Seis"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ],
+        "en_letras": "Cero Cero Tres"
+      },
+      {
+        "letras": [
+          "Dos",
+          "Cuatro",
+          "Ocho"
+        ],
+        "en_letras": "Dos Cuatro Ocho"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ],
+        "en_letras": "Cero Cero Uno"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Uno",
+          "Tres"
+        ],
+        "en_letras": "Cero Uno Tres"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ],
+        "en_letras": "Cero Cero Cero"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Seis",
+          "Uno"
+        ],
+        "en_letras": "Cero Seis Uno"
+      },
+      {
+        "letras": [
+          "Uno",
+          "Cuatro",
+          "Nueve"
+        ],
+        "en_letras": "Uno Cuatro Nueve"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Uno",
+          "Nueve"
+        ],
+        "en_letras": "Cero Uno Nueve"
+      },
+      {
+        "letras": [
+          "Cero",
+          "Cero",
+          "Cinco"
+        ],
+        "en_letras": "Cero Cero Cinco"
+      },
+      {
+        "letras": [
+          "Dos",
+          "Cuatro",
+          "Ocho"
+        ],
+        "en_letras": "Dos Cuatro Ocho"
+      }
+    ]
+  }
+]

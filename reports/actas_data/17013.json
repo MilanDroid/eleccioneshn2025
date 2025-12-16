@@ -1,5 +1,144 @@
-{
-  "error": "JSON parsing error: Expecting property name enclosed in double quotes: line 69 column 3 (char 1743)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"digitos\": \"197\",\n          \"letras\": [\"Uno\", \"nueve\", \"siete\"],\n          \"digitos_con_letras\": {\n            \"numero\": \"197\",\n            \"letra\": \"Uno nueve siete\"\n          }\n        },\n        {\n          \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n          \"digitos\": \"084\",\n          \"letras\": [\"Cero\", \"ocho\", \"cuatro\"],\n          \"digitos_con_letras\": {\n            \"numero\": \"084\",\n            \"letra\": \"Cero ocho cuatro\"\n          }\n        },\n        {\n          \"etiqueta\": \"UTILIZADAS\",\n          \"digitos\": \"113\",\n          \"letras\": [\"Uno\", \"uno\", \"tres\"],\n          \"digitos_con_letras\": {\n            \"numero\": \"113\",\n            \"letra\": \"Uno uno tres\"\n          }\n        }\n      ]\n    },\n    {\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n          \"digitos\": \"108\",\n          \"letras\": [\"Uno\", \"cero\", \"ocho\"],\n          \"digitos_con_letras\": {\n            \"numero\": \"108\",\n            \"letra\": \"Uno cero ocho\"\n          }\n        },\n        {\n          \"etiqueta\": \"MIEMBROS JRV\",\n          \"digitos\": \"005\",\n          \"letras\": [\"Cero\", \"cero\", \"cinco\"],\n          \"digitos_con_letras\": {\n            \"numero\": \"005\",\n            \"letra\": \"Cero cero cinco\"\n          }\n        },\n        {\n          \"etiqueta\": \"TOTAL VOTANTES\",\n          \"digitos\": \"113\",\n          \"letras\": [\"Uno\", \"uno\", \"tres\"],\n          \"digitos_con_letras\": {\n            \"numero\": \"113\",\n            \"letra\": \"Uno uno tres\"\n          }\n        }\n      ]\n    }\n  ],\n  {\n    \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n    \"filas\": [\n      {\n        \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS\",\n        \"etiqueta_corta\": \"DC\",\n        \"digitos\": \"000\",\n        \"letras\": [\"Cero\", \"cero\", \"cero\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"000\",\n          \"letra\": \"Cero cero cero\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBERTAD Y REFUNDACIÓN\",\n        \"etiqueta_corta\": \"libre\",\n        \"digitos\": \"022\",\n        \"letras\": [\"Cero\", \"dos\", \"dos\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"022\",\n          \"letra\": \"Cero dos dos\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA\",\n        \"etiqueta_corta\": \"PINU\",\n        \"digitos\": \"002\",\n        \"letras\": [\"Cero\", \"cero\", \"dos\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"002\",\n          \"letra\": \"Cero cero dos\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBERAL DE HONDURAS\",\n        \"etiqueta_corta\": \"PLH\",\n        \"digitos\": \"034\",\n        \"letras\": [\"Cero\", \"tres\", \"cuatro\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"034\",\n          \"letra\": \"Cero tres cuatro\"\n        }\n      },\n      {\n        \"etiqueta\": \"PARTIDO NACIONAL DE HONDURAS\",\n        \"etiqueta_corta\": \"PNH\",\n        \"digitos\": \"051\",\n        \"letras\": [\"Cero\", \"cinco\", \"uno\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"051\",\n          \"letra\": \"Cero cinco uno\"\n        }\n      },\n      {\n        \"etiqueta\": \"VOTOS EN BLANCO\",\n        \"digitos\": \"002\",\n        \"letras\": [\"Cero\", \"cero\", \"dos\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"002\",\n          \"letra\": \"Cero cero dos\"\n        }\n      },\n      {\n        \"etiqueta\": \"VOTOS NULOS\",\n        \"digitos\": \"002\",\n        \"letras\": [\"Cero\", \"cero\", \"dos\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"002\",\n          \"letra\": \"Cero cero dos\"\n        }\n      },\n      {\n        \"etiqueta\": \"GRAN TOTAL\",\n        \"digitos\": \"113\",\n        \"letras\": [\"Uno\", \"uno\", \"tres\"],\n        \"digitos_con_letras\": {\n          \"numero\": \"113\",\n          \"letra\": \"Uno uno tres\"\n        }\n      }\n    ]\n  }\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+        "letras": [
+          "Uno",
+          "nueve",
+          "siete"
+        ],
+        "en_letras": "Uno nueve siete"
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES",
+        "letras": [
+          "Cero",
+          "ocho",
+          "cuatro"
+        ],
+        "en_letras": "Cero ocho cuatro"
+      },
+      {
+        "etiqueta": "UTILIZADAS",
+        "letras": [
+          "Uno",
+          "uno",
+          "tres"
+        ],
+        "en_letras": "Uno uno tres"
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
+        "letras": [
+          "Uno",
+          "cero",
+          "ocho"
+        ],
+        "en_letras": "Uno cero ocho"
+      },
+      {
+        "etiqueta": "MIEMBROS JRV",
+        "letras": [
+          "Cero",
+          "cero",
+          "cinco"
+        ],
+        "en_letras": "Cero cero cinco"
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES",
+        "letras": [
+          "Uno",
+          "uno",
+          "tres"
+        ],
+        "en_letras": "Uno uno tres"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "letras": [
+          "Cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "Cero cero cero"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "letras": [
+          "Cero",
+          "dos",
+          "dos"
+        ],
+        "en_letras": "Cero dos dos"
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "letras": [
+          "Cero",
+          "cero",
+          "dos"
+        ],
+        "en_letras": "Cero cero dos"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "letras": [
+          "Cero",
+          "tres",
+          "cuatro"
+        ],
+        "en_letras": "Cero tres cuatro"
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "letras": [
+          "Cero",
+          "cinco",
+          "uno"
+        ],
+        "en_letras": "Cero cinco uno"
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "letras": [
+          "Cero",
+          "cero",
+          "dos"
+        ],
+        "en_letras": "Cero cero dos"
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "letras": [
+          "Cero",
+          "cero",
+          "dos"
+        ],
+        "en_letras": "Cero cero dos"
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "letras": [
+          "Uno",
+          "uno",
+          "tres"
+        ],
+        "en_letras": "Uno uno tres"
+      }
+    ]
+  }
+]

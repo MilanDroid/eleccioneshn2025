@@ -1,5 +1,243 @@
-{
-  "error": "JSON parsing error: Expecting property name enclosed in double quotes: line 64 column 3 (char 1869)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"digitos\": \"273\",\n          \"letras\": [\"Dos\", \"Siete\", \"Tres\"],\n          \"digitos_completos\": \"273\",\n          \"letras_completas\": [\"Dos\", \"Siete\", \"Tres\"]\n        },\n        {\n          \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n          \"digitos\": \"045\",\n          \"letras\": [\"Cero\", \"Cuatro\", \"Cinco\"],\n          \"digitos_completos\": \"045\",\n          \"letras_completas\": [\"Cero\", \"Cuatro\", \"Cinco\"]\n        },\n        {\n          \"etiqueta\": \"UTILIZADAS\",\n          \"digitos\": \"228\",\n          \"letras\": [\"Dos\", \"Dos\", \"Ocho\"],\n          \"digitos_completos\": \"228\",\n          \"letras_completas\": [\"Dos\", \"Dos\", \"Ocho\"]\n        }\n      ]\n    },\n    {\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n          \"digitos\": \"218\",\n          \"letras\": [\"Dos\", \"Uno\", \"Ocho\"],\n          \"digitos_completos\": \"218\",\n          \"letras_completas\": [\"Dos\", \"Uno\", \"Ocho\"]\n        },\n        {\n          \"etiqueta\": \"MIEMBROS JRV\",\n          \"digitos\": \"007\",\n          \"letras\": [\"Cero\", \"Cero\", \"Siete\"],\n          \"digitos_completos\": \"007\",\n          \"letras_completas\": [\"Cero\", \"Cero\", \"Siete\"]\n        },\n        {\n          \"etiqueta\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n          \"digitos\": \"003\",\n          \"letras\": [\"Cero\", \"Cero\", \"Tres\"],\n          \"digitos_completos\": \"003\",\n          \"letras_completas\": [\"Cero\", \"Cero\", \"Tres\"]\n        },\n        {\n          \"etiqueta\": \"TOTAL VOTANTES\",\n          \"digitos\": \"228\",\n          \"letras\": [\"Dos\", \"Dos\", \"Ocho\"],\n          \"digitos_completos\": \"228\",\n          \"letras_completas\": [\"Dos\", \"Dos\", \"Ocho\"]\n        }\n      ]\n    }\n  ],\n  {\n    \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n    \"filas\": [\n      {\n        \"etiqueta\": \"PARTIDO DC\",\n        \"digitos\": \"000\",\n        \"letras\": [\"Cero\", \"Cero\", \"Cero\"],\n        \"digitos_completos\": \"000\",\n        \"letras_completas\": [\"Cero\", \"Cero\", \"Cero\"]\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBRE\",\n        \"digitos\": \"042\",\n        \"letras\": [\"Cero\", \"Cuatro\", \"Dos\"],\n        \"digitos_completos\": \"042\",\n        \"letras_completas\": [\"Cero\", \"Cuatro\", \"Dos\"]\n      },\n      {\n        \"etiqueta\": \"PARTIDO PINU\",\n        \"digitos\": \"000\",\n        \"letras\": [\"Cero\", \"Cero\", \"Cero\"],\n        \"digitos_completos\": \"000\",\n        \"letras_completas\": [\"Cero\", \"Cero\", \"Cero\"]\n      },\n      {\n        \"etiqueta\": \"PARTIDO LIBERAL\",\n        \"digitos\": \"049\",\n        \"letras\": [\"Cero\", \"Cuatro\", \"Nueve\"],\n        \"digitos_completos\": \"049\",\n        \"letras_completas\": [\"Cero\", \"Cuatro\", \"Nueve\"]\n      },\n      {\n        \"etiqueta\": \"PARTIDO NACIONAL\",\n        \"digitos\": \"129\",\n        \"letras\": [\"Uno\", \"Dos\", \"Nueve\"],\n        \"digitos_completos\": \"129\",\n        \"letras_completas\": [\"Uno\", \"Dos\", \"Nueve\"]\n      },\n      {\n        \"etiqueta\": \"VOTOS EN BLANCO\",\n        \"digitos\": \"006\",\n        \"letras\": [\"Cero\", \"Cero\", \"Seis\"],\n        \"digitos_completos\": \"006\",\n        \"letras_completas\": [\"Cero\", \"Cero\", \"Seis\"]\n      },\n      {\n        \"etiqueta\": \"VOTOS NULOS\",\n        \"digitos\": \"002\",\n        \"letras\": [\"Cero\", \"Cero\", \"Dos\"],\n        \"digitos_completos\": \"002\",\n        \"letras_completas\": [\"Cero\", \"Cero\", \"Dos\"]\n      },\n      {\n        \"etiqueta\": \"GRAN TOTAL\",\n        \"digitos\": \"228\",\n        \"letras\": [\"Dos\", \"Dos\", \"Ocho\"],\n        \"digitos_completos\": \"228\",\n        \"letras_completas\": [\"Dos\", \"Dos\", \"Ocho\"]\n      }\n    ]\n  }\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+        "digitos": "273",
+        "letras": [
+          "Dos",
+          "Siete",
+          "Tres"
+        ],
+        "en_numeros": "273",
+        "en_letras": [
+          "Dos",
+          "Siete",
+          "Tres"
+        ]
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES",
+        "digitos": "045",
+        "letras": [
+          "Cero",
+          "Cuatro",
+          "Cinco"
+        ],
+        "en_numeros": "045",
+        "en_letras": [
+          "Cero",
+          "Cuatro",
+          "Cinco"
+        ]
+      },
+      {
+        "etiqueta": "UTILIZADAS",
+        "digitos": "228",
+        "letras": [
+          "Dos",
+          "Dos",
+          "Ocho"
+        ],
+        "en_numeros": "228",
+        "en_letras": [
+          "Dos",
+          "Dos",
+          "Ocho"
+        ]
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
+        "digitos": "218",
+        "letras": [
+          "Dos",
+          "Uno",
+          "Ocho"
+        ],
+        "en_numeros": "218",
+        "en_letras": [
+          "Dos",
+          "Uno",
+          "Ocho"
+        ]
+      },
+      {
+        "etiqueta": "MIEMBROS JRV",
+        "digitos": "007",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Siete"
+        ],
+        "en_numeros": "007",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Siete"
+        ]
+      },
+      {
+        "etiqueta": "CUSTODIOS INFORMÁTICOS ELECTORALES",
+        "digitos": "003",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ],
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ]
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES",
+        "digitos": "228",
+        "letras": [
+          "Dos",
+          "Dos",
+          "Ocho"
+        ],
+        "en_numeros": "228",
+        "en_letras": [
+          "Dos",
+          "Dos",
+          "Ocho"
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DC",
+        "digitos": "000",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBRE",
+        "digitos": "042",
+        "letras": [
+          "Cero",
+          "Cuatro",
+          "Dos"
+        ],
+        "en_numeros": "042",
+        "en_letras": [
+          "Cero",
+          "Cuatro",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO PINU",
+        "digitos": "000",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ],
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL",
+        "digitos": "049",
+        "letras": [
+          "Cero",
+          "Cuatro",
+          "Nueve"
+        ],
+        "en_numeros": "049",
+        "en_letras": [
+          "Cero",
+          "Cuatro",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL",
+        "digitos": "129",
+        "letras": [
+          "Uno",
+          "Dos",
+          "Nueve"
+        ],
+        "en_numeros": "129",
+        "en_letras": [
+          "Uno",
+          "Dos",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "digitos": "006",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Seis"
+        ],
+        "en_numeros": "006",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Seis"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "digitos": "002",
+        "letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ],
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "digitos": "228",
+        "letras": [
+          "Dos",
+          "Dos",
+          "Ocho"
+        ],
+        "en_numeros": "228",
+        "en_letras": [
+          "Dos",
+          "Dos",
+          "Ocho"
+        ]
+      }
+    ]
+  }
+]
