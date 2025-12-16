@@ -1,0 +1,214 @@
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+        "digitos": "324",
+        "letras": [
+          "tres",
+          "dos",
+          "cuatro"
+        ],
+        "formato": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "papeletas",
+          "item": "recibidas"
+        }
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES",
+        "digitos": "126",
+        "letras": [
+          "uno",
+          "dos",
+          "seis"
+        ],
+        "formato": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "papeletas",
+          "item": "sobrantes"
+        }
+      },
+      {
+        "etiqueta": "UTILIZADAS",
+        "digitos": "198",
+        "letras": [
+          "uno",
+          "nueve",
+          "ocho"
+        ],
+        "formato": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "papeletas",
+          "item": "utilizadas"
+        }
+      }
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
+        "digitos": "192",
+        "letras": [
+          "uno",
+          "nueve",
+          "dos"
+        ],
+        "formato": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "votantes",
+          "item": "ciudadanos"
+        }
+      },
+      {
+        "etiqueta": "MIEMBROS JRV",
+        "digitos": "006",
+        "letras": [
+          "cero",
+          "cero",
+          "seis"
+        ],
+        "formato": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "votantes",
+          "item": "miembros_jrv"
+        }
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES",
+        "digitos": "198",
+        "letras": [
+          "uno",
+          "nueve",
+          "ocho"
+        ],
+        "formato": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "votantes",
+          "item": "total"
+        }
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido",
+          "nombre": "DC"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+        "digitos": "018",
+        "letras": [
+          "cero",
+          "uno",
+          "ocho"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido",
+          "nombre": "libre"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
+        "digitos": "003",
+        "letras": [
+          "cero",
+          "cero",
+          "tres"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido",
+          "nombre": "PINU"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "digitos": "043",
+        "letras": [
+          "cero",
+          "cuatro",
+          "tres"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido",
+          "nombre": "PLH"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "digitos": "126",
+        "letras": [
+          "uno",
+          "dos",
+          "seis"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido",
+          "nombre": "PNH"
+        }
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "digitos": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "votos",
+          "nombre": "blanco"
+        }
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "digitos": "008",
+        "letras": [
+          "cero",
+          "cero",
+          "ocho"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "votos",
+          "nombre": "nulos"
+        }
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "digitos": "198",
+        "letras": [
+          "uno",
+          "nueve",
+          "ocho"
+        ],
+        "formato": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "total"
+        }
+      }
+    ]
+  }
+]
