@@ -1090,6 +1090,173 @@
                 line-height: 1.2;
             }
         }
+
+        /* AI Info Box Styles */
+        .ai-info-box {
+            background: #ececec;
+            color: black;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 1400px;
+            position: relative;
+            animation: slideDown 0.5s ease-out;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ai-info-box.closing {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        .ai-info-box-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .ai-info-box-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .ai-info-box h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ai-info-box-summary {
+            font-size: 0.9rem;
+            margin-top: 8px;
+            opacity: 0.95;
+        }
+
+        .ai-info-box-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, margin-top 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .ai-info-box-content.expanded {
+            max-height: 500px;
+            margin-top: 15px;
+            opacity: 1;
+        }
+
+        .ai-info-box p {
+            margin: 8px 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .ai-info-box .close-btn {
+            background: rgba(239, 239, 239, 0.2);
+            border: none;
+            color: black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 1;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ai-info-box .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .toggle-icon {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .toggle-icon:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .toggle-icon.expanded {
+            transform: rotate(180deg);
+        }
+
+        .ai-info-box ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .ai-info-box li {
+            margin: 6px 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .ai-info-box {
+                margin: 15px;
+                padding: 15px;
+            }
+
+            .ai-info-box h4 {
+                font-size: 1rem;
+            }
+
+            .ai-info-box-summary {
+                font-size: 0.85rem;
+            }
+
+            .ai-info-box p {
+                font-size: 0.85rem;
+            }
+
+            .ai-info-box-content.expanded {
+                max-height: 600px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1110,6 +1277,34 @@
         </div>
     </nav>
 
+    <!-- AI Info Box -->
+    <div class="ai-info-box" id="aiInfoBox">
+        <div class="ai-info-box-header" onclick="toggleAIInfoBox()">
+            <div class="ai-info-box-title">
+                <div>
+                    <h4>Conteo con Inteligencia Artificial</h4>
+                    <div class="ai-info-box-summary">Este conteo utiliza IA para extraer y validar los votos de las actas oficiales</div>
+                </div>
+            </div>
+            <div class="toggle-icon" id="toggleIcon" aria-label="Expandir/Colapsar">▼</div>
+            <button class="close-btn" onclick="closeAIInfoBox(event)" aria-label="Cerrar">×</button>
+        </div>
+        <div class="ai-info-box-content" id="aiInfoContent">
+            <p>
+                El sistema de IA analiza cada acta de manera automática para:
+            </p>
+            <ul>
+                <li><strong>Leer y extraer</strong> los números de votos de cada partido político directamente de las imágenes de las actas</li>
+                <li><strong>Validar la consistencia</strong> de los datos mediante verificaciones matemáticas y lógicas</li>
+                <li><strong>Identificar inconsistencias</strong> cuando los totales no coinciden o hay irregularidades</li>
+                <li><strong>Garantizar la precisión</strong> del conteo mediante múltiples capas de validación automática</li>
+            </ul>
+            <p>
+                Cada acta procesada pasa por rigurosos controles de calidad para asegurar que los datos extraídos sean exactos y confiables.
+            </p>
+        </div>
+    </div>
+
     <!-- Disclaimer Modal -->
     <div id="disclaimerModal" class="modal-overlay">
         <div class="modal-content">
@@ -1129,6 +1324,7 @@
 
     <div class="container">
         <header>
+
             <div class="controls">
                 <div class="control-group">
                     <label class="control-label" for="departamento-select">Departamento</label>
@@ -2408,6 +2604,38 @@
             localStorage.setItem('disclaimerSeen', 'true');
         }
 
+        function toggleAIInfoBox() {
+            const content = document.getElementById('aiInfoContent');
+            const toggleIcon = document.getElementById('toggleIcon');
+
+            content.classList.toggle('expanded');
+            toggleIcon.classList.toggle('expanded');
+        }
+
+        function closeAIInfoBox(event) {
+            // Prevent the toggle event from firing when clicking close button
+            if (event) {
+                event.stopPropagation();
+            }
+
+            const infoBox = document.getElementById('aiInfoBox');
+            infoBox.classList.add('closing');
+            setTimeout(() => {
+                infoBox.style.display = 'none';
+            }, 300); // Match animation duration
+            localStorage.setItem('aiInfoBoxClosed', 'true');
+        }
+
+        function checkAIInfoBoxStatus() {
+            const aiInfoBoxClosed = localStorage.getItem('aiInfoBoxClosed');
+            if (aiInfoBoxClosed) {
+                const infoBox = document.getElementById('aiInfoBox');
+                if (infoBox) {
+                    infoBox.style.display = 'none';
+                }
+            }
+        }
+
         function checkDisclaimerStatus() {
             const disclaimerSeen = localStorage.getItem('disclaimerSeen');
             if (!disclaimerSeen) {
@@ -2434,6 +2662,9 @@
 
         // Check disclaimer status on page load
         checkDisclaimerStatus();
+
+        // Check AI info box status on page load
+        checkAIInfoBoxStatus();
 
         // ============================================
         // MISMATCHES SECTION
