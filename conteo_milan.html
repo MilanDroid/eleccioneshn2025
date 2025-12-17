@@ -1183,55 +1183,41 @@
             </div>
         </div>
 
-        <!-- Mismatches Section -->
-        <div id="mismatches-section" class="actas-info" style="display: none; margin-top: 15px;">
-            <h3 class="actas-title collapsible" data-target="mismatches-content">Actas validas con diferencia respecto al CNE</h3>
+        <!-- Valid Actas Section -->
+        <div id="valid-actas-section" class="actas-info" style="display: none; margin-top: 15px;">
+            <h3 class="actas-title collapsible" data-target="valid-actas-content">Actas Válidas (Utilizadas en el conteo)</h3>
 
-            <div id="mismatches-content" class="collapsible-content">
-                <div style="font-size: 12px; color: #666; margin: 10px 0; padding: 8px; background-color: #f5f5f5; border-radius: 4px;">
-                    <strong>Formato de votos:</strong>
-                    <span style="color: darkolivegreen;">Votos IA</span> /
-                    <span style="color: red;">Votos CNE</span>
-                </div>
-
+            <div id="valid-actas-content" class="collapsible-content">
                 <!-- Filters -->
                 <div class="actas-filters">
                     <div class="filter-group">
-                        <label class="filter-label" for="mismatch-filter-departamento">Departamento</label>
-                        <select id="mismatch-filter-departamento" class="filter-select">
+                        <label class="filter-label" for="valid-filter-departamento">Departamento</label>
+                        <select id="valid-filter-departamento" class="filter-select">
                             <option value="">Todos</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label class="filter-label" for="mismatch-filter-municipio">Municipio</label>
-                        <select id="mismatch-filter-municipio" class="filter-select">
+                        <label class="filter-label" for="valid-filter-municipio">Municipio</label>
+                        <select id="valid-filter-municipio" class="filter-select">
                             <option value="">Todos</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label class="filter-label" for="mismatch-filter-centro">Centro</label>
-                        <input type="text" id="mismatch-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                        <label class="filter-label" for="valid-filter-centro">Centro</label>
+                        <input type="text" id="valid-filter-centro" class="filter-input" placeholder="Buscar por centro...">
                     </div>
                     <div class="filter-group">
-                        <label class="filter-label" for="mismatch-filter-tipo">Tipo Diferencia</label>
-                        <select id="mismatch-filter-tipo" class="filter-select">
-                            <option value="">Todos</option>
-                            <option value="Sin votos CNE">Sin votos CNE</option>
-                            <option value="Diferencia votos">Diferencia votos</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <button id="mismatch-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                        <button id="valid-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
                     </div>
                 </div>
 
                 <div class="actas-list-scroll-wrapper">
-                    <div id="mismatches-list" style="margin-top: 15px;">
+                    <div id="valid-actas-list" style="margin-top: 15px;">
                         <!-- Paginated list will be inserted here -->
                     </div>
                 </div>
 
-                <div id="mismatches-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                <div id="valid-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
                     <!-- Pagination buttons will be inserted here -->
                 </div>
             </div>
@@ -1239,9 +1225,9 @@
 
         <!-- AI Inconsistencias Section -->
         <div id="ai-inconsistencias-section" class="actas-info" style="display: none; margin-top: 15px;">
-            <h3 class="actas-title collapsible" data-target="ai-inconsistencias-content">Inconsistencias AI</h3>
+            <h3 class="actas-title collapsible collapsed" data-target="ai-inconsistencias-content">Inconsistencias AI (No utilizadas en el conteo)</h3>
 
-            <div id="ai-inconsistencias-content" class="collapsible-content">
+            <div id="ai-inconsistencias-content" class="collapsible-content collapsed">
                 <!-- Filters -->
                 <div class="actas-filters">
                     <div class="filter-group">
@@ -1286,41 +1272,55 @@
             </div>
         </div>
 
-        <!-- Valid Actas Section -->
-        <div id="valid-actas-section" class="actas-info" style="display: none; margin-top: 15px;">
-            <h3 class="actas-title collapsible" data-target="valid-actas-content">Actas Válidas</h3>
+        <!-- Mismatches Section -->
+        <div id="mismatches-section" class="actas-info" style="display: none; margin-top: 15px;">
+            <h3 class="actas-title collapsible collapsed" data-target="mismatches-content">Actas validas con diferencia respecto al CNE</h3>
 
-            <div id="valid-actas-content" class="collapsible-content">
+            <div id="mismatches-content" class="collapsible-content collapsed">
+                <div style="font-size: 12px; color: #666; margin: 10px 0; padding: 8px; background-color: #f5f5f5; border-radius: 4px;">
+                    <strong>Formato de votos:</strong>
+                    <span style="color: darkolivegreen;">Votos IA</span> /
+                    <span style="color: red;">Votos CNE</span>
+                </div>
+
                 <!-- Filters -->
                 <div class="actas-filters">
                     <div class="filter-group">
-                        <label class="filter-label" for="valid-filter-departamento">Departamento</label>
-                        <select id="valid-filter-departamento" class="filter-select">
+                        <label class="filter-label" for="mismatch-filter-departamento">Departamento</label>
+                        <select id="mismatch-filter-departamento" class="filter-select">
                             <option value="">Todos</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label class="filter-label" for="valid-filter-municipio">Municipio</label>
-                        <select id="valid-filter-municipio" class="filter-select">
+                        <label class="filter-label" for="mismatch-filter-municipio">Municipio</label>
+                        <select id="mismatch-filter-municipio" class="filter-select">
                             <option value="">Todos</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label class="filter-label" for="valid-filter-centro">Centro</label>
-                        <input type="text" id="valid-filter-centro" class="filter-input" placeholder="Buscar por centro...">
+                        <label class="filter-label" for="mismatch-filter-centro">Centro</label>
+                        <input type="text" id="mismatch-filter-centro" class="filter-input" placeholder="Buscar por centro...">
                     </div>
                     <div class="filter-group">
-                        <button id="valid-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
+                        <label class="filter-label" for="mismatch-filter-tipo">Tipo Diferencia</label>
+                        <select id="mismatch-filter-tipo" class="filter-select">
+                            <option value="">Todos</option>
+                            <option value="Sin votos CNE">Sin votos CNE</option>
+                            <option value="Diferencia votos">Diferencia votos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button id="mismatch-clear-filters-btn" class="clear-filters-btn">Limpiar Filtros</button>
                     </div>
                 </div>
 
                 <div class="actas-list-scroll-wrapper">
-                    <div id="valid-actas-list" style="margin-top: 15px;">
+                    <div id="mismatches-list" style="margin-top: 15px;">
                         <!-- Paginated list will be inserted here -->
                     </div>
                 </div>
 
-                <div id="valid-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                <div id="mismatches-pagination-controls" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
                     <!-- Pagination buttons will be inserted here -->
                 </div>
             </div>
