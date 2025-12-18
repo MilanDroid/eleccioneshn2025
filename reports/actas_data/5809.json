@@ -1,233 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": [
-          "2",
-          "5",
-          "0"
-        ],
-        "letras": [
-          "Dos",
-          "cinco",
-          "Cero"
-        ],
-        "digitos_combinados": "250",
-        "letras_combinadas": "Dos cinco Cero"
-      },
-      {
-        "descripcion": "NO UTILIZADAS / SOBRANTES",
-        "digitos": [
-          "0",
-          "9",
-          "1"
-        ],
-        "letras": [
-          "Cero",
-          "Nueve",
-          "uno"
-        ],
-        "digitos_combinados": "091",
-        "letras_combinadas": "Cero Nueve uno"
-      },
-      {
-        "descripcion": "UTILIZADAS",
-        "digitos": [
-          "3",
-          "5",
-          "9"
-        ],
-        "letras": [
-          "uno",
-          "Cinco",
-          "Nueve"
-        ],
-        "digitos_combinados": "359",
-        "letras_combinadas": "uno Cinco Nueve"
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "digitos": [
-          "3",
-          "5",
-          "3"
-        ],
-        "letras": [
-          "Uno",
-          "Cinco",
-          "Tres"
-        ],
-        "digitos_combinados": "353",
-        "letras_combinadas": "Uno Cinco Tres"
-      },
-      {
-        "descripcion": "MIEMBROS JRV",
-        "digitos": [
-          "0",
-          "0",
-          "6"
-        ],
-        "letras": [
-          "Cero",
-          "Cero",
-          "Seis"
-        ],
-        "digitos_combinados": "006",
-        "letras_combinadas": "Cero Cero Seis"
-      },
-      {
-        "descripcion": "TOTAL VOTANTES",
-        "digitos": [
-          "3",
-          "5",
-          "9"
-        ],
-        "letras": [
-          "Uno",
-          "Cinco",
-          "Nueve"
-        ],
-        "digitos_combinados": "359",
-        "letras_combinadas": "Uno Cinco Nueve"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "descripcion": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "etiqueta": "DC",
-        "digitos": [
-          "0",
-          "0",
-          "0"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cero"
-        ],
-        "digitos_combinados": "000",
-        "letras_combinadas": "Cero Cero Cero"
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBERTAD Y REFUNDACIÓN",
-        "etiqueta": "libre",
-        "digitos": [
-          "0",
-          "3",
-          "5"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "015",
+        "en_letras": [
           "Cero",
-          "Tres",
+          "Uno",
           "Cinco"
-        ],
-        "digitos_combinados": "035",
-        "letras_combinadas": "Cero Tres Cinco"
+        ]
       },
       {
-        "descripcion": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "etiqueta": "PINU",
-        "digitos": [
-          "0",
-          "0",
-          "3"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
           "Cero",
           "Cero",
-          "Tres"
-        ],
-        "digitos_combinados": "003",
-        "letras_combinadas": "Cero Cero Tres"
+          "Uno"
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBERAL DE HONDURAS",
-        "etiqueta": "PLH",
-        "digitos": [
-          "0",
-          "8",
-          "3"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "081",
+        "en_letras": [
           "Cero",
           "Ocho",
-          "Tres"
-        ],
-        "digitos_combinados": "083",
-        "letras_combinadas": "Cero Ocho Tres"
+          "Uno"
+        ]
       },
       {
-        "descripcion": "PARTIDO NACIONAL DE HONDURAS",
-        "etiqueta": "PNH",
-        "digitos": [
-          "0",
-          "5",
-          "9"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "059",
+        "en_letras": [
           "Cero",
           "Cinco",
           "Nueve"
-        ],
-        "digitos_combinados": "059",
-        "letras_combinadas": "Cero Cinco Nueve"
+        ]
       },
       {
-        "descripcion": "VOTOS EN BLANCO",
-        "digitos": [
-          "0",
-          "0",
-          "0"
-        ],
-        "letras": [
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cero"
-        ],
-        "digitos_combinados": "000",
-        "letras_combinadas": "Cero Cero Cero"
+        ]
       },
       {
-        "descripcion": "VOTOS NULOS",
-        "digitos": [
-          "0",
-          "0",
-          "3"
-        ],
-        "letras": [
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "003",
+        "en_letras": [
           "Cero",
           "Cero",
           "Tres"
-        ],
-        "digitos_combinados": "003",
-        "letras_combinadas": "Cero Cero Tres"
+        ]
       },
       {
-        "descripcion": "GRAN TOTAL",
-        "digitos": [
-          "3",
-          "5",
-          "9"
-        ],
-        "letras": [
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "359",
+        "en_letras": [
           "Tres",
           "Cinco",
           "Nueve"
-        ],
-        "digitos_combinados": "359",
-        "letras_combinadas": "Tres Cinco Nueve"
+        ]
       }
     ]
   }
