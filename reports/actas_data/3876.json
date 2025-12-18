@@ -1,5 +1,79 @@
-{
-  "error": "JSON parsing error: Expecting value: line 1 column 1 (char 0)",
-  "raw_ocr_output": "<SPECIAL_232>```json\n{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"digitos\": \"363\",\n          \"letras\": [\"tres\", \"seis\", \"tres\"],\n          \"digitos_texto\": \"363\",\n          \"letras_texto\": [\"tres\", \"seis\", \"tres\"]\n        },\n        {\n          \"etiqueta\": \"NO UTILIZADAS / SOBRANTES\",\n          \"digitos\": \"127\",\n          \"letras\": [\"uno\", \"dos\", \"siete\"],\n          \"digitos_texto\": \"127\",\n          \"letras_texto\": [\"uno\", \"dos\", \"siete\"]\n        },\n        {\n          \"etiqueta\": \"UTILIZADAS\",\n          \"digitos\": \"236\",\n          \"letras\": [\"dos\", \"tres\", \"seis\"],\n          \"digitos_texto\": \"236\",\n          \"letras_texto\": [\"dos\", \"tres\", \"seis\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n          \"digitos\": \"228\",\n          \"letras\": [\"dos\", \"dos\", \"ocho\"],\n          \"digitos_texto\": \"228\",\n          \"letras_texto\": [\"dos\", \"dos\", \"ocho\"]\n        },\n        {\n          \"etiqueta\": \"MIEMBROS JRV\",\n          \"digitos\": \"006\",\n          \"letras\": [\"cero\", \"cero\", \"seis\"],\n          \"digitos_texto\": \"006\",\n          \"letras_texto\": [\"cero\", \"cero\", \"seis\"]\n        },\n        {\n          \"etiqueta\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n          \"digitos\": \"002\",\n          \"letras\": [\"cero\", \"cero\", \"dos\"],\n          \"digitos_texto\": \"002\",\n          \"letras_texto\": [\"cero\", \"cero\", \"dos\"]\n        },\n        {\n          \"etiqueta\": \"TOTAL VOTANTES\",\n          \"digitos\": \"236\",\n          \"letras\": [\"dos\", \"tres\", \"seis\"],\n          \"digitos_texto\": \"236\",\n          \"letras_texto\": [\"dos\", \"tres\", \"seis\"]\n        }\n      ]\n    },\n    {\n      \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n      \"filas\": [\n        {\n          \"etiqueta\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n          \"digitos\": \"002\",\n          \"letras\": [\"cero\", \"cero\", \"dos\"],\n          \"digitos_texto\": \"002\",\n          \"letras_texto\": [\"cero\", \"cero\", \"dos\"]\n        },\n        {\n          \"etiqueta\": \"PARTIDO LIBERTAD Y REPUBLICA (Libre)\",\n          \"digitos\": \"032\",\n          \"letras\": [\"cero\", \"tres\", \"dos\"],\n          \"digitos_texto\": \"032\",\n          \"letras_texto\": [\"cero\", \"tres\", \"dos\"]\n        },\n        {\n          \"etiqueta\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n          \"digitos\": \"007\",\n          \"letras\": [\"cero\", \"cero\", \"siete\"],\n          \"digitos_texto\": \"007\",\n          \"letras_texto\": [\"cero\", \"cero\", \"siete\"]\n        },\n        {\n          \"etiqueta\": \"PARTIDO LIBERAL DE HONDURAS\",\n          \"digitos\": \"156\",\n          \"letras\": [\"uno\", \"cinco\", \"seis\"],\n          \"digitos_texto\": \"156\",\n          \"letras_texto\": [\"uno\", \"cinco\", \"seis\"]\n        },\n        {\n          \"etiqueta\": \"PARTIDO NACIONAL DE HONDURAS\",\n          \"digitos\": \"039\",\n          \"letras\": [\"cero\", \"tres\", \"nueve\"],\n          \"digitos_texto\": \"039\",\n          \"letras_texto\": [\"cero\", \"tres\", \"nueve\"]\n        },\n        {\n          \"etiqueta\": \"VOTOS EN BLANCO\",\n          \"digitos\": \"000\",\n          \"letras\": [\"cero\", \"cero\", \"cero\"],\n          \"digitos_texto\": \"000\",\n          \"letras_texto\": [\"cero\", \"cero\", \"cero\"]\n        },\n        {\n          \"etiqueta\": \"VOTOS NULOS\",\n          \"digitos\": \"000\",\n          \"letras\": [\"cero\", \"cero\", \"cero\"],\n          \"digitos_texto\": \"000\",\n          \"letras_texto\": [\"cero\", \"cero\", \"cero\"]\n        },\n        {\n          \"etiqueta\": \"GRAN TOTAL\",\n          \"digitos\": \"236\",\n          \"letras\": [\"dos\", \"tres\", \"seis\"],\n          \"digitos_texto\": \"236\",\n          \"letras_texto\": [\"dos\", \"tres\", \"seis\"]\n        }\n      ]\n    }\n  ]\n}\n```",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "032",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "007",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Siete"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "156",
+        "en_letras": [
+          "Uno",
+          "Cinco",
+          "Seis"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "039",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
+      }
+    ]
+  }
+]

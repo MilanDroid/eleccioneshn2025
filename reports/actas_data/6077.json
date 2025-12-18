@@ -1,227 +1,83 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "318",
-        "letras": [
-          "TRES",
-          "UNO",
-          "OCHO"
-        ],
-        "digitos_texto": "318",
-        "letras_texto": [
-          "TRES",
-          "UNO",
-          "OCHO"
-        ]
-      },
-      {
-        "descripcion": "NO UTILIZADAS/SOBRANTES",
-        "digitos": "147",
-        "letras": [
-          "UNO",
-          "CUATRO",
-          "SIETE"
-        ],
-        "digitos_texto": "147",
-        "letras_texto": [
-          "UNO",
-          "CUATRO",
-          "SIETE"
-        ]
-      },
-      {
-        "descripcion": "UTILIZADAS",
-        "digitos": "171",
-        "letras": [
-          "UNO",
-          "SIETE",
-          "UNO"
-        ],
-        "digitos_texto": "171",
-        "letras_texto": [
-          "UNO",
-          "SIETE",
-          "UNO"
-        ]
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "digitos": "166",
-        "letras": [
-          "UNO",
-          "SEIS",
-          "SEIS"
-        ],
-        "digitos_texto": "166",
-        "letras_texto": [
-          "UNO",
-          "SEIS",
-          "SEIS"
-        ]
-      },
-      {
-        "descripcion": "MIEMBROS JRV",
-        "digitos": "005",
-        "letras": [
-          "CERO",
-          "CERO",
-          "CINCO"
-        ],
-        "digitos_texto": "005",
-        "letras_texto": [
-          "CERO",
-          "CERO",
-          "CINCO"
-        ]
-      },
-      {
-        "descripcion": "TOTAL VOTANTES",
-        "digitos": "171",
-        "letras": [
-          "UNO",
-          "SIETE",
-          "UNO"
-        ],
-        "digitos_texto": "171",
-        "letras_texto": [
-          "UNO",
-          "SIETE",
-          "UNO"
-        ]
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "descripcion": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "digitos": "000",
-        "letras": [
-          "CERO",
-          "CERO",
-          "CERO"
-        ],
-        "digitos_texto": "000",
-        "letras_texto": [
-          "CERO",
-          "CERO",
-          "CERO"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "descripcion": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "digitos": "070",
-        "letras": [
-          "CERO",
-          "SIETE",
-          "CERO"
-        ],
-        "digitos_texto": "070",
-        "letras_texto": [
-          "CERO",
-          "SIETE",
-          "CERO"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "017",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Siete"
         ]
       },
       {
-        "descripcion": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "digitos": "001",
-        "letras": [
-          "CERO",
-          "CERO",
-          "UNO"
-        ],
-        "digitos_texto": "001",
-        "letras_texto": [
-          "CERO",
-          "CERO",
-          "UNO"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
-        "descripcion": "PARTIDO LIBERAL DE HONDURAS",
-        "digitos": "110",
-        "letras": [
-          "UNO",
-          "UNO",
-          "CERO"
-        ],
-        "digitos_texto": "110",
-        "letras_texto": [
-          "UNO",
-          "UNO",
-          "CERO"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "110",
+        "en_letras": [
+          "Uno",
+          "Uno",
+          "Cero"
         ]
       },
       {
-        "descripcion": "PARTIDO NACIONAL DE HONDURAS",
-        "digitos": "028",
-        "letras": [
-          "CERO",
-          "DOS",
-          "OCHO"
-        ],
-        "digitos_texto": "028",
-        "letras_texto": [
-          "CERO",
-          "DOS",
-          "OCHO"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "028",
+        "en_letras": [
+          "Cero",
+          "Dos",
+          "Ocho"
         ]
       },
       {
-        "descripcion": "VOTOS EN BLANCO",
-        "digitos": "002",
-        "letras": [
-          "CERO",
-          "CERO",
-          "DOS"
-        ],
-        "digitos_texto": "002",
-        "letras_texto": [
-          "CERO",
-          "CERO",
-          "DOS"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
         ]
       },
       {
-        "descripcion": "VOTOS NULOS",
-        "digitos": "013",
-        "letras": [
-          "CERO",
-          "UNO",
-          "TRES"
-        ],
-        "digitos_texto": "013",
-        "letras_texto": [
-          "CERO",
-          "UNO",
-          "TRES"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "013",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Tres"
         ]
       },
       {
-        "descripcion": "GRAN TOTAL",
-        "digitos": "171",
-        "letras": [
-          "UNO",
-          "SIETE",
-          "UNO"
-        ],
-        "digitos_texto": "171",
-        "letras_texto": [
-          "UNO",
-          "SIETE",
-          "UNO"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "171",
+        "en_letras": [
+          "Uno",
+          "Siete",
+          "Uno"
         ]
       }
     ]
