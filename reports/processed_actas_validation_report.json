@@ -1,5 +1,5 @@
 {
-  "total_actas": 15166,
+  "total_actas": 15174,
   "fixed_count": 0,
   "fixed_actas": [],
   "errors": {
@@ -695,7 +695,7 @@
       ]
     },
     "gran_total_exceeds_400": {
-      "count": 121,
+      "count": 122,
       "actas": [
         {
           "acta": "1052",
@@ -1166,6 +1166,10 @@
           "gran_total_n": 796
         },
         {
+          "acta": "7213",
+          "gran_total_n": 797
+        },
+        {
           "acta": "760",
           "gran_total_n": 424
         },
@@ -1184,7 +1188,7 @@
       ]
     },
     "n_sum_not_equals_gran_total_n": {
-      "count": 1251,
+      "count": 1253,
       "actas": [
         {
           "acta": "1014",
@@ -8519,6 +8523,18 @@
           "diferencia": 3
         },
         {
+          "acta": "7213",
+          "suma_n": 820,
+          "gran_total_n": 797,
+          "diferencia": 23
+        },
+        {
+          "acta": "7214",
+          "suma_n": 156,
+          "gran_total_n": 221,
+          "diferencia": -65
+        },
+        {
           "acta": "728",
           "suma_n": 210,
           "gran_total_n": 204,
@@ -10453,6 +10469,8 @@
     "7204",
     "7206",
     "7207",
+    "7213",
+    "7214",
     "728",
     "736",
     "738",
@@ -23589,7 +23607,13 @@
     "7201",
     "7202",
     "7205",
+    "7208",
+    "7209",
     "721",
+    "7210",
+    "7211",
+    "7212",
+    "7215",
     "722",
     "723",
     "724",
