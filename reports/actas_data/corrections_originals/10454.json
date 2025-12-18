@@ -1,231 +1,80 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "filas": [
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "341",
-        "letras": [
-          "Tres",
-          "Cuatro",
-          "Uno"
-        ],
-        "digitosConcatenados": "341",
-        "letrasConcatenadas": [
-          "Tres",
-          "Cuatro",
-          "Uno"
-        ]
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "NO UTILIZADAS/SOBRANTES",
-        "digitos": "131",
-        "letras": [
-          "Uno",
-          "Tres",
-          "Uno"
-        ],
-        "digitosConcatenados": "131",
-        "letrasConcatenadas": [
-          "Uno",
-          "Tres",
-          "Uno"
-        ]
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "UTILIZADAS",
-        "digitos": "210",
-        "letras": [
-          "Dos",
-          "Uno",
-          "Cero"
-        ],
-        "digitosConcatenados": "210",
-        "letrasConcatenadas": [
-          "Dos",
-          "Uno",
-          "Cero"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "digitos": "205",
-        "letras": [
-          "Dos",
-          "Cero",
-          "Cinco"
-        ],
-        "digitosConcatenados": "205",
-        "letrasConcatenadas": [
-          "Dos",
-          "Cero",
-          "Cinco"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "MIEMBROS JRV",
-        "digitos": "005",
-        "letras": [
-          "Cero",
-          "Cero",
-          "Cinco"
-        ],
-        "digitosConcatenados": "005",
-        "letrasConcatenadas": [
-          "Cero",
-          "Cero",
-          "Cinco"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "TOTAL VOTANTES",
-        "digitos": "210",
-        "letras": [
-          "Dos",
-          "Uno",
-          "Cero"
-        ],
-        "digitosConcatenados": "210",
-        "letrasConcatenadas": [
-          "Dos",
-          "Uno",
-          "Cero"
-        ]
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Demócrata Cristiano de Honduras (DC)",
-        "digitos": "003",
-        "letras": [
-          "Cero",
-          "Cero",
-          "Tres"
-        ],
-        "digitosConcatenados": "003",
-        "letrasConcatenadas": [
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "003",
+        "en_letras": [
           "Cero",
           "Cero",
           "Tres"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Libertad y Refundación (libre)",
-        "digitos": "024",
-        "letras": [
-          "Cero",
-          "Dos",
-          "Cuatro"
-        ],
-        "digitosConcatenados": "024",
-        "letrasConcatenadas": [
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "024",
+        "en_letras": [
           "Cero",
           "Dos",
           "Cuatro"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Innovación y Unidad Social Demócrata (PINU)",
-        "digitos": "000",
-        "letras": [
-          "Cero",
-          "Cero",
-          "Cero"
-        ],
-        "digitosConcatenados": "000",
-        "letrasConcatenadas": [
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cero"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Liberal de Honduras",
-        "digitos": "071",
-        "letras": [
-          "Cero",
-          "Siete",
-          "Uno"
-        ],
-        "digitosConcatenados": "071",
-        "letrasConcatenadas": [
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "071",
+        "en_letras": [
           "Cero",
           "Siete",
           "Uno"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Nacional de Honduras",
-        "digitos": "130",
-        "letras": [
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "110",
+        "en_letras": [
           "Uno",
-          "Tres",
-          "Cero"
-        ],
-        "digitosConcatenados": "130",
-        "letrasConcatenadas": [
           "Uno",
-          "Tres",
           "Cero"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS EN BLANCO",
-        "digitos": "001",
-        "letras": [
-          "Cero",
-          "Cero",
-          "Uno"
-        ],
-        "digitosConcatenados": "001",
-        "letrasConcatenadas": [
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "001",
+        "en_letras": [
           "Cero",
           "Cero",
           "Uno"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS NULOS",
-        "digitos": "001",
-        "letras": [
-          "Cero",
-          "Cero",
-          "Uno"
-        ],
-        "digitosConcatenados": "001",
-        "letrasConcatenadas": [
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "001",
+        "en_letras": [
           "Cero",
           "Cero",
           "Uno"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "GRAN TOTAL",
-        "digitos": "210",
-        "letras": [
-          "Dos",
-          "Uno",
-          "Cero"
-        ],
-        "digitosConcatenados": "210",
-        "letrasConcatenadas": [
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "210",
+        "en_letras": [
           "Dos",
           "Uno",
           "Cero"
