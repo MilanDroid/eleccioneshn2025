@@ -1,232 +1,83 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "338",
-        "letras": [
-          "tres",
-          "tres",
-          "ocho"
-        ],
-        "digitosCompletos": "338",
-        "letrasCompletas": [
-          "tres",
-          "tres",
-          "ocho"
-        ]
-      },
-      {
-        "descripcion": "NO UTILIZADAS / SOBRANTES",
-        "digitos": "163",
-        "letras": [
-          "uno",
-          "seis",
-          "tres"
-        ],
-        "digitosCompletos": "163",
-        "letrasCompletas": [
-          "uno",
-          "seis",
-          "tres"
-        ]
-      },
-      {
-        "descripcion": "UTILIZADAS",
-        "digitos": "175",
-        "letras": [
-          "uno",
-          "siete",
-          "cinco"
-        ],
-        "digitosCompletos": "175",
-        "letrasCompletas": [
-          "uno",
-          "siete",
-          "cinco"
-        ]
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "digitos": "169",
-        "letras": [
-          "uno",
-          "seis",
-          "nueve"
-        ],
-        "digitosCompletos": "169",
-        "letrasCompletas": [
-          "uno",
-          "seis",
-          "nueve"
-        ]
-      },
-      {
-        "descripcion": "MIEMBROS JRV",
-        "digitos": "006",
-        "letras": [
-          "cero",
-          "cero",
-          "seis"
-        ],
-        "digitosCompletos": "006",
-        "letrasCompletas": [
-          "cero",
-          "cero",
-          "seis"
-        ]
-      },
-      {
-        "descripcion": "TOTAL VOTANTES",
-        "digitos": "175",
-        "letras": [
-          "uno",
-          "siete",
-          "cinco"
-        ],
-        "digitosCompletos": "175",
-        "letrasCompletas": [
-          "uno",
-          "siete",
-          "cinco"
-        ]
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "descripcion": "PARTIDO DÉMOCRATA CRISTIANO DE HONDURAS (DC)",
-        "etiqueta": "DC",
-        "digitos": "002",
-        "letras": [
-          "cero",
-          "cero",
-          "dos"
-        ],
-        "digitosCompletos": "002",
-        "letrasCompletas": [
-          "cero",
-          "cero",
-          "dos"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
         ]
       },
       {
-        "descripcion": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "etiqueta": "libre",
-        "digitos": "071",
-        "letras": [
-          "cero",
-          "siete",
-          "uno"
-        ],
-        "digitosCompletos": "071",
-        "letrasCompletas": [
-          "cero",
-          "siete",
-          "uno"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "011",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Uno"
         ]
       },
       {
-        "descripcion": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "etiqueta": "PINU",
-        "digitos": "001",
-        "letras": [
-          "cero",
-          "cero",
-          "uno"
-        ],
-        "digitosCompletos": "001",
-        "letrasCompletas": [
-          "cero",
-          "cero",
-          "uno"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
-        "descripcion": "PARTIDO LIBERAL DE HONDURAS",
-        "etiqueta": "PLH",
-        "digitos": "102",
-        "letras": [
-          "uno",
-          "cero",
-          "dos"
-        ],
-        "digitosCompletos": "102",
-        "letrasCompletas": [
-          "uno",
-          "cero",
-          "dos"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "102",
+        "en_letras": [
+          "Uno",
+          "Cero",
+          "Dos"
         ]
       },
       {
-        "descripcion": "PARTIDO NACIONAL DE HONDURAS",
-        "etiqueta": "PNH",
-        "digitos": "049",
-        "letras": [
-          "cero",
-          "cuatro",
-          "nueve"
-        ],
-        "digitosCompletos": "049",
-        "letrasCompletas": [
-          "cero",
-          "cuatro",
-          "nueve"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "049",
+        "en_letras": [
+          "Cero",
+          "Cuatro",
+          "Nueve"
         ]
       },
       {
-        "descripcion": "VOTOS EN BLANCO",
-        "digitos": "004",
-        "letras": [
-          "cero",
-          "cero",
-          "cuatro"
-        ],
-        "digitosCompletos": "004",
-        "letrasCompletas": [
-          "cero",
-          "cero",
-          "cuatro"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
-        "descripcion": "VOTOS NULOS",
-        "digitos": "009",
-        "letras": [
-          "cero",
-          "cero",
-          "nueve"
-        ],
-        "digitosCompletos": "009",
-        "letrasCompletas": [
-          "cero",
-          "cero",
-          "nueve"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "009",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Nueve"
         ]
       },
       {
-        "descripcion": "GRAN TOTAL",
-        "digitos": "175",
-        "letras": [
-          "uno",
-          "siete",
-          "cinco"
-        ],
-        "digitosCompletos": "175",
-        "letrasCompletas": [
-          "uno",
-          "siete",
-          "cinco"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "175",
+        "en_letras": [
+          "Uno",
+          "Siete",
+          "Cinco"
         ]
       }
     ]

@@ -1,102 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "357",
-        "letras": "tres cinco dos",
-        "digitos_letra": "357"
-      },
-      {
-        "descripcion": "NO UTILIZADAS / SOBRANTES",
-        "digitos": "171",
-        "letras": "uno siete uno",
-        "digitos_letra": "171"
-      },
-      {
-        "descripcion": "UTILIZADAS",
-        "digitos": "181",
-        "letras": "uno ocho uno",
-        "digitos_letra": "181"
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "digitos": "175",
-        "letras": "uno siete cinco",
-        "digitos_letra": "175"
-      },
-      {
-        "descripcion": "MIEMBROS JRV",
-        "digitos": "006",
-        "letras": "cero cero seis",
-        "digitos_letra": "006"
-      },
-      {
-        "descripcion": "TOTAL VOTANTES",
-        "digitos": "181",
-        "letras": "uno ocho uno",
-        "digitos_letra": "181"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "descripcion": "PARTIDO DC",
-        "digitos": "001",
-        "letras": "cero cero uno",
-        "digitos_letra": "001"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBRE",
-        "digitos": "028",
-        "letras": "cero dos ocho",
-        "digitos_letra": "028"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "028",
+        "en_letras": [
+          "Cero",
+          "Dos",
+          "Ocho"
+        ]
       },
       {
-        "descripcion": "PARTIDO PINU",
-        "digitos": "004",
-        "letras": "cero cero cuatro",
-        "digitos_letra": "004"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBERAL",
-        "digitos": "085",
-        "letras": "cero ocho cinco",
-        "digitos_letra": "085"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "085",
+        "en_letras": [
+          "Cero",
+          "Ocho",
+          "Cinco"
+        ]
       },
       {
-        "descripcion": "PARTIDO NACIONAL",
-        "digitos": "060",
-        "letras": "cero seis cero",
-        "digitos_letra": "060"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "060",
+        "en_letras": [
+          "Cero",
+          "Seis",
+          "Cero"
+        ]
       },
       {
-        "descripcion": "VOTOS EN BLANCO",
-        "digitos": "000",
-        "letras": "cero cero cero",
-        "digitos_letra": "000"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
-        "descripcion": "VOTOS NULOS",
-        "digitos": "006",
-        "letras": "cero cero seis",
-        "digitos_letra": "006"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "006",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Seis"
+        ]
       },
       {
-        "descripcion": "GRAN TOTAL",
-        "digitos": "181",
-        "letras": "uno ocho uno",
-        "digitos_letra": "181"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "181",
+        "en_letras": [
+          "Uno",
+          "Ocho",
+          "Uno"
+        ]
       }
     ]
   }

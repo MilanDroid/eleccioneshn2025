@@ -1,14 +1,11 @@
 {
-  "total_actas": 14528,
+  "total_actas": 14551,
   "fixed_count": 0,
   "fixed_actas": [],
   "errors": {
     "empty_gran_total": {
-      "count": 998,
+      "count": 805,
       "actas": [
-        "10085",
-        "10095",
-        "10108",
         "10119",
         "10131",
         "10156",
@@ -94,6 +91,8 @@
         "1140",
         "11401",
         "11405",
+        "11413",
+        "11428",
         "1143",
         "1158",
         "1160",
@@ -757,227 +756,35 @@
         "3609",
         "3612",
         "3626",
-        "3666",
         "369",
-        "3726",
-        "3757",
-        "3758",
-        "3798",
         "3809",
-        "3812",
-        "3827",
-        "3830",
-        "3831",
-        "3856",
         "3860",
-        "3864",
-        "3876",
-        "3883",
-        "3893",
-        "3921",
-        "3932",
-        "3973",
-        "4007",
-        "4012",
-        "4049",
-        "4054",
-        "4088",
-        "4140",
-        "4153",
-        "4164",
-        "4183",
-        "4191",
         "4198",
-        "4207",
         "428",
-        "4298",
-        "4330",
         "434",
-        "4345",
-        "4389",
-        "4391",
-        "4399",
-        "4436",
-        "4443",
-        "4444",
-        "4460",
-        "4489",
         "453",
-        "4530",
-        "4532",
-        "4549",
         "455",
-        "4554",
-        "4568",
-        "4572",
-        "4586",
-        "4598",
-        "4604",
-        "4613",
-        "4625",
-        "4645",
-        "4651",
-        "4658",
-        "4690",
-        "4699",
-        "4710",
         "473",
-        "4732",
-        "4741",
-        "4747",
         "475",
-        "4784",
-        "4788",
         "48",
-        "4818",
-        "4834",
-        "4845",
-        "4848",
-        "4862",
-        "4915",
-        "4924",
         "494",
-        "4949",
-        "4952",
-        "4964",
-        "4967",
-        "4976",
-        "4999",
-        "5002",
         "501",
-        "5016",
-        "5031",
-        "5043",
-        "5072",
-        "5094",
-        "5108",
-        "5116",
         "5123",
-        "5124",
-        "5128",
-        "5153",
-        "5166",
-        "5180",
-        "5188",
-        "5245",
         "526",
-        "5260",
-        "5269",
-        "5277",
-        "5284",
-        "5287",
-        "5301",
-        "5312",
-        "5326",
-        "5347",
-        "5352",
         "537",
-        "5388",
-        "5420",
-        "5443",
-        "5456",
-        "5457",
-        "5465",
-        "5470",
-        "5474",
         "548",
-        "5484",
-        "5523",
-        "5525",
-        "5544",
-        "5551",
-        "5581",
-        "5615",
-        "5636",
-        "5641",
-        "5651",
         "567",
-        "5680",
-        "5685",
-        "5700",
-        "5718",
-        "5721",
-        "5736",
-        "5769",
-        "5805",
-        "5806",
         "582",
-        "5821",
-        "5825",
-        "5836",
-        "5841",
-        "5849",
         "586",
-        "5870",
-        "5883",
-        "5885",
-        "5898",
-        "5909",
-        "5936",
-        "5950",
-        "5977",
-        "5983",
-        "5996",
-        "5998",
-        "6019",
-        "6021",
-        "6055",
-        "6056",
-        "6073",
-        "6076",
         "61",
-        "6112",
-        "6121",
-        "6144",
         "616",
-        "6171",
-        "6176",
-        "6204",
-        "6209",
-        "6226",
-        "6238",
-        "6268",
-        "6285",
-        "6325",
-        "6332",
-        "6337",
-        "6341",
-        "6351",
-        "6356",
-        "6359",
-        "6377",
-        "6380",
         "6397",
-        "6398",
-        "6461",
-        "6489",
-        "6498",
-        "6509",
-        "6520",
-        "6535",
-        "6537",
-        "6571",
         "6607",
         "6611",
-        "6629",
-        "6637",
-        "6651",
-        "6693",
-        "6721",
-        "6744",
-        "6746",
-        "6796",
         "680",
-        "6806",
-        "6851",
-        "6880",
-        "6888",
-        "6897",
-        "6907",
         "692",
         "6929",
         "693",
-        "6969",
         "708",
         "710",
         "732",
@@ -1007,7 +814,7 @@
       ]
     },
     "gran_total_exceeds_400": {
-      "count": 151,
+      "count": 125,
       "actas": [
         {
           "acta": "10298",
@@ -1040,6 +847,10 @@
         {
           "acta": "1135",
           "gran_total_n": 786
+        },
+        {
+          "acta": "11423",
+          "gran_total_n": 779
         },
         {
           "acta": "1154",
@@ -1470,72 +1281,8 @@
           "gran_total_n": 722
         },
         {
-          "acta": "3819",
-          "gran_total_n": 749
-        },
-        {
-          "acta": "3824",
-          "gran_total_n": 779
-        },
-        {
-          "acta": "3944",
-          "gran_total_n": 706
-        },
-        {
-          "acta": "4404",
-          "gran_total_n": 778
-        },
-        {
-          "acta": "4597",
-          "gran_total_n": 775
-        },
-        {
-          "acta": "4599",
-          "gran_total_n": 783
-        },
-        {
-          "acta": "4659",
-          "gran_total_n": 482
-        },
-        {
-          "acta": "4804",
-          "gran_total_n": 13000
-        },
-        {
           "acta": "487",
           "gran_total_n": 785
-        },
-        {
-          "acta": "4905",
-          "gran_total_n": 774
-        },
-        {
-          "acta": "4993",
-          "gran_total_n": 464
-        },
-        {
-          "acta": "5037",
-          "gran_total_n": 758
-        },
-        {
-          "acta": "5311",
-          "gran_total_n": 774
-        },
-        {
-          "acta": "5316",
-          "gran_total_n": 1999
-        },
-        {
-          "acta": "5365",
-          "gran_total_n": 774
-        },
-        {
-          "acta": "5428",
-          "gran_total_n": 796
-        },
-        {
-          "acta": "5468",
-          "gran_total_n": 779
         },
         {
           "acta": "5540",
@@ -1546,51 +1293,7 @@
           "gran_total_n": 706
         },
         {
-          "acta": "5760",
-          "gran_total_n": 2033
-        },
-        {
-          "acta": "5856",
-          "gran_total_n": 489
-        },
-        {
-          "acta": "6091",
-          "gran_total_n": 783
-        },
-        {
-          "acta": "6106",
-          "gran_total_n": 775
-        },
-        {
-          "acta": "6269",
-          "gran_total_n": 799
-        },
-        {
-          "acta": "6311",
-          "gran_total_n": 786
-        },
-        {
           "acta": "639",
-          "gran_total_n": 778
-        },
-        {
-          "acta": "6450",
-          "gran_total_n": 789
-        },
-        {
-          "acta": "6551",
-          "gran_total_n": 798
-        },
-        {
-          "acta": "6605",
-          "gran_total_n": 788
-        },
-        {
-          "acta": "6798",
-          "gran_total_n": 786
-        },
-        {
-          "acta": "6800",
           "gran_total_n": 778
         },
         {
@@ -1616,7 +1319,7 @@
       ]
     },
     "n_sum_not_equals_gran_total_n": {
-      "count": 1737,
+      "count": 1423,
       "actas": [
         {
           "acta": "10009",
@@ -1727,22 +1430,10 @@
           "diferencia": -6
         },
         {
-          "acta": "10085",
-          "suma_n": 61,
-          "gran_total_n": 0,
-          "diferencia": 61
-        },
-        {
           "acta": "10091",
           "suma_n": 223,
           "gran_total_n": 215,
           "diferencia": 8
-        },
-        {
-          "acta": "10095",
-          "suma_n": 176,
-          "gran_total_n": 0,
-          "diferencia": 176
         },
         {
           "acta": "10098",
@@ -1767,12 +1458,6 @@
           "suma_n": 319,
           "gran_total_n": 253,
           "diferencia": 66
-        },
-        {
-          "acta": "10108",
-          "suma_n": 239,
-          "gran_total_n": 0,
-          "diferencia": 239
         },
         {
           "acta": "10119",
@@ -2937,6 +2622,24 @@
           "suma_n": 206,
           "gran_total_n": 0,
           "diferencia": 206
+        },
+        {
+          "acta": "11413",
+          "suma_n": 178,
+          "gran_total_n": 0,
+          "diferencia": 178
+        },
+        {
+          "acta": "11422",
+          "suma_n": 210,
+          "gran_total_n": 204,
+          "diferencia": 6
+        },
+        {
+          "acta": "11423",
+          "suma_n": 131,
+          "gran_total_n": 779,
+          "diferencia": -648
         },
         {
           "acta": "1152",
@@ -9677,118 +9380,10 @@
           "diferencia": -1
         },
         {
-          "acta": "3666",
-          "suma_n": 211,
-          "gran_total_n": 0,
-          "diferencia": 211
-        },
-        {
-          "acta": "3688",
-          "suma_n": 181,
-          "gran_total_n": 189,
-          "diferencia": -8
-        },
-        {
-          "acta": "3726",
-          "suma_n": 212,
-          "gran_total_n": 0,
-          "diferencia": 212
-        },
-        {
-          "acta": "3731",
-          "suma_n": 214,
-          "gran_total_n": 200,
-          "diferencia": 14
-        },
-        {
-          "acta": "3757",
-          "suma_n": 190,
-          "gran_total_n": 0,
-          "diferencia": 190
-        },
-        {
-          "acta": "3758",
-          "suma_n": 199,
-          "gran_total_n": 0,
-          "diferencia": 199
-        },
-        {
-          "acta": "3787",
-          "suma_n": 243,
-          "gran_total_n": 244,
-          "diferencia": -1
-        },
-        {
-          "acta": "3798",
-          "suma_n": 233,
-          "gran_total_n": 0,
-          "diferencia": 233
-        },
-        {
-          "acta": "3799",
-          "suma_n": 224,
-          "gran_total_n": 225,
-          "diferencia": -1
-        },
-        {
-          "acta": "3812",
-          "suma_n": 212,
-          "gran_total_n": 0,
-          "diferencia": 212
-        },
-        {
-          "acta": "3819",
-          "suma_n": 169,
-          "gran_total_n": 749,
-          "diferencia": -580
-        },
-        {
           "acta": "382",
           "suma_n": 193,
           "gran_total_n": 213,
           "diferencia": -20
-        },
-        {
-          "acta": "3824",
-          "suma_n": 179,
-          "gran_total_n": 779,
-          "diferencia": -600
-        },
-        {
-          "acta": "3826",
-          "suma_n": 178,
-          "gran_total_n": 179,
-          "diferencia": -1
-        },
-        {
-          "acta": "3827",
-          "suma_n": 195,
-          "gran_total_n": 0,
-          "diferencia": 195
-        },
-        {
-          "acta": "3830",
-          "suma_n": 166,
-          "gran_total_n": 0,
-          "diferencia": 166
-        },
-        {
-          "acta": "3831",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
-          "acta": "3856",
-          "suma_n": 216,
-          "gran_total_n": 0,
-          "diferencia": 216
-        },
-        {
-          "acta": "3864",
-          "suma_n": 222,
-          "gran_total_n": 0,
-          "diferencia": 222
         },
         {
           "acta": "387",
@@ -9797,70 +9392,10 @@
           "diferencia": 1
         },
         {
-          "acta": "3876",
-          "suma_n": 236,
-          "gran_total_n": 0,
-          "diferencia": 236
-        },
-        {
-          "acta": "3877",
-          "suma_n": 227,
-          "gran_total_n": 224,
-          "diferencia": 3
-        },
-        {
-          "acta": "3883",
-          "suma_n": 204,
-          "gran_total_n": 0,
-          "diferencia": 204
-        },
-        {
-          "acta": "3893",
-          "suma_n": 155,
-          "gran_total_n": 0,
-          "diferencia": 155
-        },
-        {
           "acta": "391",
           "suma_n": 203,
           "gran_total_n": 204,
           "diferencia": -1
-        },
-        {
-          "acta": "3921",
-          "suma_n": 229,
-          "gran_total_n": 0,
-          "diferencia": 229
-        },
-        {
-          "acta": "3932",
-          "suma_n": 195,
-          "gran_total_n": 0,
-          "diferencia": 195
-        },
-        {
-          "acta": "3944",
-          "suma_n": 206,
-          "gran_total_n": 706,
-          "diferencia": -500
-        },
-        {
-          "acta": "3973",
-          "suma_n": 219,
-          "gran_total_n": 0,
-          "diferencia": 219
-        },
-        {
-          "acta": "4007",
-          "suma_n": 193,
-          "gran_total_n": 0,
-          "diferencia": 193
-        },
-        {
-          "acta": "4012",
-          "suma_n": 189,
-          "gran_total_n": 0,
-          "diferencia": 189
         },
         {
           "acta": "403",
@@ -9869,58 +9404,10 @@
           "diferencia": 50
         },
         {
-          "acta": "4049",
-          "suma_n": 242,
-          "gran_total_n": 0,
-          "diferencia": 242
-        },
-        {
-          "acta": "4054",
-          "suma_n": 170,
-          "gran_total_n": 0,
-          "diferencia": 170
-        },
-        {
-          "acta": "4071",
-          "suma_n": 187,
-          "gran_total_n": 186,
-          "diferencia": 1
-        },
-        {
-          "acta": "4088",
-          "suma_n": 218,
-          "gran_total_n": 0,
-          "diferencia": 218
-        },
-        {
           "acta": "413",
           "suma_n": 205,
           "gran_total_n": 192,
           "diferencia": 13
-        },
-        {
-          "acta": "4140",
-          "suma_n": 185,
-          "gran_total_n": 0,
-          "diferencia": 185
-        },
-        {
-          "acta": "4153",
-          "suma_n": 235,
-          "gran_total_n": 0,
-          "diferencia": 235
-        },
-        {
-          "acta": "4157",
-          "suma_n": 213,
-          "gran_total_n": 273,
-          "diferencia": -60
-        },
-        {
-          "acta": "4164",
-          "suma_n": 218,
-          "gran_total_n": 0,
-          "diferencia": 218
         },
         {
           "acta": "4166",
@@ -9929,34 +9416,10 @@
           "diferencia": 10
         },
         {
-          "acta": "4183",
-          "suma_n": 204,
-          "gran_total_n": 0,
-          "diferencia": 204
-        },
-        {
-          "acta": "4189",
-          "suma_n": 188,
-          "gran_total_n": 193,
-          "diferencia": -5
-        },
-        {
           "acta": "419",
           "suma_n": 172,
           "gran_total_n": 135,
           "diferencia": 37
-        },
-        {
-          "acta": "4191",
-          "suma_n": 181,
-          "gran_total_n": 0,
-          "diferencia": 181
-        },
-        {
-          "acta": "4207",
-          "suma_n": 212,
-          "gran_total_n": 0,
-          "diferencia": 212
         },
         {
           "acta": "428",
@@ -9971,412 +9434,16 @@
           "diferencia": 236
         },
         {
-          "acta": "4294",
-          "suma_n": 189,
-          "gran_total_n": 188,
-          "diferencia": 1
-        },
-        {
-          "acta": "4298",
-          "suma_n": 203,
-          "gran_total_n": 0,
-          "diferencia": 203
-        },
-        {
           "acta": "431",
           "suma_n": 363,
           "gran_total_n": 163,
           "diferencia": 200
         },
         {
-          "acta": "4320",
-          "suma_n": 209,
-          "gran_total_n": 208,
-          "diferencia": 1
-        },
-        {
-          "acta": "4330",
-          "suma_n": 198,
-          "gran_total_n": 0,
-          "diferencia": 198
-        },
-        {
-          "acta": "4345",
-          "suma_n": 228,
-          "gran_total_n": 0,
-          "diferencia": 228
-        },
-        {
-          "acta": "4353",
-          "suma_n": 192,
-          "gran_total_n": 197,
-          "diferencia": -5
-        },
-        {
-          "acta": "4359",
-          "suma_n": 189,
-          "gran_total_n": 219,
-          "diferencia": -30
-        },
-        {
-          "acta": "4370",
-          "suma_n": 212,
-          "gran_total_n": 222,
-          "diferencia": -10
-        },
-        {
-          "acta": "4389",
-          "suma_n": 210,
-          "gran_total_n": 0,
-          "diferencia": 210
-        },
-        {
-          "acta": "4391",
-          "suma_n": 213,
-          "gran_total_n": 0,
-          "diferencia": 213
-        },
-        {
-          "acta": "4399",
-          "suma_n": 192,
-          "gran_total_n": 0,
-          "diferencia": 192
-        },
-        {
-          "acta": "4404",
-          "suma_n": 178,
-          "gran_total_n": 778,
-          "diferencia": -600
-        },
-        {
-          "acta": "4426",
-          "suma_n": 203,
-          "gran_total_n": 213,
-          "diferencia": -10
-        },
-        {
-          "acta": "4436",
-          "suma_n": 236,
-          "gran_total_n": 0,
-          "diferencia": 236
-        },
-        {
-          "acta": "4443",
-          "suma_n": 236,
-          "gran_total_n": 0,
-          "diferencia": 236
-        },
-        {
-          "acta": "4444",
-          "suma_n": 235,
-          "gran_total_n": 0,
-          "diferencia": 235
-        },
-        {
-          "acta": "4460",
-          "suma_n": 185,
-          "gran_total_n": 0,
-          "diferencia": 185
-        },
-        {
-          "acta": "4478",
-          "suma_n": 192,
-          "gran_total_n": 190,
-          "diferencia": 2
-        },
-        {
-          "acta": "4489",
-          "suma_n": 217,
-          "gran_total_n": 0,
-          "diferencia": 217
-        },
-        {
-          "acta": "4491",
-          "suma_n": 181,
-          "gran_total_n": 180,
-          "diferencia": 1
-        },
-        {
-          "acta": "4494",
-          "suma_n": 201,
-          "gran_total_n": 203,
-          "diferencia": -2
-        },
-        {
-          "acta": "4528",
-          "suma_n": 177,
-          "gran_total_n": 178,
-          "diferencia": -1
-        },
-        {
-          "acta": "4530",
-          "suma_n": 159,
-          "gran_total_n": 0,
-          "diferencia": 159
-        },
-        {
-          "acta": "4532",
-          "suma_n": 211,
-          "gran_total_n": 0,
-          "diferencia": 211
-        },
-        {
-          "acta": "4549",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
-          "acta": "4554",
-          "suma_n": 200,
-          "gran_total_n": 0,
-          "diferencia": 200
-        },
-        {
-          "acta": "4568",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
           "acta": "457",
           "suma_n": 160,
           "gran_total_n": 161,
           "diferencia": -1
-        },
-        {
-          "acta": "4572",
-          "suma_n": 193,
-          "gran_total_n": 0,
-          "diferencia": 193
-        },
-        {
-          "acta": "4573",
-          "suma_n": 171,
-          "gran_total_n": 172,
-          "diferencia": -1
-        },
-        {
-          "acta": "4586",
-          "suma_n": 176,
-          "gran_total_n": 0,
-          "diferencia": 176
-        },
-        {
-          "acta": "4597",
-          "suma_n": 175,
-          "gran_total_n": 775,
-          "diferencia": -600
-        },
-        {
-          "acta": "4598",
-          "suma_n": 184,
-          "gran_total_n": 0,
-          "diferencia": 184
-        },
-        {
-          "acta": "4599",
-          "suma_n": 184,
-          "gran_total_n": 783,
-          "diferencia": -599
-        },
-        {
-          "acta": "4602",
-          "suma_n": 195,
-          "gran_total_n": 196,
-          "diferencia": -1
-        },
-        {
-          "acta": "4604",
-          "suma_n": 191,
-          "gran_total_n": 0,
-          "diferencia": 191
-        },
-        {
-          "acta": "4613",
-          "suma_n": 174,
-          "gran_total_n": 0,
-          "diferencia": 174
-        },
-        {
-          "acta": "4620",
-          "suma_n": 173,
-          "gran_total_n": 175,
-          "diferencia": -2
-        },
-        {
-          "acta": "4625",
-          "suma_n": 157,
-          "gran_total_n": 0,
-          "diferencia": 157
-        },
-        {
-          "acta": "4629",
-          "suma_n": 178,
-          "gran_total_n": 183,
-          "diferencia": -5
-        },
-        {
-          "acta": "4640",
-          "suma_n": 195,
-          "gran_total_n": 196,
-          "diferencia": -1
-        },
-        {
-          "acta": "4645",
-          "suma_n": 167,
-          "gran_total_n": 0,
-          "diferencia": 167
-        },
-        {
-          "acta": "4651",
-          "suma_n": 180,
-          "gran_total_n": 0,
-          "diferencia": 180
-        },
-        {
-          "acta": "4658",
-          "suma_n": 170,
-          "gran_total_n": 0,
-          "diferencia": 170
-        },
-        {
-          "acta": "4659",
-          "suma_n": 182,
-          "gran_total_n": 482,
-          "diferencia": -300
-        },
-        {
-          "acta": "4668",
-          "suma_n": 185,
-          "gran_total_n": 138,
-          "diferencia": 47
-        },
-        {
-          "acta": "4690",
-          "suma_n": 188,
-          "gran_total_n": 0,
-          "diferencia": 188
-        },
-        {
-          "acta": "4699",
-          "suma_n": 176,
-          "gran_total_n": 0,
-          "diferencia": 176
-        },
-        {
-          "acta": "4708",
-          "suma_n": 179,
-          "gran_total_n": 178,
-          "diferencia": 1
-        },
-        {
-          "acta": "4710",
-          "suma_n": 175,
-          "gran_total_n": 0,
-          "diferencia": 175
-        },
-        {
-          "acta": "4721",
-          "suma_n": 170,
-          "gran_total_n": 169,
-          "diferencia": 1
-        },
-        {
-          "acta": "4732",
-          "suma_n": 192,
-          "gran_total_n": 0,
-          "diferencia": 192
-        },
-        {
-          "acta": "4741",
-          "suma_n": 189,
-          "gran_total_n": 0,
-          "diferencia": 189
-        },
-        {
-          "acta": "4747",
-          "suma_n": 195,
-          "gran_total_n": 0,
-          "diferencia": 195
-        },
-        {
-          "acta": "4767",
-          "suma_n": 180,
-          "gran_total_n": 190,
-          "diferencia": -10
-        },
-        {
-          "acta": "4769",
-          "suma_n": 168,
-          "gran_total_n": 148,
-          "diferencia": 20
-        },
-        {
-          "acta": "4784",
-          "suma_n": 220,
-          "gran_total_n": 0,
-          "diferencia": 220
-        },
-        {
-          "acta": "4788",
-          "suma_n": 220,
-          "gran_total_n": 0,
-          "diferencia": 220
-        },
-        {
-          "acta": "4804",
-          "suma_n": 200,
-          "gran_total_n": 13000,
-          "diferencia": -12800
-        },
-        {
-          "acta": "4818",
-          "suma_n": 164,
-          "gran_total_n": 0,
-          "diferencia": 164
-        },
-        {
-          "acta": "4820",
-          "suma_n": 162,
-          "gran_total_n": 161,
-          "diferencia": 1
-        },
-        {
-          "acta": "4834",
-          "suma_n": 202,
-          "gran_total_n": 0,
-          "diferencia": 202
-        },
-        {
-          "acta": "4845",
-          "suma_n": 237,
-          "gran_total_n": 0,
-          "diferencia": 237
-        },
-        {
-          "acta": "4848",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
-          "acta": "4858",
-          "suma_n": 173,
-          "gran_total_n": 172,
-          "diferencia": 1
-        },
-        {
-          "acta": "4862",
-          "suma_n": 170,
-          "gran_total_n": 0,
-          "diferencia": 170
-        },
-        {
-          "acta": "4867",
-          "suma_n": 276,
-          "gran_total_n": 183,
-          "diferencia": 93
         },
         {
           "acta": "487",
@@ -10391,34 +9458,10 @@
           "diferencia": -73
         },
         {
-          "acta": "4905",
-          "suma_n": 174,
-          "gran_total_n": 774,
-          "diferencia": -600
-        },
-        {
-          "acta": "4915",
-          "suma_n": 191,
-          "gran_total_n": 0,
-          "diferencia": 191
-        },
-        {
-          "acta": "4924",
-          "suma_n": 195,
-          "gran_total_n": 0,
-          "diferencia": 195
-        },
-        {
           "acta": "494",
           "suma_n": 214,
           "gran_total_n": 0,
           "diferencia": 214
-        },
-        {
-          "acta": "4949",
-          "suma_n": 171,
-          "gran_total_n": 0,
-          "diferencia": 171
         },
         {
           "acta": "495",
@@ -10427,166 +9470,10 @@
           "diferencia": 66
         },
         {
-          "acta": "4952",
-          "suma_n": 178,
-          "gran_total_n": 0,
-          "diferencia": 178
-        },
-        {
-          "acta": "4964",
-          "suma_n": 147,
-          "gran_total_n": 0,
-          "diferencia": 147
-        },
-        {
-          "acta": "4967",
-          "suma_n": 153,
-          "gran_total_n": 0,
-          "diferencia": 153
-        },
-        {
-          "acta": "4976",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
-          "acta": "4986",
-          "suma_n": 173,
-          "gran_total_n": 175,
-          "diferencia": -2
-        },
-        {
-          "acta": "4993",
-          "suma_n": 162,
-          "gran_total_n": 464,
-          "diferencia": -302
-        },
-        {
-          "acta": "4999",
-          "suma_n": 171,
-          "gran_total_n": 0,
-          "diferencia": 171
-        },
-        {
-          "acta": "5002",
-          "suma_n": 203,
-          "gran_total_n": 0,
-          "diferencia": 203
-        },
-        {
-          "acta": "5016",
-          "suma_n": 189,
-          "gran_total_n": 0,
-          "diferencia": 189
-        },
-        {
-          "acta": "5023",
-          "suma_n": 172,
-          "gran_total_n": 173,
-          "diferencia": -1
-        },
-        {
-          "acta": "5024",
-          "suma_n": 182,
-          "gran_total_n": 177,
-          "diferencia": 5
-        },
-        {
-          "acta": "5031",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
-          "acta": "5032",
-          "suma_n": 179,
-          "gran_total_n": 183,
-          "diferencia": -4
-        },
-        {
-          "acta": "5037",
-          "suma_n": 168,
-          "gran_total_n": 758,
-          "diferencia": -590
-        },
-        {
-          "acta": "5043",
-          "suma_n": 188,
-          "gran_total_n": 0,
-          "diferencia": 188
-        },
-        {
-          "acta": "5072",
-          "suma_n": 211,
-          "gran_total_n": 0,
-          "diferencia": 211
-        },
-        {
-          "acta": "5082",
-          "suma_n": 215,
-          "gran_total_n": 214,
-          "diferencia": 1
-        },
-        {
-          "acta": "5094",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
-          "acta": "5108",
-          "suma_n": 186,
-          "gran_total_n": 0,
-          "diferencia": 186
-        },
-        {
-          "acta": "5116",
-          "suma_n": 203,
-          "gran_total_n": 0,
-          "diferencia": 203
-        },
-        {
-          "acta": "5124",
-          "suma_n": 98,
-          "gran_total_n": 0,
-          "diferencia": 98
-        },
-        {
-          "acta": "5128",
-          "suma_n": 179,
-          "gran_total_n": 0,
-          "diferencia": 179
-        },
-        {
-          "acta": "5153",
-          "suma_n": 149,
-          "gran_total_n": 0,
-          "diferencia": 149
-        },
-        {
-          "acta": "5166",
-          "suma_n": 210,
-          "gran_total_n": 0,
-          "diferencia": 210
-        },
-        {
           "acta": "517",
           "suma_n": 1052,
           "gran_total_n": 246,
           "diferencia": 806
-        },
-        {
-          "acta": "5180",
-          "suma_n": 188,
-          "gran_total_n": 0,
-          "diferencia": 188
-        },
-        {
-          "acta": "5188",
-          "suma_n": 171,
-          "gran_total_n": 0,
-          "diferencia": 171
         },
         {
           "acta": "521",
@@ -10595,34 +9482,10 @@
           "diferencia": 600
         },
         {
-          "acta": "5214",
-          "suma_n": 197,
-          "gran_total_n": 193,
-          "diferencia": 4
-        },
-        {
-          "acta": "5233",
-          "suma_n": 190,
-          "gran_total_n": 184,
-          "diferencia": 6
-        },
-        {
-          "acta": "5245",
-          "suma_n": 223,
-          "gran_total_n": 0,
-          "diferencia": 223
-        },
-        {
           "acta": "525",
           "suma_n": 134,
           "gran_total_n": 154,
           "diferencia": -20
-        },
-        {
-          "acta": "5253",
-          "suma_n": 213,
-          "gran_total_n": 273,
-          "diferencia": -60
         },
         {
           "acta": "5258",
@@ -10631,196 +9494,10 @@
           "diferencia": 51
         },
         {
-          "acta": "5260",
-          "suma_n": 205,
-          "gran_total_n": 0,
-          "diferencia": 205
-        },
-        {
-          "acta": "5265",
-          "suma_n": 221,
-          "gran_total_n": 27,
-          "diferencia": 194
-        },
-        {
-          "acta": "5269",
-          "suma_n": 198,
-          "gran_total_n": 0,
-          "diferencia": 198
-        },
-        {
-          "acta": "5277",
-          "suma_n": 207,
-          "gran_total_n": 0,
-          "diferencia": 207
-        },
-        {
-          "acta": "5284",
-          "suma_n": 205,
-          "gran_total_n": 0,
-          "diferencia": 205
-        },
-        {
-          "acta": "5287",
-          "suma_n": 208,
-          "gran_total_n": 0,
-          "diferencia": 208
-        },
-        {
-          "acta": "5294",
-          "suma_n": 187,
-          "gran_total_n": 191,
-          "diferencia": -4
-        },
-        {
-          "acta": "5301",
-          "suma_n": 193,
-          "gran_total_n": 0,
-          "diferencia": 193
-        },
-        {
-          "acta": "5303",
-          "suma_n": 192,
-          "gran_total_n": 191,
-          "diferencia": 1
-        },
-        {
-          "acta": "5311",
-          "suma_n": 174,
-          "gran_total_n": 774,
-          "diferencia": -600
-        },
-        {
-          "acta": "5312",
-          "suma_n": 174,
-          "gran_total_n": 0,
-          "diferencia": 174
-        },
-        {
-          "acta": "5315",
-          "suma_n": 202,
-          "gran_total_n": 200,
-          "diferencia": 2
-        },
-        {
-          "acta": "5316",
-          "suma_n": 199,
-          "gran_total_n": 1999,
-          "diferencia": -1800
-        },
-        {
-          "acta": "5326",
-          "suma_n": 194,
-          "gran_total_n": 0,
-          "diferencia": 194
-        },
-        {
-          "acta": "5347",
-          "suma_n": 168,
-          "gran_total_n": 0,
-          "diferencia": 168
-        },
-        {
-          "acta": "5352",
-          "suma_n": 190,
-          "gran_total_n": 0,
-          "diferencia": 190
-        },
-        {
           "acta": "536",
           "suma_n": 295,
           "gran_total_n": 255,
           "diferencia": 40
-        },
-        {
-          "acta": "5365",
-          "suma_n": 174,
-          "gran_total_n": 774,
-          "diferencia": -600
-        },
-        {
-          "acta": "5388",
-          "suma_n": 208,
-          "gran_total_n": 0,
-          "diferencia": 208
-        },
-        {
-          "acta": "5420",
-          "suma_n": 191,
-          "gran_total_n": 0,
-          "diferencia": 191
-        },
-        {
-          "acta": "5428",
-          "suma_n": 195,
-          "gran_total_n": 796,
-          "diferencia": -601
-        },
-        {
-          "acta": "5443",
-          "suma_n": 199,
-          "gran_total_n": 0,
-          "diferencia": 199
-        },
-        {
-          "acta": "5454",
-          "suma_n": 198,
-          "gran_total_n": 199,
-          "diferencia": -1
-        },
-        {
-          "acta": "5455",
-          "suma_n": 224,
-          "gran_total_n": 226,
-          "diferencia": -2
-        },
-        {
-          "acta": "5456",
-          "suma_n": 214,
-          "gran_total_n": 0,
-          "diferencia": 214
-        },
-        {
-          "acta": "5457",
-          "suma_n": 212,
-          "gran_total_n": 0,
-          "diferencia": 212
-        },
-        {
-          "acta": "5458",
-          "suma_n": 203,
-          "gran_total_n": 205,
-          "diferencia": -2
-        },
-        {
-          "acta": "5465",
-          "suma_n": 190,
-          "gran_total_n": 0,
-          "diferencia": 190
-        },
-        {
-          "acta": "5468",
-          "suma_n": 179,
-          "gran_total_n": 779,
-          "diferencia": -600
-        },
-        {
-          "acta": "5470",
-          "suma_n": 201,
-          "gran_total_n": 0,
-          "diferencia": 201
-        },
-        {
-          "acta": "5474",
-          "suma_n": 132,
-          "gran_total_n": 0,
-          "diferencia": 132
-        },
-        {
-          "acta": "5484",
-          "suma_n": 175,
-          "gran_total_n": 0,
-          "diferencia": 175
         },
         {
           "acta": "549",
@@ -10829,46 +9506,10 @@
           "diferencia": -100
         },
         {
-          "acta": "5495",
-          "suma_n": 195,
-          "gran_total_n": 191,
-          "diferencia": 4
-        },
-        {
           "acta": "55",
           "suma_n": 186,
           "gran_total_n": 184,
           "diferencia": 2
-        },
-        {
-          "acta": "5509",
-          "suma_n": 184,
-          "gran_total_n": 185,
-          "diferencia": -1
-        },
-        {
-          "acta": "5511",
-          "suma_n": 182,
-          "gran_total_n": 181,
-          "diferencia": 1
-        },
-        {
-          "acta": "5513",
-          "suma_n": 197,
-          "gran_total_n": 187,
-          "diferencia": 10
-        },
-        {
-          "acta": "5523",
-          "suma_n": 170,
-          "gran_total_n": 0,
-          "diferencia": 170
-        },
-        {
-          "acta": "5525",
-          "suma_n": 170,
-          "gran_total_n": 0,
-          "diferencia": 170
         },
         {
           "acta": "5540",
@@ -10877,34 +9518,10 @@
           "diferencia": -601
         },
         {
-          "acta": "5544",
-          "suma_n": 177,
-          "gran_total_n": 0,
-          "diferencia": 177
-        },
-        {
-          "acta": "5551",
-          "suma_n": 178,
-          "gran_total_n": 0,
-          "diferencia": 178
-        },
-        {
-          "acta": "5581",
-          "suma_n": 145,
-          "gran_total_n": 0,
-          "diferencia": 145
-        },
-        {
           "acta": "5585",
           "suma_n": 804,
           "gran_total_n": 204,
           "diferencia": 600
-        },
-        {
-          "acta": "5615",
-          "suma_n": 199,
-          "gran_total_n": 0,
-          "diferencia": 199
         },
         {
           "acta": "562",
@@ -10913,118 +9530,10 @@
           "diferencia": -500
         },
         {
-          "acta": "5636",
-          "suma_n": 214,
-          "gran_total_n": 0,
-          "diferencia": 214
-        },
-        {
-          "acta": "5641",
-          "suma_n": 223,
-          "gran_total_n": 0,
-          "diferencia": 223
-        },
-        {
-          "acta": "5651",
-          "suma_n": 162,
-          "gran_total_n": 0,
-          "diferencia": 162
-        },
-        {
           "acta": "5653",
           "suma_n": 184,
           "gran_total_n": 186,
           "diferencia": -2
-        },
-        {
-          "acta": "5680",
-          "suma_n": 150,
-          "gran_total_n": 0,
-          "diferencia": 150
-        },
-        {
-          "acta": "5685",
-          "suma_n": 180,
-          "gran_total_n": 0,
-          "diferencia": 180
-        },
-        {
-          "acta": "5700",
-          "suma_n": 116,
-          "gran_total_n": 0,
-          "diferencia": 116
-        },
-        {
-          "acta": "5717",
-          "suma_n": 203,
-          "gran_total_n": 103,
-          "diferencia": 100
-        },
-        {
-          "acta": "5718",
-          "suma_n": 158,
-          "gran_total_n": 0,
-          "diferencia": 158
-        },
-        {
-          "acta": "5721",
-          "suma_n": 242,
-          "gran_total_n": 0,
-          "diferencia": 242
-        },
-        {
-          "acta": "5723",
-          "suma_n": 222,
-          "gran_total_n": 227,
-          "diferencia": -5
-        },
-        {
-          "acta": "5736",
-          "suma_n": 239,
-          "gran_total_n": 0,
-          "diferencia": 239
-        },
-        {
-          "acta": "5760",
-          "suma_n": 203,
-          "gran_total_n": 2033,
-          "diferencia": -1830
-        },
-        {
-          "acta": "5761",
-          "suma_n": 207,
-          "gran_total_n": 210,
-          "diferencia": -3
-        },
-        {
-          "acta": "5769",
-          "suma_n": 210,
-          "gran_total_n": 0,
-          "diferencia": 210
-        },
-        {
-          "acta": "5771",
-          "suma_n": 200,
-          "gran_total_n": 199,
-          "diferencia": 1
-        },
-        {
-          "acta": "5801",
-          "suma_n": 199,
-          "gran_total_n": 197,
-          "diferencia": 2
-        },
-        {
-          "acta": "5805",
-          "suma_n": 200,
-          "gran_total_n": 0,
-          "diferencia": 200
-        },
-        {
-          "acta": "5806",
-          "suma_n": 201,
-          "gran_total_n": 0,
-          "diferencia": 201
         },
         {
           "acta": "5809",
@@ -11033,52 +9542,10 @@
           "diferencia": -176
         },
         {
-          "acta": "5821",
-          "suma_n": 179,
-          "gran_total_n": 0,
-          "diferencia": 179
-        },
-        {
-          "acta": "5822",
-          "suma_n": 180,
-          "gran_total_n": 150,
-          "diferencia": 30
-        },
-        {
-          "acta": "5825",
-          "suma_n": 184,
-          "gran_total_n": 0,
-          "diferencia": 184
-        },
-        {
           "acta": "583",
           "suma_n": 226,
           "gran_total_n": 228,
           "diferencia": -2
-        },
-        {
-          "acta": "5836",
-          "suma_n": 169,
-          "gran_total_n": 0,
-          "diferencia": 169
-        },
-        {
-          "acta": "5841",
-          "suma_n": 197,
-          "gran_total_n": 0,
-          "diferencia": 197
-        },
-        {
-          "acta": "5849",
-          "suma_n": 190,
-          "gran_total_n": 0,
-          "diferencia": 190
-        },
-        {
-          "acta": "5856",
-          "suma_n": 189,
-          "gran_total_n": 489,
-          "diferencia": -300
         },
         {
           "acta": "586",
@@ -11087,70 +9554,10 @@
           "diferencia": 44
         },
         {
-          "acta": "5870",
-          "suma_n": 197,
-          "gran_total_n": 0,
-          "diferencia": 197
-        },
-        {
-          "acta": "5883",
-          "suma_n": 212,
-          "gran_total_n": 0,
-          "diferencia": 212
-        },
-        {
-          "acta": "5885",
-          "suma_n": 211,
-          "gran_total_n": 0,
-          "diferencia": 211
-        },
-        {
-          "acta": "5898",
-          "suma_n": 229,
-          "gran_total_n": 0,
-          "diferencia": 229
-        },
-        {
-          "acta": "5909",
-          "suma_n": 217,
-          "gran_total_n": 0,
-          "diferencia": 217
-        },
-        {
-          "acta": "5936",
-          "suma_n": 193,
-          "gran_total_n": 0,
-          "diferencia": 193
-        },
-        {
           "acta": "595",
           "suma_n": 189,
           "gran_total_n": 181,
           "diferencia": 8
-        },
-        {
-          "acta": "5950",
-          "suma_n": 206,
-          "gran_total_n": 0,
-          "diferencia": 206
-        },
-        {
-          "acta": "5951",
-          "suma_n": 221,
-          "gran_total_n": 336,
-          "diferencia": -115
-        },
-        {
-          "acta": "5952",
-          "suma_n": 204,
-          "gran_total_n": 201,
-          "diferencia": 3
-        },
-        {
-          "acta": "5977",
-          "suma_n": 189,
-          "gran_total_n": 0,
-          "diferencia": 189
         },
         {
           "acta": "598",
@@ -11159,112 +9566,10 @@
           "diferencia": 60
         },
         {
-          "acta": "5983",
-          "suma_n": 137,
-          "gran_total_n": 0,
-          "diferencia": 137
-        },
-        {
-          "acta": "5996",
-          "suma_n": 126,
-          "gran_total_n": 0,
-          "diferencia": 126
-        },
-        {
-          "acta": "5998",
-          "suma_n": 154,
-          "gran_total_n": 0,
-          "diferencia": 154
-        },
-        {
-          "acta": "6019",
-          "suma_n": 216,
-          "gran_total_n": 0,
-          "diferencia": 216
-        },
-        {
-          "acta": "6021",
-          "suma_n": 182,
-          "gran_total_n": 0,
-          "diferencia": 182
-        },
-        {
           "acta": "6030",
           "suma_n": 222,
           "gran_total_n": 162,
           "diferencia": 60
-        },
-        {
-          "acta": "6033",
-          "suma_n": 164,
-          "gran_total_n": 158,
-          "diferencia": 6
-        },
-        {
-          "acta": "6055",
-          "suma_n": 169,
-          "gran_total_n": 0,
-          "diferencia": 169
-        },
-        {
-          "acta": "6056",
-          "suma_n": 187,
-          "gran_total_n": 0,
-          "diferencia": 187
-        },
-        {
-          "acta": "6073",
-          "suma_n": 185,
-          "gran_total_n": 0,
-          "diferencia": 185
-        },
-        {
-          "acta": "6076",
-          "suma_n": 182,
-          "gran_total_n": 0,
-          "diferencia": 182
-        },
-        {
-          "acta": "6080",
-          "suma_n": 117,
-          "gran_total_n": 115,
-          "diferencia": 2
-        },
-        {
-          "acta": "6090",
-          "suma_n": 158,
-          "gran_total_n": 152,
-          "diferencia": 6
-        },
-        {
-          "acta": "6091",
-          "suma_n": 183,
-          "gran_total_n": 783,
-          "diferencia": -600
-        },
-        {
-          "acta": "6106",
-          "suma_n": 174,
-          "gran_total_n": 775,
-          "diferencia": -601
-        },
-        {
-          "acta": "6107",
-          "suma_n": 211,
-          "gran_total_n": 338,
-          "diferencia": -127
-        },
-        {
-          "acta": "6112",
-          "suma_n": 211,
-          "gran_total_n": 0,
-          "diferencia": 211
-        },
-        {
-          "acta": "6121",
-          "suma_n": 155,
-          "gran_total_n": 0,
-          "diferencia": 155
         },
         {
           "acta": "614",
@@ -11273,196 +9578,16 @@
           "diferencia": 1
         },
         {
-          "acta": "6141",
-          "suma_n": 186,
-          "gran_total_n": 185,
-          "diferencia": 1
-        },
-        {
-          "acta": "6144",
-          "suma_n": 185,
-          "gran_total_n": 0,
-          "diferencia": 185
-        },
-        {
-          "acta": "6155",
-          "suma_n": 134,
-          "gran_total_n": 136,
-          "diferencia": -2
-        },
-        {
-          "acta": "6161",
-          "suma_n": 226,
-          "gran_total_n": 220,
-          "diferencia": 6
-        },
-        {
           "acta": "6166",
           "suma_n": 818,
           "gran_total_n": 218,
           "diferencia": 600
         },
         {
-          "acta": "6171",
-          "suma_n": 227,
-          "gran_total_n": 0,
-          "diferencia": 227
-        },
-        {
-          "acta": "6176",
-          "suma_n": 216,
-          "gran_total_n": 0,
-          "diferencia": 216
-        },
-        {
-          "acta": "6204",
-          "suma_n": 184,
-          "gran_total_n": 0,
-          "diferencia": 184
-        },
-        {
-          "acta": "6209",
-          "suma_n": 202,
-          "gran_total_n": 0,
-          "diferencia": 202
-        },
-        {
-          "acta": "6211",
-          "suma_n": 198,
-          "gran_total_n": 197,
-          "diferencia": 1
-        },
-        {
-          "acta": "6226",
-          "suma_n": 224,
-          "gran_total_n": 0,
-          "diferencia": 224
-        },
-        {
-          "acta": "6238",
-          "suma_n": 220,
-          "gran_total_n": 0,
-          "diferencia": 220
-        },
-        {
-          "acta": "6244",
-          "suma_n": 192,
-          "gran_total_n": 287,
-          "diferencia": -95
-        },
-        {
-          "acta": "6259",
-          "suma_n": 203,
-          "gran_total_n": 204,
-          "diferencia": -1
-        },
-        {
-          "acta": "6268",
-          "suma_n": 203,
-          "gran_total_n": 0,
-          "diferencia": 203
-        },
-        {
-          "acta": "6269",
-          "suma_n": 199,
-          "gran_total_n": 799,
-          "diferencia": -600
-        },
-        {
-          "acta": "6285",
-          "suma_n": 213,
-          "gran_total_n": 0,
-          "diferencia": 213
-        },
-        {
-          "acta": "6286",
-          "suma_n": 227,
-          "gran_total_n": 310,
-          "diferencia": -83
-        },
-        {
           "acta": "629",
           "suma_n": 139,
           "gran_total_n": 140,
           "diferencia": -1
-        },
-        {
-          "acta": "6311",
-          "suma_n": 186,
-          "gran_total_n": 786,
-          "diferencia": -600
-        },
-        {
-          "acta": "6325",
-          "suma_n": 149,
-          "gran_total_n": 0,
-          "diferencia": 149
-        },
-        {
-          "acta": "6332",
-          "suma_n": 186,
-          "gran_total_n": 0,
-          "diferencia": 186
-        },
-        {
-          "acta": "6335",
-          "suma_n": 199,
-          "gran_total_n": 200,
-          "diferencia": -1
-        },
-        {
-          "acta": "6337",
-          "suma_n": 206,
-          "gran_total_n": 0,
-          "diferencia": 206
-        },
-        {
-          "acta": "6341",
-          "suma_n": 202,
-          "gran_total_n": 0,
-          "diferencia": 202
-        },
-        {
-          "acta": "6350",
-          "suma_n": 202,
-          "gran_total_n": 192,
-          "diferencia": 10
-        },
-        {
-          "acta": "6351",
-          "suma_n": 192,
-          "gran_total_n": 0,
-          "diferencia": 192
-        },
-        {
-          "acta": "6356",
-          "suma_n": 193,
-          "gran_total_n": 0,
-          "diferencia": 193
-        },
-        {
-          "acta": "6359",
-          "suma_n": 206,
-          "gran_total_n": 0,
-          "diferencia": 206
-        },
-        {
-          "acta": "6366",
-          "suma_n": 208,
-          "gran_total_n": 207,
-          "diferencia": 1
-        },
-        {
-          "acta": "6377",
-          "suma_n": 189,
-          "gran_total_n": 0,
-          "diferencia": 189
-        },
-        {
-          "acta": "6380",
-          "suma_n": 174,
-          "gran_total_n": 0,
-          "diferencia": 174
         },
         {
           "acta": "639",
@@ -11477,172 +9602,10 @@
           "diferencia": 105
         },
         {
-          "acta": "6398",
-          "suma_n": 250,
-          "gran_total_n": 0,
-          "diferencia": 250
-        },
-        {
-          "acta": "6412",
-          "suma_n": 205,
-          "gran_total_n": 197,
-          "diferencia": 8
-        },
-        {
-          "acta": "6443",
-          "suma_n": 224,
-          "gran_total_n": 223,
-          "diferencia": 1
-        },
-        {
-          "acta": "6450",
-          "suma_n": 201,
-          "gran_total_n": 789,
-          "diferencia": -588
-        },
-        {
-          "acta": "6461",
-          "suma_n": 207,
-          "gran_total_n": 0,
-          "diferencia": 207
-        },
-        {
-          "acta": "6462",
-          "suma_n": 211,
-          "gran_total_n": 212,
-          "diferencia": -1
-        },
-        {
-          "acta": "6482",
-          "suma_n": 167,
-          "gran_total_n": 166,
-          "diferencia": 1
-        },
-        {
-          "acta": "6489",
-          "suma_n": 170,
-          "gran_total_n": 0,
-          "diferencia": 170
-        },
-        {
           "acta": "649",
           "suma_n": 196,
           "gran_total_n": 190,
           "diferencia": 6
-        },
-        {
-          "acta": "6498",
-          "suma_n": 136,
-          "gran_total_n": 0,
-          "diferencia": 136
-        },
-        {
-          "acta": "6499",
-          "suma_n": 195,
-          "gran_total_n": 196,
-          "diferencia": -1
-        },
-        {
-          "acta": "6509",
-          "suma_n": 205,
-          "gran_total_n": 0,
-          "diferencia": 205
-        },
-        {
-          "acta": "6520",
-          "suma_n": 228,
-          "gran_total_n": 0,
-          "diferencia": 228
-        },
-        {
-          "acta": "6530",
-          "suma_n": 216,
-          "gran_total_n": 218,
-          "diferencia": -2
-        },
-        {
-          "acta": "6535",
-          "suma_n": 205,
-          "gran_total_n": 0,
-          "diferencia": 205
-        },
-        {
-          "acta": "6537",
-          "suma_n": 230,
-          "gran_total_n": 0,
-          "diferencia": 230
-        },
-        {
-          "acta": "6550",
-          "suma_n": 191,
-          "gran_total_n": 190,
-          "diferencia": 1
-        },
-        {
-          "acta": "6551",
-          "suma_n": 198,
-          "gran_total_n": 798,
-          "diferencia": -600
-        },
-        {
-          "acta": "6556",
-          "suma_n": 203,
-          "gran_total_n": 202,
-          "diferencia": 1
-        },
-        {
-          "acta": "6571",
-          "suma_n": 189,
-          "gran_total_n": 0,
-          "diferencia": 189
-        },
-        {
-          "acta": "6600",
-          "suma_n": 216,
-          "gran_total_n": 276,
-          "diferencia": -60
-        },
-        {
-          "acta": "6605",
-          "suma_n": 188,
-          "gran_total_n": 788,
-          "diferencia": -600
-        },
-        {
-          "acta": "6629",
-          "suma_n": 175,
-          "gran_total_n": 0,
-          "diferencia": 175
-        },
-        {
-          "acta": "6637",
-          "suma_n": 200,
-          "gran_total_n": 0,
-          "diferencia": 200
-        },
-        {
-          "acta": "6651",
-          "suma_n": 181,
-          "gran_total_n": 0,
-          "diferencia": 181
-        },
-        {
-          "acta": "6656",
-          "suma_n": 189,
-          "gran_total_n": 188,
-          "diferencia": 1
-        },
-        {
-          "acta": "6674",
-          "suma_n": 220,
-          "gran_total_n": 221,
-          "diferencia": -1
-        },
-        {
-          "acta": "6693",
-          "suma_n": 178,
-          "gran_total_n": 0,
-          "diferencia": 178
         },
         {
           "acta": "670",
@@ -11651,64 +9614,16 @@
           "diferencia": 6
         },
         {
-          "acta": "6718",
-          "suma_n": 179,
-          "gran_total_n": 177,
-          "diferencia": 2
-        },
-        {
-          "acta": "6721",
-          "suma_n": 175,
-          "gran_total_n": 0,
-          "diferencia": 175
-        },
-        {
           "acta": "6741",
           "suma_n": 175,
           "gran_total_n": 173,
           "diferencia": 2
         },
         {
-          "acta": "6744",
-          "suma_n": 168,
-          "gran_total_n": 0,
-          "diferencia": 168
-        },
-        {
-          "acta": "6746",
-          "suma_n": 130,
-          "gran_total_n": 0,
-          "diferencia": 130
-        },
-        {
-          "acta": "6796",
-          "suma_n": 180,
-          "gran_total_n": 0,
-          "diferencia": 180
-        },
-        {
-          "acta": "6798",
-          "suma_n": 186,
-          "gran_total_n": 786,
-          "diferencia": -600
-        },
-        {
           "acta": "680",
           "suma_n": 192,
           "gran_total_n": 0,
           "diferencia": 192
-        },
-        {
-          "acta": "6800",
-          "suma_n": 178,
-          "gran_total_n": 778,
-          "diferencia": -600
-        },
-        {
-          "acta": "6806",
-          "suma_n": 183,
-          "gran_total_n": 0,
-          "diferencia": 183
         },
         {
           "acta": "6825",
@@ -11721,78 +9636,6 @@
           "suma_n": 197,
           "gran_total_n": 191,
           "diferencia": 6
-        },
-        {
-          "acta": "6831",
-          "suma_n": 178,
-          "gran_total_n": 176,
-          "diferencia": 2
-        },
-        {
-          "acta": "6836",
-          "suma_n": 209,
-          "gran_total_n": 201,
-          "diferencia": 8
-        },
-        {
-          "acta": "6840",
-          "suma_n": 201,
-          "gran_total_n": 203,
-          "diferencia": -2
-        },
-        {
-          "acta": "6844",
-          "suma_n": 231,
-          "gran_total_n": 201,
-          "diferencia": 30
-        },
-        {
-          "acta": "6851",
-          "suma_n": 199,
-          "gran_total_n": 0,
-          "diferencia": 199
-        },
-        {
-          "acta": "6859",
-          "suma_n": 199,
-          "gran_total_n": 202,
-          "diferencia": -3
-        },
-        {
-          "acta": "6878",
-          "suma_n": 166,
-          "gran_total_n": 168,
-          "diferencia": -2
-        },
-        {
-          "acta": "6880",
-          "suma_n": 150,
-          "gran_total_n": 0,
-          "diferencia": 150
-        },
-        {
-          "acta": "6888",
-          "suma_n": 214,
-          "gran_total_n": 0,
-          "diferencia": 214
-        },
-        {
-          "acta": "6897",
-          "suma_n": 206,
-          "gran_total_n": 0,
-          "diferencia": 206
-        },
-        {
-          "acta": "6907",
-          "suma_n": 208,
-          "gran_total_n": 0,
-          "diferencia": 208
-        },
-        {
-          "acta": "6911",
-          "suma_n": 220,
-          "gran_total_n": 212,
-          "diferencia": 8
         },
         {
           "acta": "692",
@@ -11819,40 +9662,16 @@
           "diferencia": 125
         },
         {
-          "acta": "6932",
-          "suma_n": 164,
-          "gran_total_n": 166,
-          "diferencia": -2
-        },
-        {
-          "acta": "6939",
-          "suma_n": 171,
-          "gran_total_n": 170,
-          "diferencia": 1
-        },
-        {
           "acta": "6955",
           "suma_n": 481,
           "gran_total_n": 170,
           "diferencia": 311
         },
         {
-          "acta": "6960",
-          "suma_n": 210,
-          "gran_total_n": 270,
-          "diferencia": -60
-        },
-        {
-          "acta": "6962",
-          "suma_n": 226,
-          "gran_total_n": 211,
-          "diferencia": 15
-        },
-        {
-          "acta": "6969",
-          "suma_n": 189,
-          "gran_total_n": 0,
-          "diferencia": 189
+          "acta": "6992",
+          "suma_n": 755,
+          "gran_total_n": 223,
+          "diferencia": 532
         },
         {
           "acta": "70",
@@ -12062,14 +9881,11 @@
     "10063",
     "10074",
     "10075",
-    "10085",
     "10091",
-    "10095",
     "10098",
     "10100",
     "10102",
     "10104",
-    "10108",
     "10119",
     "10120",
     "10122",
@@ -12337,6 +10153,10 @@
     "11400",
     "11401",
     "11405",
+    "11413",
+    "11422",
+    "11423",
+    "11428",
     "1143",
     "1152",
     "1154",
@@ -13978,391 +11798,77 @@
     "3632",
     "3635",
     "3649",
-    "3666",
-    "3688",
     "369",
-    "3726",
-    "3731",
-    "3757",
-    "3758",
-    "3787",
-    "3798",
-    "3799",
     "3809",
-    "3812",
-    "3819",
     "382",
-    "3824",
-    "3826",
-    "3827",
-    "3830",
-    "3831",
-    "3856",
     "3860",
-    "3864",
     "387",
-    "3876",
-    "3877",
-    "3883",
-    "3893",
     "391",
-    "3921",
-    "3932",
-    "3944",
-    "3973",
-    "4007",
-    "4012",
     "403",
-    "4049",
-    "4054",
-    "4071",
-    "4088",
     "413",
-    "4140",
-    "4153",
-    "4157",
-    "4164",
     "4166",
-    "4183",
-    "4189",
     "419",
-    "4191",
     "4198",
-    "4207",
     "428",
     "429",
-    "4294",
-    "4298",
     "431",
-    "4320",
-    "4330",
     "434",
-    "4345",
-    "4353",
-    "4359",
-    "4370",
-    "4389",
-    "4391",
-    "4399",
-    "4404",
-    "4426",
-    "4436",
-    "4443",
-    "4444",
-    "4460",
-    "4478",
-    "4489",
-    "4491",
-    "4494",
-    "4528",
     "453",
-    "4530",
-    "4532",
-    "4549",
     "455",
-    "4554",
-    "4568",
     "457",
-    "4572",
-    "4573",
-    "4586",
-    "4597",
-    "4598",
-    "4599",
-    "4602",
-    "4604",
-    "4613",
-    "4620",
-    "4625",
-    "4629",
-    "4640",
-    "4645",
-    "4651",
-    "4658",
-    "4659",
-    "4668",
-    "4690",
-    "4699",
-    "4708",
-    "4710",
-    "4721",
     "473",
-    "4732",
-    "4741",
-    "4747",
     "475",
-    "4767",
-    "4769",
-    "4784",
-    "4788",
     "48",
-    "4804",
-    "4818",
-    "4820",
-    "4834",
-    "4845",
-    "4848",
-    "4858",
-    "4862",
-    "4867",
     "487",
     "488",
-    "4905",
-    "4915",
-    "4924",
     "494",
-    "4949",
     "495",
-    "4952",
-    "4964",
-    "4967",
-    "4976",
-    "4986",
-    "4993",
-    "4999",
-    "5002",
     "501",
-    "5016",
-    "5023",
-    "5024",
-    "5031",
-    "5032",
-    "5037",
-    "5043",
-    "5072",
-    "5082",
-    "5094",
-    "5108",
-    "5116",
     "5123",
-    "5124",
-    "5128",
-    "5153",
-    "5166",
     "517",
-    "5180",
-    "5188",
     "521",
-    "5214",
-    "5233",
-    "5245",
     "525",
-    "5253",
     "5258",
     "526",
-    "5260",
-    "5265",
-    "5269",
-    "5277",
-    "5284",
-    "5287",
-    "5294",
-    "5301",
-    "5303",
-    "5311",
-    "5312",
-    "5315",
-    "5316",
-    "5326",
-    "5347",
-    "5352",
     "536",
-    "5365",
     "537",
-    "5388",
-    "5420",
-    "5428",
-    "5443",
-    "5454",
-    "5455",
-    "5456",
-    "5457",
-    "5458",
-    "5465",
-    "5468",
-    "5470",
-    "5474",
     "548",
-    "5484",
     "549",
-    "5495",
     "55",
-    "5509",
-    "5511",
-    "5513",
-    "5523",
-    "5525",
     "5540",
-    "5544",
-    "5551",
-    "5581",
     "5585",
-    "5615",
     "562",
-    "5636",
-    "5641",
-    "5651",
     "5653",
     "567",
-    "5680",
-    "5685",
-    "5700",
-    "5717",
-    "5718",
-    "5721",
-    "5723",
-    "5736",
-    "5760",
-    "5761",
-    "5769",
-    "5771",
-    "5801",
-    "5805",
-    "5806",
     "5809",
     "582",
-    "5821",
-    "5822",
-    "5825",
     "583",
-    "5836",
-    "5841",
-    "5849",
-    "5856",
     "586",
-    "5870",
-    "5883",
-    "5885",
-    "5898",
-    "5909",
-    "5936",
     "595",
-    "5950",
-    "5951",
-    "5952",
-    "5977",
     "598",
-    "5983",
-    "5996",
-    "5998",
-    "6019",
-    "6021",
     "6030",
-    "6033",
-    "6055",
-    "6056",
-    "6073",
-    "6076",
-    "6080",
-    "6090",
-    "6091",
     "61",
-    "6106",
-    "6107",
-    "6112",
-    "6121",
     "614",
-    "6141",
-    "6144",
-    "6155",
     "616",
-    "6161",
     "6166",
-    "6171",
-    "6176",
-    "6204",
-    "6209",
-    "6211",
-    "6226",
-    "6238",
-    "6244",
-    "6259",
-    "6268",
-    "6269",
-    "6285",
-    "6286",
     "629",
-    "6311",
-    "6325",
-    "6332",
-    "6335",
-    "6337",
-    "6341",
-    "6350",
-    "6351",
-    "6356",
-    "6359",
-    "6366",
-    "6377",
-    "6380",
     "639",
     "6397",
-    "6398",
-    "6412",
-    "6443",
-    "6450",
-    "6461",
-    "6462",
-    "6482",
-    "6489",
     "649",
-    "6498",
-    "6499",
-    "6509",
-    "6520",
-    "6530",
-    "6535",
-    "6537",
-    "6550",
-    "6551",
-    "6556",
-    "6571",
-    "6600",
-    "6605",
     "6607",
     "6611",
-    "6629",
-    "6637",
-    "6651",
-    "6656",
-    "6674",
-    "6693",
     "670",
-    "6718",
-    "6721",
     "6741",
-    "6744",
-    "6746",
-    "6796",
-    "6798",
     "680",
-    "6800",
-    "6806",
     "6825",
     "683",
-    "6831",
-    "6836",
-    "6840",
-    "6844",
-    "6851",
-    "6859",
-    "6878",
-    "6880",
-    "6888",
-    "6897",
-    "6907",
-    "6911",
     "692",
     "6923",
     "6924",
     "6929",
     "693",
-    "6932",
-    "6939",
     "6955",
-    "6960",
-    "6962",
-    "6969",
+    "6992",
     "70",
     "708",
     "710",
@@ -14499,6 +12005,7 @@
     "10082",
     "10083",
     "10084",
+    "10085",
     "10086",
     "10087",
     "10088",
@@ -14508,6 +12015,7 @@
     "10092",
     "10093",
     "10094",
+    "10095",
     "10096",
     "10097",
     "10099",
@@ -14518,6 +12026,7 @@
     "10105",
     "10106",
     "10107",
+    "10108",
     "10109",
     "1011",
     "10110",
@@ -15689,7 +13198,19 @@
     "1141",
     "11410",
     "11411",
+    "11412",
+    "11414",
+    "11415",
+    "11416",
+    "11417",
+    "11418",
+    "11419",
     "1142",
+    "11420",
+    "11421",
+    "11425",
+    "11426",
+    "11427",
     "1144",
     "1145",
     "1146",
@@ -22997,6 +20518,7 @@
     "3663",
     "3664",
     "3665",
+    "3666",
     "3667",
     "3668",
     "3669",
@@ -23020,6 +20542,7 @@
     "3685",
     "3686",
     "3687",
+    "3688",
     "3689",
     "3690",
     "3691",
@@ -23061,11 +20584,13 @@
     "3723",
     "3724",
     "3725",
+    "3726",
     "3727",
     "3728",
     "3729",
     "373",
     "3730",
+    "3731",
     "3732",
     "3733",
     "3734",
@@ -23093,6 +20618,8 @@
     "3754",
     "3755",
     "3756",
+    "3757",
+    "3758",
     "3759",
     "376",
     "3760",
@@ -23124,6 +20651,7 @@
     "3784",
     "3785",
     "3786",
+    "3787",
     "3788",
     "3789",
     "379",
@@ -23135,6 +20663,8 @@
     "3795",
     "3796",
     "3797",
+    "3798",
+    "3799",
     "38",
     "380",
     "3800",
@@ -23149,20 +20679,27 @@
     "381",
     "3810",
     "3811",
+    "3812",
     "3813",
     "3814",
     "3815",
     "3816",
     "3817",
     "3818",
+    "3819",
     "3820",
     "3821",
     "3822",
     "3823",
+    "3824",
     "3825",
+    "3826",
+    "3827",
     "3828",
     "3829",
     "383",
+    "3830",
+    "3831",
     "3832",
     "3833",
     "3834",
@@ -23189,6 +20726,7 @@
     "3853",
     "3854",
     "3855",
+    "3856",
     "3857",
     "3858",
     "3859",
@@ -23196,6 +20734,7 @@
     "3861",
     "3862",
     "3863",
+    "3864",
     "3865",
     "3866",
     "3867",
@@ -23207,12 +20746,15 @@
     "3873",
     "3874",
     "3875",
+    "3876",
+    "3877",
     "3878",
     "3879",
     "388",
     "3880",
     "3881",
     "3882",
+    "3883",
     "3884",
     "3885",
     "3886",
@@ -23223,6 +20765,7 @@
     "3890",
     "3891",
     "3892",
+    "3893",
     "3894",
     "3895",
     "3896",
@@ -23253,6 +20796,7 @@
     "3919",
     "392",
     "3920",
+    "3921",
     "3922",
     "3923",
     "3924",
@@ -23264,6 +20808,7 @@
     "393",
     "3930",
     "3931",
+    "3932",
     "3933",
     "3934",
     "3935",
@@ -23276,6 +20821,7 @@
     "3941",
     "3942",
     "3943",
+    "3944",
     "3945",
     "3946",
     "3947",
@@ -23307,6 +20853,7 @@
     "3970",
     "3971",
     "3972",
+    "3973",
     "3974",
     "3975",
     "3976",
@@ -23345,11 +20892,13 @@
     "4004",
     "4005",
     "4006",
+    "4007",
     "4008",
     "4009",
     "401",
     "4010",
     "4011",
+    "4012",
     "4013",
     "4014",
     "4015",
@@ -23388,11 +20937,13 @@
     "4046",
     "4047",
     "4048",
+    "4049",
     "405",
     "4050",
     "4051",
     "4052",
     "4053",
+    "4054",
     "4055",
     "4056",
     "4057",
@@ -23411,6 +20962,7 @@
     "4069",
     "407",
     "4070",
+    "4071",
     "4072",
     "4073",
     "4074",
@@ -23428,6 +20980,7 @@
     "4085",
     "4086",
     "4087",
+    "4088",
     "4089",
     "409",
     "4090",
@@ -23485,6 +21038,7 @@
     "4138",
     "4139",
     "414",
+    "4140",
     "4141",
     "4142",
     "4143",
@@ -23498,9 +21052,11 @@
     "4150",
     "4151",
     "4152",
+    "4153",
     "4154",
     "4155",
     "4156",
+    "4157",
     "4158",
     "4159",
     "416",
@@ -23508,6 +21064,7 @@
     "4161",
     "4162",
     "4163",
+    "4164",
     "4165",
     "4167",
     "4168",
@@ -23527,12 +21084,15 @@
     "4180",
     "4181",
     "4182",
+    "4183",
     "4184",
     "4185",
     "4186",
     "4187",
     "4188",
+    "4189",
     "4190",
+    "4191",
     "4192",
     "4193",
     "4194",
@@ -23549,6 +21109,7 @@
     "4204",
     "4205",
     "4206",
+    "4207",
     "4208",
     "4209",
     "421",
@@ -23642,9 +21203,11 @@
     "4291",
     "4292",
     "4293",
+    "4294",
     "4295",
     "4296",
     "4297",
+    "4298",
     "4299",
     "43",
     "430",
@@ -23669,6 +21232,7 @@
     "4318",
     "4319",
     "432",
+    "4320",
     "4321",
     "4322",
     "4323",
@@ -23679,6 +21243,7 @@
     "4328",
     "4329",
     "433",
+    "4330",
     "4331",
     "4332",
     "4333",
@@ -23693,6 +21258,7 @@
     "4342",
     "4343",
     "4344",
+    "4345",
     "4346",
     "4347",
     "4348",
@@ -23701,11 +21267,13 @@
     "4350",
     "4351",
     "4352",
+    "4353",
     "4354",
     "4355",
     "4356",
     "4357",
     "4358",
+    "4359",
     "436",
     "4360",
     "4361",
@@ -23718,6 +21286,7 @@
     "4368",
     "4369",
     "437",
+    "4370",
     "4371",
     "4372",
     "4373",
@@ -23737,8 +21306,10 @@
     "4386",
     "4387",
     "4388",
+    "4389",
     "439",
     "4390",
+    "4391",
     "4392",
     "4393",
     "4394",
@@ -23746,12 +21317,14 @@
     "4396",
     "4397",
     "4398",
+    "4399",
     "44",
     "440",
     "4400",
     "4401",
     "4402",
     "4403",
+    "4404",
     "4405",
     "4406",
     "4407",
@@ -23775,6 +21348,7 @@
     "4423",
     "4424",
     "4425",
+    "4426",
     "4427",
     "4428",
     "4429",
@@ -23785,6 +21359,7 @@
     "4433",
     "4434",
     "4435",
+    "4436",
     "4437",
     "4438",
     "4439",
@@ -23792,6 +21367,8 @@
     "4440",
     "4441",
     "4442",
+    "4443",
+    "4444",
     "4445",
     "4446",
     "4447",
@@ -23809,6 +21386,7 @@
     "4458",
     "4459",
     "446",
+    "4460",
     "4461",
     "4462",
     "4463",
@@ -23827,6 +21405,7 @@
     "4475",
     "4476",
     "4477",
+    "4478",
     "4479",
     "448",
     "4480",
@@ -23838,10 +21417,13 @@
     "4486",
     "4487",
     "4488",
+    "4489",
     "449",
     "4490",
+    "4491",
     "4492",
     "4493",
+    "4494",
     "4495",
     "4496",
     "4497",
@@ -23879,8 +21461,11 @@
     "4525",
     "4526",
     "4527",
+    "4528",
     "4529",
+    "4530",
     "4531",
+    "4532",
     "4533",
     "4534",
     "4535",
@@ -23898,10 +21483,12 @@
     "4546",
     "4547",
     "4548",
+    "4549",
     "4550",
     "4551",
     "4552",
     "4553",
+    "4554",
     "4555",
     "4556",
     "4557",
@@ -23916,9 +21503,12 @@
     "4565",
     "4566",
     "4567",
+    "4568",
     "4569",
     "4570",
     "4571",
+    "4572",
+    "4573",
     "4574",
     "4575",
     "4576",
@@ -23932,6 +21522,7 @@
     "4583",
     "4584",
     "4585",
+    "4586",
     "4587",
     "4588",
     "4589",
@@ -23943,11 +21534,16 @@
     "4594",
     "4595",
     "4596",
+    "4597",
+    "4598",
+    "4599",
     "46",
     "460",
     "4600",
     "4601",
+    "4602",
     "4603",
+    "4604",
     "4605",
     "4606",
     "4607",
@@ -23957,6 +21553,7 @@
     "4610",
     "4611",
     "4612",
+    "4613",
     "4614",
     "4615",
     "4616",
@@ -23964,13 +21561,16 @@
     "4618",
     "4619",
     "462",
+    "4620",
     "4621",
     "4622",
     "4623",
     "4624",
+    "4625",
     "4626",
     "4627",
     "4628",
+    "4629",
     "463",
     "4630",
     "4631",
@@ -23983,22 +21583,27 @@
     "4638",
     "4639",
     "464",
+    "4640",
     "4641",
     "4642",
     "4643",
     "4644",
+    "4645",
     "4646",
     "4647",
     "4648",
     "4649",
     "465",
     "4650",
+    "4651",
     "4652",
     "4653",
     "4654",
     "4655",
     "4656",
     "4657",
+    "4658",
+    "4659",
     "466",
     "4660",
     "4661",
@@ -24008,6 +21613,7 @@
     "4665",
     "4666",
     "4667",
+    "4668",
     "4669",
     "467",
     "4670",
@@ -24032,6 +21638,7 @@
     "4688",
     "4689",
     "469",
+    "4690",
     "4691",
     "4692",
     "4693",
@@ -24040,6 +21647,7 @@
     "4696",
     "4697",
     "4698",
+    "4699",
     "47",
     "470",
     "4700",
@@ -24050,8 +21658,10 @@
     "4705",
     "4706",
     "4707",
+    "4708",
     "4709",
     "471",
+    "4710",
     "4711",
     "4712",
     "4713",
@@ -24063,6 +21673,7 @@
     "4719",
     "472",
     "4720",
+    "4721",
     "4722",
     "4723",
     "4724",
@@ -24073,6 +21684,7 @@
     "4729",
     "4730",
     "4731",
+    "4732",
     "4733",
     "4734",
     "4735",
@@ -24082,11 +21694,13 @@
     "4739",
     "474",
     "4740",
+    "4741",
     "4742",
     "4743",
     "4744",
     "4745",
     "4746",
+    "4747",
     "4748",
     "4749",
     "4750",
@@ -24107,7 +21721,9 @@
     "4764",
     "4765",
     "4766",
+    "4767",
     "4768",
+    "4769",
     "477",
     "4770",
     "4771",
@@ -24124,9 +21740,11 @@
     "4781",
     "4782",
     "4783",
+    "4784",
     "4785",
     "4786",
     "4787",
+    "4788",
     "4789",
     "479",
     "4790",
@@ -24144,6 +21762,7 @@
     "4801",
     "4802",
     "4803",
+    "4804",
     "4805",
     "4806",
     "4807",
@@ -24158,8 +21777,10 @@
     "4815",
     "4816",
     "4817",
+    "4818",
     "4819",
     "482",
+    "4820",
     "4821",
     "4822",
     "4823",
@@ -24174,6 +21795,7 @@
     "4831",
     "4832",
     "4833",
+    "4834",
     "4835",
     "4836",
     "4837",
@@ -24185,8 +21807,10 @@
     "4842",
     "4843",
     "4844",
+    "4845",
     "4846",
     "4847",
+    "4848",
     "4849",
     "485",
     "4850",
@@ -24197,14 +21821,17 @@
     "4855",
     "4856",
     "4857",
+    "4858",
     "4859",
     "486",
     "4860",
     "4861",
+    "4862",
     "4863",
     "4864",
     "4865",
     "4866",
+    "4867",
     "4868",
     "4869",
     "4870",
@@ -24245,6 +21872,7 @@
     "4902",
     "4903",
     "4904",
+    "4905",
     "4906",
     "4907",
     "4908",
@@ -24255,6 +21883,7 @@
     "4912",
     "4913",
     "4914",
+    "4915",
     "4916",
     "4917",
     "4918",
@@ -24264,6 +21893,7 @@
     "4921",
     "4922",
     "4923",
+    "4924",
     "4925",
     "4926",
     "4927",
@@ -24289,8 +21919,10 @@
     "4946",
     "4947",
     "4948",
+    "4949",
     "4950",
     "4951",
+    "4952",
     "4953",
     "4954",
     "4955",
@@ -24303,8 +21935,10 @@
     "4961",
     "4962",
     "4963",
+    "4964",
     "4965",
     "4966",
+    "4967",
     "4968",
     "4969",
     "497",
@@ -24314,6 +21948,7 @@
     "4973",
     "4974",
     "4975",
+    "4976",
     "4977",
     "4978",
     "4979",
@@ -24324,6 +21959,7 @@
     "4983",
     "4984",
     "4985",
+    "4986",
     "4987",
     "4988",
     "4989",
@@ -24331,16 +21967,19 @@
     "4990",
     "4991",
     "4992",
+    "4993",
     "4994",
     "4995",
     "4996",
     "4997",
     "4998",
+    "4999",
     "5",
     "50",
     "500",
     "5000",
     "5001",
+    "5002",
     "5003",
     "5004",
     "5005",
@@ -24354,6 +21993,7 @@
     "5013",
     "5014",
     "5015",
+    "5016",
     "5017",
     "5018",
     "5019",
@@ -24361,6 +22001,8 @@
     "5020",
     "5021",
     "5022",
+    "5023",
+    "5024",
     "5025",
     "5026",
     "5027",
@@ -24368,16 +22010,20 @@
     "5029",
     "503",
     "5030",
+    "5031",
+    "5032",
     "5033",
     "5034",
     "5035",
     "5036",
+    "5037",
     "5038",
     "5039",
     "504",
     "5040",
     "5041",
     "5042",
+    "5043",
     "5044",
     "5045",
     "5046",
@@ -24409,6 +22055,7 @@
     "507",
     "5070",
     "5071",
+    "5072",
     "5073",
     "5074",
     "5075",
@@ -24419,6 +22066,7 @@
     "508",
     "5080",
     "5081",
+    "5082",
     "5083",
     "5084",
     "5085",
@@ -24431,6 +22079,7 @@
     "5091",
     "5092",
     "5093",
+    "5094",
     "5095",
     "5096",
     "5097",
@@ -24446,6 +22095,7 @@
     "5105",
     "5106",
     "5107",
+    "5108",
     "5109",
     "511",
     "5110",
@@ -24454,6 +22104,7 @@
     "5113",
     "5114",
     "5115",
+    "5116",
     "5117",
     "5118",
     "5119",
@@ -24461,9 +22112,11 @@
     "5120",
     "5121",
     "5122",
+    "5124",
     "5125",
     "5126",
     "5127",
+    "5128",
     "5129",
     "513",
     "5130",
@@ -24491,6 +22144,7 @@
     "5150",
     "5151",
     "5152",
+    "5153",
     "5154",
     "5155",
     "5156",
@@ -24504,6 +22158,7 @@
     "5163",
     "5164",
     "5165",
+    "5166",
     "5167",
     "5168",
     "5169",
@@ -24518,6 +22173,7 @@
     "5178",
     "5179",
     "518",
+    "5180",
     "5181",
     "5182",
     "5183",
@@ -24525,6 +22181,7 @@
     "5185",
     "5186",
     "5187",
+    "5188",
     "5189",
     "519",
     "5190",
@@ -24553,6 +22210,7 @@
     "5211",
     "5212",
     "5213",
+    "5214",
     "5215",
     "5216",
     "5217",
@@ -24573,6 +22231,7 @@
     "5230",
     "5231",
     "5232",
+    "5233",
     "5234",
     "5235",
     "5236",
@@ -24585,6 +22244,7 @@
     "5242",
     "5243",
     "5244",
+    "5245",
     "5246",
     "5247",
     "5248",
@@ -24592,18 +22252,22 @@
     "5250",
     "5251",
     "5252",
+    "5253",
     "5254",
     "5255",
     "5256",
     "5257",
     "5259",
+    "5260",
     "5261",
     "5262",
     "5263",
     "5264",
+    "5265",
     "5266",
     "5267",
     "5268",
+    "5269",
     "527",
     "5270",
     "5271",
@@ -24612,6 +22276,7 @@
     "5274",
     "5275",
     "5276",
+    "5277",
     "5278",
     "5279",
     "528",
@@ -24619,8 +22284,10 @@
     "5281",
     "5282",
     "5283",
+    "5284",
     "5285",
     "5286",
+    "5287",
     "5288",
     "5289",
     "529",
@@ -24628,6 +22295,7 @@
     "5291",
     "5292",
     "5293",
+    "5294",
     "5295",
     "5296",
     "5297",
@@ -24636,7 +22304,9 @@
     "53",
     "530",
     "5300",
+    "5301",
     "5302",
+    "5303",
     "5304",
     "5305",
     "5306",
@@ -24645,8 +22315,12 @@
     "5309",
     "531",
     "5310",
+    "5311",
+    "5312",
     "5313",
     "5314",
+    "5315",
+    "5316",
     "5317",
     "5318",
     "5319",
@@ -24657,6 +22331,7 @@
     "5323",
     "5324",
     "5325",
+    "5326",
     "5327",
     "5328",
     "5329",
@@ -24679,11 +22354,13 @@
     "5344",
     "5345",
     "5346",
+    "5347",
     "5348",
     "5349",
     "535",
     "5350",
     "5351",
+    "5352",
     "5353",
     "5354",
     "5355",
@@ -24696,6 +22373,7 @@
     "5362",
     "5363",
     "5364",
+    "5365",
     "5366",
     "5367",
     "5368",
@@ -24719,6 +22397,7 @@
     "5385",
     "5386",
     "5387",
+    "5388",
     "5389",
     "539",
     "5390",
@@ -24755,6 +22434,7 @@
     "5418",
     "5419",
     "542",
+    "5420",
     "5421",
     "5422",
     "5423",
@@ -24762,6 +22442,7 @@
     "5425",
     "5426",
     "5427",
+    "5428",
     "5429",
     "543",
     "5430",
@@ -24778,6 +22459,7 @@
     "5440",
     "5441",
     "5442",
+    "5443",
     "5444",
     "5445",
     "5446",
@@ -24789,6 +22471,11 @@
     "5451",
     "5452",
     "5453",
+    "5454",
+    "5455",
+    "5456",
+    "5457",
+    "5458",
     "5459",
     "546",
     "5460",
@@ -24796,13 +22483,17 @@
     "5462",
     "5463",
     "5464",
+    "5465",
     "5466",
     "5467",
+    "5468",
     "5469",
     "547",
+    "5470",
     "5471",
     "5472",
     "5473",
+    "5474",
     "5475",
     "5476",
     "5477",
@@ -24812,6 +22503,7 @@
     "5481",
     "5482",
     "5483",
+    "5484",
     "5485",
     "5486",
     "5487",
@@ -24822,6 +22514,7 @@
     "5492",
     "5493",
     "5494",
+    "5495",
     "5496",
     "5497",
     "5498",
@@ -24836,9 +22529,12 @@
     "5506",
     "5507",
     "5508",
+    "5509",
     "551",
     "5510",
+    "5511",
     "5512",
+    "5513",
     "5514",
     "5515",
     "5516",
@@ -24849,7 +22545,9 @@
     "5520",
     "5521",
     "5522",
+    "5523",
     "5524",
+    "5525",
     "5526",
     "5527",
     "5528",
@@ -24869,6 +22567,7 @@
     "5541",
     "5542",
     "5543",
+    "5544",
     "5545",
     "5546",
     "5547",
@@ -24876,6 +22575,7 @@
     "5549",
     "555",
     "5550",
+    "5551",
     "5552",
     "5553",
     "5554",
@@ -24908,6 +22608,7 @@
     "5579",
     "558",
     "5580",
+    "5581",
     "5582",
     "5583",
     "5584",
@@ -24944,6 +22645,7 @@
     "5612",
     "5613",
     "5614",
+    "5615",
     "5616",
     "5617",
     "5618",
@@ -24965,11 +22667,13 @@
     "5633",
     "5634",
     "5635",
+    "5636",
     "5637",
     "5638",
     "5639",
     "564",
     "5640",
+    "5641",
     "5642",
     "5643",
     "5644",
@@ -24980,6 +22684,7 @@
     "5649",
     "565",
     "5650",
+    "5651",
     "5652",
     "5654",
     "5655",
@@ -25009,10 +22714,12 @@
     "5678",
     "5679",
     "568",
+    "5680",
     "5681",
     "5682",
     "5683",
     "5684",
+    "5685",
     "5686",
     "5687",
     "5688",
@@ -25030,6 +22737,7 @@
     "5699",
     "57",
     "570",
+    "5700",
     "5701",
     "5702",
     "5703",
@@ -25047,10 +22755,14 @@
     "5714",
     "5715",
     "5716",
+    "5717",
+    "5718",
     "5719",
     "572",
     "5720",
+    "5721",
     "5722",
+    "5723",
     "5724",
     "5725",
     "5726",
@@ -25064,6 +22776,7 @@
     "5733",
     "5734",
     "5735",
+    "5736",
     "5737",
     "5738",
     "5739",
@@ -25090,6 +22803,8 @@
     "5758",
     "5759",
     "576",
+    "5760",
+    "5761",
     "5762",
     "5763",
     "5764",
@@ -25097,8 +22812,10 @@
     "5766",
     "5767",
     "5768",
+    "5769",
     "577",
     "5770",
+    "5771",
     "5772",
     "5773",
     "5774",
@@ -25132,9 +22849,12 @@
     "58",
     "580",
     "5800",
+    "5801",
     "5802",
     "5803",
     "5804",
+    "5805",
+    "5806",
     "5807",
     "5808",
     "581",
@@ -25149,8 +22869,11 @@
     "5818",
     "5819",
     "5820",
+    "5821",
+    "5822",
     "5823",
     "5824",
+    "5825",
     "5826",
     "5827",
     "5829",
@@ -25160,11 +22883,13 @@
     "5833",
     "5834",
     "5835",
+    "5836",
     "5837",
     "5838",
     "5839",
     "584",
     "5840",
+    "5841",
     "5842",
     "5843",
     "5844",
@@ -25172,6 +22897,7 @@
     "5846",
     "5847",
     "5848",
+    "5849",
     "585",
     "5850",
     "5851",
@@ -25179,6 +22905,7 @@
     "5853",
     "5854",
     "5855",
+    "5856",
     "5857",
     "5858",
     "5859",
@@ -25193,6 +22920,7 @@
     "5868",
     "5869",
     "587",
+    "5870",
     "5871",
     "5872",
     "5873",
@@ -25206,7 +22934,9 @@
     "5880",
     "5881",
     "5882",
+    "5883",
     "5884",
+    "5885",
     "5886",
     "5887",
     "5888",
@@ -25220,6 +22950,7 @@
     "5895",
     "5896",
     "5897",
+    "5898",
     "5899",
     "59",
     "590",
@@ -25232,6 +22963,7 @@
     "5906",
     "5907",
     "5908",
+    "5909",
     "591",
     "5910",
     "5911",
@@ -25261,6 +22993,7 @@
     "5933",
     "5934",
     "5935",
+    "5936",
     "5937",
     "5938",
     "5939",
@@ -25275,6 +23008,9 @@
     "5947",
     "5948",
     "5949",
+    "5950",
+    "5951",
+    "5952",
     "5953",
     "5954",
     "5955",
@@ -25301,11 +23037,13 @@
     "5974",
     "5975",
     "5976",
+    "5977",
     "5978",
     "5979",
     "5980",
     "5981",
     "5982",
+    "5983",
     "5984",
     "5985",
     "5986",
@@ -25319,7 +23057,9 @@
     "5993",
     "5994",
     "5995",
+    "5996",
     "5997",
+    "5998",
     "5999",
     "6",
     "60",
@@ -25344,8 +23084,10 @@
     "6016",
     "6017",
     "6018",
+    "6019",
     "602",
     "6020",
+    "6021",
     "6022",
     "6023",
     "6024",
@@ -25357,6 +23099,7 @@
     "603",
     "6031",
     "6032",
+    "6033",
     "6034",
     "6035",
     "6036",
@@ -25380,6 +23123,8 @@
     "6052",
     "6053",
     "6054",
+    "6055",
+    "6056",
     "6057",
     "6058",
     "6059",
@@ -25398,12 +23143,15 @@
     "6070",
     "6071",
     "6072",
+    "6073",
     "6074",
     "6075",
+    "6076",
     "6077",
     "6078",
     "6079",
     "608",
+    "6080",
     "6081",
     "6082",
     "6083",
@@ -25414,6 +23162,8 @@
     "6088",
     "6089",
     "609",
+    "6090",
+    "6091",
     "6092",
     "6093",
     "6094",
@@ -25429,11 +23179,14 @@
     "6103",
     "6104",
     "6105",
+    "6106",
+    "6107",
     "6108",
     "6109",
     "611",
     "6110",
     "6111",
+    "6112",
     "6113",
     "6114",
     "6115",
@@ -25443,6 +23196,7 @@
     "6119",
     "612",
     "6120",
+    "6121",
     "6122",
     "6123",
     "6124",
@@ -25463,8 +23217,10 @@
     "6138",
     "6139",
     "6140",
+    "6141",
     "6142",
     "6143",
+    "6144",
     "6145",
     "6146",
     "6147",
@@ -25476,11 +23232,13 @@
     "6152",
     "6153",
     "6154",
+    "6155",
     "6156",
     "6157",
     "6158",
     "6159",
     "6160",
+    "6161",
     "6162",
     "6163",
     "6164",
@@ -25490,10 +23248,12 @@
     "6169",
     "617",
     "6170",
+    "6171",
     "6172",
     "6173",
     "6174",
     "6175",
+    "6176",
     "6177",
     "6178",
     "6179",
@@ -25525,12 +23285,15 @@
     "6201",
     "6202",
     "6203",
+    "6204",
     "6205",
     "6206",
     "6207",
     "6208",
+    "6209",
     "621",
     "6210",
+    "6211",
     "6212",
     "6213",
     "6214",
@@ -25546,6 +23309,7 @@
     "6223",
     "6224",
     "6225",
+    "6226",
     "6227",
     "6228",
     "6229",
@@ -25558,12 +23322,14 @@
     "6235",
     "6236",
     "6237",
+    "6238",
     "6239",
     "624",
     "6240",
     "6241",
     "6242",
     "6243",
+    "6244",
     "6245",
     "6246",
     "6247",
@@ -25579,6 +23345,7 @@
     "6256",
     "6257",
     "6258",
+    "6259",
     "626",
     "6260",
     "6261",
@@ -25588,6 +23355,8 @@
     "6265",
     "6266",
     "6267",
+    "6268",
+    "6269",
     "627",
     "6270",
     "6271",
@@ -25605,6 +23374,8 @@
     "6282",
     "6283",
     "6284",
+    "6285",
+    "6286",
     "6287",
     "6288",
     "6289",
@@ -25632,6 +23403,7 @@
     "6309",
     "631",
     "6310",
+    "6311",
     "6312",
     "6313",
     "6314",
@@ -25646,6 +23418,7 @@
     "6322",
     "6323",
     "6324",
+    "6325",
     "6326",
     "6327",
     "6328",
@@ -25653,13 +23426,17 @@
     "633",
     "6330",
     "6331",
+    "6332",
     "6333",
     "6334",
+    "6335",
     "6336",
+    "6337",
     "6338",
     "6339",
     "634",
     "6340",
+    "6341",
     "6342",
     "6343",
     "6344",
@@ -25669,12 +23446,16 @@
     "6348",
     "6349",
     "635",
+    "6350",
+    "6351",
     "6352",
     "6353",
     "6354",
     "6355",
+    "6356",
     "6357",
     "6358",
+    "6359",
     "636",
     "6360",
     "6361",
@@ -25682,6 +23463,7 @@
     "6363",
     "6364",
     "6365",
+    "6366",
     "6367",
     "6368",
     "6369",
@@ -25693,9 +23475,11 @@
     "6374",
     "6375",
     "6376",
+    "6377",
     "6378",
     "6379",
     "638",
+    "6380",
     "6381",
     "6382",
     "6383",
@@ -25712,6 +23496,7 @@
     "6394",
     "6395",
     "6396",
+    "6398",
     "6399",
     "64",
     "640",
@@ -25727,6 +23512,7 @@
     "641",
     "6410",
     "6411",
+    "6412",
     "6413",
     "6414",
     "6415",
@@ -25760,6 +23546,7 @@
     "6440",
     "6441",
     "6442",
+    "6443",
     "6444",
     "6445",
     "6446",
@@ -25767,6 +23554,7 @@
     "6448",
     "6449",
     "645",
+    "6450",
     "6451",
     "6452",
     "6453",
@@ -25778,6 +23566,8 @@
     "6459",
     "646",
     "6460",
+    "6461",
+    "6462",
     "6463",
     "6464",
     "6465",
@@ -25799,12 +23589,14 @@
     "648",
     "6480",
     "6481",
+    "6482",
     "6483",
     "6484",
     "6485",
     "6486",
     "6487",
     "6488",
+    "6489",
     "6490",
     "6491",
     "6492",
@@ -25813,6 +23605,8 @@
     "6495",
     "6496",
     "6497",
+    "6498",
+    "6499",
     "65",
     "650",
     "6500",
@@ -25824,6 +23618,7 @@
     "6506",
     "6507",
     "6508",
+    "6509",
     "651",
     "6510",
     "6511",
@@ -25836,6 +23631,7 @@
     "6518",
     "6519",
     "652",
+    "6520",
     "6521",
     "6522",
     "6523",
@@ -25846,11 +23642,14 @@
     "6528",
     "6529",
     "653",
+    "6530",
     "6531",
     "6532",
     "6533",
     "6534",
+    "6535",
     "6536",
+    "6537",
     "6538",
     "6539",
     "654",
@@ -25865,10 +23664,13 @@
     "6548",
     "6549",
     "655",
+    "6550",
+    "6551",
     "6552",
     "6553",
     "6554",
     "6555",
+    "6556",
     "6557",
     "6558",
     "6559",
@@ -25885,6 +23687,7 @@
     "6569",
     "657",
     "6570",
+    "6571",
     "6572",
     "6573",
     "6574",
@@ -25917,10 +23720,12 @@
     "6599",
     "66",
     "660",
+    "6600",
     "6601",
     "6602",
     "6603",
     "6604",
+    "6605",
     "6606",
     "6608",
     "6609",
@@ -25944,6 +23749,7 @@
     "6626",
     "6627",
     "6628",
+    "6629",
     "663",
     "6630",
     "6631",
@@ -25952,6 +23758,7 @@
     "6634",
     "6635",
     "6636",
+    "6637",
     "6638",
     "6639",
     "664",
@@ -25967,10 +23774,12 @@
     "6649",
     "665",
     "6650",
+    "6651",
     "6652",
     "6653",
     "6654",
     "6655",
+    "6656",
     "6657",
     "6658",
     "6659",
@@ -25990,6 +23799,7 @@
     "6671",
     "6672",
     "6673",
+    "6674",
     "6675",
     "6676",
     "6677",
@@ -26010,6 +23820,7 @@
     "6690",
     "6691",
     "6692",
+    "6693",
     "6694",
     "6695",
     "6696",
@@ -26036,9 +23847,11 @@
     "6715",
     "6716",
     "6717",
+    "6718",
     "6719",
     "672",
     "6720",
+    "6721",
     "6722",
     "6723",
     "6724",
@@ -26062,7 +23875,9 @@
     "6740",
     "6742",
     "6743",
+    "6744",
     "6745",
+    "6746",
     "6747",
     "6748",
     "6749",
@@ -26117,14 +23932,18 @@
     "6793",
     "6794",
     "6795",
+    "6796",
     "6797",
+    "6798",
     "6799",
     "68",
+    "6800",
     "6801",
     "6802",
     "6803",
     "6804",
     "6805",
+    "6806",
     "6807",
     "6808",
     "6809",
@@ -26145,17 +23964,21 @@
     "6828",
     "6829",
     "6830",
+    "6831",
     "6832",
     "6833",
     "6834",
     "6835",
+    "6836",
     "6837",
     "6838",
     "6839",
     "684",
+    "6840",
     "6841",
     "6842",
     "6843",
+    "6844",
     "6845",
     "6846",
     "6847",
@@ -26163,6 +23986,7 @@
     "6849",
     "685",
     "6850",
+    "6851",
     "6852",
     "6853",
     "6854",
@@ -26170,6 +23994,7 @@
     "6856",
     "6857",
     "6858",
+    "6859",
     "686",
     "6860",
     "6861",
@@ -26190,8 +24015,10 @@
     "6875",
     "6876",
     "6877",
+    "6878",
     "6879",
     "688",
+    "6880",
     "6881",
     "6882",
     "6883",
@@ -26199,6 +24026,7 @@
     "6885",
     "6886",
     "6887",
+    "6888",
     "6889",
     "689",
     "6890",
@@ -26208,6 +24036,7 @@
     "6894",
     "6895",
     "6896",
+    "6897",
     "6898",
     "6899",
     "69",
@@ -26219,10 +24048,12 @@
     "6904",
     "6905",
     "6906",
+    "6907",
     "6908",
     "6909",
     "691",
     "6910",
+    "6911",
     "6912",
     "6913",
     "6914",
@@ -26240,12 +24071,14 @@
     "6928",
     "6930",
     "6931",
+    "6932",
     "6933",
     "6934",
     "6935",
     "6936",
     "6937",
     "6938",
+    "6939",
     "694",
     "6940",
     "6941",
@@ -26267,13 +24100,16 @@
     "6958",
     "6959",
     "696",
+    "6960",
     "6961",
+    "6962",
     "6963",
     "6964",
     "6965",
     "6966",
     "6967",
     "6968",
+    "6969",
     "697",
     "6970",
     "6971",
@@ -26295,7 +24131,13 @@
     "6986",
     "6987",
     "6988",
+    "6989",
     "699",
+    "6990",
+    "6991",
+    "6993",
+    "6994",
+    "6995",
     "7",
     "700",
     "701",

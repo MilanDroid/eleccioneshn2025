@@ -1,63 +1,82 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA"
-      },
-      {
-        "etiqueta": "NO UTILIZADAS / SOBRANTES"
-      },
-      {
-        "etiqueta": "UTILIZADAS"
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN"
-      },
-      {
-        "etiqueta": "MIEMBROS JRV"
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "etiqueta_corta": "DC"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
-        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (Libre)",
-        "etiqueta_corta": "Libre"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "021",
+        "en_letras": [
+          "Cero",
+          "Dos",
+          "Uno"
+        ]
       },
       {
-        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "etiqueta_corta": "PINU"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
-        "etiqueta": "PARTIDO LIBERAL DE HONDURAS"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "072",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Dos"
+        ]
       },
       {
-        "etiqueta": "PARTIDO NACIONAL DE HONDURAS"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "088",
+        "en_letras": [
+          "Cero",
+          "Ocho",
+          "Ocho"
+        ]
       },
       {
-        "etiqueta": "VOTOS EN BLANCO"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
-        "etiqueta": "VOTOS NULOS"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ]
       },
       {
-        "etiqueta": "GRAN TOTAL"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
       }
     ]
   }

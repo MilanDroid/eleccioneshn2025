@@ -1,90 +1,83 @@
-{
-  "filings": [
-    {
-      "section": "I. BALANCE GENERAL",
-      "entries": [
-        {
-          "category": "PAPELETAS",
-          "subcategory": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-          "numbers": "327",
-          "letters": "Tres Dos Siete"
-        },
-        {
-          "category": "PAPELETAS",
-          "subcategory": "NO UTILIZADAS/SOBRANTES",
-          "numbers": "138",
-          "letters": "Uno Tres Ocho"
-        },
-        {
-          "category": "PAPELETAS",
-          "subcategory": "UTILIZADAS",
-          "numbers": "189",
-          "letters": "Uno Ocho Nueve"
-        },
-        {
-          "category": "VOTANTES",
-          "subcategory": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-          "numbers": "183",
-          "letters": "Uno Ocho Tres"
-        },
-        {
-          "category": "VOTANTES",
-          "subcategory": "MIEMBROS JRV",
-          "numbers": "006",
-          "letters": "Cero Cero Seis"
-        },
-        {
-          "category": "VOTANTES",
-          "subcategory": "TOTAL VOTANTES",
-          "numbers": "189",
-          "letters": "Uno Ocho Nueve"
-        }
-      ]
-    },
-    {
-      "section": "II. RESULTADOS DEL ESCRUTINIO",
-      "entries": [
-        {
-          "party": "Partido Demócrata Cristiano de Honduras (DC)",
-          "numbers": "001",
-          "letters": "Cero Cero Uno"
-        },
-        {
-          "party": "Partido Libertad y Refundación (libre)",
-          "numbers": "019",
-          "letters": "Cero Uno Nueve"
-        },
-        {
-          "party": "Partido Innovación y Unidad Social Demócrata (pinud)",
-          "numbers": "001",
-          "letters": "Cero Cero Uno"
-        },
-        {
-          "party": "Partido Liberal de Honduras",
-          "numbers": "098",
-          "letters": "Cero Nueve Ocho"
-        },
-        {
-          "party": "Partido Nacional de Honduras",
-          "numbers": "067",
-          "letters": "Cero Seis Siete"
-        },
-        {
-          "category": "VOTOS EN BLANCO",
-          "numbers": "002",
-          "letters": "Cero Cero Dos"
-        },
-        {
-          "category": "VOTOS NULOS",
-          "numbers": "001",
-          "letters": "Cero Cero Uno"
-        },
-        {
-          "category": "GRAN TOTAL",
-          "numbers": "189",
-          "letters": "Uno Ocho Nueve"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "019",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "098",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Ocho"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "067",
+        "en_letras": [
+          "Cero",
+          "Seis",
+          "Siete"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
+      }
+    ]
+  }
+]
