@@ -1,168 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "numeros": "332",
-        "letras": [
-          "tres",
-          "tres",
-          "dos"
-        ],
-        "etiquetaJSON": "RecibidasSegunActaApertura"
-      },
-      {
-        "etiqueta": "NO UTILIZADAS / SOBRANTES",
-        "numeros": "095",
-        "letras": [
-          "cero",
-          "nueve",
-          "cinco"
-        ],
-        "etiquetaJSON": "NoUtilizadasSobrantes"
-      },
-      {
-        "etiqueta": "UTILIZADAS",
-        "numeros": "137",
-        "letras": [
-          "uno",
-          "tres",
-          "siete"
-        ],
-        "etiquetaJSON": "Utilizadas"
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "numeros": "227",
-        "letras": [
-          "dos",
-          "dos",
-          "siete"
-        ],
-        "etiquetaJSON": "CiudadanosQueVotaron"
-      },
-      {
-        "etiqueta": "MIEMBROS JRV",
-        "numeros": "008",
-        "letras": [
-          "cero",
-          "cero",
-          "ocho"
-        ],
-        "etiquetaJSON": "MembrosJRV"
-      },
-      {
-        "etiqueta": "CUSTODIOS INFORMÁTICOS ELECTORALES",
-        "numeros": "007",
-        "letras": [
-          "cero",
-          "cero",
-          "dos"
-        ],
-        "etiquetaJSON": "CustodiosInformaticos"
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES",
-        "numeros": "237",
-        "letras": [
-          "dos",
-          "tres",
-          "siete"
-        ],
-        "etiquetaJSON": "TotalVotantes"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "numeros": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "etiquetaJSON": "PartidoDemocrataCristiano"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
-        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "numeros": "072",
-        "letras": [
-          "cero",
-          "siete",
-          "dos"
-        ],
-        "etiquetaJSON": "PartidoLibertadRefundacion"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "022",
+        "en_letras": [
+          "Cero",
+          "Dos",
+          "Dos"
+        ]
       },
       {
-        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "numeros": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "etiquetaJSON": "PartidoInnovacionUnidadSocialDemocrata"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
-        "numeros": "091",
-        "letras": [
-          "cero",
-          "nueve",
-          "uno"
-        ],
-        "etiquetaJSON": "PartidoLiberalHonduras"
+        "etiqueta_corta": "PLH",
+        "en_numeros": "091",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Uno"
+        ]
       },
       {
         "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
-        "numeros": "114",
-        "letras": [
-          "uno",
-          "uno",
-          "cuatro"
-        ],
-        "etiquetaJSON": "PartidoNacionalHonduras"
+        "etiqueta_corta": "PNH",
+        "en_numeros": "114",
+        "en_letras": [
+          "Uno",
+          "Uno",
+          "Cuatro"
+        ]
       },
       {
         "etiqueta": "VOTOS EN BLANCO",
-        "numeros": "008",
-        "letras": [
-          "cero",
-          "cero",
-          "ocho"
-        ],
-        "etiquetaJSON": "VotosEnBlanco"
+        "en_numeros": "008",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Ocho"
+        ]
       },
       {
         "etiqueta": "VOTOS NULOS",
-        "numeros": "002",
-        "letras": [
-          "cero",
-          "cero",
-          "dos"
-        ],
-        "etiquetaJSON": "VotosNulos"
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
       },
       {
         "etiqueta": "GRAN TOTAL",
-        "numeros": "237",
-        "letras": [
-          "dos",
-          "tres",
-          "siete"
-        ],
-        "etiquetaJSON": "GranTotal"
+        "en_numeros": "237",
+        "en_letras": [
+          "Dos",
+          "Tres",
+          "Siete"
+        ]
       }
     ]
   }

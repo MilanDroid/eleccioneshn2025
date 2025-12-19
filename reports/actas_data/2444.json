@@ -1,152 +1,85 @@
-{
-  "filas": [
-    {
-      "seccion": "I. BALANCE GENERAL",
-      "subseccion": "PAPELETAS",
-      "filas": [
-        {
-          "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-          "numeros": "357",
-          "letras": [
-            "Tres",
-            "Cinco",
-            "Siete"
-          ]
-        },
-        {
-          "descripcion": "NO UTILIZADAS / SOBRANTES",
-          "numeros": "128",
-          "letras": [
-            "Uno",
-            "Dos",
-            "Ocho"
-          ]
-        },
-        {
-          "descripcion": "UTILIZADAS",
-          "numeros": "229",
-          "letras": [
-            "Dos",
-            "Dos",
-            "Nueve"
-          ]
-        }
-      ]
-    },
-    {
-      "seccion": "I. BALANCE GENERAL",
-      "subseccion": "VOTANTES",
-      "filas": [
-        {
-          "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-          "numeros": "229",
-          "letras": [
-            "Dos",
-            "Dos",
-            "Nueve"
-          ]
-        },
-        {
-          "descripcion": "MIEMBROS JRV",
-          "numeros": "005",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cinco"
-          ]
-        },
-        {
-          "descripcion": "TOTAL VOTANTES",
-          "numeros": "229",
-          "letras": [
-            "Dos",
-            "Dos",
-            "Nueve"
-          ]
-        }
-      ]
-    },
-    {
-      "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-      "filas": [
-        {
-          "descripcion": "PARTIDO DÉMOCRATA CRISTIANO DE HONDURAS",
-          "etiqueta": "DC",
-          "numeros": "000",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cero"
-          ]
-        },
-        {
-          "descripcion": "PARTIDO LIBERTAD Y REFUNDACIÓN",
-          "etiqueta": "libre",
-          "numeros": "110",
-          "letras": [
-            "Uno",
-            "Uno",
-            "Cero"
-          ]
-        },
-        {
-          "descripcion": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
-          "etiqueta": "PINU",
-          "numeros": "003",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Tres"
-          ]
-        },
-        {
-          "descripcion": "PARTIDO LIBERAL DE HONDURAS",
-          "etiqueta": "PLH",
-          "numeros": "108",
-          "letras": [
-            "Uno",
-            "Cero",
-            "Ocho"
-          ]
-        },
-        {
-          "descripcion": "PARTIDO NACIONAL DE HONDURAS",
-          "etiqueta": "PNH",
-          "numeros": "106",
-          "letras": [
-            "Uno",
-            "Cero",
-            "Seis"
-          ]
-        },
-        {
-          "descripcion": "VOTOS EN BLANCO",
-          "numeros": "000",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cero"
-          ]
-        },
-        {
-          "descripcion": "VOTOS NULOS",
-          "numeros": "002",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Dos"
-          ]
-        },
-        {
-          "descripcion": "GRAN TOTAL",
-          "numeros": "229",
-          "letras": [
-            "Dos",
-            "Dos",
-            "Nueve"
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "010",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "108",
+        "en_letras": [
+          "Uno",
+          "Cero",
+          "Ocho"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "106",
+        "en_letras": [
+          "Uno",
+          "Cero",
+          "Seis"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "229",
+        "en_letras": [
+          "Dos",
+          "Dos",
+          "Nueve"
+        ]
+      }
+    ]
+  }
+]
