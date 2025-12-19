@@ -1,0 +1,293 @@
+{
+  "filas": [
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "PAPELETAS",
+      "filas": [
+        {
+          "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+          "en_numeros": "350",
+          "en_letras": [
+            "Tres",
+            "cinco",
+            "cero"
+          ],
+          "json": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "PAPELETAS",
+            "categoria": "RECIBIDAS",
+            "numero": "350",
+            "letras": [
+              "Tres",
+              "cinco",
+              "cero"
+            ]
+          }
+        },
+        {
+          "etiqueta": "NO UTILIZADAS / SOBRANTES",
+          "en_numeros": "135",
+          "en_letras": [
+            "Uno",
+            "Tres",
+            "cinco"
+          ],
+          "json": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "PAPELETAS",
+            "categoria": "NO_UTILIZADAS",
+            "numero": "135",
+            "letras": [
+              "Uno",
+              "Tres",
+              "cinco"
+            ]
+          }
+        },
+        {
+          "etiqueta": "UTILIZADAS",
+          "en_numeros": "215",
+          "en_letras": [
+            "Dos",
+            "Uno",
+            "cinco"
+          ],
+          "json": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "PAPELETAS",
+            "categoria": "UTILIZADAS",
+            "numero": "215",
+            "letras": [
+              "Dos",
+              "Uno",
+              "cinco"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seccion": "I. BALANCE GENERAL",
+      "subseccion": "VOTANTES",
+      "filas": [
+        {
+          "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
+          "en_numeros": "209",
+          "en_letras": [
+            "Dos",
+            "cero",
+            "nueve"
+          ],
+          "json": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "VOTANTES",
+            "categoria": "CIUDADANOS_VOTANTES",
+            "numero": "209",
+            "letras": [
+              "Dos",
+              "cero",
+              "nueve"
+            ]
+          }
+        },
+        {
+          "etiqueta": "MIEMBROS JRV",
+          "en_numeros": "006",
+          "en_letras": [
+            "cero",
+            "cero",
+            "seis"
+          ],
+          "json": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "VOTANTES",
+            "categoria": "MIEMBROS_JRV",
+            "numero": "006",
+            "letras": [
+              "cero",
+              "cero",
+              "seis"
+            ]
+          }
+        },
+        {
+          "etiqueta": "TOTAL VOTANTES",
+          "en_numeros": "215",
+          "en_letras": [
+            "Dos",
+            "Uno",
+            "cinco"
+          ],
+          "json": {
+            "seccion": "BALANCE_GENERAL",
+            "tipo": "VOTANTES",
+            "categoria": "TOTAL_VOTANTES",
+            "numero": "215",
+            "letras": [
+              "Dos",
+              "Uno",
+              "cinco"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+      "filas": [
+        {
+          "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+          "en_numeros": "001",
+          "en_letras": [
+            "cero",
+            "cero",
+            "uno"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "PARTIDO_DC",
+            "numero": "001",
+            "letras": [
+              "cero",
+              "cero",
+              "uno"
+            ]
+          }
+        },
+        {
+          "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+          "en_numeros": "033",
+          "en_letras": [
+            "cero",
+            "Tres",
+            "Tres"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "PARTIDO_LIBRE",
+            "numero": "033",
+            "letras": [
+              "cero",
+              "Tres",
+              "Tres"
+            ]
+          }
+        },
+        {
+          "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
+          "en_numeros": "003",
+          "en_letras": [
+            "cero",
+            "cero",
+            "Tres"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "PARTIDO_PINU",
+            "numero": "003",
+            "letras": [
+              "cero",
+              "cero",
+              "Tres"
+            ]
+          }
+        },
+        {
+          "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+          "en_numeros": "085",
+          "en_letras": [
+            "cero",
+            "ocho",
+            "cinco"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "PARTIDO_LIBERAL",
+            "numero": "085",
+            "letras": [
+              "cero",
+              "ocho",
+              "cinco"
+            ]
+          }
+        },
+        {
+          "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+          "en_numeros": "089",
+          "en_letras": [
+            "cero",
+            "ocho",
+            "nueve"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "PARTIDO_NACIONAL",
+            "numero": "089",
+            "letras": [
+              "cero",
+              "ocho",
+              "nueve"
+            ]
+          }
+        },
+        {
+          "etiqueta": "VOTOS EN BLANCO",
+          "en_numeros": "000",
+          "en_letras": [
+            "cero",
+            "cero",
+            "cero"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "VOTOS_BLANCO",
+            "numero": "000",
+            "letras": [
+              "cero",
+              "cero",
+              "cero"
+            ]
+          }
+        },
+        {
+          "etiqueta": "VOTOS NULOS",
+          "en_numeros": "004",
+          "en_letras": [
+            "cero",
+            "cero",
+            "cuatro"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "VOTOS_NULOS",
+            "numero": "004",
+            "letras": [
+              "cero",
+              "cero",
+              "cuatro"
+            ]
+          }
+        },
+        {
+          "etiqueta": "GRAN TOTAL",
+          "en_numeros": "215",
+          "en_letras": [
+            "Dos",
+            "Uno",
+            "cinco"
+          ],
+          "json": {
+            "seccion": "RESULTADOS_ESCRUTINIO",
+            "categoria": "GRAN_TOTAL",
+            "numero": "215",
+            "letras": [
+              "Dos",
+              "Uno",
+              "cinco"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
