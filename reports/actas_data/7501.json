@@ -1,159 +1,85 @@
-{
-  "filings": [
-    {
-      "section": "I. BALANCE GENERAL",
-      "subsections": [
-        {
-          "subsection": "PAPELETAS",
-          "rows": [
-            {
-              "row": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-              "digits": "317",
-              "letters": "tres uno siete",
-              "filing": {
-                "number": "317",
-                "letter": "tres uno siete"
-              }
-            },
-            {
-              "row": "NO UTILIZADAS / SOBRANTES",
-              "digits": "138",
-              "letters": "uno tres ocho",
-              "filing": {
-                "number": "138",
-                "letter": "uno tres ocho"
-              }
-            },
-            {
-              "row": "UTILIZADAS",
-              "digits": "179",
-              "letters": "uno siete nueve",
-              "filing": {
-                "number": "179",
-                "letter": "uno siete nueve"
-              }
-            }
-          ]
-        },
-        {
-          "subsection": "VOTANTES",
-          "rows": [
-            {
-              "row": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-              "digits": "169",
-              "letters": "uno seis nueve",
-              "filing": {
-                "number": "169",
-                "letter": "uno seis nueve"
-              }
-            },
-            {
-              "row": "MIEMBROS JRV",
-              "digits": "007",
-              "letters": "cero cero siete",
-              "filing": {
-                "number": "007",
-                "letter": "cero cero siete"
-              }
-            },
-            {
-              "row": "CUSTODIOS INFORMATICOS ELECTORALES",
-              "digits": "003",
-              "letters": "cero cero tres",
-              "filing": {
-                "number": "003",
-                "letter": "cero cero tres"
-              }
-            },
-            {
-              "row": "TOTAL VOTANTES",
-              "digits": "179",
-              "letters": "uno siete nueve",
-              "filing": {
-                "number": "179",
-                "letter": "uno siete nueve"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "section": "II. RESULTADOS DEL ESCRUTINIO",
-      "rows": [
-        {
-          "party": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-          "digits": "000",
-          "letters": "cero cero cero",
-          "filing": {
-            "number": "000",
-            "letter": "cero cero cero"
-          }
-        },
-        {
-          "party": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-          "digits": "634",
-          "letters": "seis tres cuatro",
-          "filing": {
-            "number": "634",
-            "letter": "seis tres cuatro"
-          }
-        },
-        {
-          "party": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-          "digits": "001",
-          "letters": "cero cero uno",
-          "filing": {
-            "number": "001",
-            "letter": "cero cero uno"
-          }
-        },
-        {
-          "party": "PARTIDO LIBERAL DE HONDURAS (PLH)",
-          "digits": "082",
-          "letters": "cero ocho dos",
-          "filing": {
-            "number": "082",
-            "letter": "cero ocho dos"
-          }
-        },
-        {
-          "party": "PARTIDO NACIONAL DE HONDURAS (PNH)",
-          "digits": "059",
-          "letters": "cero cinco nueve",
-          "filing": {
-            "number": "059",
-            "letter": "cero cinco nueve"
-          }
-        },
-        {
-          "row": "VOTOS EN BLANCO",
-          "digits": "002",
-          "letters": "cero cero dos",
-          "filing": {
-            "number": "002",
-            "letter": "cero cero dos"
-          }
-        },
-        {
-          "row": "VOTOS NULOS",
-          "digits": "001",
-          "letters": "cero cero uno",
-          "filing": {
-            "number": "001",
-            "letter": "cero cero uno"
-          }
-        },
-        {
-          "row": "GRAN TOTAL",
-          "digits": "179",
-          "letters": "uno siete nueve",
-          "filing": {
-            "number": "179",
-            "letter": "uno siete nueve"
-          }
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "034",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Cuatro"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "082",
+        "en_letras": [
+          "Cero",
+          "Ocho",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "059",
+        "en_letras": [
+          "Cero",
+          "Cinco",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "179",
+        "en_letras": [
+          "Uno",
+          "Siete",
+          "Nueve"
+        ]
+      }
+    ]
+  }
+]

@@ -1,143 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "letras": [
-          "tres",
-          "seis",
-          "seis"
-        ],
-        "en_letras": "tres seis seis"
-      },
-      {
-        "etiqueta": "NO UTILIZADAS / SOBRANTES",
-        "letras": [
-          "uno",
-          "siete",
-          "cinco"
-        ],
-        "en_letras": "uno siete cinco"
-      },
-      {
-        "etiqueta": "UTILIZADAS",
-        "letras": [
-          "uno",
-          "nueve",
-          "uno"
-        ],
-        "en_letras": "uno nueve uno"
-      }
-    ]
-  },
-  {
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "letras": [
-          "uno",
-          "ochenta",
-          "seis"
-        ],
-        "en_letras": "uno ochenta seis"
-      },
-      {
-        "etiqueta": "MIEMBROS JRV",
-        "letras": [
-          "cero",
-          "cero",
-          "cinco"
-        ],
-        "en_letras": "cero cero cinco"
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES",
-        "letras": [
-          "uno",
-          "nueve",
-          "uno"
-        ],
-        "en_letras": "uno nueve uno"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
         "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
-        "letras": [
-          "cero",
-          "cero",
-          "uno"
-        ],
-        "en_letras": "cero cero uno"
+        "etiqueta_corta": "DC",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
-        "letras": [
-          "cero",
-          "dos",
-          "nueve"
-        ],
-        "en_letras": "cero dos nueve"
+        "etiqueta_corta": "libre",
+        "en_numeros": "029",
+        "en_letras": [
+          "Cero",
+          "Dos",
+          "Nueve"
+        ]
       },
       {
         "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "en_letras": "cero cero cero"
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
-        "letras": [
-          "cero",
-          "siete",
-          "ocho"
-        ],
-        "en_letras": "cero siete ocho"
+        "etiqueta_corta": "PLH",
+        "en_numeros": "078",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Ocho"
+        ]
       },
       {
         "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
-        "letras": [
-          "cero",
-          "siete",
-          "siete"
-        ],
-        "en_letras": "cero siete siete"
+        "etiqueta_corta": "PNH",
+        "en_numeros": "077",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Siete"
+        ]
       },
       {
         "etiqueta": "VOTOS EN BLANCO",
-        "letras": [
-          "cero",
-          "cero",
-          "cuatro"
-        ],
-        "en_letras": "cero cero cuatro"
+        "en_numeros": "004",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cuatro"
+        ]
       },
       {
         "etiqueta": "VOTOS NULOS",
-        "letras": [
-          "cero",
-          "cero",
-          "tres"
-        ],
-        "en_letras": "cero cero tres"
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ]
       },
       {
         "etiqueta": "GRAN TOTAL",
-        "letras": [
-          "uno",
-          "nueve",
-          "uno"
-        ],
-        "en_letras": "uno nueve uno"
+        "en_numeros": "192",
+        "en_letras": [
+          "Uno",
+          "Nueve",
+          "Dos"
+        ]
       }
     ]
   }

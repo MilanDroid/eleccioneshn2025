@@ -1,180 +1,83 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "filas": [
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "344",
-        "letras": [
-          "tres",
-          "cuatro",
-          "cuatro"
-        ],
-        "digitos_letra": [
-          "tres",
-          "cuatro",
-          "cuatro"
-        ]
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "NO UTILIZADAS/SOBRANTES",
-        "digitos": "073",
-        "letras": [
-          "cero",
-          "siete",
-          "tres"
-        ],
-        "digitos_letra": [
-          "cero",
-          "siete",
-          "tres"
-        ]
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "UTILIZADAS",
-        "digitos": "251",
-        "letras": [
-          "dos",
-          "cinco",
-          "uno"
-        ],
-        "digitos_letra": [
-          "dos",
-          "cinco",
-          "uno"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "digitos": "245",
-        "letras": [
-          "dos",
-          "cuatro",
-          "cinco"
-        ],
-        "digitos_letra": [
-          "dos",
-          "cuatro",
-          "cinco"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "MIEMBROS JRV",
-        "digitos": "006",
-        "letras": [
-          "cero",
-          "cero",
-          "seis"
-        ],
-        "digitos_letra": [
-          "cero",
-          "cero",
-          "seis"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "TOTAL VOTANTES",
-        "digitos": "251",
-        "letras": [
-          "dos",
-          "cinco",
-          "uno"
-        ],
-        "digitos_letra": [
-          "dos",
-          "cinco",
-          "uno"
-        ]
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "digitos": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "digitos": "052",
-        "letras": [
-          "cero",
-          "cinco",
-          "dos"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "052",
+        "en_letras": [
+          "Cero",
+          "Cinco",
+          "Dos"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (FINU)",
-        "digitos": "010",
-        "letras": [
-          "cero",
-          "uno",
-          "cero"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "010",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Cero"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO LIBERAL DE HONDURAS",
-        "digitos": "093",
-        "letras": [
-          "cero",
-          "nueve",
-          "tres"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "093",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Tres"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO NACIONAL DE HONDURAS",
-        "digitos": "073",
-        "letras": [
-          "cero",
-          "siete",
-          "tres"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "093",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Tres"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS EN BLANCO",
-        "digitos": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS NULOS",
-        "digitos": "003",
-        "letras": [
-          "cero",
-          "cero",
-          "tres"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
         ]
       },
       {
-        "categoria": "TOTAL",
-        "subcategoria": "GRAN TOTAL",
-        "digitos": "251",
-        "letras": [
-          "dos",
-          "cinco",
-          "uno"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "251",
+        "en_letras": [
+          "Dos",
+          "Cinco",
+          "Uno"
         ]
       }
     ]
