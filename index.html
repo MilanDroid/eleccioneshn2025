@@ -2149,11 +2149,6 @@
                     percentage: expectedTotal > 0 ? ((actas.total / expectedTotal) * 100).toFixed(2) : '0.00'
                 },
                 {
-                    label: 'Usadas',
-                    value: actas.total - actas.inconsistencias,
-                    percentage: actas.total > 0 ? (((actas.total - actas.inconsistencias) / actas.total) * 100).toFixed(2) : '0.00'
-                },
-                {
                     label: 'Correctas',
                     value: actas.correctas,
                     percentage: actas.total > 0 ? ((actas.correctas / actas.total) * 100).toFixed(2) : '0.00'
