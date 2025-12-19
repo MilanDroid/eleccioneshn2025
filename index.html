@@ -2694,7 +2694,7 @@
             const aiInfoBoxClosed = localStorage.getItem('aiInfoDisclaimerBoxClosed');
             if (aiInfoBoxClosed) {
                 const closedTimestamp = parseInt(aiInfoBoxClosed);
-                const oneHourInMs = 60 * 60 * 1000; // 1 hour = 3600000 milliseconds
+                const oneHourInMs = 60 * 60 * 2000; // 2 hour = 6200000 milliseconds
                 const currentTime = Date.now();
 
                 if (currentTime - closedTimestamp < oneHourInMs) {
