@@ -2148,7 +2148,7 @@
                         // Calculate actas publicadas percentage
                         let actasPercentage = 0;
                         if (data.actas && data.actas.total > 0) {
-                            actasPercentage = ((data.actas.publicadas / data.actas.total) * 100).toFixed(1);
+                            actasPercentage = ((data.actas.correctas / data.actas.total) * 100).toFixed(1);
                         }
 
                         // Include all differences
