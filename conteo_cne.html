@@ -968,6 +968,58 @@
                 font-size: 0.7rem;
             }
         }
+
+        /* PDF Tooltip Styles */
+        .pdf-tooltip {
+            position: fixed;
+            background: white;
+            border: 3px solid var(--accent-color);
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            pointer-events: auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            overflow: hidden;
+            display: none;
+        }
+
+        .pdf-tooltip.visible {
+            opacity: 1;
+            display: block;
+        }
+
+        .pdf-tooltip iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            background: white;
+        }
+
+        /* Desktop: 400px width */
+        @media (min-width: 769px) {
+            .pdf-tooltip {
+                width: 400px;
+                height: 500px;
+            }
+        }
+
+        /* Mobile: 200px width */
+        @media (max-width: 768px) {
+            .pdf-tooltip {
+                width: 200px;
+                height: 250px;
+            }
+        }
+
+        .acta-list-item:hover {
+            background-color: rgba(0, 123, 255, 0.05);
+        }
+
+        .acta-list-item.active-tooltip {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -2447,6 +2499,253 @@
 
         // Check disclaimer status on page load
         checkDisclaimerStatus();
+
+        // PDF Tooltip functionality
+        (function() {
+            // Create tooltip element
+            const tooltip = document.createElement('div');
+            tooltip.className = 'pdf-tooltip';
+            document.body.appendChild(tooltip);
+
+            let currentRow = null;
+            let isMobile = false;
+            let isTooltipHovered = false;
+
+            // Check if mobile
+            function checkMobile() {
+                isMobile = window.innerWidth <= 768;
+            }
+            checkMobile();
+
+            // Function to show tooltip
+            function showTooltip(event, pdfUrl, rowElement) {
+                // If already showing for this row, do nothing
+                if (currentRow === rowElement && tooltip.classList.contains('visible')) {
+                    return;
+                }
+
+                // Remove active class from previous row
+                if (currentRow && currentRow !== rowElement) {
+                    currentRow.classList.remove('active-tooltip');
+                }
+
+                currentRow = rowElement;
+                currentRow.classList.add('active-tooltip');
+
+                // Create iframe if not exists or URL changed
+                if (!tooltip.querySelector('iframe') || tooltip.dataset.currentUrl !== pdfUrl) {
+                    tooltip.innerHTML = `<iframe src="${pdfUrl}"></iframe>`;
+                    tooltip.dataset.currentUrl = pdfUrl;
+                }
+
+                // Position tooltip
+                if (isMobile) {
+                    positionTooltipMobile(event, rowElement);
+                } else {
+                    positionTooltipDesktop(event, rowElement);
+                }
+
+                // Show tooltip
+                requestAnimationFrame(() => {
+                    tooltip.classList.add('visible');
+                });
+            }
+
+            // Function to position tooltip on desktop (aligned to left of screen)
+            function positionTooltipDesktop(event, rowElement) {
+                const tooltipWidth = 400;
+                const tooltipHeight = 500;
+                const gap = 10;
+
+                // Get row position
+                const rowRect = rowElement.getBoundingClientRect();
+
+                // Position tooltip top aligned to row bottom
+                let top = rowRect.bottom + 5;
+
+                // Align to the left of the screen
+                let left = gap;
+
+                // Adjust vertical position if tooltip goes off bottom
+                if (top + tooltipHeight > window.innerHeight) {
+                    // Try to position above the row
+                    top = rowRect.top - tooltipHeight - 5;
+
+                    // If still off screen, position at the top of viewport
+                    if (top < 10) {
+                        top = 10;
+                    }
+                }
+
+                tooltip.style.top = `${top}px`;
+                tooltip.style.left = `${left}px`;
+            }
+
+            // Function to position tooltip on mobile (right side at row height)
+            function positionTooltipMobile(event, rowElement) {
+                const tooltipWidth = 200;
+                const tooltipHeight = 250;
+                const gap = 10;
+
+                // Get row position
+                const rowRect = rowElement.getBoundingClientRect();
+
+                // Position tooltip top aligned to row bottom
+                let top = rowRect.bottom + 5;
+                let left = window.innerWidth - tooltipWidth - gap;
+
+                // Adjust vertical position if needed
+                if (top + tooltipHeight > window.innerHeight) {
+                    // Try to position above the row
+                    top = rowRect.top - tooltipHeight - 5;
+
+                    // If still off screen, position at the top of viewport
+                    if (top < 10) {
+                        top = 10;
+                    }
+                }
+
+                tooltip.style.top = `${top}px`;
+                tooltip.style.left = `${left}px`;
+            }
+
+            // Function to hide tooltip
+            function hideTooltip() {
+                tooltip.classList.remove('visible');
+                if (currentRow) {
+                    currentRow.classList.remove('active-tooltip');
+                }
+                currentRow = null;
+                tooltip.dataset.currentUrl = '';
+            }
+
+            // Check if click is outside row and tooltip
+            function isOutsideRowAndTooltip(target) {
+                if (!currentRow) return true;
+
+                const isInsideRow = currentRow.contains(target);
+                const isInsideTooltip = tooltip.contains(target);
+
+                return !isInsideRow && !isInsideTooltip;
+            }
+
+            // Add event listeners to the list container
+            function attachListeners() {
+                const listContainer = document.getElementById('actas-without-votes-list');
+
+                if (listContainer) {
+                    // Both desktop and mobile: show on click
+                    listContainer.addEventListener('click', (event) => {
+                        // Don't show tooltip if clicking the PDF link itself
+                        if (event.target.closest('.acta-link')) {
+                            return;
+                        }
+
+                        const actaListItem = event.target.closest('.acta-list-item');
+                        if (actaListItem) {
+                            event.preventDefault();
+                            const pdfLink = actaListItem.querySelector('.acta-link');
+                            if (pdfLink) {
+                                const pdfUrl = pdfLink.href;
+
+                                // Toggle tooltip if clicking same row
+                                if (currentRow === actaListItem && tooltip.classList.contains('visible')) {
+                                    hideTooltip();
+                                } else {
+                                    showTooltip(event, pdfUrl, actaListItem);
+                                }
+                            }
+                        }
+                    });
+
+                    // Close tooltip when mouse leaves the table
+                    listContainer.addEventListener('mouseleave', (event) => {
+                        // Check if we're leaving to the tooltip
+                        const relatedTarget = event.relatedTarget;
+                        if (!tooltip.contains(relatedTarget) && !isTooltipHovered) {
+                            hideTooltip();
+                        }
+                    });
+
+                    // Track scroll position to hide tooltip when scrolling out
+                    const scrollWrapper = listContainer.closest('.actas-list-scroll-wrapper');
+
+                    if (scrollWrapper) {
+                        let scrollTimeout = null;
+
+                        scrollWrapper.addEventListener('scroll', (event) => {
+                            // Debounce scroll events
+                            if (scrollTimeout) {
+                                clearTimeout(scrollTimeout);
+                            }
+
+                            scrollTimeout = setTimeout(() => {
+                                if (currentRow && tooltip.classList.contains('visible')) {
+                                    const rowRect = currentRow.getBoundingClientRect();
+                                    const wrapperRect = scrollWrapper.getBoundingClientRect();
+
+                                    // Hide if row is out of view
+                                    if (rowRect.bottom < wrapperRect.top || rowRect.top > wrapperRect.bottom) {
+                                        hideTooltip();
+                                    }
+                                }
+                            }, 100);
+                        }, { passive: true });
+                    }
+                }
+            }
+
+            // Click outside to close
+            document.addEventListener('click', (event) => {
+                if (tooltip.classList.contains('visible')) {
+                    if (isOutsideRowAndTooltip(event.target)) {
+                        hideTooltip();
+                    }
+                }
+            });
+
+            // Track tooltip hover state
+            tooltip.addEventListener('mouseenter', () => {
+                isTooltipHovered = true;
+            });
+
+            tooltip.addEventListener('mouseleave', () => {
+                isTooltipHovered = false;
+                // Hide tooltip when leaving it (both desktop and mobile)
+                hideTooltip();
+            });
+
+            // Attach listeners on page load and after a delay to ensure DOM is ready
+            attachListeners();
+            setTimeout(attachListeners, 1500);
+
+            // Handle window resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                // Debounce resize events
+                if (resizeTimeout) {
+                    clearTimeout(resizeTimeout);
+                }
+
+                resizeTimeout = setTimeout(() => {
+                    checkMobile();
+                    if (currentRow && tooltip.classList.contains('visible')) {
+                        // Reposition tooltip based on current row
+                        const rowRect = currentRow.getBoundingClientRect();
+                        const fakeEvent = {
+                            clientX: rowRect.left + rowRect.width / 2,
+                            clientY: rowRect.top + rowRect.height / 2
+                        };
+
+                        if (isMobile) {
+                            positionTooltipMobile(fakeEvent, currentRow);
+                        } else {
+                            positionTooltipDesktop(fakeEvent, currentRow);
+                        }
+                    }
+                }, 200);
+            });
+        })();
 
     </script>
 </body>
