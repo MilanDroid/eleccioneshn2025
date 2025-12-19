@@ -1,251 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "filas": [
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": [
-          "2",
-          "1",
-          "6"
-        ],
-        "letras": [
-          "Dos",
-          "uno",
-          "seis"
-        ],
-        "digitos_concatenados": "216",
-        "letras_concatenadas": "Dos uno seis"
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "NO UTILIZADAS / SOBRANTES",
-        "digitos": [
-          "1",
-          "0",
-          "9"
-        ],
-        "letras": [
-          "uno",
-          "cero",
-          "nueve"
-        ],
-        "digitos_concatenados": "109",
-        "letras_concatenadas": "uno cero nueve"
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "UTILIZADAS",
-        "digitos": [
-          "1",
-          "0",
-          "7"
-        ],
-        "letras": [
-          "uno",
-          "cero",
-          "siete"
-        ],
-        "digitos_concatenados": "107",
-        "letras_concatenadas": "uno cero siete"
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "digitos": [
-          "0",
-          "9",
-          "9"
-        ],
-        "letras": [
-          "cero",
-          "nueve",
-          "nueve"
-        ],
-        "digitos_concatenados": "099",
-        "letras_concatenadas": "cero nueve nueve"
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "MIEMBROS JRV",
-        "digitos": [
-          "0",
-          "0",
-          "6"
-        ],
-        "letras": [
-          "cero",
-          "cero",
-          "seis"
-        ],
-        "digitos_concatenados": "006",
-        "letras_concatenadas": "cero cero seis"
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "CUSTODIOS INFORMATICOS ELECTORALES",
-        "digitos": [
-          "0",
-          "0",
-          "2"
-        ],
-        "letras": [
-          "cero",
-          "cero",
-          "dos"
-        ],
-        "digitos_concatenados": "002",
-        "letras_concatenadas": "cero cero dos"
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "TOTAL VOTANTES",
-        "digitos": [
-          "1",
-          "0",
-          "7"
-        ],
-        "letras": [
-          "uno",
-          "cero",
-          "siete"
-        ],
-        "digitos_concatenados": "107",
-        "letras_concatenadas": "uno cero siete"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "digitos": [
-          "0",
-          "0",
-          "0"
-        ],
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "digitos_concatenados": "000",
-        "letras_concatenadas": "cero cero cero"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "digitos": [
-          "0",
-          "7",
-          "1"
-        ],
-        "letras": [
-          "cero",
-          "siete",
-          "uno"
-        ],
-        "digitos_concatenados": "071",
-        "letras_concatenadas": "cero siete uno"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "011",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Uno"
+        ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "digitos": [
-          "0",
-          "0",
-          "0"
-        ],
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "digitos_concatenados": "000",
-        "letras_concatenadas": "cero cero cero"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO LIBERAL DE HONDURAS",
-        "digitos": [
-          "0",
-          "1",
-          "8"
-        ],
-        "letras": [
-          "cero",
-          "uno",
-          "ocho"
-        ],
-        "digitos_concatenados": "018",
-        "letras_concatenadas": "cero uno ocho"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "018",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Ocho"
+        ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "PARTIDO NACIONAL DE HONDURAS",
-        "digitos": [
-          "0",
-          "7",
-          "5"
-        ],
-        "letras": [
-          "cero",
-          "siete",
-          "cinco"
-        ],
-        "digitos_concatenados": "075",
-        "letras_concatenadas": "cero siete cinco"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "075",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Cinco"
+        ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS EN BLANCO",
-        "digitos": [
-          "0",
-          "0",
-          "0"
-        ],
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "digitos_concatenados": "000",
-        "letras_concatenadas": "cero cero cero"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS NULOS",
-        "digitos": [
-          "0",
-          "0",
-          "3"
-        ],
-        "letras": [
-          "cero",
-          "cero",
-          "tres"
-        ],
-        "digitos_concatenados": "003",
-        "letras_concatenadas": "cero cero tres"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ]
       },
       {
-        "categoria": "TOTAL",
-        "subcategoria": "GRAN TOTAL",
-        "digitos": [
-          "1",
-          "0",
-          "7"
-        ],
-        "letras": [
-          "uno",
-          "cero",
-          "siete"
-        ],
-        "digitos_concatenados": "107",
-        "letras_concatenadas": "uno cero siete"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "107",
+        "en_letras": [
+          "Uno",
+          "Cero",
+          "Siete"
+        ]
       }
     ]
   }

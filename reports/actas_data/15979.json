@@ -1,363 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "numeros": "312",
-        "letras": [
-          "tres",
-          "uno",
-          "dos"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "3",
-            "letra": "tres"
-          },
-          "digito2": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito3": {
-            "numero": "2",
-            "letra": "dos"
-          }
-        }
-      },
-      {
-        "descripcion": "NO UTILIZADAS / SOBRANTES",
-        "numeros": "117",
-        "letras": [
-          "uno",
-          "uno",
-          "siete"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito2": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito3": {
-            "numero": "7",
-            "letra": "siete"
-          }
-        }
-      },
-      {
-        "descripcion": "UTILIZADAS",
-        "numeros": "195",
-        "letras": [
-          "uno",
-          "nueve",
-          "cinco"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito2": {
-            "numero": "9",
-            "letra": "nueve"
-          },
-          "digito3": {
-            "numero": "5",
-            "letra": "cinco"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "numeros": "186",
-        "letras": [
-          "uno",
-          "ocho",
-          "seis"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito2": {
-            "numero": "8",
-            "letra": "ocho"
-          },
-          "digito3": {
-            "numero": "6",
-            "letra": "seis"
-          }
-        }
-      },
-      {
-        "descripcion": "MIEMBROS JRV",
-        "numeros": "006",
-        "letras": [
-          "cero",
-          "cero",
-          "seis"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito3": {
-            "numero": "6",
-            "letra": "seis"
-          }
-        }
-      },
-      {
-        "descripcion": "CUSTODIOS INFORMÁTICOS ELECTORALES",
-        "numeros": "003",
-        "letras": [
-          "cero",
-          "cero",
-          "tres"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito3": {
-            "numero": "3",
-            "letra": "tres"
-          }
-        }
-      },
-      {
-        "descripcion": "TOTAL VOTANTES",
-        "numeros": "195",
-        "letras": [
-          "uno",
-          "nueve",
-          "cinco"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito2": {
-            "numero": "9",
-            "letra": "nueve"
-          },
-          "digito3": {
-            "numero": "5",
-            "letra": "cinco"
-          }
-        }
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "descripcion": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "numeros": "007",
-        "letras": [
-          "cero",
-          "cero",
-          "siete"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito3": {
-            "numero": "7",
-            "letra": "siete"
-          }
-        }
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "numeros": "097",
-        "letras": [
-          "cero",
-          "nueve",
-          "siete"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "9",
-            "letra": "nueve"
-          },
-          "digito3": {
-            "numero": "7",
-            "letra": "siete"
-          }
-        }
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "097",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Siete"
+        ]
       },
       {
-        "descripcion": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "numeros": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito3": {
-            "numero": "0",
-            "letra": "cero"
-          }
-        }
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBERAL DE HONDURAS",
-        "numeros": "075",
-        "letras": [
-          "cero",
-          "siete",
-          "cinco"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "7",
-            "letra": "siete"
-          },
-          "digito3": {
-            "numero": "5",
-            "letra": "cinco"
-          }
-        }
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "015",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Cinco"
+        ]
       },
       {
-        "descripcion": "PARTIDO NACIONAL",
-        "numeros": "067",
-        "letras": [
-          "cero",
-          "seis",
-          "siete"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "6",
-            "letra": "seis"
-          },
-          "digito3": {
-            "numero": "7",
-            "letra": "siete"
-          }
-        }
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "061",
+        "en_letras": [
+          "Cero",
+          "Seis",
+          "Uno"
+        ]
       },
       {
-        "descripcion": "VOTOS EN BLANCO",
-        "numeros": "017",
-        "letras": [
-          "cero",
-          "uno",
-          "siete"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito3": {
-            "numero": "7",
-            "letra": "siete"
-          }
-        }
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "017",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Siete"
+        ]
       },
       {
-        "descripcion": "VOTOS NULOS",
-        "numeros": "004",
-        "letras": [
-          "cero",
-          "cero",
-          "cuatro"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito2": {
-            "numero": "0",
-            "letra": "cero"
-          },
-          "digito3": {
-            "numero": "4",
-            "letra": "cuatro"
-          }
-        }
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "004",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cuatro"
+        ]
       },
       {
-        "descripcion": "GRAN TOTAL",
-        "numeros": "195",
-        "letras": [
-          "uno",
-          "nueve",
-          "cinco"
-        ],
-        "filasJSON": {
-          "digito1": {
-            "numero": "1",
-            "letra": "uno"
-          },
-          "digito2": {
-            "numero": "9",
-            "letra": "nueve"
-          },
-          "digito3": {
-            "numero": "5",
-            "letra": "cinco"
-          }
-        }
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "195",
+        "en_letras": [
+          "Uno",
+          "Nueve",
+          "Cinco"
+        ]
       }
     ]
   }

@@ -1,242 +1,83 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "218",
-        "letras": [
-          "DOS",
-          "UNO",
-          "OCHO"
-        ],
-        "digitosCompleto": "218",
-        "letrasCompleto": [
-          "DOS",
-          "UNO",
-          "OCHO"
-        ]
-      },
-      {
-        "etiqueta": "NO UTILIZADAS / SOBRANTES",
-        "digitos": "113",
-        "letras": [
-          "UNO",
-          "UNO",
-          "TRES"
-        ],
-        "digitosCompleto": "113",
-        "letrasCompleto": [
-          "UNO",
-          "UNO",
-          "TRES"
-        ]
-      },
-      {
-        "etiqueta": "UTILIZADAS",
-        "digitos": "105",
-        "letras": [
-          "UNO",
-          "CERO",
-          "CINCO"
-        ],
-        "digitosCompleto": "105",
-        "letrasCompleto": [
-          "UNO",
-          "CERO",
-          "CINCO"
-        ]
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "digitos": "099",
-        "letras": [
-          "CERO",
-          "NUEVE",
-          "NUEVE"
-        ],
-        "digitosCompleto": "099",
-        "letrasCompleto": [
-          "CERO",
-          "NUEVE",
-          "NUEVE"
-        ]
-      },
-      {
-        "etiqueta": "MIEMBROS JRV",
-        "digitos": "005",
-        "letras": [
-          "CERO",
-          "CERO",
-          "CINCO"
-        ],
-        "digitosCompleto": "005",
-        "letrasCompleto": [
-          "CERO",
-          "CERO",
-          "CINCO"
-        ]
-      },
-      {
-        "etiqueta": "CUSTODIOS INFORMATICOS",
-        "digitos": "001",
-        "letras": [
-          "CERO",
-          "CERO",
-          "UNO"
-        ],
-        "digitosCompleto": "001",
-        "letrasCompleto": [
-          "CERO",
-          "CERO",
-          "UNO"
-        ]
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES",
-        "digitos": "105",
-        "letras": [
-          "UNO",
-          "CERO",
-          "CINCO"
-        ],
-        "digitosCompleto": "105",
-        "letrasCompleto": [
-          "UNO",
-          "CERO",
-          "CINCO"
-        ]
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "digitos": "000",
-        "letras": [
-          "CERO",
-          "CERO",
-          "CERO"
-        ],
-        "digitosCompleto": "000",
-        "letrasCompleto": [
-          "CERO",
-          "CERO",
-          "CERO"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "digitos": "002",
-        "letras": [
-          "CERO",
-          "CERO",
-          "DOS"
-        ],
-        "digitosCompleto": "002",
-        "letrasCompleto": [
-          "CERO",
-          "CERO",
-          "DOS"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
         ]
       },
       {
-        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "digitos": "001",
-        "letras": [
-          "CERO",
-          "CERO",
-          "UNO"
-        ],
-        "digitosCompleto": "001",
-        "letrasCompleto": [
-          "CERO",
-          "CERO",
-          "UNO"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
         "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
-        "digitos": "008",
-        "letras": [
-          "CERO",
-          "CERO",
-          "OCHO"
-        ],
-        "digitosCompleto": "008",
-        "letrasCompleto": [
-          "CERO",
-          "CERO",
-          "OCHO"
+        "etiqueta_corta": "PLH",
+        "en_numeros": "008",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Ocho"
         ]
       },
       {
         "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
-        "digitos": "092",
-        "letras": [
-          "CERO",
-          "NUEVE",
-          "DOS"
-        ],
-        "digitosCompleto": "092",
-        "letrasCompleto": [
-          "CERO",
-          "NUEVE",
-          "DOS"
+        "etiqueta_corta": "PNH",
+        "en_numeros": "092",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Dos"
         ]
       },
       {
         "etiqueta": "VOTOS EN BLANCO",
-        "digitos": "010",
-        "letras": [
-          "CERO",
-          "UNO",
-          "UNO"
-        ],
-        "digitosCompleto": "010",
-        "letrasCompleto": [
-          "CERO",
-          "UNO",
-          "UNO"
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
         "etiqueta": "VOTOS NULOS",
-        "digitos": "001",
-        "letras": [
-          "CERO",
-          "CERO",
-          "UNO"
-        ],
-        "digitosCompleto": "001",
-        "letrasCompleto": [
-          "CERO",
-          "CERO",
-          "UNO"
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
         "etiqueta": "GRAN TOTAL",
-        "digitos": "105",
-        "letras": [
-          "UNO",
-          "CERO",
-          "CINCO"
-        ],
-        "digitosCompleto": "105",
-        "letrasCompleto": [
-          "UNO",
-          "CERO",
-          "CINCO"
+        "en_numeros": "105",
+        "en_letras": [
+          "Uno",
+          "Cero",
+          "Cinco"
         ]
       }
     ]

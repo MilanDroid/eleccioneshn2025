@@ -1,184 +1,82 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "3164",
-        "en_numeros": "3164",
-        "letras": [
-          "tres",
-          "cais",
-          "cuatro",
-          "cinco",
-          "cuatro"
-        ],
-        "en_letras": "tres cais cuatro cinco cuatro"
-      },
-      {
-        "etiqueta": "NO UTILIZADAS / SOBRANTES",
-        "digitos": "154",
-        "en_numeros": "154",
-        "letras": [
-          "cai",
-          "cinco",
-          "cuatro"
-        ],
-        "en_letras": "cai cinco cuatro"
-      },
-      {
-        "etiqueta": "UTILIZADAS",
-        "digitos": "210",
-        "en_numeros": "210",
-        "letras": [
-          "dos",
-          "uno",
-          "cai"
-        ],
-        "en_letras": "dos uno cai"
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "digitos": "202",
-        "en_numeros": "202",
-        "letras": [
-          "dos",
-          "cai",
-          "dos"
-        ],
-        "en_letras": "dos cai dos"
-      },
-      {
-        "etiqueta": "MIEMBROS JRV",
-        "digitos": "00",
-        "en_numeros": "00",
-        "letras": [
-          "cai",
-          "cai"
-        ],
-        "en_letras": "cai cai"
-      },
-      {
-        "etiqueta": "CUSTODIOS INFORMATICOS ELECTORALES",
-        "digitos": "02",
-        "en_numeros": "02",
-        "letras": [
-          "cai",
-          "dos"
-        ],
-        "en_letras": "cai dos"
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES",
-        "digitos": "210",
-        "en_numeros": "210",
-        "letras": [
-          "dos",
-          "uno",
-          "cai"
-        ],
-        "en_letras": "dos uno cai"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
         "etiqueta_corta": "DC",
-        "digitos": "000",
         "en_numeros": "000",
-        "letras": [
-          "cai",
-          "cai",
-          "cai"
-        ],
-        "en_letras": "cai cai cai"
+        "en_letras": [
+          "Cai",
+          "Cai",
+          "Cai"
+        ]
       },
       {
-        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
         "etiqueta_corta": "libre",
-        "digitos": "055",
         "en_numeros": "055",
-        "letras": [
-          "cai",
-          "cinco",
-          "cinco"
-        ],
-        "en_letras": "cai cinco cinco"
+        "en_letras": [
+          "Cai",
+          "Cinco",
+          "Cinco"
+        ]
       },
       {
-        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINI)",
-        "etiqueta_corta": "PINI",
-        "digitos": "011",
-        "en_numeros": "011",
-        "letras": [
-          "cai",
-          "uno",
-          "uno"
-        ],
-        "en_letras": "cai uno uno"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
-        "digitos": "032",
+        "etiqueta_corta": "PLH",
         "en_numeros": "032",
-        "letras": [
-          "cai",
-          "tres",
-          "dos"
-        ],
-        "en_letras": "cai tres dos"
+        "en_letras": [
+          "Cai",
+          "Tres",
+          "Dos"
+        ]
       },
       {
         "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
-        "digitos": "110",
+        "etiqueta_corta": "PNH",
         "en_numeros": "110",
-        "letras": [
-          "uno",
-          "uno",
-          "cai"
-        ],
-        "en_letras": "uno uno cai"
+        "en_letras": [
+          "Uno",
+          "Uno",
+          "Cai"
+        ]
       },
       {
         "etiqueta": "VOTOS EN BLANCO",
-        "digitos": "04",
-        "en_numeros": "04",
-        "letras": [
-          "cai",
-          "cuatro"
-        ],
-        "en_letras": "cai cuatro"
+        "en_numeros": "004",
+        "en_letras": [
+          "Cai",
+          "Cuatro"
+        ]
       },
       {
         "etiqueta": "VOTOS NULOS",
-        "digitos": "08",
-        "en_numeros": "08",
-        "letras": [
-          "cai",
-          "ocho"
-        ],
-        "en_letras": "cai ocho"
+        "en_numeros": "008",
+        "en_letras": [
+          "Cai",
+          "Ocho"
+        ]
       },
       {
         "etiqueta": "GRAN TOTAL",
-        "digitos": "210",
         "en_numeros": "210",
-        "letras": [
-          "dos",
-          "uno",
-          "cai"
-        ],
-        "en_letras": "dos uno cai"
+        "en_letras": [
+          "Dos",
+          "Uno",
+          "Cero"
+        ]
       }
     ]
   }
