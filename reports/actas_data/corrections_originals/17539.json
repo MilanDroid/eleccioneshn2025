@@ -1,310 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "numeros": "224",
-        "letras": [
-          "Dos",
-          "Dos",
-          "Cuatro"
-        ],
-        "filasJSON": {
-          "seccion": "I. BALANCE GENERAL",
-          "subseccion": "PAPELETAS",
-          "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-          "numeros": "224",
-          "letras": [
-            "Dos",
-            "Dos",
-            "Cuatro"
-          ]
-        }
-      },
-      {
-        "descripcion": "NO UTILIZADAS / SOBRANTES",
-        "numeros": "071",
-        "letras": [
-          "Cero",
-          "Siete",
-          "Uno"
-        ],
-        "filasJSON": {
-          "seccion": "I. BALANCE GENERAL",
-          "subseccion": "PAPELETAS",
-          "descripcion": "NO UTILIZADAS / SOBRANTES",
-          "numeros": "071",
-          "letras": [
-            "Cero",
-            "Siete",
-            "Uno"
-          ]
-        }
-      },
-      {
-        "descripcion": "UTILIZADAS",
-        "numeros": "153",
-        "letras": [
-          "Uno",
-          "Cinco",
-          "Tres"
-        ],
-        "filasJSON": {
-          "seccion": "I. BALANCE GENERAL",
-          "subseccion": "PAPELETAS",
-          "descripcion": "UTILIZADAS",
-          "numeros": "153",
-          "letras": [
-            "Uno",
-            "Cinco",
-            "Tres"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "numeros": "144",
-        "letras": [
-          "Uno",
-          "Cuatro",
-          "Cuatro"
-        ],
-        "filasJSON": {
-          "seccion": "I. BALANCE GENERAL",
-          "subseccion": "VOTANTES",
-          "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-          "numeros": "144",
-          "letras": [
-            "Uno",
-            "Cuatro",
-            "Cuatro"
-          ]
-        }
-      },
-      {
-        "descripcion": "MIEMBROS JRV",
-        "numeros": "006",
-        "letras": [
-          "Cero",
-          "Cero",
-          "Seis"
-        ],
-        "filasJSON": {
-          "seccion": "I. BALANCE GENERAL",
-          "subseccion": "VOTANTES",
-          "descripcion": "MIEMBROS JRV",
-          "numeros": "006",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Seis"
-          ]
-        }
-      },
-      {
-        "descripcion": "CUSTODIOS INFORMÁTICOS ELECTORALES",
-        "numeros": "003",
-        "letras": [
-          "Cero",
-          "Cero",
-          "Tres"
-        ],
-        "filasJSON": {
-          "seccion": "I. BALANCE GENERAL",
-          "subseccion": "VOTANTES",
-          "descripcion": "CUSTODIOS INFORMÁTICOS ELECTORALES",
-          "numeros": "003",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Tres"
-          ]
-        }
-      },
-      {
-        "descripcion": "TOTAL VOTANTES",
-        "numeros": "153",
-        "letras": [
-          "Uno",
-          "Cinco",
-          "Tres"
-        ],
-        "filasJSON": {
-          "seccion": "I. BALANCE GENERAL",
-          "subseccion": "VOTANTES",
-          "descripcion": "TOTAL VOTANTES",
-          "numeros": "153",
-          "letras": [
-            "Uno",
-            "Cinco",
-            "Tres"
-          ]
-        }
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "descripcion": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "numeros": "000",
-        "letras": [
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cero"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-          "numeros": "000",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cero"
-          ]
-        }
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBERTAD Y REFUNDACIÓN (Libre)",
-        "numeros": "082",
-        "letras": [
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "022",
+        "en_letras": [
           "Cero",
-          "Ocho",
+          "Dos",
           "Dos"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "PARTIDO LIBERTAD Y REFUNDACIÓN (Libre)",
-          "numeros": "082",
-          "letras": [
-            "Cero",
-            "Ocho",
-            "Dos"
-          ]
-        }
+        ]
       },
       {
-        "descripcion": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "numeros": "000",
-        "letras": [
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cero"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-          "numeros": "000",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cero"
-          ]
-        }
+        ]
       },
       {
-        "descripcion": "PARTIDO LIBERAL DE HONDURAS",
-        "numeros": "072",
-        "letras": [
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "072",
+        "en_letras": [
           "Cero",
           "Siete",
           "Dos"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "PARTIDO LIBERAL DE HONDURAS",
-          "numeros": "072",
-          "letras": [
-            "Cero",
-            "Siete",
-            "Dos"
-          ]
-        }
+        ]
       },
       {
-        "descripcion": "PARTIDO NACIONAL DE HONDURAS",
-        "numeros": "056",
-        "letras": [
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "056",
+        "en_letras": [
           "Cero",
           "Cinco",
           "Seis"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "PARTIDO NACIONAL DE HONDURAS",
-          "numeros": "056",
-          "letras": [
-            "Cero",
-            "Cinco",
-            "Seis"
-          ]
-        }
+        ]
       },
       {
-        "descripcion": "VOTOS EN BLANCO",
-        "numeros": "000",
-        "letras": [
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cero"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "VOTOS EN BLANCO",
-          "numeros": "000",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cero"
-          ]
-        }
+        ]
       },
       {
-        "descripcion": "VOTOS NULOS",
-        "numeros": "004",
-        "letras": [
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "004",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cuatro"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "VOTOS NULOS",
-          "numeros": "004",
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cuatro"
-          ]
-        }
+        ]
       },
       {
-        "descripcion": "GRAN TOTAL",
-        "numeros": "153",
-        "letras": [
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "154",
+        "en_letras": [
           "Uno",
           "Cinco",
-          "Tres"
-        ],
-        "filasJSON": {
-          "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-          "descripcion": "GRAN TOTAL",
-          "numeros": "153",
-          "letras": [
-            "Uno",
-            "Cinco",
-            "Tres"
-          ]
-        }
+          "Cuatro"
+        ]
       }
     ]
   }
