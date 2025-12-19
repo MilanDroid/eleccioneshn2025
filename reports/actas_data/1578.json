@@ -1,229 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "descripcion": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": [
-          "3",
-          "7",
-          "6"
-        ],
-        "letras": [
-          "Tres",
-          "Uno",
-          "Seis"
-        ],
-        "digitos_convertido": "376",
-        "letras_convertido": "Tres Uno Seis"
-      },
-      {
-        "descripcion": "NO UTILIZADAS / SOBRANTES",
-        "digitos": [
-          "1",
-          "2",
-          "2"
-        ],
-        "letras": [
-          "Uno",
-          "Dos",
-          "Dos"
-        ],
-        "digitos_convertido": "122",
-        "letras_convertido": "Uno Dos Dos"
-      },
-      {
-        "descripcion": "UTILIZADAS",
-        "digitos": [
-          "1",
-          "9",
-          "4"
-        ],
-        "letras": [
-          "Uno",
-          "Nueve",
-          "Cuatro"
-        ],
-        "digitos_convertido": "194",
-        "letras_convertido": "Uno Nueve Cuatro"
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "descripcion": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "digitos": [
-          "7",
-          "8",
-          "8"
-        ],
-        "letras": [
-          "Siete",
-          "Ocho",
-          "Ocho"
-        ],
-        "digitos_convertido": "788",
-        "letras_convertido": "Siete Ocho Ocho"
-      },
-      {
-        "descripcion": "MIEMBROS JRV",
-        "digitos": [
-          "0",
-          "0",
-          "6"
-        ],
-        "letras": [
-          "Cero",
-          "Cero",
-          "Seis"
-        ],
-        "digitos_convertido": "006",
-        "letras_convertido": "Cero Cero Seis"
-      },
-      {
-        "descripcion": "TOTAL VOTANTES",
-        "digitos": [
-          "1",
-          "9",
-          "4"
-        ],
-        "letras": [
-          "Uno",
-          "Nueve",
-          "Cuatro"
-        ],
-        "digitos_convertido": "194",
-        "letras_convertido": "Uno Nueve Cuatro"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
     "subseccion": "VOTOS",
     "filas": [
       {
-        "partido": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "digitos": [
-          "0",
-          "0",
-          "0"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cero"
-        ],
-        "digitos_convertido": "000",
-        "letras_convertido": "Cero Cero Cero"
+        ]
       },
       {
-        "partido": "PARTIDO LIBERTAD Y REFORMA (libre)",
-        "digitos": [
-          "0",
-          "3",
-          "4"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "034",
+        "en_letras": [
           "Cero",
           "Tres",
           "Cuatro"
-        ],
-        "digitos_convertido": "034",
-        "letras_convertido": "Cero Tres Cuatro"
+        ]
       },
       {
-        "partido": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
-        "digitos": [
-          "0",
-          "0",
-          "7"
-        ],
-        "letras": [
-          "Cero",
-          "Cero",
-          "Siete"
-        ],
-        "digitos_convertido": "007",
-        "letras_convertido": "Cero Cero Siete"
-      },
-      {
-        "partido": "PARTIDO LIBERAL DE HONDURAS",
-        "digitos": [
-          "0",
-          "5",
-          "4"
-        ],
-        "letras": [
-          "Cero",
-          "Cinco",
-          "Cuatro"
-        ],
-        "digitos_convertido": "054",
-        "letras_convertido": "Cero Cinco Cuatro"
-      },
-      {
-        "partido": "PARTIDO NACIONAL DE HONDURAS",
-        "digitos": [
-          "0",
-          "9",
-          "9"
-        ],
-        "letras": [
-          "Cero",
-          "Nueve",
-          "Nueve"
-        ],
-        "digitos_convertido": "099",
-        "letras_convertido": "Cero Nueve Nueve"
-      },
-      {
-        "categoria": "VOTOS EN BLANCO",
-        "digitos": [
-          "0",
-          "0",
-          "1"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "001",
+        "en_letras": [
           "Cero",
           "Cero",
           "Uno"
-        ],
-        "digitos_convertido": "001",
-        "letras_convertido": "Cero Cero Uno"
+        ]
       },
       {
-        "categoria": "VOTOS NULOS",
-        "digitos": [
-          "0",
-          "0",
-          "5"
-        ],
-        "letras": [
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "054",
+        "en_letras": [
+          "Cero",
+          "Cinco",
+          "Cuatro"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "099",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "005",
+        "en_letras": [
           "Cero",
           "Cero",
           "Cinco"
-        ],
-        "digitos_convertido": "005",
-        "letras_convertido": "Cero Cero Cinco"
+        ]
       },
       {
-        "categoria": "GRAN TOTAL",
-        "digitos": [
-          "1",
-          "9",
-          "4"
-        ],
-        "letras": [
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "194",
+        "en_letras": [
           "Uno",
           "Nueve",
           "Cuatro"
-        ],
-        "digitos_convertido": "194",
-        "letras_convertido": "Uno Nueve Cuatro"
+        ]
       }
     ]
   }
