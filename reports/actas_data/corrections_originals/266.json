@@ -1,184 +1,83 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "filas": [
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "350",
-        "letras": [
-          "tres",
-          "cinco",
-          "cero"
-        ],
-        "digitos_letra": "350",
-        "letras_letra": [
-          "tres",
-          "cinco",
-          "cero"
-        ]
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "NO UTILIZADAS/SOBRANTES",
-        "digitos": "181",
-        "letras": [
-          "uno",
-          "ocho",
-          "uno"
-        ],
-        "digitos_letra": "181",
-        "letras_letra": [
-          "uno",
-          "ocho",
-          "uno"
-        ]
-      },
-      {
-        "categoria": "PAPELETAS",
-        "subcategoria": "UTILIZADAS",
-        "digitos": "169",
-        "letras": [
-          "uno",
-          "seis",
-          "nueve"
-        ],
-        "digitos_letra": "169",
-        "letras_letra": [
-          "uno",
-          "seis",
-          "nueve"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "digitos": "163",
-        "letras": [
-          "uno",
-          "seis",
-          "tres"
-        ],
-        "digitos_letra": "163",
-        "letras_letra": [
-          "uno",
-          "seis",
-          "tres"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "MIEMBROS JRV",
-        "digitos": "006",
-        "letras": [
-          "cero",
-          "cero",
-          "seis"
-        ],
-        "digitos_letra": "006",
-        "letras_letra": [
-          "cero",
-          "cero",
-          "seis"
-        ]
-      },
-      {
-        "categoria": "VOTANTES",
-        "subcategoria": "TOTAL VOTANTES",
-        "digitos": "169",
-        "letras": [
-          "uno",
-          "seis",
-          "nueve"
-        ],
-        "digitos_letra": "169",
-        "letras_letra": [
-          "uno",
-          "seis",
-          "nueve"
-        ]
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Demócrata Cristiano de Honduras (DC)",
-        "digitos": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Libertad y Refundación (libre)",
-        "digitos": "007",
-        "letras": [
-          "cero",
-          "cero",
-          "siete"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "007",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Siete"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Innovación y Unidad Social Demócrata (PINU)",
-        "digitos": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Liberal de Honduras",
-        "digitos": "081",
-        "letras": [
-          "cero",
-          "ocho",
-          "uno"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "081",
+        "en_letras": [
+          "Cero",
+          "Ocho",
+          "Uno"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "partido": "Partido Nacional de Honduras",
-        "digitos": "076",
-        "letras": [
-          "cero",
-          "siete",
-          "seis"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "076",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Seis"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS EN BLANCO",
-        "digitos": "010",
-        "letras": [
-          "cero",
-          "uno"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "VOTOS NULOS",
-        "digitos": "040",
-        "letras": [
-          "cero",
-          "cuatro"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "004",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cuatro"
         ]
       },
       {
-        "categoria": "VOTOS",
-        "subcategoria": "GRAN TOTAL",
-        "digitos": "190",
-        "letras": [
-          "uno",
-          "nueve",
-          "cero"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "169",
+        "en_letras": [
+          "Uno",
+          "Seis",
+          "Nueve"
         ]
       }
     ]

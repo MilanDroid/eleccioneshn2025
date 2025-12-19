@@ -1,167 +1,83 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "filas": [
-      {
-        "categoria": "Papeletas",
-        "subcategoria": "Recibidas según acta de apertura",
-        "digitos": "354",
-        "letras": [
-          "TRES",
-          "CINCO",
-          "CUATRO"
-        ],
-        "digitos_letra": "354"
-      },
-      {
-        "categoria": "Papeletas",
-        "subcategoria": "No utilizadas / sobrantes",
-        "digitos": "158",
-        "letras": [
-          "UNO",
-          "CINCO",
-          "OCHO"
-        ],
-        "digitos_letra": "158"
-      },
-      {
-        "categoria": "Papeletas",
-        "subcategoria": "Utilizadas",
-        "digitos": "796",
-        "letras": [
-          "UNO",
-          "NUEVE",
-          "SEIS"
-        ],
-        "digitos_letra": "796"
-      },
-      {
-        "categoria": "Votantes",
-        "subcategoria": "Ciudadanos que votaron según cuaderno de votación",
-        "digitos": "786",
-        "letras": [
-          "UNO",
-          "OCHO",
-          "SEIS"
-        ],
-        "digitos_letra": "786"
-      },
-      {
-        "categoria": "Votantes",
-        "subcategoria": "Miembros JRV",
-        "digitos": "007",
-        "letras": [
-          "CERO",
-          "CERO",
-          "SIETE"
-        ],
-        "digitos_letra": "007"
-      },
-      {
-        "categoria": "Votantes",
-        "subcategoria": "Custodios informáticos electorales",
-        "digitos": "003",
-        "letras": [
-          "CERO",
-          "CERO",
-          "TRES"
-        ],
-        "digitos_letra": "003"
-      },
-      {
-        "categoria": "Votantes",
-        "subcategoria": "Total votantes",
-        "digitos": "796",
-        "letras": [
-          "UNO",
-          "NUEVE",
-          "SEIS"
-        ],
-        "digitos_letra": "796"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "categoria": "Votos",
-        "partido": "Partido Demócrata Cristiano de Honduras (DC)",
-        "digitos": "000",
-        "letras": [
-          "CERO",
-          "CERO",
-          "CERO"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "categoria": "Votos",
-        "partido": "Partido Libertad y Refundación (libre)",
-        "digitos": "036",
-        "letras": [
-          "CERO",
-          "TRES",
-          "SEIS"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "036",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Seis"
         ]
       },
       {
-        "categoria": "Votos",
-        "partido": "Partido Innovación y Unidad Social Demócrata (PINU)",
-        "digitos": "002",
-        "letras": [
-          "CERO",
-          "CERO",
-          "DOS"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
         ]
       },
       {
-        "categoria": "Votos",
-        "partido": "Partido Liberal de Honduras",
-        "digitos": "776",
-        "letras": [
-          "SIETE",
-          "SIETE",
-          "SEIS"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "116",
+        "en_letras": [
+          "Uno",
+          "Uno",
+          "Seis"
         ]
       },
       {
-        "categoria": "Votos",
-        "partido": "Partido Nacional de Honduras",
-        "digitos": "039",
-        "letras": [
-          "CERO",
-          "TRES",
-          "NUEVE"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "039",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Nueve"
         ]
       },
       {
-        "categoria": "Votos",
-        "subcategoria": "Votos en blanco",
-        "digitos": "001",
-        "letras": [
-          "CERO",
-          "CERO",
-          "UNO"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
         ]
       },
       {
-        "categoria": "Votos",
-        "subcategoria": "Votos nulos",
-        "digitos": "002",
-        "letras": [
-          "CERO",
-          "CERO",
-          "DOS"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
         ]
       },
       {
-        "categoria": "Votos",
-        "subcategoria": "Gran Total",
-        "digitos": "796",
-        "letras": [
-          "UNO",
-          "NUEVE",
-          "SEIS"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "196",
+        "en_letras": [
+          "Uno",
+          "Nueve",
+          "Seis"
         ]
       }
     ]

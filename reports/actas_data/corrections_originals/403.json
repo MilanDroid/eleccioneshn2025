@@ -1,170 +1,83 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "nombre": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "digitos": "313",
-        "letras": [
-          "tres",
-          "uno",
-          "tres"
-        ],
-        "digitos_entregados": "313",
-        "letras_entregadas": [
-          "tres",
-          "uno",
-          "tres"
-        ]
-      },
-      {
-        "nombre": "NO UTILIZADAS/SOBRANTES",
-        "digitos": "120",
-        "letras": [
-          "uno",
-          "dos",
-          "cero"
-        ],
-        "digitos_entregados": "120",
-        "letras_entregadas": [
-          "uno",
-          "dos",
-          "cero"
-        ]
-      },
-      {
-        "nombre": "UTILIZADAS",
-        "digitos": "193",
-        "letras": [
-          "uno",
-          "nueve",
-          "tres"
-        ],
-        "digitos_entregados": "193",
-        "letras_entregadas": [
-          "uno",
-          "nueve",
-          "tres"
-        ]
-      }
-    ]
-  },
-  {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "nombre": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "digitos": "184",
-        "letras": [
-          "uno",
-          "ocho",
-          "cuatro"
-        ]
-      },
-      {
-        "nombre": "MIEMBROS JRV",
-        "digitos": "006",
-        "letras": [
-          "cero",
-          "cero",
-          "seis"
-        ]
-      },
-      {
-        "nombre": "CUSTODIOS INFORMATICOS ELECTORALES",
-        "digitos": "003",
-        "letras": [
-          "cero",
-          "cero",
-          "tres"
-        ]
-      },
-      {
-        "nombre": "TOTAL VOTANTES",
-        "digitos": "193",
-        "letras": [
-          "uno",
-          "nueve",
-          "tres"
-        ]
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "nombre": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
-        "digitos": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "nombre": "PARTIDO LIBERTAD Y REFUNDACIÓN (libre)",
-        "digitos": "018",
-        "letras": [
-          "cero",
-          "uno",
-          "ocho"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "018",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Ocho"
         ]
       },
       {
-        "nombre": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)",
-        "digitos": "000",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
         ]
       },
       {
-        "nombre": "PARTIDO LIBERAL DE HONDURAS",
-        "digitos": "098",
-        "letras": [
-          "cero",
-          "nueve",
-          "ocho"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "098",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Ocho"
         ]
       },
       {
-        "nombre": "PARTIDO NACIONAL DE HONDURAS",
-        "digitos": "072",
-        "letras": [
-          "cero",
-          "siete",
-          "dos"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "072",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Dos"
         ]
       },
       {
-        "nombre": "VOTOS EN BLANCO",
-        "digitos": "003",
-        "letras": [
-          "cero",
-          "cero",
-          "tres"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
         ]
       },
       {
-        "nombre": "VOTOS NULOS",
-        "digitos": "002",
-        "letras": [
-          "cero",
-          "cero",
-          "dos"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
         ]
       },
       {
-        "nombre": "GRAN TOTAL",
-        "digitos": "143",
-        "letras": [
-          "uno",
-          "cuatro",
-          "tres"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "193",
+        "en_letras": [
+          "Uno",
+          "Nueve",
+          "Tres"
         ]
       }
     ]

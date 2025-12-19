@@ -1,236 +1,85 @@
-{
-  "filas": [
-    {
-      "seccion": "I. BALANCE GENERAL",
-      "subseccion": "PAPELETAS",
-      "filas": [
-        {
-          "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-          "numeros": [
-            "3",
-            "3",
-            "7"
-          ],
-          "letras": [
-            "Tres",
-            "Tres",
-            "Siete"
-          ],
-          "digitos": "337"
-        },
-        {
-          "etiqueta": "NO UTILIZADAS / SOBRANTES",
-          "numeros": [
-            "1",
-            "7",
-            "2"
-          ],
-          "letras": [
-            "Uno",
-            "Siete",
-            "Dos"
-          ],
-          "digitos": "172"
-        },
-        {
-          "etiqueta": "UTILIZADAS",
-          "numeros": [
-            "1",
-            "6",
-            "3"
-          ],
-          "letras": [
-            "Uno",
-            "Seis",
-            "Cinco"
-          ],
-          "digitos": "163"
-        }
-      ]
-    },
-    {
-      "seccion": "I. BALANCE GENERAL",
-      "subseccion": "VOTANTES",
-      "filas": [
-        {
-          "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-          "numeros": [
-            "4",
-            "5",
-            "6"
-          ],
-          "letras": [
-            "Uno",
-            "Cinco",
-            "Seis"
-          ],
-          "digitos": "456"
-        },
-        {
-          "etiqueta": "MIEMBROS JRV",
-          "numeros": [
-            "0",
-            "0",
-            "6"
-          ],
-          "letras": [
-            "Cero",
-            "Cero",
-            "Seis"
-          ],
-          "digitos": "006"
-        },
-        {
-          "etiqueta": "CUSTODIOS INFORMÁTICOS ELECTORALES",
-          "numeros": [
-            "0",
-            "0",
-            "3"
-          ],
-          "letras": [
-            "Cero",
-            "Cero",
-            "Tres"
-          ],
-          "digitos": "003"
-        },
-        {
-          "etiqueta": "TOTAL VOTANTES",
-          "numeros": [
-            "2",
-            "6",
-            "5"
-          ],
-          "letras": [
-            "Dos",
-            "Seis",
-            "Cinco"
-          ],
-          "digitos": "265"
-        }
-      ]
-    },
-    {
-      "seccion": "II. RESULTADOS DEL ESCRUTINIO",
-      "filas": [
-        {
-          "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
-          "etiqueta_corta": "DC",
-          "numeros": [
-            "0",
-            "0",
-            "2"
-          ],
-          "letras": [
-            "Cero",
-            "Cero",
-            "Dos"
-          ],
-          "digitos": "002"
-        },
-        {
-          "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
-          "etiqueta_corta": "libre",
-          "numeros": [
-            "0",
-            "1",
-            "4"
-          ],
-          "letras": [
-            "Cero",
-            "Uno",
-            "Cuatro"
-          ],
-          "digitos": "014"
-        },
-        {
-          "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
-          "etiqueta_corta": "PINU",
-          "numeros": [
-            "0",
-            "0",
-            "5"
-          ],
-          "letras": [
-            "Cero",
-            "Cero",
-            "Cinco"
-          ],
-          "digitos": "005"
-        },
-        {
-          "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
-          "etiqueta_corta": "PLH",
-          "numeros": [
-            "1",
-            "0",
-            "6"
-          ],
-          "letras": [
-            "Uno",
-            "Cero",
-            "Seis"
-          ],
-          "digitos": "106"
-        },
-        {
-          "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
-          "etiqueta_corta": "PNH",
-          "numeros": [
-            "0",
-            "2",
-            "5"
-          ],
-          "letras": [
-            "Cero",
-            "Dos",
-            "Cinco"
-          ],
-          "digitos": "025"
-        },
-        {
-          "etiqueta": "VOTOS EN BLANCO",
-          "numeros": [
-            "0",
-            "0",
-            "3"
-          ],
-          "letras": [
-            "Cero",
-            "Cero",
-            "Tres"
-          ],
-          "digitos": "003"
-        },
-        {
-          "etiqueta": "VOTOS NULOS",
-          "numeros": [
-            "0",
-            "0",
-            "9"
-          ],
-          "letras": [
-            "Cero",
-            "Cero",
-            "Nueve"
-          ],
-          "digitos": "009"
-        },
-        {
-          "etiqueta": "GRAN TOTAL",
-          "numeros": [
-            "1",
-            "6",
-            "5"
-          ],
-          "letras": [
-            "Uno",
-            "Seis",
-            "Cinco"
-          ],
-          "digitos": "165"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "014",
+        "en_letras": [
+          "Cero",
+          "Uno",
+          "Cuatro"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "005",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cinco"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "106",
+        "en_letras": [
+          "Uno",
+          "Cero",
+          "Seis"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "025",
+        "en_letras": [
+          "Cero",
+          "Dos",
+          "Cinco"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "003",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Tres"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "009",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "164",
+        "en_letras": [
+          "Uno",
+          "Seis",
+          "Cuatro"
+        ]
+      }
+    ]
+  }
+]
