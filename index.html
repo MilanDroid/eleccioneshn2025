@@ -1283,7 +1283,12 @@
             <div class="ai-info-box-title">
                 <div>
                     <h4>Conteo con Inteligencia Artificial</h4>
-                    <div class="ai-info-box-summary">Este conteo utiliza IA para extraer y validar los votos de las actas oficiales</div>
+                    <div class="ai-info-box-summary">
+                        Este conteo utiliza inteligencia artificial para extraer y validar los votos a partir de las actas oficiales.
+                        Los votos se suman exactamente tal como aparecen en las actas y se trabaja únicamente con la información contenida en dichos documentos.
+                        <br>
+                        Si las actas están adulteradas o no, es algo que no podemos controlar, ya que se trabaja con información pública y no estamos afiliados al CNE ni a ningún partido político. Por lo tanto, si existiera manipulación en las actas, los resultados reflejarían esa misma manipulación. Se recomienda utilizar esta información de manera consciente.
+                    </div>
                 </div>
             </div>
             <div class="toggle-icon" id="toggleIcon" aria-label="Expandir/Colapsar">▼</div>
@@ -2624,11 +2629,11 @@
             setTimeout(() => {
                 infoBox.style.display = 'none';
             }, 300); // Match animation duration
-            localStorage.setItem('aiInfoBoxClosed', 'true');
+            localStorage.setItem('aiInfoDisclaimerBoxClosed', 'true');
         }
 
         function checkAIInfoBoxStatus() {
-            const aiInfoBoxClosed = localStorage.getItem('aiInfoBoxClosed');
+            const aiInfoBoxClosed = localStorage.getItem('aiInfoDisclaimerBoxClosed');
             if (aiInfoBoxClosed) {
                 const infoBox = document.getElementById('aiInfoBox');
                 if (infoBox) {
