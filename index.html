@@ -2629,15 +2629,25 @@
             setTimeout(() => {
                 infoBox.style.display = 'none';
             }, 300); // Match animation duration
-            localStorage.setItem('aiInfoDisclaimerBoxClosed', 'true');
+            localStorage.setItem('aiInfoDisclaimerBoxClosed', Date.now().toString());
         }
 
         function checkAIInfoBoxStatus() {
             const aiInfoBoxClosed = localStorage.getItem('aiInfoDisclaimerBoxClosed');
             if (aiInfoBoxClosed) {
-                const infoBox = document.getElementById('aiInfoBox');
-                if (infoBox) {
-                    infoBox.style.display = 'none';
+                const closedTimestamp = parseInt(aiInfoBoxClosed);
+                const oneHourInMs = 60 * 60 * 1000; // 1 hour = 3600000 milliseconds
+                const currentTime = Date.now();
+
+                if (currentTime - closedTimestamp < oneHourInMs) {
+                    // Less than 1 hour has passed, keep it hidden
+                    const infoBox = document.getElementById('aiInfoBox');
+                    if (infoBox) {
+                        infoBox.style.display = 'none';
+                    }
+                } else {
+                    // More than 1 hour has passed, remove the timestamp to show the box again
+                    localStorage.removeItem('aiInfoDisclaimerBoxClosed');
                 }
             }
         }
