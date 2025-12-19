@@ -3071,10 +3071,15 @@
                 return;
             }
 
+            // Sort by actaNumber numerically
+            const sortedList = [...data.mismatchesList].sort((a, b) => {
+                return parseInt(a.actaNumber) - parseInt(b.actaNumber);
+            });
+
             // Calculate pagination
             const startIndex = (page - 1) * mismatchItemsPerPage;
             const endIndex = startIndex + mismatchItemsPerPage;
-            const pageItems = data.mismatchesList.slice(startIndex, endIndex);
+            const pageItems = sortedList.slice(startIndex, endIndex);
 
             // Load vote data for all items on this page
             const itemsWithVotes = await Promise.all(
@@ -3536,10 +3541,15 @@
                 return;
             }
 
+            // Sort by actaNumber numerically
+            const sortedList = [...data.aiInconsistenciasList].sort((a, b) => {
+                return parseInt(a.actaNumber) - parseInt(b.actaNumber);
+            });
+
             // Calculate pagination
             const startIndex = (page - 1) * aiItemsPerPage;
             const endIndex = startIndex + aiItemsPerPage;
-            const pageItems = data.aiInconsistenciasList.slice(startIndex, endIndex);
+            const pageItems = sortedList.slice(startIndex, endIndex);
 
             // Load vote data for all items on this page
             const itemsWithVotes = await Promise.all(
@@ -3926,10 +3936,15 @@
                 return;
             }
 
+            // Sort by actaNumber numerically
+            const sortedList = [...data.validActasList].sort((a, b) => {
+                return parseInt(a.actaNumber) - parseInt(b.actaNumber);
+            });
+
             // Calculate pagination
             const startIndex = (page - 1) * validItemsPerPage;
             const endIndex = startIndex + validItemsPerPage;
-            const pageItems = data.validActasList.slice(startIndex, endIndex);
+            const pageItems = sortedList.slice(startIndex, endIndex);
 
             // Load vote data for all items on this page
             const itemsWithVotes = await Promise.all(
