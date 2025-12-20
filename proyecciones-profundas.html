@@ -428,7 +428,7 @@
 
         function takeEvery30Minutes(dates) {
             const result = [];
-            const SIX_HOURS = 1 * 60 * 60 * 1000;
+            const TIME_GAP = 45 * 60 * 1000;
 
             let lastAccepted = null;
             dates = dates.map(s => {
@@ -441,16 +441,14 @@
             for (const v of dates) {
                 const d = v.timestamp
                 const current = new Date(d).getTime();
-console.log({
-    lastAccepted, current
-})
+
                 if (!lastAccepted) {
                     result.push(v);
                     lastAccepted = current;
                     continue;
                 }
 
-                if (current - lastAccepted >= SIX_HOURS) {
+                if (lastAccepted - current >= TIME_GAP) {
                     result.push(v);
                     lastAccepted = current;
                 }
