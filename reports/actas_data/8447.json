@@ -1,5 +1,145 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 35 column 55 (char 1080)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"PAPELETAS\",\n        \"filas\": [\n            {\n                \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"numeros\": \"356\",\n                \"letras\": [\"Tres\", \"Cinco\", \"Seis\"]\n            },\n            {\n                \"descripcion\": \"NO UTILIZADAS / SOBRANTES\",\n                \"numeros\": \"198\",\n                \"letras\": [\"Uno\", \"Nueve\", \"ocho\"]\n            },\n            {\n                \"descripcion\": \"UTILIZADAS\",\n                \"numeros\": \"158\",\n                \"letras\": [\"Uno\", \"Cinco\", \"ocho\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"subseccion\": \"VOTANTES\",\n        \"filas\": [\n            {\n                \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"numeros\": \"152\",\n                \"letras\": [\"Uno\", \"Cinco\", \"Dos\"]\n            },\n            {\n                \"descripcion\": \"MIEMBROS JRV\",\n                \"numeros\": \"004\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cuatro\"]  // Corregido de \"Seis\" a \"Cuatro\" según lo visible\n            },\n            {\n                \"descripcion\": \"TOTAL VOTANTES\",\n                \"numeros\": \"158\",\n                \"letras\": [\"Uno\", \"Cinco\", \"ocho\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"descripcion\": \"PARTIDO DC\",\n                \"numeros\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBRE\",\n                \"numeros\": \"025\",\n                \"letras\": [\"Cero\", \"Dos\", \"Cinco\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO PINI\",\n                \"numeros\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO LIBERAL\",\n                \"numeros\": \"036\",\n                \"letras\": [\"Cero\", \"Tres\", \"Seis\"]\n            },\n            {\n                \"descripcion\": \"PARTIDO NACIONAL\",\n                \"numeros\": \"085\",\n                \"letras\": [\"Cero\", \"Ocho\", \"Cinco\"]\n            },\n            {\n                \"descripcion\": \"VOTOS EN BLANCO\",\n                \"numeros\": \"002\",\n                \"letras\": [\"Cero\", \"Cero\", \"Dos\"]\n            },\n            {\n                \"descripcion\": \"VOTOS NULOS\",\n                \"numeros\": \"010\",\n                \"letras\": [\"Cero\", \"Uno\", \"Cero\"]\n            },\n            {\n                \"descripcion\": \"GRAN TOTAL\",\n                \"numeros\": \"158\",\n                \"letras\": [\"Uno\", \"Cinco\", \"ocho\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+        "letras": [
+          "tres",
+          "cinco",
+          "seis"
+        ],
+        "en_letras": "tres cinco seis"
+      },
+      {
+        "etiqueta": "NO UTILIZADAS / SOBRANTES",
+        "letras": [
+          "uno",
+          "nueve",
+          "ocho"
+        ],
+        "en_letras": "uno nueve ocho"
+      },
+      {
+        "etiqueta": "UTILIZADAS",
+        "letras": [
+          "uno",
+          "cinco",
+          "ocho"
+        ],
+        "en_letras": "uno cinco ocho"
+      }
+    ]
+  },
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
+        "letras": [
+          "uno",
+          "cinco",
+          "dos"
+        ],
+        "en_letras": "uno cinco dos"
+      },
+      {
+        "etiqueta": "MIEMBROS JRV",
+        "letras": [
+          "cero",
+          "cero",
+          "cuatro"
+        ],
+        "en_letras": "cero cero cuatro"
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES",
+        "letras": [
+          "uno",
+          "cinco",
+          "ocho"
+        ],
+        "en_letras": "uno cinco ocho"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DC",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "etiqueta": "PARTIDO LIBRE",
+        "letras": [
+          "cero",
+          "dos",
+          "cinco"
+        ],
+        "en_letras": "cero dos cinco"
+      },
+      {
+        "etiqueta": "PARTIDO PINI",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL",
+        "letras": [
+          "cero",
+          "tres",
+          "seis"
+        ],
+        "en_letras": "cero tres seis"
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL",
+        "letras": [
+          "cero",
+          "ocho",
+          "cinco"
+        ],
+        "en_letras": "cero ocho cinco"
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "letras": [
+          "cero",
+          "cero",
+          "dos"
+        ],
+        "en_letras": "cero cero dos"
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "letras": [
+          "cero",
+          "uno",
+          "cero"
+        ],
+        "en_letras": "cero uno cero"
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "letras": [
+          "uno",
+          "cinco",
+          "ocho"
+        ],
+        "en_letras": "uno cinco ocho"
+      }
+    ]
+  }
+]

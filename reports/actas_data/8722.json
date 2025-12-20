@@ -1,5 +1,162 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 65 column 55 (char 2355)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"filas\": [\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"333\",\n                \"digitos\": [\"3\", \"3\", \"3\"],\n                \"en_letras\": [\"tres\", \"tres\", \"tres\"],\n                \"digitos_letras\": [\"tres\", \"tres\", \"tres\"]\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"NO UTILIZADAS / SOBRANTES\",\n                \"en_numeros\": \"076\",\n                \"digitos\": [\"0\", \"7\", \"6\"],\n                \"en_letras\": [\"cero\", \"siete\", \"seis\"]\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"UTILIZADAS\",\n                \"en_numeros\": \"257\",\n                \"digitos\": [\"2\", \"5\", \"7\"],\n                \"en_letras\": [\"dos\", \"cinco\", \"siete\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"en_numeros\": \"247\",\n                \"digitos\": [\"2\", \"4\", \"7\"],\n                \"en_letras\": [\"dos\", \"cuatro\", \"siete\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"007\",\n                \"digitos\": [\"0\", \"0\", \"7\"],\n                \"en_letras\": [\"cero\", \"cero\", \"siete\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"CUSTODIOS INFORMATICOS ELECTORALES\",\n                \"en_numeros\": \"003\",\n                \"digitos\": [\"0\", \"0\", \"3\"],\n                \"en_letras\": [\"cero\", \"cero\", \"tres\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"257\",\n                \"digitos\": [\"2\", \"5\", \"7\"],\n                \"en_letras\": [\"dos\", \"cinco\", \"siete\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Demócrata Cristiano de Honduras (DC)\",\n                \"en_numeros\": \"007\",\n                \"digitos\": [\"0\", \"0\", \"7\"],\n                \"en_letras\": [\"cero\", \"cero\", \"uno\"]  // Error en la imagen, debe ser \"siete\"\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Libertad y Refundación (Libre)\",\n                \"en_numeros\": \"050\",\n                \"digitos\": [\"0\", \"5\", \"0\"],\n                \"en_letras\": [\"cero\", \"cinco\", \"cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Innovación y Unidad Social Demócrata (PINU)\",\n                \"en_numeros\": \"002\",\n                \"digitos\": [\"0\", \"0\", \"2\"],\n                \"en_letras\": [\"cero\", \"cero\", \"dos\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Liberal de Honduras\",\n                \"en_numeros\": \"089\",\n                \"digitos\": [\"0\", \"8\", \"9\"],\n                \"en_letras\": [\"cero\", \"ocho\", \"nueve\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Nacional de Honduras\",\n                \"en_numeros\": \"173\",\n                \"digitos\": [\"1\", \"7\", \"3\"],\n                \"en_letras\": [\"uno\", \"siete\", \"tres\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"subcategoria\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"000\",\n                \"digitos\": [\"0\", \"0\", \"0\"],\n                \"en_letras\": [\"cero\", \"cero\", \"cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"subcategoria\": \"VOTOS NULOS\",\n                \"en_numeros\": \"002\",\n                \"digitos\": [\"0\", \"0\", \"2\"],\n                \"en_letras\": [\"cero\", \"cero\", \"dos\"]\n            },\n            {\n                \"categoria\": \"TOTAL\",\n                \"subcategoria\": \"GRAN TOTAL\",\n                \"en_numeros\": \"257\",\n                \"digitos\": [\"2\", \"5\", \"7\"],\n                \"en_letras\": [\"dos\", \"cinco\", \"siete\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "filas": [
+      {
+        "digitos": "333",
+        "en_numeros": "333",
+        "letras": [
+          "tres",
+          "tres",
+          "tres"
+        ],
+        "en_letras": "tres tres tres"
+      },
+      {
+        "digitos": "076",
+        "en_numeros": "076",
+        "letras": [
+          "cero",
+          "siete",
+          "seis"
+        ],
+        "en_letras": "cero siete seis"
+      },
+      {
+        "digitos": "257",
+        "en_numeros": "257",
+        "letras": [
+          "dos",
+          "cinco",
+          "siete"
+        ],
+        "en_letras": "dos cinco siete"
+      },
+      {
+        "digitos": "247",
+        "en_numeros": "247",
+        "letras": [
+          "dos",
+          "cuatro",
+          "siete"
+        ],
+        "en_letras": "dos cuatro siete"
+      },
+      {
+        "digitos": "007",
+        "en_numeros": "007",
+        "letras": [
+          "cero",
+          "cero",
+          "siete"
+        ],
+        "en_letras": "cero cero siete"
+      },
+      {
+        "digitos": "003",
+        "en_numeros": "003",
+        "letras": [
+          "cero",
+          "cero",
+          "tres"
+        ],
+        "en_letras": "cero cero tres"
+      },
+      {
+        "digitos": "257",
+        "en_numeros": "257",
+        "letras": [
+          "dos",
+          "cinco",
+          "siete"
+        ],
+        "en_letras": "dos cinco siete"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "digitos": "007",
+        "en_numeros": "007",
+        "letras": [
+          "cero",
+          "cero",
+          "uno"
+        ],
+        "en_letras": "cero cero uno"
+      },
+      {
+        "digitos": "050",
+        "en_numeros": "050",
+        "letras": [
+          "cero",
+          "cinco",
+          "cero"
+        ],
+        "en_letras": "cero cinco cero"
+      },
+      {
+        "digitos": "002",
+        "en_numeros": "002",
+        "letras": [
+          "cero",
+          "cero",
+          "dos"
+        ],
+        "en_letras": "cero cero dos"
+      },
+      {
+        "digitos": "089",
+        "en_numeros": "089",
+        "letras": [
+          "cero",
+          "ocho",
+          "nueve"
+        ],
+        "en_letras": "cero ocho nueve"
+      },
+      {
+        "digitos": "173",
+        "en_numeros": "173",
+        "letras": [
+          "uno",
+          "siete",
+          "tres"
+        ],
+        "en_letras": "uno siete tres"
+      },
+      {
+        "digitos": "000",
+        "en_numeros": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "digitos": "002",
+        "en_numeros": "002",
+        "letras": [
+          "cero",
+          "cero",
+          "dos"
+        ],
+        "en_letras": "cero cero dos"
+      },
+      {
+        "digitos": "257",
+        "en_numeros": "257",
+        "letras": [
+          "dos",
+          "cinco",
+          "siete"
+        ],
+        "en_letras": "dos cinco siete"
+      }
+    ]
+  }
+]

@@ -1,5 +1,132 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 27 column 53 (char 939)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"filas\": [\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"numeros\": \"345\",\n                \"letras\": [\"Tres\", \"Cuatro\", \"Cinco\"]\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"NO UTILIZADAS/SOBRANTES\",\n                \"numeros\": \"140\",\n                \"letras\": [\"Uno\", \"Cuatro\", \"Cero\"]\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"UTILIZADAS\",\n                \"numeros\": \"205\",\n                \"letras\": [\"Dos\", \"Cero\", \"Cinco\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN\",\n                \"numeros\": \"190\",\n                \"letras\": [\"Uno\", \"Nueve\", \"Cero\"]  // Note: The image shows \"196\" but transcription is \"190\" based on the visible number\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"MIEMBROS JRV\",\n                \"numeros\": \"006\",\n                \"letras\": [\"Cero\", \"Cero\", \"Seis\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"CUSTODIOS INFORMÁTICOS ELECTORALES\",\n                \"numeros\": \"003\",\n                \"letras\": [\"Cero\", \"Cero\", \"Tres\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"TOTAL VOTANTES\",\n                \"numeros\": \"205\",\n                \"letras\": [\"Dos\", \"Cero\", \"Cinco\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Demócrata Cristiano de Honduras (DC)\",\n                \"numeros\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Libertad y Refundación (libre)\",\n                \"numeros\": \"077\",\n                \"letras\": [\"Cero\", \"Siete\", \"Siete\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Innovación y Unidad Social Demócrata (PINU)\",\n                \"numeros\": \"000\",\n                \"letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Liberal de Honduras\",\n                \"numeros\": \"060\",\n                \"letras\": [\"Cero\", \"Seis\", \"Cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Nacional de Honduras\",\n                \"numeros\": \"064\",\n                \"letras\": [\"Cero\", \"Seis\", \"Cuatro\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"subcategoria\": \"VOTOS EN BLANCO\",\n                \"numeros\": \"001\",\n                \"letras\": [\"Cero\", \"Cero\", \"Uno\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"subcategoria\": \"VOTOS NULOS\",\n                \"numeros\": \"003\",\n                \"letras\": [\"Cero\", \"Cero\", \"Tres\"]\n            },\n            {\n                \"categoria\": \"TOTAL\",\n                \"subcategoria\": \"GRAN TOTAL\",\n                \"numeros\": \"205\",\n                \"letras\": [\"Dos\", \"Cero\", \"Cinco\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "filas": [
+      {
+        "letras": [
+          "tres",
+          "cuatro",
+          "cinco"
+        ],
+        "en_letras": "tres cuatro cinco"
+      },
+      {
+        "letras": [
+          "uno",
+          "cuatro",
+          "cero"
+        ],
+        "en_letras": "uno cuatro cero"
+      },
+      {
+        "letras": [
+          "dos",
+          "cero",
+          "cinco"
+        ],
+        "en_letras": "dos cero cinco"
+      },
+      {
+        "letras": [
+          "uno",
+          "nueve",
+          "cero"
+        ],
+        "en_letras": "uno nueve cero"
+      },
+      {
+        "letras": [
+          "cero",
+          "cero",
+          "seis"
+        ],
+        "en_letras": "cero cero seis"
+      },
+      {
+        "letras": [
+          "cero",
+          "cero",
+          "tres"
+        ],
+        "en_letras": "cero cero tres"
+      },
+      {
+        "letras": [
+          "dos",
+          "cero",
+          "cinco"
+        ],
+        "en_letras": "dos cero cinco"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "letras": [
+          "cero",
+          "siete",
+          "siete"
+        ],
+        "en_letras": "cero siete siete"
+      },
+      {
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "letras": [
+          "cero",
+          "seis",
+          "cero"
+        ],
+        "en_letras": "cero seis cero"
+      },
+      {
+        "letras": [
+          "cero",
+          "seis",
+          "cuatro"
+        ],
+        "en_letras": "cero seis cuatro"
+      },
+      {
+        "letras": [
+          "cero",
+          "cero",
+          "uno"
+        ],
+        "en_letras": "cero cero uno"
+      },
+      {
+        "letras": [
+          "cero",
+          "cero",
+          "tres"
+        ],
+        "en_letras": "cero cero tres"
+      },
+      {
+        "letras": [
+          "dos",
+          "cero",
+          "cinco"
+        ],
+        "en_letras": "dos cero cinco"
+      }
+    ]
+  }
+]

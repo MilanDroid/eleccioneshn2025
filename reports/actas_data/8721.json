@@ -1,5 +1,152 @@
-{
-  "error": "JSON parsing error: Expecting ',' delimiter: line 33 column 57 (char 1170)",
-  "raw_ocr_output": "[\n    {\n        \"seccion\": \"I. BALANCE GENERAL\",\n        \"filas\": [\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n                \"en_numeros\": \"333\",\n                \"en_letras\": [\"Tres\", \"Tres\", \"Tres\"]\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"NO UTILIZADAS/SOBRANTES\",\n                \"en_numeros\": \"082\",\n                \"en_letras\": [\"Cero\", \"Ocho\", \"Dos\"]\n            },\n            {\n                \"categoria\": \"PAPELETAS\",\n                \"subcategoria\": \"UTILIZADAS\",\n                \"en_numeros\": \"251\",\n                \"en_letras\": [\"Dos\", \"Cinco\", \"Uno\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n                \"en_numeros\": \"244\",\n                \"en_letras\": [\"Dos\", \"Cuatro\", \"Cuatro\"]\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"MIEMBROS JRV\",\n                \"en_numeros\": \"007\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Siete\"]  // Tachado, pero se transcribe como está\n            },\n            {\n                \"categoria\": \"VOTANTES\",\n                \"subcategoria\": \"TOTAL VOTANTES\",\n                \"en_numeros\": \"251\",\n                \"en_letras\": [\"Dos\", \"Cinco\", \"Uno\"]\n            }\n        ]\n    },\n    {\n        \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n        \"filas\": [\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Demócrata Cristiano de Honduras (DC)\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Libertad y Refundación (libre)\",\n                \"en_numeros\": \"035\",\n                \"en_letras\": [\"Cero\", \"Tres\", \"Cinco\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Innovación y Unidad Social Demócrata (PINU)\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Liberal de Honduras\",\n                \"en_numeros\": \"099\",\n                \"en_letras\": [\"Cero\", \"Nueve\", \"Nueve\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"partido\": \"Partido Nacional de Honduras\",\n                \"en_numeros\": \"113\",\n                \"en_letras\": [\"Uno\", \"Uno\", \"Tres\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"subcategoria\": \"VOTOS EN BLANCO\",\n                \"en_numeros\": \"000\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Cero\"]\n            },\n            {\n                \"categoria\": \"VOTOS\",\n                \"subcategoria\": \"VOTOS NULOS\",\n                \"en_numeros\": \"004\",\n                \"en_letras\": [\"Cero\", \"Cero\", \"Cuatro\"]\n            },\n            {\n                \"categoria\": \"TOTAL\",\n                \"subcategoria\": \"GRAN TOTAL\",\n                \"en_numeros\": \"251\",\n                \"en_letras\": [\"Dos\", \"Cinco\", \"Uno\"]\n            }\n        ]\n    }\n]",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "filas": [
+      {
+        "digitos": "333",
+        "en_numeros": "333",
+        "letras": [
+          "tres",
+          "tres",
+          "tres"
+        ],
+        "en_letras": "tres tres tres"
+      },
+      {
+        "digitos": "082",
+        "en_numeros": "082",
+        "letras": [
+          "cero",
+          "ocho",
+          "dos"
+        ],
+        "en_letras": "cero ocho dos"
+      },
+      {
+        "digitos": "251",
+        "en_numeros": "251",
+        "letras": [
+          "dos",
+          "cinco",
+          "uno"
+        ],
+        "en_letras": "dos cinco uno"
+      },
+      {
+        "digitos": "244",
+        "en_numeros": "244",
+        "letras": [
+          "dos",
+          "cuatro",
+          "cuatro"
+        ],
+        "en_letras": "dos cuatro cuatro"
+      },
+      {
+        "digitos": "007",
+        "en_numeros": "007",
+        "letras": [
+          "cero",
+          "cero",
+          "siete"
+        ],
+        "en_letras": "cero cero siete"
+      },
+      {
+        "digitos": "251",
+        "en_numeros": "251",
+        "letras": [
+          "dos",
+          "cinco",
+          "uno"
+        ],
+        "en_letras": "dos cinco uno"
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "digitos": "000",
+        "en_numeros": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "digitos": "035",
+        "en_numeros": "035",
+        "letras": [
+          "cero",
+          "tres",
+          "cinco"
+        ],
+        "en_letras": "cero tres cinco"
+      },
+      {
+        "digitos": "000",
+        "en_numeros": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "digitos": "099",
+        "en_numeros": "099",
+        "letras": [
+          "cero",
+          "nueve",
+          "nueve"
+        ],
+        "en_letras": "cero nueve nueve"
+      },
+      {
+        "digitos": "113",
+        "en_numeros": "113",
+        "letras": [
+          "uno",
+          "uno",
+          "tres"
+        ],
+        "en_letras": "uno uno tres"
+      },
+      {
+        "digitos": "000",
+        "en_numeros": "000",
+        "letras": [
+          "cero",
+          "cero",
+          "cero"
+        ],
+        "en_letras": "cero cero cero"
+      },
+      {
+        "digitos": "004",
+        "en_numeros": "004",
+        "letras": [
+          "cero",
+          "cero",
+          "cuatro"
+        ],
+        "en_letras": "cero cero cuatro"
+      },
+      {
+        "digitos": "251",
+        "en_numeros": "251",
+        "letras": [
+          "dos",
+          "cinco",
+          "uno"
+        ],
+        "en_letras": "dos cinco uno"
+      }
+    ]
+  }
+]
