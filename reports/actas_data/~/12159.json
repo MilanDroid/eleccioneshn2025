@@ -1,0 +1,200 @@
+[
+  {
+    "seccion": "I. BALANCE GENERAL",
+    "subseccion": "PAPELETAS",
+    "filas": [
+      {
+        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
+        "digitos": "341",
+        "letras": [
+          "tres",
+          "cuatro",
+          "uno"
+        ],
+        "item": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "papeletas_recibidas"
+        }
+      },
+      {
+        "etiqueta": "NO UTILIZADAS/SOBRANTES",
+        "digitos": "078",
+        "letras": [
+          "cero",
+          "siete",
+          "ocho"
+        ],
+        "item": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "papeletas_no_utilizadas"
+        }
+      },
+      {
+        "etiqueta": "UTILIZADAS",
+        "digitos": "263",
+        "letras": [
+          "dos",
+          "seis",
+          "tres"
+        ],
+        "item": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "papeletas_utilizadas"
+        }
+      }
+    ]
+  },
+  {
+    "subseccion": "VOTANTES",
+    "filas": [
+      {
+        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
+        "digitos": "256",
+        "letras": [
+          "dos",
+          "cinco",
+          "seis"
+        ],
+        "item": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "votantes_ciudadanos"
+        }
+      },
+      {
+        "etiqueta": "MIEMBROS JRV",
+        "digitos": "007",
+        "letras": [
+          "cero",
+          "cero",
+          "siete"
+        ],
+        "item": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "miembros_jrv"
+        }
+      },
+      {
+        "etiqueta": "TOTAL VOTANTES",
+        "digitos": "263",
+        "letras": [
+          "dos",
+          "seis",
+          "tres"
+        ],
+        "item": {
+          "seccion": "BALANCE_GENERAL",
+          "tipo": "total_votantes"
+        }
+      }
+    ]
+  },
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)",
+        "digitos": "007",
+        "letras": [
+          "cero",
+          "cero",
+          "uno"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido_dc"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REPUBLICA (libre)",
+        "digitos": "044",
+        "letras": [
+          "cero",
+          "cuatro",
+          "cuatro"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido_libre"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (pinu)",
+        "digitos": "005",
+        "letras": [
+          "cero",
+          "cero",
+          "cinco"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido_pinu"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "digitos": "108",
+        "letras": [
+          "uno",
+          "cero",
+          "ocho"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido_liberal"
+        }
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "digitos": "102",
+        "letras": [
+          "uno",
+          "cero",
+          "dos"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "partido_nacional"
+        }
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "digitos": "007",
+        "letras": [
+          "cero",
+          "cero",
+          "uno"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "votos_blanco"
+        }
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "digitos": "002",
+        "letras": [
+          "cero",
+          "cero",
+          "dos"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "votos_nulos"
+        }
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "digitos": "263",
+        "letras": [
+          "dos",
+          "seis",
+          "tres"
+        ],
+        "item": {
+          "seccion": "RESULTADOS_ESCRUTINIO",
+          "tipo": "gran_total"
+        }
+      }
+    ]
+  }
+]
