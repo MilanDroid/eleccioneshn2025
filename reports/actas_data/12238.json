@@ -1,5 +1,83 @@
-{
-  "error": "JSON parsing error: Expecting property name enclosed in double quotes: line 57 column 3 (char 1671)",
-  "raw_ocr_output": "{\n  \"filas\": [\n    {\n      \"seccion\": \"I. BALANCE GENERAL\",\n      \"subseccion\": \"PAPELETAS\",\n      \"filas\": [\n        {\n          \"descripcion\": \"RECIBIDAS SEGÚN ACTA DE APERTURA\",\n          \"en_numeros\": \"349\",\n          \"digitos\": [\"3\", \"4\", \"9\"],\n          \"en_letras\": [\"Tres\", \"Cuatro\", \"Nueve\"],\n          \"digitos_letras\": [\"Tres\", \"Cuatro\", \"Nueve\"]\n        },\n        {\n          \"descripcion\": \"NO UTILIZADAS/SOBRANTES\",\n          \"en_numeros\": \"089\",\n          \"digitos\": [\"0\", \"8\", \"9\"],\n          \"en_letras\": [\"Cero\", \"Ocho\", \"Nueve\"],\n          \"digitos_letras\": [\"Cero\", \"Ocho\", \"Nueve\"]\n        },\n        {\n          \"descripcion\": \"UTILIZADAS\",\n          \"en_numeros\": \"260\",\n          \"digitos\": [\"2\", \"6\", \"0\"],\n          \"en_letras\": [\"Dos\", \"Seis\", \"Cero\"],\n          \"digitos_letras\": [\"Dos\", \"Seis\", \"Cero\"]\n        }\n      ]\n    },\n    {\n      \"subseccion\": \"VOTANTES\",\n      \"filas\": [\n        {\n          \"descripcion\": \"CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN\",\n          \"en_numeros\": \"253\",\n          \"digitos\": [\"2\", \"5\", \"3\"],\n          \"en_letras\": [\"Dos\", \"Cinco\", \"Tres\"],\n          \"digitos_letras\": [\"Dos\", \"Cinco\", \"Tres\"]\n        },\n        {\n          \"descripcion\": \"MIEMBROS JRV\",\n          \"en_numeros\": \"007\",\n          \"digitos\": [\"0\", \"0\", \"7\"],\n          \"en_letras\": [\"Cero\", \"Cero\", \"Siete\"],\n          \"digitos_letras\": [\"Cero\", \"Cero\", \"Siete\"]\n        },\n        {\n          \"descripcion\": \"TOTAL VOTANTES\",\n          \"en_numeros\": \"260\",\n          \"digitos\": [\"2\", \"6\", \"0\"],\n          \"en_letras\": [\"Dos\", \"Seis\", \"Cero\"],\n          \"digitos_letras\": [\"Dos\", \"Seis\", \"Cero\"]\n        }\n      ]\n    }\n  ],\n  {\n    \"seccion\": \"II. RESULTADOS DEL ESCRUTINIO\",\n    \"filas\": [\n      {\n        \"descripcion\": \"PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS (DC)\",\n        \"en_numeros\": \"001\",\n        \"digitos\": [\"0\", \"0\", \"1\"],\n        \"en_letras\": [\"Cero\", \"Cero\", \"Uno\"],\n        \"digitos_letras\": [\"Cero\", \"Cero\", \"Uno\"]\n      },\n      {\n        \"descripcion\": \"PARTIDO LIBERTAD Y REFUNDACIÓN (libre)\",\n        \"en_numeros\": \"035\",\n        \"digitos\": [\"0\", \"3\", \"5\"],\n        \"en_letras\": [\"Cero\", \"Tres\", \"Cinco\"],\n        \"digitos_letras\": [\"Cero\", \"Tres\", \"Cinco\"]\n      },\n      {\n        \"descripcion\": \"PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA (PINU)\",\n        \"en_numeros\": \"000\",\n        \"digitos\": [\"0\", \"0\", \"0\"],\n        \"en_letras\": [\"Cero\", \"Cero\", \"Cero\"],\n        \"digitos_letras\": [\"Cero\", \"Cero\", \"Cero\"]\n      },\n      {\n        \"descripcion\": \"PARTIDO LIBERAL DE HONDURAS\",\n        \"en_numeros\": \"072\",\n        \"digitos\": [\"0\", \"7\", \"2\"],\n        \"en_letras\": [\"Cero\", \"Siete\", \"Dos\"],\n        \"digitos_letras\": [\"Cero\", \"Siete\", \"Dos\"]\n      },\n      {\n        \"descripcion\": \"PARTIDO NACIONAL DE HONDURAS\",\n        \"en_numeros\": \"139\",\n        \"digitos\": [\"1\", \"3\", \"9\"],\n        \"en_letras\": [\"Uno\", \"Tres\", \"Nueve\"],\n        \"digitos_letras\": [\"Uno\", \"Tres\", \"Nueve\"]\n      },\n      {\n        \"descripcion\": \"VOTOS EN BLANCO\",\n        \"en_numeros\": \"004\",\n        \"digitos\": [\"0\", \"0\", \"4\"],\n        \"en_letras\": [\"Cero\", \"Cero\", \"Cuatro\"],\n        \"digitos_letras\": [\"Cero\", \"Cero\", \"Cuatro\"]\n      },\n      {\n        \"descripcion\": \"VOTOS NULOS\",\n        \"en_numeros\": \"009\",\n        \"digitos\": [\"0\", \"0\", \"9\"],\n        \"en_letras\": [\"Cero\", \"Cero\", \"Nueve\"],\n        \"digitos_letras\": [\"Cero\", \"Cero\", \"Nueve\"]\n      },\n      {\n        \"descripcion\": \"GRAN TOTAL\",\n        \"en_numeros\": \"260\",\n        \"digitos\": [\"2\", \"6\", \"0\"],\n        \"en_letras\": [\"Dos\", \"Seis\", \"Cero\"],\n        \"digitos_letras\": [\"Dos\", \"Seis\", \"Cero\"]\n      }\n    ]\n  }\n}",
-  "processing_failed": true
-}
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "035",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Cinco"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "072",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "139",
+        "en_letras": [
+          "Uno",
+          "Tres",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "004",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cuatro"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "009",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "260",
+        "en_letras": [
+          "Dos",
+          "Seis",
+          "Cero"
+        ]
+      }
+    ]
+  }
+]

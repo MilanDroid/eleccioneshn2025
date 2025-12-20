@@ -1,143 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "letras": [
-          "uno",
-          "nueve",
-          "cero"
-        ],
-        "en_letras": "uno nueve cero"
-      },
-      {
-        "etiqueta": "NO UTILIZADAS / SOBRANTES",
-        "letras": [
-          "cero",
-          "cuatro",
-          "uno"
-        ],
-        "en_letras": "cero cuatro uno"
-      },
-      {
-        "etiqueta": "UTILIZADAS",
-        "letras": [
-          "uno",
-          "cuatro",
-          "nueve"
-        ],
-        "en_letras": "uno cuatro nueve"
-      }
-    ]
-  },
-  {
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN",
-        "letras": [
-          "uno",
-          "cuatro",
-          "uno"
-        ],
-        "en_letras": "uno cuatro uno"
-      },
-      {
-        "etiqueta": "MIEMBROS JRV",
-        "letras": [
-          "cero",
-          "cero",
-          "ocho"
-        ],
-        "en_letras": "cero cero ocho"
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES",
-        "letras": [
-          "uno",
-          "cuatro",
-          "nueve"
-        ],
-        "en_letras": "uno cuatro nueve"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
         "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "en_letras": "cero cero cero"
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
-        "letras": [
-          "cero",
-          "cuatro",
-          "tres"
-        ],
-        "en_letras": "cero cuatro tres"
+        "etiqueta_corta": "libre",
+        "en_numeros": "043",
+        "en_letras": [
+          "Cero",
+          "Cuatro",
+          "Tres"
+        ]
       },
       {
         "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
-        "letras": [
-          "cero",
-          "cero",
-          "cero"
-        ],
-        "en_letras": "cero cero cero"
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
-        "letras": [
-          "cero",
-          "cinco",
-          "tres"
-        ],
-        "en_letras": "cero cinco tres"
+        "etiqueta_corta": "PLH",
+        "en_numeros": "053",
+        "en_letras": [
+          "Cero",
+          "Cinco",
+          "Tres"
+        ]
       },
       {
         "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
-        "letras": [
-          "cero",
-          "cuatro",
-          "cinco"
-        ],
-        "en_letras": "cero cuatro cinco"
+        "etiqueta_corta": "PNH",
+        "en_numeros": "045",
+        "en_letras": [
+          "Cero",
+          "Cuatro",
+          "Cinco"
+        ]
       },
       {
         "etiqueta": "VOTOS EN BLANCO",
-        "letras": [
-          "cero",
-          "cero",
-          "uno"
-        ],
-        "en_letras": "cero cero uno"
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
         "etiqueta": "VOTOS NULOS",
-        "letras": [
-          "cero",
-          "cero",
-          "siete"
-        ],
-        "en_letras": "cero cero siete"
+        "en_numeros": "007",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Siete"
+        ]
       },
       {
         "etiqueta": "GRAN TOTAL",
-        "letras": [
-          "uno",
-          "cuatro",
-          "nueve"
-        ],
-        "en_letras": "uno cuatro nueve"
+        "en_numeros": "149",
+        "en_letras": [
+          "Uno",
+          "Cuatro",
+          "Nueve"
+        ]
       }
     ]
   }

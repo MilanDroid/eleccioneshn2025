@@ -1,151 +1,85 @@
-{
-  "I.BALANCE_GENERAL": [
-    {
-      "section": "PAPELETAS",
-      "row": "RECIBIDAS_SEGÚN_ACTA_DE_APERTURA",
-      "digits": "340",
-      "letters": "Tres Cuatro Cero",
-      "formatted": {
-        "en_numeros": "340",
-        "en_letras": "Tres Cuatro Cero"
-      }
-    },
-    {
-      "section": "PAPELETAS",
-      "row": "NO_UTILIZADAS_SOBRANTES",
-      "digits": "095",
-      "letters": "Cero Nueve Cinco",
-      "formatted": {
-        "en_numeros": "095",
-        "en_letras": "Cero Nueve Cinco"
-      }
-    },
-    {
-      "section": "PAPELETAS",
-      "row": "UTILIZADAS",
-      "digits": "245",
-      "letters": "Dos Cuatro Cinco",
-      "formatted": {
-        "en_numeros": "245",
-        "en_letras": "Dos Cuatro Cinco"
-      }
-    },
-    {
-      "section": "VOTANTES",
-      "row": "CIUDADANOS_QUE_VOTARON_SEGÚN_CUADRERO_DE_VOTACIÓN",
-      "digits": "236",
-      "letters": "Dos Tres Seis",
-      "formatted": {
-        "en_numeros": "236",
-        "en_letras": "Dos Tres Seis"
-      }
-    },
-    {
-      "section": "VOTANTES",
-      "row": "MIEMBROS_JRV",
-      "digits": "006",
-      "letters": "Cero Cero Seis",
-      "formatted": {
-        "en_numeros": "006",
-        "en_letras": "Cero Cero Seis"
-      }
-    },
-    {
-      "section": "VOTANTES",
-      "row": "CUSTODIOS_INFORMÁTICOS",
-      "digits": "003",
-      "letters": "Cero Cero Tres",
-      "formatted": {
-        "en_numeros": "003",
-        "en_letras": "Cero Cero Tres"
-      }
-    },
-    {
-      "section": "VOTANTES",
-      "row": "TOTAL_VOTANTES",
-      "digits": "245",
-      "letters": "Dos Cuatro Cinco",
-      "formatted": {
-        "en_numeros": "245",
-        "en_letras": "Dos Cuatro Cinco"
-      }
-    }
-  ],
-  "II.RESULTADOS_DEL_ESCRUTINIO": [
-    {
-      "party": "PARTIDO_DEMÓCRATA_CRISTIANO_DE_HONDURAS",
-      "abbreviation": "DC",
-      "digits": "000",
-      "letters": "Cero Cero Cero",
-      "formatted": {
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
         "en_numeros": "000",
-        "en_letras": "Cero Cero Cero"
-      }
-    },
-    {
-      "party": "PARTIDO_LIBERTAD_Y_REFUNDACIÓN",
-      "abbreviation": "libre",
-      "digits": "050",
-      "letters": "Cero Cinco Cero",
-      "formatted": {
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
         "en_numeros": "050",
-        "en_letras": "Cero Cinco Cero"
-      }
-    },
-    {
-      "party": "PARTIDO_INNOVACIÓN_Y_UNIDAD_SOCIAL_DEMÓCRATA",
-      "abbreviation": "PINU",
-      "digits": "000",
-      "letters": "Cero Cero Cero",
-      "formatted": {
+        "en_letras": [
+          "Cero",
+          "Cinco",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
         "en_numeros": "000",
-        "en_letras": "Cero Cero Cero"
-      }
-    },
-    {
-      "party": "PARTIDO_LIBERAL_DE_HONDURAS",
-      "digits": "077",
-      "letters": "Cero Siete Siete",
-      "formatted": {
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
         "en_numeros": "077",
-        "en_letras": "Cero Siete Siete"
-      }
-    },
-    {
-      "party": "PARTIDO_NACIONAL_DE_HONDURAS",
-      "digits": "115",
-      "letters": "Uno Uno Cinco",
-      "formatted": {
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Siete"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
         "en_numeros": "115",
-        "en_letras": "Uno Uno Cinco"
-      }
-    },
-    {
-      "category": "VOTOS_EN_BLANCO",
-      "digits": "061",
-      "letters": "Cero Cero Uno",
-      "formatted": {
-        "en_numeros": "061",
-        "en_letras": "Cero Seis Uno"
-      }
-    },
-    {
-      "category": "VOTOS_NULOS",
-      "digits": "002",
-      "letters": "Cero Cero Dos",
-      "formatted": {
+        "en_letras": [
+          "Uno",
+          "Uno",
+          "Cinco"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
         "en_numeros": "002",
-        "en_letras": "Cero Cero Dos"
-      }
-    },
-    {
-      "category": "GRAN_TOTAL",
-      "digits": "245",
-      "letters": "Dos Cuatro Cinco",
-      "formatted": {
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
         "en_numeros": "245",
-        "en_letras": "Dos Cuatro Cinco"
+        "en_letras": [
+          "Dos",
+          "Cuatro",
+          "Cinco"
+        ]
       }
-    }
-  ]
-}
+    ]
+  }
+]

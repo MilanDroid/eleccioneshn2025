@@ -1,138 +1,83 @@
-{
-  "I.BALANCE_GENERAL": [
-    {
-      "seccion": "Papeletas",
-      "tipo": "Recibidas según acta de apertura",
-      "digitos": "337",
-      "letras": [
-        "tres",
-        "tres",
-        "tres"
-      ]
-    },
-    {
-      "seccion": "Papeletas",
-      "tipo": "No utilizadas / sobrantes",
-      "digitos": "157",
-      "letras": [
-        "uno",
-        "cinco",
-        "siete"
-      ]
-    },
-    {
-      "seccion": "Papeletas",
-      "tipo": "Utilizadas",
-      "digitos": "180",
-      "letras": [
-        "uno",
-        "ocho",
-        "cero"
-      ]
-    },
-    {
-      "seccion": "Votantes",
-      "tipo": "Ciudadanos que votaron según cuaderno de votación",
-      "digitos": "174",
-      "letras": [
-        "uno",
-        "siete",
-        "cuatro"
-      ]
-    },
-    {
-      "seccion": "Votantes",
-      "tipo": "Miembros JRV",
-      "digitos": "006",
-      "letras": [
-        "cero",
-        "cero",
-        "seis"
-      ]
-    },
-    {
-      "seccion": "Votantes",
-      "tipo": "Total votantes",
-      "digitos": "180",
-      "letras": [
-        "uno",
-        "ocho",
-        "cero"
-      ]
-    }
-  ],
-  "II.RESULTADOS_DEL_ESCRUTINIO": [
-    {
-      "partido": "DC",
-      "digitos": "000",
-      "letras": [
-        "cero",
-        "cero",
-        "cero"
-      ]
-    },
-    {
-      "partido": "libre",
-      "digitos": "053",
-      "letras": [
-        "cero",
-        "cinco",
-        "tres"
-      ]
-    },
-    {
-      "partido": "PINI",
-      "digitos": "000",
-      "letras": [
-        "cero",
-        "cero",
-        "cero"
-      ]
-    },
-    {
-      "partido": "PL",
-      "digitos": "089",
-      "letras": [
-        "cero",
-        "ocho",
-        "nueve"
-      ]
-    },
-    {
-      "partido": "PNH",
-      "digitos": "035",
-      "letras": [
-        "cero",
-        "tres",
-        "cinco"
-      ]
-    },
-    {
-      "tipo": "Votos en blanco",
-      "digitos": "000",
-      "letras": [
-        "cero",
-        "cero",
-        "cero"
-      ]
-    },
-    {
-      "tipo": "Votos nulos",
-      "digitos": "004",
-      "letras": [
-        "cero",
-        "cero",
-        "cuatro"
-      ]
-    },
-    {
-      "tipo": "Gran total",
-      "digitos": "180",
-      "letras": [
-        "uno",
-        "ocho",
-        "cero"
-      ]
-    }
-  ]
-}
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "053",
+        "en_letras": [
+          "Cero",
+          "Cinco",
+          "Tres"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "089",
+        "en_letras": [
+          "Cero",
+          "Ocho",
+          "Nueve"
+        ]
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "035",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Cinco"
+        ]
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "004",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cuatro"
+        ]
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "181",
+        "en_letras": [
+          "Uno",
+          "Ocho",
+          "Uno"
+        ]
+      }
+    ]
+  }
+]

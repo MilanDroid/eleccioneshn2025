@@ -1,171 +1,68 @@
-{
-  "I.BALANCE_GENERAL": [
-    {
-      "seccion": "Papeletas",
-      "tipo": "Recibidas según acta de apertura",
-      "digitos": {
-        "en_numeros": "355",
-        "en_letras": [
-          "Tres",
-          "Cinco",
-          "Cinco"
-        ]
-      }
-    },
-    {
-      "seccion": "Papeletas",
-      "tipo": "No utilizadas/sobrantes",
-      "digitos": {
-        "en_numeros": "113",
-        "en_letras": [
-          "Uno",
-          "Uno",
-          "Tres"
-        ]
-      }
-    },
-    {
-      "seccion": "Papeletas",
-      "tipo": "Utilizadas",
-      "digitos": {
-        "en_numeros": "242",
-        "en_letras": [
-          "Dos",
-          "Cuatro",
-          "Dos"
-        ]
-      }
-    },
-    {
-      "seccion": "Votantes",
-      "tipo": "Ciudadanos que votaron según cuaderno de votación",
-      "digitos": {
-        "en_numeros": "233",
-        "en_letras": [
-          "Dos",
-          "Tres",
-          "Tres"
-        ]
-      }
-    },
-    {
-      "seccion": "Votantes",
-      "tipo": "Miembros JRV",
-      "digitos": {
-        "en_numeros": "006",
-        "en_letras": [
-          "Cero",
-          "Cero",
-          "Seis"
-        ]
-      }
-    },
-    {
-      "seccion": "Votantes",
-      "tipo": "Custodios informáticos electorales",
-      "digitos": {
-        "en_numeros": "003",
-        "en_letras": [
-          "Cero",
-          "Cero",
-          "Tres"
-        ]
-      }
-    },
-    {
-      "seccion": "Votantes",
-      "tipo": "Total votantes",
-      "digitos": {
-        "en_numeros": "242",
-        "en_letras": [
-          "Dos",
-          "Cuatro",
-          "Dos"
-        ]
-      }
-    }
-  ],
-  "II.RESULTADOS_DEL_ESCRUTINIO": [
-    {
-      "partido": "Partido Demócrata Cristiano de Honduras (DC)",
-      "digitos": {
+[
+  {
+    "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
+    "filas": [
+      {
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
         "en_numeros": "001",
         "en_letras": [
-          "Cero",
-          "Cero",
-          "Uno"
+          ""
         ]
-      }
-    },
-    {
-      "partido": "Partido Libertad y Refundación (libre)",
-      "digitos": {
+      },
+      {
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
         "en_numeros": "039",
         "en_letras": [
-          "Cero",
-          "Tres",
-          "Nueve"
+          ""
         ]
-      }
-    },
-    {
-      "partido": "Partido Innovación y Unidad Social Demócrata (PINU)",
-      "digitos": {
+      },
+      {
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
         "en_numeros": "000",
         "en_letras": [
-          "Cero",
-          "Cero",
-          "Cero"
+          ""
         ]
-      }
-    },
-    {
-      "partido": "Partido Liberal de Honduras",
-      "digitos": {
+      },
+      {
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
         "en_numeros": "138",
         "en_letras": [
-          "Uno",
-          "Tres",
-          "Ocho"
+          ""
         ]
-      }
-    },
-    {
-      "partido": "Partido Nacional de Honduras",
-      "digitos": {
+      },
+      {
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
         "en_numeros": "058",
         "en_letras": [
-          "Cero",
-          "Cinco",
-          "Ocho"
+          ""
         ]
-      }
-    },
-    {
-      "tipo": "Votos en blanco",
-      "digitos": {
+      },
+      {
+        "etiqueta": "VOTOS EN BLANCO",
         "en_numeros": "002",
         "en_letras": [
           "Cero",
           "Cero",
           "Dos"
         ]
-      }
-    },
-    {
-      "tipo": "Votos nulos",
-      "digitos": {
+      },
+      {
+        "etiqueta": "VOTOS NULOS",
         "en_numeros": "004",
         "en_letras": [
           "Cero",
           "Cero",
           "Cuatro"
         ]
-      }
-    },
-    {
-      "tipo": "Gran Total",
-      "digitos": {
+      },
+      {
+        "etiqueta": "GRAN TOTAL",
         "en_numeros": "242",
         "en_letras": [
           "Dos",
@@ -173,6 +70,6 @@
           "Dos"
         ]
       }
-    }
-  ]
-}
+    ]
+  }
+]

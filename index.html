@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Conteo, Resultados Electorales - Honduras 2025</title>
-    <link rel="stylesheet" href="https://milandroid.dev/eleccioneshn2025/style.css">
+    <link rel="stylesheet" href="/style.css">
 
     <style>
         /* Theme Variables */
@@ -1321,16 +1321,16 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="https://milandroid.dev/eleccioneshn2025/index.html" class="navbar-brand">
+            <a href="/index.html" class="navbar-brand">
                 <img style="max-width: 60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Honduras_%282022%E2%80%93present%29.svg/2560px-Flag_of_Honduras_%282022%E2%80%93present%29.svg.png" alt="Honduras 2025">
                 HN 2025
             </a>
             <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
             <ul class="navbar-menu" id="navbarMenu">
-                <li class="navbar-item"><a href="https://milandroid.dev/eleccioneshn2025/actas.html" class="navbar-link">Actas</a></li>
-                <li class="navbar-item"><a href="https://milandroid.dev/eleccioneshn2025/conteo_cne.html" class="navbar-link">Conteo CNE</a></li>
-                <li class="navbar-item"><a href="https://milandroid.dev/eleccioneshn2025/index.html" class="navbar-link active">Mi Conteo</a></li>
-                <li class="navbar-item"><a href="https://milandroid.dev/eleccioneshn2025/proyeccion-simple.html" class="navbar-link">Análisis a CNE</a></li>
+                <li class="navbar-item"><a href="/actas.html" class="navbar-link">Actas</a></li>
+                <li class="navbar-item"><a href="/conteo_cne.html" class="navbar-link">Conteo CNE</a></li>
+                <li class="navbar-item"><a href="/index.html" class="navbar-link active">Mi Conteo</a></li>
+                <li class="navbar-item"><a href="/proyeccion-simple.html" class="navbar-link">Análisis a CNE</a></li>
             </ul>
         </div>
     </nav>
@@ -1443,7 +1443,7 @@
         </div>
 
         <div style="display: flex; justify-content: end">
-            <a href="https://milandroid.dev/eleccioneshn2025/reports/actas_complete_report.csv" download>
+            <a href="/reports/actas_complete_report.csv" download>
                 Descargar CSV
             </a>
         </div>
@@ -1729,9 +1729,9 @@
             try {
                 // Load all required data files
                 const [metadataResponse, municipiosResponse, centrosResponse] = await Promise.all([
-                    fetch('https://milandroid.dev/eleccioneshn2025/reports/processed_metadata.json' + `?${Date.now()}`),
-                    fetch('https://milandroid.dev/eleccioneshn2025/reports/municipios_data.json' + `?${Date.now()}`),
-                    fetch('https://milandroid.dev/eleccioneshn2025/reports/centros_data.json' + `?${Date.now()}`)
+                    fetch('/reports/processed_metadata.json' + `?${Date.now()}`),
+                    fetch('/reports/municipios_data.json' + `?${Date.now()}`),
+                    fetch('/reports/centros_data.json' + `?${Date.now()}`)
                 ]);
 
                 if (!metadataResponse.ok || !municipiosResponse.ok || !centrosResponse.ok) {
@@ -2775,14 +2775,14 @@
         async function loadMismatchesData() {
             try {
                 // Load vote_comparison_report.json
-                const reportResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/vote_comparison_report.json' + `?${Date.now()}`);
+                const reportResponse = await fetch('/reports/vote_comparison_report.json' + `?${Date.now()}`);
                 if (!reportResponse.ok) {
                     throw new Error('Could not load vote comparison report');
                 }
                 const reportData = await reportResponse.json();
 
                 // Load cne_mesas_output.csv
-                const csvResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/cne_mesas_output.csv' + `?${Date.now()}`);
+                const csvResponse = await fetch('/reports/cne_mesas_output.csv' + `?${Date.now()}`);
                 if (!csvResponse.ok) {
                     throw new Error('Could not load CSV data');
                 }
@@ -2881,11 +2881,11 @@
         async function loadActaVotes(actaNumber) {
             try {
                 // Load transformed data
-                const transformedResponse = await fetch(`https://milandroid.dev/eleccioneshn2025/reports/actas_data_transformed/${actaNumber}.json`);
+                const transformedResponse = await fetch(`/reports/actas_data_transformed/${actaNumber}.json`);
                 const transformedData = transformedResponse.ok ? await transformedResponse.json() : null;
 
                 // Load CNE data
-                const cneResponse = await fetch(`https://milandroid.dev/eleccioneshn2025/reports/actas_data_cne/${actaNumber}.json`);
+                const cneResponse = await fetch(`/reports/actas_data_cne/${actaNumber}.json`);
                 const cneData = cneResponse.ok ? await cneResponse.json() : null;
 
                 // Extract party votes
@@ -3274,7 +3274,7 @@
             try {
                 // Load CSV if not already loaded
                 if (!csvMappingData) {
-                    const csvResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/cne_mesas_output.csv' + `?${Date.now()}`);
+                    const csvResponse = await fetch('/reports/cne_mesas_output.csv' + `?${Date.now()}`);
                     if (!csvResponse.ok) {
                         throw new Error('Could not load CSV data');
                     }
@@ -3283,7 +3283,7 @@
                 }
 
                 // Load processed_actas_validation_report.json
-                const reportResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/processed_actas_validation_report.json' + `?${Date.now()}`);
+                const reportResponse = await fetch('/reports/processed_actas_validation_report.json' + `?${Date.now()}`);
                 if (!reportResponse.ok) {
                     throw new Error('Could not load AI validation report');
                 }
@@ -3504,7 +3504,7 @@
         async function loadActaDataWithGranTotal(actaNumber) {
             try {
                 // Load transformed data
-                const transformedResponse = await fetch(`https://milandroid.dev/eleccioneshn2025/reports/actas_data_transformed/${actaNumber}.json`);
+                const transformedResponse = await fetch(`/reports/actas_data_transformed/${actaNumber}.json`);
                 const transformedData = transformedResponse.ok ? await transformedResponse.json() : null;
 
                 if (!transformedData) return null;
@@ -3748,7 +3748,7 @@
             try {
                 // Load CSV if not already loaded
                 if (!csvMappingData) {
-                    const csvResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/cne_mesas_output.csv' + `?${Date.now()}`);
+                    const csvResponse = await fetch('/reports/cne_mesas_output.csv' + `?${Date.now()}`);
                     if (!csvResponse.ok) {
                         throw new Error('Could not load CSV data');
                     }
@@ -3757,7 +3757,7 @@
                 }
 
                 // Load processed_actas_validation_report.json
-                const reportResponse = await fetch('https://milandroid.dev/eleccioneshn2025/reports/processed_actas_validation_report.json' + `?${Date.now()}`);
+                const reportResponse = await fetch('/reports/processed_actas_validation_report.json' + `?${Date.now()}`);
                 if (!reportResponse.ok) {
                     throw new Error('Could not load validation report');
                 }

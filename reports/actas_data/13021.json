@@ -1,152 +1,84 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA",
-        "letras": [
-          "TRES",
-          "CUATRO",
-          "OCHO"
-        ],
-        "en_letras": "TRES CUATRO OCHO"
-      },
-      {
-        "etiqueta": "NO UTILIZADAS / SOBRANTES",
-        "letras": [
-          "UNO",
-          "UNO",
-          "UNO"
-        ],
-        "en_letras": "UNO UNO UNO"
-      },
-      {
-        "etiqueta": "UTILIZADAS",
-        "letras": [
-          "DOS",
-          "TRES",
-          "SIETE"
-        ],
-        "en_letras": "DOS TRES SIETE"
-      }
-    ]
-  },
-  {
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADERNO DE VOTACIÓN",
-        "letras": [
-          "DOS",
-          "DOS",
-          "OCHO"
-        ],
-        "en_letras": "DOS DOS OCHO"
-      },
-      {
-        "etiqueta": "MIEMBROS JRV",
-        "letras": [
-          "CERO",
-          "CERO",
-          "SEIS"
-        ],
-        "en_letras": "CERO CERO SEIS"
-      },
-      {
-        "etiqueta": "CUSTODIOS INFORMATICOS ELECTORALES",
-        "letras": [
-          "CERO",
-          "CERO",
-          "TRES"
-        ],
-        "en_letras": "CERO CERO TRES"
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES",
-        "letras": [
-          "DOS",
-          "TRES",
-          "SIETE"
-        ],
-        "en_letras": "DOS TRES SIETE"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
         "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
-        "letras": [
-          "CERO",
-          "CERO",
-          "UNO"
-        ],
-        "en_letras": "CERO CERO UNO"
+        "etiqueta_corta": "DC",
+        "en_numeros": "001",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Uno"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
-        "letras": [
-          "CERO",
-          "TRES",
-          "CUATRO"
-        ],
-        "en_letras": "CERO TRES CUATRO"
+        "etiqueta_corta": "libre",
+        "en_numeros": "034",
+        "en_letras": [
+          "Cero",
+          "Tres",
+          "Cuatro"
+        ]
       },
       {
         "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
-        "letras": [
-          "CERO",
-          "CERO",
-          "DOS"
-        ],
-        "en_letras": "CERO CERO DOS"
+        "etiqueta_corta": "PINU",
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
       },
       {
         "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
-        "letras": [
-          "CERO",
-          "NUEVE",
-          "SEIS"
-        ],
-        "en_letras": "CERO NUEVE SEIS"
+        "etiqueta_corta": "PLH",
+        "en_numeros": "096",
+        "en_letras": [
+          "Cero",
+          "Nueve",
+          "Seis"
+        ]
       },
       {
         "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
-        "letras": [
-          "UNO",
-          "CERO",
-          "DOS"
-        ],
-        "en_letras": "UNO CERO DOS"
+        "etiqueta_corta": "PNH",
+        "en_numeros": "102",
+        "en_letras": [
+          "Uno",
+          "Cero",
+          "Dos"
+        ]
       },
       {
         "etiqueta": "VOTOS EN BLANCO",
-        "letras": [
-          "CERO",
-          "CERO",
-          "CERO"
-        ],
-        "en_letras": "CERO CERO CERO"
+        "en_numeros": "000",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Cero"
+        ]
       },
       {
         "etiqueta": "VOTOS NULOS",
-        "letras": [
-          "CERO",
-          "CERO",
-          "DOS"
-        ],
-        "en_letras": "CERO CERO DOS"
+        "en_numeros": "002",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Dos"
+        ]
       },
       {
         "etiqueta": "GRAN TOTAL",
-        "letras": [
-          "DOS",
-          "TRES",
-          "SIETE"
-        ],
-        "en_letras": "DOS TRES SIETE"
+        "en_numeros": "237",
+        "en_letras": [
+          "Dos",
+          "Tres",
+          "Siete"
+        ]
       }
     ]
   }

@@ -1,62 +1,80 @@
 [
   {
-    "seccion": "I. BALANCE GENERAL",
-    "subseccion": "PAPELETAS",
-    "filas": [
-      {
-        "etiqueta": "RECIBIDAS SEGÚN ACTA DE APERTURA"
-      },
-      {
-        "etiqueta": "NO UTILIZADAS/SOBRANTES"
-      },
-      {
-        "etiqueta": "UTILIZADAS"
-      }
-    ]
-  },
-  {
-    "subseccion": "VOTANTES",
-    "filas": [
-      {
-        "etiqueta": "CIUDADANOS QUE VOTARON SEGÚN CUADRERO DE VOTACIÓN"
-      },
-      {
-        "etiqueta": "MIEMBROS JRV"
-      },
-      {
-        "etiqueta": "CUSTODIOS INFORMATICOS ELECTORALES"
-      },
-      {
-        "etiqueta": "TOTAL VOTANTES"
-      }
-    ]
-  },
-  {
     "seccion": "II. RESULTADOS DEL ESCRUTINIO",
+    "subseccion": "VOTOS",
     "filas": [
       {
-        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS"
+        "etiqueta": "PARTIDO DEMÓCRATA CRISTIANO DE HONDURAS",
+        "etiqueta_corta": "DC",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
       },
       {
-        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN"
+        "etiqueta": "PARTIDO LIBERTAD Y REFUNDACIÓN",
+        "etiqueta_corta": "libre",
+        "en_numeros": "076",
+        "en_letras": [
+          "Cero",
+          "Siete",
+          "Seis"
+        ]
       },
       {
-        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA"
+        "etiqueta": "PARTIDO INNOVACIÓN Y UNIDAD SOCIAL DEMÓCRATA",
+        "etiqueta_corta": "PINU",
+        "en_numeros": "000",
+        "en_letras": [
+          ""
+        ]
       },
       {
-        "etiqueta": "PARTIDO LIBERAL DE HONDURAS"
+        "etiqueta": "PARTIDO LIBERAL DE HONDURAS",
+        "etiqueta_corta": "PLH",
+        "en_numeros": "046",
+        "en_letras": [
+          "Cero",
+          "Cuatro",
+          "Seis"
+        ]
       },
       {
-        "etiqueta": "PARTIDO NACIONAL DE HONDURAS"
+        "etiqueta": "PARTIDO NACIONAL DE HONDURAS",
+        "etiqueta_corta": "PNH",
+        "en_numeros": "051",
+        "en_letras": [
+          "Cero",
+          "Cinco",
+          "Uno"
+        ]
       },
       {
-        "etiqueta": "VOTOS EN BLANCO"
+        "etiqueta": "VOTOS EN BLANCO",
+        "en_numeros": "006",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Seis"
+        ]
       },
       {
-        "etiqueta": "VOTOS NULOS"
+        "etiqueta": "VOTOS NULOS",
+        "en_numeros": "009",
+        "en_letras": [
+          "Cero",
+          "Cero",
+          "Nueve"
+        ]
       },
       {
-        "etiqueta": "GRAN TOTAL"
+        "etiqueta": "GRAN TOTAL",
+        "en_numeros": "188",
+        "en_letras": [
+          "Uno",
+          "Ocho",
+          "Ocho"
+        ]
       }
     ]
   }
