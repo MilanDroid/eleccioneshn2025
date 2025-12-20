@@ -426,6 +426,49 @@
             await loadProjections();
         });
 
+        function takeEvery30Minutes(dates) {
+            const result = [];
+            const SIX_HOURS = 1 * 60 * 60 * 1000;
+
+            let lastAccepted = null;
+            dates = dates.map(s => {
+                return {
+                    timestamp: parseCustomTimestamp(s),
+                    directory: s,
+                }
+            })
+
+            for (const v of dates) {
+                const d = v.timestamp
+                const current = new Date(d).getTime();
+console.log({
+    lastAccepted, current
+})
+                if (!lastAccepted) {
+                    result.push(v);
+                    lastAccepted = current;
+                    continue;
+                }
+
+                if (current - lastAccepted >= SIX_HOURS) {
+                    result.push(v);
+                    lastAccepted = current;
+                }
+            }
+
+            return result.map(v => v.directory);
+        }
+
+        function parseCustomTimestamp(s) {
+            // Convert to ISO-ish: "2025-12-19T22:40:47"
+            const isoLike = s.replace("_", "T").replace(/T(\d{2})-(\d{2})-(\d{2})$/, "T$1:$2:$3");
+            const d = new Date(isoLike);
+
+            // Invalid check
+            if (Number.isNaN(d.getTime())) return null;
+            return d;
+        }
+
         // Load all historical data
         async function loadProjections() {
             const loadingEl = document.getElementById('loading');
@@ -443,7 +486,8 @@
                     throw new Error('No se pudo cargar la metadata');
                 }
                 metadata = await metadataResponse.json();
-                availableDates = metadata.available_dates.slice(0, 100) || [];
+                availableDates = takeEvery30Minutes(metadata.available_dates) || [];
+                console.log(availableDates);
 
                 if (availableDates.length === 0) {
                     throw new Error('No hay datos disponibles');
@@ -857,7 +901,9 @@
                             // Collect projected vote data (normalized to 100%) for this department
                             availableDates.slice().reverse().forEach((date, index) => {
                                 const dateData = departmentDataCache[dept]?.[date];
-                                if (!dateData) return;
+                                if (!dateData) {
+                                    return
+                                }
 
                                 if (dateData.candidatos && dateData.actas) {
                                     const cand = dateData.candidatos.find(c => c.cddto_nombres === candidateName);
@@ -912,7 +958,7 @@
 
                             // Sum all department values at this specific time point
                             departmentsArray.forEach(dept => {
-                                if (departmentProjections[dept] && departmentProjections[dept][i] !== undefined) {
+                                if (departmentProjections[dept] && !isNaN(departmentProjections[dept][i]) && departmentProjections[dept][i] !== undefined) {
                                     totalAtThisPoint += departmentProjections[dept][i];
                                     hasData = true;
                                 }
