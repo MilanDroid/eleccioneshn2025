@@ -266,7 +266,6 @@ select:focus {
     border-radius: 20px;
     padding: 40px;
     max-width: 600px;
-    max-height: 80dvh;
     width: 100%;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -297,6 +296,8 @@ select:focus {
     font-size: 1em;
     line-height: 1.8;
     margin-bottom: 30px;
+    max-height: 70dvh;
+    overflow: auto;
 }
 
 .modal-body p {
@@ -338,25 +339,3 @@ select:focus {
         font-size: 0.95em;
     }
 }
-
-/* Common JavaScript for Mobile Menu Toggle */
-/* Add this script to your HTML files:
-
-<script>
-function toggleMenu() {
-    const menu = document.getElementById('navbarMenu');
-    menu.classList.toggle('active');
-}
-
-// Close menu when clicking outside on mobile
-document.addEventListener('click', function(event) {
-    const navbar = document.querySelector('.navbar');
-    const menu = document.getElementById('navbarMenu');
-
-    if (!navbar.contains(event.target) && menu.classList.contains('active')) {
-        menu.classList.remove('active');
-    }
-});
-</script>
-
-*/
