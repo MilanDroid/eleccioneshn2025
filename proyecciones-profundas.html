@@ -443,7 +443,7 @@
                     throw new Error('No se pudo cargar la metadata');
                 }
                 metadata = await metadataResponse.json();
-                availableDates = metadata.available_dates || [];
+                availableDates = metadata.available_dates.slice(-100) || [];
 
                 if (availableDates.length === 0) {
                     throw new Error('No hay datos disponibles');

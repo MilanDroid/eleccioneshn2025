@@ -460,7 +460,7 @@
                     throw new Error('No se pudo cargar la metadata');
                 }
                 metadata = await metadataResponse.json();
-                const availableDates = metadata.available_dates || [];
+                const availableDates = metadata.available_dates.slice(0, 100) || [];
 
                 if (availableDates.length === 0) {
                     throw new Error('No hay datos disponibles');
@@ -553,7 +553,7 @@
             select.addEventListener('change', async (e) => {
                 currentState = e.target.value;
                 if (currentState && metadata) {
-                    const availableDates = metadata.available_dates || [];
+                    const availableDates = metadata.available_dates.slice(0, 100) || [];
                     await loadDataForState(currentState, availableDates);
                 }
             });
