@@ -485,7 +485,6 @@
                 }
                 metadata = await metadataResponse.json();
                 availableDates = takeEvery30Minutes(metadata.available_dates) || [];
-                console.log(availableDates);
 
                 if (availableDates.length === 0) {
                     throw new Error('No hay datos disponibles');
