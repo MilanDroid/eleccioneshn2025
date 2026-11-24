@@ -43,3 +43,7 @@ This repository holds the published site and the data behind it.
 | `reports/*.csv`, `reports/*.json` | Validation, inconsistency and coverage reports, plus the CNE's reference data on zonas, municipios and centros |
 
 The pages load their data from the live site, not from the files next to them, so editing a file here doesn't change what a local copy shows.
+
+## License
+
+MIT. See [LICENSE](LICENSE). The license covers the site and the extracted data. It does not cover the CNE's own material, which is included for reference: its published figures in `reports/actas_data_cne/` and its data on zonas, municipios and centros.
